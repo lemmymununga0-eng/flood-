@@ -1,0 +1,75 @@
+/* FloodShield Zambia design tokens — Dark, professional, restrained.
+   Values per the product's UI specification (docs/UI-UX.md). Do not scatter
+   ad-hoc colors elsewhere in the app; add a token here instead. */
+:root {
+  /* Surfaces */
+  --bg: #07111f;
+  --bg-secondary: #0b1726;
+  --surface: #101d2d;
+  --surface-elevated: #142337;
+  --border: #1c2c40;
+
+  /* Brand */
+  --brand-blue: #1e5a7a;
+  --brand-green: #2e8b68;
+  --brand-gold: #c99a2e;
+
+  /* Risk */
+  --risk-low: #3fa67c;
+  --risk-moderate: #d4a72c;
+  --risk-high: #d97732;
+  --risk-critical: #c94a4a;
+
+  /* Text */
+  --text-primary: #f4f7fa;
+  --text-secondary: #c2ccd6;
+  --text-muted: #8292a3;
+
+  /* Structure */
+  --radius: 10px;
+  --radius-sm: 6px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --sidebar-w: 248px;
+  --topbar-h: 60px;
+
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family:
+    Inter,
+    Manrope,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+a {
+  color: var(--brand-blue);
+}
+
+button {
+  font-family: inherit;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}

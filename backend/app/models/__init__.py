@@ -1,3 +1,4 @@
+from app.models.alert import Alert
 from app.models.flood_event import FloodEvent
 from app.models.location import Location
 from app.models.prediction import ModelVersion, Prediction
@@ -9,4 +10,5 @@ __all__ = [
     "WeatherObservation",
     "ModelVersion",
     "Prediction",
+    "Alert",
 ]

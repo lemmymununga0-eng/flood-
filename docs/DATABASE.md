@@ -14,11 +14,12 @@ skeleton stage but is not the production migration path.
 | `flood_events` | `backend/scripts/seed_db.py`, from `ai-engine/data/external/zambia_flood_events_log.csv` | 11 real, sourced rows. Not a validated label — see `docs/ML-METHODOLOGY.md`. |
 | `weather_observations` | `POST /api/v1/weather/{id}/ingest` only | Empty by default; only ever populated by a real successful NASA POWER fetch, never seeded with placeholder values. |
 | `model_versions`, `predictions` | Nothing yet | Exist as schema only — no model has been trained (Phases 5–9 not started), so these are legitimately empty. |
+| `alerts` | `POST /api/v1/alerts` (real, via the Create Alert screen) | Genuinely persisted. No workflow states beyond a fixed `"issued"` status — see `docs/API.md`. |
 
 ## Not yet implemented
 
-`RiskAssessment`, `FloodEvent`-as-remote-sensing-product, `Alert`, `CitizenReport`,
+`RiskAssessment`, `FloodEvent`-as-remote-sensing-product, `CitizenReport`,
 `PredictionExplanation`, `SystemUser` from the candidate entity list in
-`docs/ARCHITECTURE.md` — added when the phases that need them (Alerts, Citizen
-Reporting, Auth) actually begin. No indexes beyond primary/unique keys have been tuned;
-this is a development skeleton, not a performance-reviewed schema.
+`docs/ARCHITECTURE.md` — added when the phases that need them (Citizen Reporting, Auth)
+actually begin. No indexes beyond primary/unique keys have been tuned; this is a
+development skeleton, not a performance-reviewed schema.

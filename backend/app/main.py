@@ -2,7 +2,7 @@
 
 Built ahead of the normal phase order at the user's explicit request, to demonstrate a
 real running system on top of the real (small, incomplete) data gathered in Phase 1.
-This is NOT a claim that Phase 10/11/12 are complete — no auth, no alerts, no citizen
+This is NOT a claim that Phase 10/11/12 are complete — no auth, no citizen
 reports, no trained model, minimal tests. See docs/ROADMAP.md for what's actually done.
 """
 import logging
@@ -10,7 +10,15 @@ import logging
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import flood_events, health, locations, predictions, weather
+from app.api import (
+    alerts,
+    flood_events,
+    health,
+    locations,
+    predictions,
+    system_status,
+    weather,
+)
 from app.core.config import get_settings
 from app.core.logging import configure_logging
 from app.database.session import Base, engine
@@ -43,6 +51,8 @@ app.include_router(locations.router, prefix=settings.api_v1_prefix)
 app.include_router(flood_events.router, prefix=settings.api_v1_prefix)
 app.include_router(weather.router, prefix=settings.api_v1_prefix)
 app.include_router(predictions.router, prefix=settings.api_v1_prefix)
+app.include_router(alerts.router, prefix=settings.api_v1_prefix)
+app.include_router(system_status.router, prefix=settings.api_v1_prefix)
 
 
 @app.on_event("startup")

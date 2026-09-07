@@ -23,6 +23,22 @@ section 41) — not merely scaffolded.
 | 14 | Testing | Ongoing per-phase from Phase 1 onward, plus a dedicated system-testing pass. Skeleton was manually verified (curl + headless-browser screenshots at two viewport widths) but has no automated test suite yet. |
 | 15 | Deployment | Not started |
 
+## Note: full UI redesign built (2026-09-07, same day, second request)
+
+The user then supplied a detailed UI specification (dark design system, 26-screen
+list) asking to recreate a reference dashboard mockup as a real, functional app. Built:
+the full design-token system, a persistent/collapsible app shell, and ~20 of the 26
+named screens — every one that could be backed by real data or an honest empty state.
+Added real backend support for it: an `alerts` table with working create/list (verified
+end-to-end: a form submission produces a real row that appears immediately), and a
+`/system-status` endpoint that computes each component's status at request time (DB
+ping, real row counts) rather than hardcoding "Operational." Deferred: Signup, separate
+How-It-Works/Methodology pages (folded into About), Prediction/Citizen-Report detail
+pages (no data yet to show), Data Quality, a React error boundary, and role-based
+permissions. See `docs/UI-UX.md` for the full screen-by-screen account, including one
+real responsive bug found (mobile tables had no card fallback rendered) and fixed
+during QA.
+
 ## Note: Phases 10–12 built early (2026-09-07)
 
 The user explicitly asked to "run the app" and, when asked to clarify given nothing was

@@ -1,38 +1,58 @@
 # UI/UX — FloodShield Zambia
 
-Status: **early skeleton**, built 2026-09-07 ahead of the normal phase order (see
-`docs/API.md`). One screen only: a single dashboard, React + TypeScript + Vite, styled
-with plain CSS (no component library yet).
+Status: **dark design system + multi-screen app**, built 2026-09-07 against the
+project's UI specification (`prompts/` — recreation of a reference dashboard mockup).
+Not a claim that Phase 12 (Frontend) is complete — see "Not yet implemented" below.
 
-## Screen: dashboard (`frontend/src/App.tsx`)
+## Design system
 
-Four panels, each independently fetched and each implementing its own loading / success
-/ empty / error state (governing prompt §36):
+CSS custom properties in `frontend/src/styles/tokens.css`, matching the spec's palette
+exactly: Deep Navy (`#07111f`) background, Secondary Navy/Surface/Elevated Surface for
+layering, Professional Blue/Environmental Green/Gold as brand accents, and a 4-level
+risk scale (`--risk-low` green through `--risk-critical` red). Shared component classes
+in `frontend/src/styles/components.css` (cards, KPI tiles, risk/status badges, buttons,
+forms, tables with a mobile card fallback, loading/empty/error states). No inline
+one-off colors — everything routes through the token file.
 
-- **Monitored locations** — real seeded locations with coordinates, confidence level,
-  and a source link.
-- **Historical flood-event log** — the 11 real, sourced events, explicitly labelled as
-  "not a validated ground-truth label."
-- **Weather data ingestion** — a button per location that triggers a real NASA POWER
-  fetch attempt and displays the honest result (including the raw error when it fails,
-  which it currently always does in this sandbox — see `docs/DATA-SOURCES.md`).
-- **Flood-risk predictions** — always empty right now, with an explicit empty state
-  explaining why (no model trained yet) rather than a blank panel or an invented number.
+## App shell
 
-## Responsive testing performed
+`frontend/src/layouts/AppShell.tsx` — persistent sidebar (collapses to a slide-over
+below 900px, toggled by a hamburger button) + top bar, shared by every authenticated
+route via React Router's nested-route outlet. Landing, Login, and About render outside
+the shell as public pages.
 
-Screenshotted via headless Chromium (Playwright) at 1280×900 (desktop) and 390×844
-(mobile, iPhone-sized). Found and fixed one real bug: long error text in the weather
-panel overflowed its container and caused page-level horizontal scroll — fixed with
-`overflow-wrap`/`word-break` on the message boxes and `overflow-x: hidden` on `html,
-body`. Confirmed no horizontal scroll at either width after the fix (verified via
-`document.documentElement.scrollWidth` === `clientWidth`). The flood-event table
-scrolls horizontally *within its own container* on narrow viewports, which is the
-correct pattern (per this project's own rule) rather than letting the whole page
-overflow. Tablet-width and full cross-browser testing have not been done.
+## Screens implemented
+
+Dashboard, Risk Map (Leaflet, real location markers, no fake risk overlay), Location
+Detail (real weather-ingestion demo), Predictions (real empty state), Analytics (honest
+stub — nothing to show without real metrics), Historical Events + Historical Event
+Detail (the real 11-event log), Alerts + Create Alert (real create/list against the
+backend — verified end-to-end with Playwright: submitting the form creates a real DB
+row that immediately appears on `/alerts`), Citizen Reports (honest stub — no backend
+table), AI Model (honest stub), Data Sources, System Status (live, computed), Settings,
+Profile, About, Notifications (honest stub), 404, plus Landing and Login.
 
 ## Not yet implemented
 
-Everything else in `docs/PRD.md`'s planned screen list (Risk Map, Analytics, Alerts,
-Citizen Reports, Model Information, Settings), any design system/component library, and
-any frontend automated tests (`frontend/tests/` is still empty).
+Signup, standalone How-It-Works/Methodology pages (folded into About instead),
+Prediction Detail and Citizen Report Detail (no data to show yet), Data Quality, a
+React error boundary, role-based permissions, and dark/light theme toggle (this build
+is dark-only, matching the spec). Against the spec's 26-screen checklist this build
+covers roughly 20, prioritizing every screen that could be backed by real data or a
+real empty state over ones that would be pure static mockup.
+
+## Verified
+
+- Typechecked clean (`tsc -b --noEmit`).
+- No horizontal overflow at 1440px, 390px (iPhone-sized), confirmed via
+  `document.documentElement.scrollWidth === clientWidth` after Playwright screenshots
+  of every implemented route at both widths.
+- Found and fixed a real bug: the historical-events and predictions tables had a
+  `.record-cards` mobile fallback class styled in CSS but never rendered in the
+  component — on mobile the table (correctly hidden per the responsive table rule) had
+  nothing to replace it, so the page was blank below the header. Fixed by actually
+  rendering the card list; re-verified with a screenshot.
+- The Leaflet map initializes and its controls/attribution render correctly, but OSM
+  tile images do not load in this sandbox (same class of egress restriction as NASA
+  POWER — see `docs/DATA-SOURCES.md`). The map is functionally correct code; tile
+  loading is an environment constraint, not a code defect.

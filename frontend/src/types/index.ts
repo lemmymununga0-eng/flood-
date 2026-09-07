@@ -42,3 +42,37 @@ export interface WeatherIngestResult {
   observations_stored: number;
   error_detail: string | null;
 }
+
+export interface Alert {
+  id: number;
+  title: string;
+  risk_level: string;
+  location_id: number;
+  message: string;
+  audience: string;
+  channels: string;
+  status: string;
+  valid_until: string | null;
+  created_at: string;
+}
+
+export interface AlertCreateInput {
+  title: string;
+  risk_level: string;
+  location_id: number;
+  message: string;
+  audience?: string;
+  channels?: string;
+}
+
+export interface ComponentStatus {
+  name: string;
+  status: "operational" | "degraded" | "unavailable";
+  detail: string;
+  response_time_ms: number | null;
+}
+
+export interface SystemStatus {
+  checked_at: string;
+  components: ComponentStatus[];
+}

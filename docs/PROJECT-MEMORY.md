@@ -13,6 +13,31 @@ Status tags used throughout this document and the rest of `/docs`:
 
 ---
 
+## 2026-09-07 — Dark design system + multi-screen UI built against a reference spec
+
+**Decision:** Implemented the user-supplied UI specification (dark navy/blue/green/gold
+palette, risk color scale, persistent app shell, ~20 of 26 named screens) as real,
+data-backed React screens rather than static mockups matching the reference image
+pixel-for-pixel.
+
+**Why:** The spec itself (its own sections 28, 29, 48, 54) prohibits fabricating
+metrics, predictions, model accuracy, or system health to "fill the page" — which is
+exactly what a literal pixel-for-pixel recreation of the reference mockup would require,
+since that mockup shows invented KPI numbers, a populated model-comparison table, and
+fake alerts. Resolved this by keeping the mockup's visual language (colors, layout
+rhythm, component shapes) while sourcing every value from a real API call, and using
+the spec's own required empty/error states (sections 30–32) wherever no real data
+exists yet — which is most analytics/prediction surfaces, since no model is trained.
+Added a real `alerts` table + endpoints so Alerts/Create Alert are genuinely functional,
+not just styled to look that way.
+
+**Status:** VERIFIED (built and tested this session — typecheck clean, no horizontal
+overflow at 1440px/390px, end-to-end alert-creation flow tested with Playwright, one
+real mobile bug found and fixed). Full screen coverage against the spec's 26-screen
+checklist and remaining gaps are recorded in `docs/UI-UX.md`.
+
+---
+
 ## 2026-09-07 — Backend/frontend skeleton built out of phase order
 
 **Decision:** Stood up a minimal but real FastAPI backend (PostgreSQL 16, provisioned
