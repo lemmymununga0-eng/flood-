@@ -1,0 +1,29 @@
+# FloodShield Zambia — root Python environment (AI engine + backend).
+# Pinned versions to be finalized once Phase 2 (data ingestion) begins;
+# this is a starter list reflecting the recommended stack, not yet installed/tested.
+#
+# AI engine
+pandas
+numpy
+scikit-learn
+xgboost
+tensorflow           # LSTM candidate — evaluate CPU-only feasibility before committing
+shap
+matplotlib
+requests
+python-dotenv
+pyyaml
+
+# Backend (FastAPI)
+fastapi
+uvicorn[standard]
+sqlalchemy
+alembic
+psycopg2-binary
+pydantic
+pydantic-settings
+
+# Testing
+pytest
+pytest-asyncio
+httpx

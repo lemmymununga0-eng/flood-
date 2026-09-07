@@ -1,0 +1,54 @@
+# Environments / secrets
+.env
+.env.local
+*.env
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Node / frontend
+node_modules/
+dist/
+build/
+.vite/
+
+# Data (raw/interim/processed are regenerable from documented sources —
+# do not commit large datasets to git; use DVC or documented re-download
+# scripts instead. .gitkeep files ARE tracked so the folder structure survives.)
+ai-engine/data/raw/*
+!ai-engine/data/raw/.gitkeep
+ai-engine/data/interim/*
+!ai-engine/data/interim/.gitkeep
+ai-engine/data/processed/*
+!ai-engine/data/processed/.gitkeep
+ai-engine/data/features/*
+!ai-engine/data/features/.gitkeep
+ai-engine/data/external/*
+!ai-engine/data/external/.gitkeep
+
+# Trained model artifacts (large binaries — track via metadata.json + registry,
+# not raw weights, unless the team sets up Git LFS/DVC later)
+ai-engine/models/**/*.json
+!ai-engine/models/**/metadata.json
+ai-engine/models/**/*.pkl
+ai-engine/models/**/*.keras
+ai-engine/models/**/*.h5
+
+# Experiment outputs
+ai-engine/experiments/*
+!ai-engine/experiments/.gitkeep
+ai-engine/reports/*
+!ai-engine/reports/.gitkeep
+
+# OS / editor
+.DS_Store
+*.swp
+.vscode/
+.idea/
