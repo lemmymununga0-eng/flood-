@@ -9,12 +9,19 @@ No target variable has been defined yet. Candidate approaches, per the governing
 prompt's ranking from strongest to weakest evidentiary basis:
 
 1. **Historical flood-event records** — strongest if a reliable Zambian source can be
-   found. **Update 2026-09-07:** no ready-made dataset located yet, but a real path
-   exists — DMMU (Zambia's national disaster authority) and ReliefWeb both publish
-   dated, located situation reports (e.g. the January 2023 Southern/Central/Lusaka
-   floods, and a January 2022 Southern Province event affecting ~15,000 people) that
-   could be hand-compiled into a small event table. See DATA-SOURCES.md for citations.
-   Still TO VALIDATE as a *sufficient volume* of events for training.
+   found. **Update 2026-09-07:** a first version of this now exists —
+   `ai-engine/data/external/zambia_flood_events_log.csv`, eleven hand-compiled,
+   individually-sourced flood events across Zambia from January 2020 through
+   December 2025/January 2026, built from FloodList, UN-SPIDER, and Charter-activation
+   reporting (see that file's `README.md` for full provenance and caveats). This is a
+   genuine step beyond "no data" but is explicitly **not** validated ground truth yet:
+   it is media/situation-report-derived (likely under-counts real events), has **no
+   negative examples** (periods without flooding — required to train a classifier), and
+   contains one unresolved date discrepancy (row `ZM-2023-01`). Eleven positive events
+   over six years is also a small sample — see the statistical-power note added to
+   `docs/LIMITATIONS.md`. **Next step:** decide how negative examples will be
+   constructed (e.g. sampling non-event periods at the same locations) and attempt to
+   cross-reference each row against a primary DMMU/WARMA source.
 2. **Official disaster/flood reports** — e.g. from a national disaster-management
    authority or international humanitarian reporting. **Update 2026-09-07:** DMMU
    (Office of the Vice President) and WARMA (Water Resources Management Authority) are

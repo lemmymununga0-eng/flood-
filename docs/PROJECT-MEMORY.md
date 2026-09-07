@@ -100,17 +100,34 @@ running the request and sharing the response) before ingestion code is written. 
 ERA5-Land and a near-real-time provider (OpenWeather or equivalent) remain candidates to
 investigate, not commitments. No data has been downloaded yet.
 
-## OPEN — Flood label / target methodology (Phase 1, partially validated 2026-09-07)
+## OPEN — Flood label / target methodology (Phase 1, advanced further 2026-09-07)
 
-**Status:** TO VALIDATE, updated. This is flagged by the governing prompt itself as the
-single most important and highest-risk decision in the project (section 10). No target
-variable has been defined yet, but real candidate ground-truth paths were identified this
-session: DMMU (Zambia's Office of the Vice President disaster authority) and WARMA
-publish situation reports with dated, located flood events; International Charter
-Activation #796 produced real Sentinel-2B flood-extent products for Zambia in Jan–Feb
-2023. Neither has yet been turned into an actual dataset — see `docs/ML-METHODOLOGY.md`
-and `docs/DATA-SOURCES.md`. Do not proceed to feature engineering or modelling before
-this is settled and documented here.
+**Status:** TO VALIDATE, updated again. This is flagged by the governing prompt itself
+as the single most important and highest-risk decision in the project (section 10). A
+first real artifact now exists: `ai-engine/data/external/zambia_flood_events_log.csv`,
+eleven sourced flood events across Zambia (Jan 2020 – Jan 2026), compiled from FloodList,
+UN-SPIDER, and International Charter activation reporting. This is not yet a finished
+label — it has no negative examples, is media-derived rather than pulled from a primary
+government dataset, is a small sample (11 events), and contains one unresolved date
+discrepancy (documented in the file itself). DMMU's own site remains unreachable from
+this session, so it has not yet been used as a primary cross-check. See
+`docs/ML-METHODOLOGY.md` and `docs/LIMITATIONS.md` for the implications. **Decision not
+yet made:** whether this event log becomes the primary label (supplemented with a
+constructed negative class) or is used only to validate a rainfall-accumulation proxy
+built independently. Do not proceed to feature engineering or modelling before this is
+settled and documented here.
+
+## OPEN — NASA POWER live verification (Phase 1/2, blocked in this environment,
+2026-09-07)
+
+**Status:** TO VALIDATE, blocked. Two independent live-request attempts against NASA
+POWER's Daily API this session failed for different reasons: this sandbox's egress
+policy blocks a direct `curl` to `power.larc.nasa.gov`, and the session's web-fetch tool
+declines the same URL because NASA's `robots.txt` disallows automated fetching of `/api/`
+paths. The endpoint shape, parameters, and formats are still confirmed from NASA's own
+documentation (see `docs/DATA-SOURCES.md`), so Phase 2 ingestion code can be written
+against that specification — but its first real run, in an environment that can reach
+NASA POWER directly, is the actual verification step and has not happened yet.
 
 ## OPEN — Prediction horizon (Phase 1/6, not yet decided)
 

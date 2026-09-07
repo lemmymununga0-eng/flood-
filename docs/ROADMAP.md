@@ -7,7 +7,7 @@ section 41) — not merely scaffolded.
 | Phase | Name | Status |
 |---|---|---|
 | 0 | Discovery | **Complete** — repository was empty; scaffold + documentation foundation created 2026-09-07. |
-| 1 | Research & Data | **In progress** (started 2026-09-07). NASA POWER endpoint/params confirmed from docs (live request still blocked — see below); real DMMU/WARMA/Charter ground-truth candidates identified; Kanyama and Ng'ombe upgraded to independently-verified candidate locations. Flood-label decision and final geographic scope still open. |
+| 1 | Research & Data | **In progress** (started 2026-09-07). NASA POWER endpoint/params confirmed from docs (live request confirmed blocked in this environment — needs an environment that can reach the API directly, e.g. Phase 2 development). A first hand-compiled, sourced flood-event log (11 events, 2020–2026) now exists at `ai-engine/data/external/zambia_flood_events_log.csv`. Kanyama and Ng'ombe upgraded to independently-verified candidate locations. Flood-label decision (event-log-based vs. proxy) and final geographic scope still open. |
 | 2 | Data Ingestion | Not started |
 | 3 | Preprocessing | Not started |
 | 4 | Feature Engineering | Not started |
@@ -26,20 +26,21 @@ section 41) — not merely scaffolded.
 ## Progress log (Phase 1)
 
 **2026-09-07:**
-1. ~~Verify NASA POWER API access~~ — **partially done.** Confirmed endpoint pattern,
-   required/optional parameters, formats, and rate-limit behavior against NASA's own
-   docs. A live JSON test request was attempted but blocked by this environment's fetch-
-   approval gate (direct `curl` is blocked by egress policy; the fetch tool's request for
-   the live API URL needs explicit approval that wasn't given in time). **Still needed:**
-   get that live request approved and run, or have a human run it and share the response,
-   before Phase 2 ingestion code is written.
-2. ~~Investigate flood-event ground truth~~ — **real candidates found, not yet a
-   dataset.** DMMU (Office of the Vice President) and WARMA are Zambia's confirmed
-   authoritative bodies; DMMU publishes situation reports (its own site was unreachable
-   this session — retry or contact directly); International Charter Activation #796
-   produced real Sentinel-2B flood-extent products for Jan–Feb 2023 Zambia flooding.
-   **Still needed:** turn these into an actual event table, or make the documented call
-   to fall back to a rainfall-accumulation proxy instead.
+1. ~~Verify NASA POWER API access~~ — **as far as this environment allows, done.**
+   Confirmed endpoint pattern, required/optional parameters, formats, and rate-limit
+   behavior against NASA's own docs. Two independent attempts at a live JSON request
+   both failed structurally (sandbox egress policy, then robots.txt) rather than
+   transiently — this cloud session cannot complete this step. **Still needed:** the
+   actual live verification, which now belongs to Phase 2 (first real ingestion run in
+   an environment that can reach `power.larc.nasa.gov` directly).
+2. ~~Investigate flood-event ground truth~~ — **turned into a real artifact.**
+   DMMU (Office of the Vice President) and WARMA are Zambia's confirmed authoritative
+   bodies (DMMU's own site remains unreachable — retry or contact directly); a
+   hand-compiled log of 11 sourced flood events (2020–2026) now exists at
+   `ai-engine/data/external/zambia_flood_events_log.csv`, built from FloodList,
+   UN-SPIDER, and Charter-activation reporting. **Still needed:** decide whether this
+   becomes the primary label (with a constructed negative class) or a validation check
+   against a rainfall-accumulation proxy instead — see `docs/ML-METHODOLOGY.md`.
 3. ~~Narrow geographic scope~~ — **partially done.** Kanyama compound and Ng'ombe
    settlement (both Lusaka) are now independently verified via peer-reviewed/graduate
    research as flood-affected, not just named by the prompt. **Still needed:** commit to

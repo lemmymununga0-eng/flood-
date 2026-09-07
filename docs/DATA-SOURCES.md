@@ -24,15 +24,23 @@ a confirmed integration.
   application making repeated requests for the same location can be blocked — the
   ingestion client (Phase 2) must cache/dedupe requests per coordinate rather than
   re-fetching the same point repeatedly.
-- **Still TO VALIDATE:** an actual live JSON request against
-  `https://power.larc.nasa.gov/api/temporal/daily/point` for a candidate Zambian
-  coordinate was attempted this session and blocked by this environment's fetch
-  permission gate (direct `curl` is blocked by organizational egress policy; the fetch
-  tool's request for this specific URL was not approved in time). This needs to be
-  re-run — either with the fetch approved, or by having a human run the request once and
-  paste the response — before Phase 2 ingestion code is written against it. Current
-  terms of use for derivative/research products have also not been independently
-  re-confirmed this session.
+- **Still TO VALIDATE — live request blocked in this environment, cause now identified:**
+  two independent attempts to make a live JSON request against
+  `https://power.larc.nasa.gov/api/temporal/daily/point` failed for two different
+  reasons: (1) this sandbox's egress proxy rejects a direct `curl` CONNECT to
+  `power.larc.nasa.gov` under organizational policy; (2) this session's web-fetch tool
+  refuses the same URL because NASA's `robots.txt` disallows automated fetching of
+  `/api/` paths — a policy aimed at crawlers, not at an application calling its own
+  documented public API with `requests`/`httpx`, but this tool respects it regardless.
+  **Practical conclusion:** this specific cloud session cannot independently verify a
+  live NASA POWER response. That is a constraint of *this development environment*, not
+  necessarily of wherever the AI engine's ingestion code actually runs — Phase 2's
+  ingestion client should still be written as a normal HTTP client against the
+  documented parameters above, and its first real run (in an environment that can reach
+  `power.larc.nasa.gov` directly, e.g. a developer machine or the eventual backend host)
+  becomes the live verification step, with the raw response saved under
+  `ai-engine/data/raw/` and its shape reconciled against this document. Current terms of
+  use for derivative/research products have also not been independently re-confirmed.
 
 ## Candidate supplementary sources
 
