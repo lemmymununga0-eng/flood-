@@ -1,10 +1,10 @@
 # Database — FloodShield Zambia
 
-Status: **early skeleton**, built 2026-09-07 ahead of the normal phase order (see
-`docs/API.md` for context). Real PostgreSQL 16, matching the target architecture — no
-SQLite substitution. No formal migrations yet (`alembic` is not wired up); tables are
-created by `Base.metadata.create_all()` on backend startup, which is fine for this
-skeleton stage but is not the production migration path.
+Status: expanded 2026-09-07 to 11 tables with real Alembic migrations (`alembic`
+is now wired up — `Base.metadata.create_all()` was removed from backend startup).
+**The full, current schema lives in `docs/database-schema.md` — this file is kept for
+history; treat database-schema.md as authoritative.** Real PostgreSQL 16, matching the
+target architecture — no SQLite substitution.
 
 ## Tables implemented
 

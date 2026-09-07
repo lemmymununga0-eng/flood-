@@ -1,12 +1,14 @@
 import { useCallback, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ErrorState, LoadingState } from "../components/ui/States";
+import { canManageAlerts, useAuth } from "../context/AuthContext";
 import { useFetch } from "../hooks/useFetch";
 import { createAlert, fetchLocations } from "../services/api";
 
 export default function CreateAlert() {
   const [locState] = useFetch(useCallback(fetchLocations, []));
   const navigate = useNavigate();
+  const { user, status } = useAuth();
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -39,6 +41,32 @@ export default function CreateAlert() {
     } finally {
       setSubmitting(false);
     }
+  }
+
+  if (status === "checking") {
+    return <LoadingState label="Checking your session" />;
+  }
+
+  if (!canManageAlerts(user)) {
+    return (
+      <div>
+        <div className="page-header">
+          <h1>Create Alert</h1>
+        </div>
+        <div className="card" style={{ maxWidth: 480 }}>
+          <p className="text-secondary">
+            Issuing an alert requires an ADMIN, ANALYST, or OPERATOR account — enforced
+            by the backend, not just hidden here (see <code>docs/api-inventory.md</code>).
+            {status === "anonymous" ? " You're not signed in." : ` You're signed in as ${user?.role}.`}
+          </p>
+          {status === "anonymous" && (
+            <Link className="btn btn-primary" to="/login">
+              Sign in
+            </Link>
+          )}
+        </div>
+      </div>
+    );
   }
 
   return (

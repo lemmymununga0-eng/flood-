@@ -1,4 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext";
 import AppShell from "./layouts/AppShell";
 import About from "./pages/About";
 import AIModel from "./pages/AIModel";
@@ -19,14 +20,17 @@ import Predictions from "./pages/Predictions";
 import Profile from "./pages/Profile";
 import RiskMap from "./pages/RiskMap";
 import Settings from "./pages/Settings";
+import Signup from "./pages/Signup";
 import SystemStatus from "./pages/SystemStatus";
 
 export default function App() {
   return (
+    <AuthProvider>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/about" element={<About />} />
 
         <Route element={<AppShell />}>
@@ -52,5 +56,6 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
+    </AuthProvider>
   );
 }

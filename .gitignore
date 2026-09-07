@@ -53,3 +53,7 @@ ai-engine/reports/*
 *.swp
 .vscode/
 .idea/
+
+# Runtime logs from local dev servers (not build artifacts, not source)
+backend/uvicorn.log
+*.log

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 const NAV_PRIMARY = [
   { to: "/dashboard", label: "Dashboard" },
@@ -21,6 +22,8 @@ const NAV_SECONDARY = [
 
 export default function AppShell() {
   const [open, setOpen] = useState(false);
+  const { user, status, logout } = useAuth();
+  const navigate = useNavigate();
 
   return (
     <div className="app-shell">
@@ -57,9 +60,28 @@ export default function AppShell() {
           ))}
         </nav>
         <div className="sidebar-footer">
-          <NavLink to="/profile" className="nav-item">
-            Admin User
-          </NavLink>
+          {status === "authenticated" && user ? (
+            <>
+              <NavLink to="/profile" className="nav-item">
+                {user.full_name || user.email} · {user.role}
+              </NavLink>
+              <button
+                type="button"
+                className="nav-item"
+                style={{ width: "100%", textAlign: "left", background: "none", border: "none", cursor: "pointer" }}
+                onClick={() => {
+                  logout();
+                  navigate("/login");
+                }}
+              >
+                Sign out
+              </button>
+            </>
+          ) : (
+            <NavLink to="/login" className="nav-item">
+              Sign in
+            </NavLink>
+          )}
         </div>
       </aside>
 

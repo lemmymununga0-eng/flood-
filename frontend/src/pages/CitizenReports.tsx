@@ -1,16 +1,143 @@
-import { EmptyState } from "../components/ui/States";
+import { useCallback, useState } from "react";
+import { Link } from "react-router-dom";
+import StatusBadge from "../components/ui/StatusBadge";
+import { EmptyState, ErrorState, LoadingState } from "../components/ui/States";
+import { canManageAlerts, useAuth } from "../context/AuthContext";
+import { useFetch } from "../hooks/useFetch";
+import { fetchCitizenReports, moderateCitizenReport, submitCitizenReport } from "../services/api";
+
+function statusBadge(status: string): "operational" | "unavailable" | "unknown" {
+  if (status === "verified") return "operational";
+  if (status === "rejected") return "unavailable";
+  return "unknown";
+}
 
 export default function CitizenReports() {
+  const [state, retry] = useFetch(useCallback(fetchCitizenReports, []));
+  const { user, status: authStatus } = useAuth();
+  const [description, setDescription] = useState("");
+  const [severity, setSeverity] = useState("moderate");
+  const [submitting, setSubmitting] = useState(false);
+  const [formError, setFormError] = useState<string | null>(null);
+  const [moderatingId, setModeratingId] = useState<number | null>(null);
+
+  async function onSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSubmitting(true);
+    setFormError(null);
+    try {
+      await submitCitizenReport({ description, severity });
+      setDescription("");
+      retry();
+    } catch (err) {
+      setFormError(err instanceof Error ? err.message : "Could not submit report");
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  async function onModerate(id: number, next: "verified" | "rejected") {
+    setModeratingId(id);
+    try {
+      await moderateCitizenReport(id, next, "");
+      retry();
+    } finally {
+      setModeratingId(null);
+    }
+  }
+
   return (
     <div>
       <div className="page-header">
         <h1>Citizen Flood Reports</h1>
-        <p>Community-submitted flooding reports, pending verification.</p>
+        <p>
+          Community-submitted flooding reports, pending verification. Real submissions
+          against the backend — see docs/api-inventory.md.
+        </p>
       </div>
-      <EmptyState
-        title="No citizen reports have been submitted"
-        detail="Citizen reporting isn't wired up on the backend yet (no CitizenReport table/endpoint — see docs/DATABASE.md 'Not yet implemented'). This screen is a placeholder for that future feature, not a live form yet."
-      />
+
+      {authStatus === "authenticated" ? (
+        <form className="card" style={{ maxWidth: 520, marginBottom: "1.5rem" }} onSubmit={onSubmit}>
+          <h3 style={{ marginTop: 0 }}>Submit a ground report</h3>
+          <div className="field">
+            <label htmlFor="description">What are you seeing?</label>
+            <textarea
+              id="description"
+              required
+              minLength={5}
+              rows={3}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="severity">Severity</label>
+            <select id="severity" value={severity} onChange={(e) => setSeverity(e.target.value)}>
+              <option value="low">Low</option>
+              <option value="moderate">Moderate</option>
+              <option value="high">High</option>
+              <option value="unknown">Not sure</option>
+            </select>
+          </div>
+          {formError && <ErrorState title="Could not submit" detail={formError} />}
+          <button className="btn btn-primary" type="submit" disabled={submitting}>
+            {submitting ? "Submitting…" : "Submit report"}
+          </button>
+        </form>
+      ) : (
+        <div className="card" style={{ maxWidth: 520, marginBottom: "1.5rem" }}>
+          <p className="text-secondary" style={{ margin: 0 }}>
+            <Link to="/login">Sign in</Link> to submit a ground report.
+          </p>
+        </div>
+      )}
+
+      {state.status === "loading" && <LoadingState label="Loading citizen reports" />}
+      {state.status === "error" && <ErrorState detail={state.message} onRetry={retry} />}
+      {state.status === "success" && state.data.length === 0 && (
+        <EmptyState
+          title="No citizen reports have been submitted"
+          detail="This is a real, empty result from GET /api/v1/citizen-reports — not a placeholder."
+        />
+      )}
+      {state.status === "success" && state.data.length > 0 && (
+        <div className="grid grid-auto">
+          {state.data.map((r) => (
+            <div className="card" key={r.id}>
+              <div style={{ display: "flex", justifyContent: "space-between", alignItems: "start" }}>
+                <span className="text-muted">{new Date(r.submitted_at).toLocaleString()}</span>
+                <StatusBadge status={statusBadge(r.status)} />
+              </div>
+              <p style={{ marginBottom: "0.3rem" }}>{r.description}</p>
+              <p className="text-muted" style={{ marginBottom: "0.3rem" }}>
+                Severity: {r.severity}
+                {r.location_id ? ` · Location #${r.location_id}` : ""}
+              </p>
+              {r.review_note && <p className="text-muted">Review note: {r.review_note}</p>}
+              {canManageAlerts(user) && r.status === "pending" && (
+                <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.5rem" }}>
+                  <button
+                    className="btn btn-secondary"
+                    type="button"
+                    disabled={moderatingId === r.id}
+                    onClick={() => onModerate(r.id, "verified")}
+                  >
+                    Verify
+                  </button>
+                  <button
+                    className="btn btn-secondary"
+                    type="button"
+                    disabled={moderatingId === r.id}
+                    onClick={() => onModerate(r.id, "rejected")}
+                  >
+                    Reject
+                  </button>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

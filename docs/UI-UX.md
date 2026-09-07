@@ -27,19 +27,27 @@ Dashboard, Risk Map (Leaflet, real location markers, no fake risk overlay), Loca
 Detail (real weather-ingestion demo), Predictions (real empty state), Analytics (honest
 stub — nothing to show without real metrics), Historical Events + Historical Event
 Detail (the real 11-event log), Alerts + Create Alert (real create/list against the
-backend — verified end-to-end with Playwright: submitting the form creates a real DB
-row that immediately appears on `/alerts`), Citizen Reports (honest stub — no backend
-table), AI Model (honest stub), Data Sources, System Status (live, computed), Settings,
-Profile, About, Notifications (honest stub), 404, plus Landing and Login.
+backend, now RBAC-gated to ADMIN/ANALYST/OPERATOR — verified end-to-end with
+Playwright, including the anonymous-denied case), Citizen Reports (rebuilt 2026-09-07:
+real submit/list/moderate against `/citizen-reports`, no longer a stub), AI Model
+(rebuilt 2026-09-07: fetches the real, empty `/models` registry instead of hardcoded
+JSX), Data Sources (rebuilt 2026-09-07: fetches the real `/data-sources` catalog with
+live-checked status instead of hand-written static content), System Status (live,
+computed), Settings, Profile (rebuilt 2026-09-07: shows the real authenticated user),
+Login (rebuilt 2026-09-07: real `POST /auth/login`, no longer a no-op form), Signup
+(new 2026-09-07: real `POST /auth/register`), About, Notifications (honest stub), 404,
+plus Landing. See `docs/verified-screens.md` for exactly how the 2026-09-07 changes
+were re-verified.
 
 ## Not yet implemented
 
-Signup, standalone How-It-Works/Methodology pages (folded into About instead),
-Prediction Detail and Citizen Report Detail (no data to show yet), Data Quality, a
-React error boundary, role-based permissions, and dark/light theme toggle (this build
-is dark-only, matching the spec). Against the spec's 26-screen checklist this build
-covers roughly 20, prioritizing every screen that could be backed by real data or a
-real empty state over ones that would be pure static mockup.
+Standalone How-It-Works/Methodology pages (folded into About instead), Prediction
+Detail and Citizen Report Detail single-item views (list views exist), Data Quality, a
+React error boundary, an admin UI for granting roles (the backend has roles; nothing
+in the frontend lets an ADMIN change another user's role yet), and dark/light theme
+toggle (this build is dark-only, matching the spec). Against the spec's 26-screen
+checklist this build covers roughly 22, prioritizing every screen that could be backed
+by real data or a real empty state over ones that would be pure static mockup.
 
 ## Verified
 

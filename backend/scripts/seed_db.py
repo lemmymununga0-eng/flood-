@@ -5,21 +5,75 @@
   city-approximate, not surveyed — coordinate_confidence reflects that.
 - Flood events: the 11 rows in ai-engine/data/external/zambia_flood_events_log.csv,
   loaded verbatim with their source citations.
+- Roles: the five fixed roles (ADMIN/ANALYST/OPERATOR/RESEARCHER/CITIZEN) the RBAC
+  system checks against — these are not arbitrary, the API rejects any role name
+  outside this set implicitly (no role-creation endpoint exists).
+- One local-development ADMIN account, ONLY if FLOODSHIELD_DEV_ADMIN_PASSWORD is set
+  in the environment — never a hardcoded default password. If unset, no admin account
+  is created and this is reported, not silently skipped.
+- Data sources: the real catalog of external sources this project depends on, with a
+  live connectivity status set by an actual check, not asserted.
 
 Nothing here is synthetic. No WeatherObservation, ModelVersion, or Prediction rows are
 seeded — those only get populated by a real ingestion run or a real trained model.
 Safe to re-run: it upserts by unique key rather than duplicating rows.
+
+This script assumes migrations have already been applied (`alembic upgrade head`) — it
+no longer calls Base.metadata.create_all(); schema is Alembic's responsibility now.
 """
 import csv
+import os
 import sys
 from datetime import date, datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from app.database.session import Base, SessionLocal, engine  # noqa: E402
+from app.core.security import hash_password  # noqa: E402
+from app.database.session import SessionLocal  # noqa: E402
+from app.models.data_source import DataSource  # noqa: E402
 from app.models.flood_event import FloodEvent  # noqa: E402
 from app.models.location import Location  # noqa: E402
+from app.models.user import Role, User  # noqa: E402
+from app.services.data_source_health import check_data_source  # noqa: E402
+
+ROLE_DEFS = [
+    ("ADMIN", "Full system access: manages users, moderates citizen reports, issues alerts."),
+    ("ANALYST", "Reviews model output, issues alerts, moderates citizen reports."),
+    ("OPERATOR", "Day-to-day dashboard operation: issues alerts, moderates citizen reports."),
+    ("RESEARCHER", "Read access plus data/model-registry visibility for methodology review."),
+    ("CITIZEN", "Public account: can submit citizen reports. Default role on self-registration."),
+]
+
+DATA_SOURCE_DEFS = [
+    dict(
+        name="NASA POWER (Daily API)",
+        category="weather",
+        base_url="https://power.larc.nasa.gov/api/temporal/daily/point",
+        description="Daily rainfall/temperature/humidity/wind observations. See docs/DATA-SOURCES.md — "
+        "this project's sandbox environment cannot reach this host (egress policy); the code path is real.",
+    ),
+    dict(
+        name="DMMU (Disaster Management & Mitigation Unit, Zambia)",
+        category="authoritative-agency",
+        base_url="https://www.dmmu.gov.zm",
+        description="Zambia's national disaster management authority. Site has been unreachable "
+        "(redirect-loop) from this session in prior checks — see docs/DATA-SOURCES.md.",
+    ),
+    dict(
+        name="WARMA (Water Resources Management Authority, Zambia)",
+        category="authoritative-agency",
+        base_url="https://warma.org.zm",
+        description="Zambia's water resources regulator; a candidate cross-check for flood/river data.",
+    ),
+    dict(
+        name="Hand-compiled Zambia flood-event log",
+        category="internal",
+        base_url="",
+        description="ai-engine/data/external/zambia_flood_events_log.csv — 11 sourced events, "
+        "compiled from FloodList/UN-SPIDER/Charter reporting. Not a live source; no URL to check.",
+    ),
+]
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 FLOOD_LOG_CSV = REPO_ROOT / "ai-engine" / "data" / "external" / "zambia_flood_events_log.csv"
@@ -116,14 +170,77 @@ def seed_flood_events(db) -> int:
     return count
 
 
+def seed_roles(db) -> int:
+    count = 0
+    for name, description in ROLE_DEFS:
+        existing = db.query(Role).filter_by(name=name).one_or_none()
+        if existing:
+            existing.description = description
+        else:
+            db.add(Role(name=name, description=description))
+            count += 1
+    db.commit()
+    return count
+
+
+def seed_dev_admin(db) -> str:
+    password = os.environ.get("FLOODSHIELD_DEV_ADMIN_PASSWORD")
+    if not password:
+        return "SKIPPED — FLOODSHIELD_DEV_ADMIN_PASSWORD not set in environment."
+    admin_role = db.query(Role).filter_by(name="ADMIN").one_or_none()
+    if admin_role is None:
+        return "SKIPPED — ADMIN role not seeded (seed_roles must run first)."
+    existing = db.query(User).filter_by(email="admin@floodshield-zambia.org").one_or_none()
+    if existing:
+        existing.hashed_password = hash_password(password)
+        db.commit()
+        return "UPDATED existing dev admin (admin@floodshield-zambia.org) password."
+    db.add(
+        User(
+            email="admin@floodshield-zambia.org",
+            hashed_password=hash_password(password),
+            full_name="Local Dev Admin",
+            role_id=admin_role.id,
+            is_active=True,
+        )
+    )
+    db.commit()
+    return "CREATED dev admin (admin@floodshield-zambia.org)."
+
+
+def seed_data_sources(db, do_health_check: bool) -> int:
+    count = 0
+    for defn in DATA_SOURCE_DEFS:
+        existing = db.query(DataSource).filter_by(name=defn["name"]).one_or_none()
+        if existing:
+            for k, v in defn.items():
+                setattr(existing, k, v)
+            source = existing
+        else:
+            source = DataSource(**defn)
+            db.add(source)
+            count += 1
+        db.commit()
+        db.refresh(source)
+        if do_health_check:
+            check_data_source(db, source)
+    return count
+
+
 def main() -> None:
-    Base.metadata.create_all(bind=engine)
     db = SessionLocal()
     try:
         n_loc = seed_locations(db)
         n_events = seed_flood_events(db)
+        n_roles = seed_roles(db)
+        admin_result = seed_dev_admin(db)
+        n_sources = seed_data_sources(db, do_health_check="--check-sources" in sys.argv)
         print(f"Seeded/updated {len(LOCATIONS)} locations ({n_loc} new).")
         print(f"Seeded/updated flood events from {FLOOD_LOG_CSV.name} ({n_events} new).")
+        print(f"Seeded/updated {len(ROLE_DEFS)} roles ({n_roles} new).")
+        print(f"Dev admin account: {admin_result}")
+        print(f"Seeded/updated {len(DATA_SOURCE_DEFS)} data-source catalog entries ({n_sources} new)."
+              + ("" if "--check-sources" in sys.argv else " (pass --check-sources to run live connectivity checks)"))
         print("No weather observations, model versions, or predictions were seeded "
               "(none exist yet - see docs/ROADMAP.md).")
     finally:

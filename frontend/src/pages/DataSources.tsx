@@ -1,61 +1,82 @@
+import { useCallback, useState } from "react";
 import StatusBadge from "../components/ui/StatusBadge";
+import { ErrorState, LoadingState } from "../components/ui/States";
+import { canManageAlerts, useAuth } from "../context/AuthContext";
+import { useFetch } from "../hooks/useFetch";
+import { checkDataSource, fetchDataSources } from "../services/api";
+import type { DataSourceEntry } from "../types";
 
-const SOURCES = [
-  {
-    name: "NASA POWER",
-    type: "Meteorological (historical, daily)",
-    parameters: "Precipitation, temperature, humidity, wind",
-    coverage: "Zambia (point-based, per monitored location)",
-    status: "unavailable" as const,
-    detail:
-      "Endpoint/parameters confirmed from NASA's own docs, but live requests from this development environment are blocked (egress policy + robots.txt) — see docs/DATA-SOURCES.md.",
-  },
-  {
-    name: "CHIRPS",
-    type: "Rainfall (satellite + station blend)",
-    parameters: "Precipitation",
-    coverage: "Not yet evaluated for Zambia",
-    status: "unavailable" as const,
-    detail: "Candidate only — not integrated. Access method not yet investigated.",
-  },
-  {
-    name: "DMMU / WARMA situation reports",
-    type: "Flood ground-truth (narrative)",
-    parameters: "Event dates, locations, impact",
-    coverage: "National (as reported)",
-    status: "degraded" as const,
-    detail:
-      "Used to compile ai-engine/data/external/zambia_flood_events_log.csv (11 events). DMMU's own site was unreachable when checked — cross-referencing is incomplete.",
-  },
-];
+function toBadgeStatus(status: DataSourceEntry["last_check_status"]): "operational" | "unavailable" | "unknown" {
+  if (status === "ok") return "operational";
+  if (status === "failed") return "unavailable";
+  return "unknown";
+}
 
 export default function DataSources() {
+  const [state, retry] = useFetch(useCallback(fetchDataSources, []));
+  const { user } = useAuth();
+  const [checkingId, setCheckingId] = useState<number | null>(null);
+  const [checkError, setCheckError] = useState<string | null>(null);
+
+  async function runCheck(id: number) {
+    setCheckingId(id);
+    setCheckError(null);
+    try {
+      await checkDataSource(id);
+      retry();
+    } catch (err) {
+      setCheckError(err instanceof Error ? err.message : "Check failed");
+    } finally {
+      setCheckingId(null);
+    }
+  }
+
   return (
     <div>
       <div className="page-header">
         <h1>Data Sources</h1>
-        <p>Configured and candidate data sources for this project.</p>
+        <p>
+          The real catalog of external data this project depends on. Status reflects the
+          last real connectivity check — see docs/DATA-SOURCES.md for why NASA POWER and
+          DMMU/WARMA are currently unreachable from this development environment.
+        </p>
       </div>
-      <div className="grid grid-auto">
-        {SOURCES.map((s) => (
-          <div className="card" key={s.name}>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <h3 style={{ margin: 0 }}>{s.name}</h3>
-              <StatusBadge status={s.status} />
+
+      {state.status === "loading" && <LoadingState label="Loading data sources" />}
+      {state.status === "error" && <ErrorState detail={state.message} onRetry={retry} />}
+      {checkError && <ErrorState title="Check failed" detail={checkError} />}
+
+      {state.status === "success" && (
+        <div className="grid grid-auto">
+          {state.data.map((s) => (
+            <div className="card" key={s.id}>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <h3 style={{ margin: 0 }}>{s.name}</h3>
+                <StatusBadge status={toBadgeStatus(s.last_check_status)} />
+              </div>
+              <p className="text-secondary">{s.category}</p>
+              <p className="text-muted" style={{ marginBottom: "0.3rem" }}>
+                {s.description}
+              </p>
+              <p className="text-muted" style={{ marginBottom: "0.3rem" }}>
+                Last checked:{" "}
+                {s.last_checked_at ? new Date(s.last_checked_at).toLocaleString() : "never"}
+                {s.last_check_detail ? ` — ${s.last_check_detail}` : ""}
+              </p>
+              {canManageAlerts(user) && (
+                <button
+                  className="btn btn-secondary"
+                  type="button"
+                  disabled={checkingId === s.id}
+                  onClick={() => runCheck(s.id)}
+                >
+                  {checkingId === s.id ? "Checking…" : "Check now"}
+                </button>
+              )}
             </div>
-            <p className="text-secondary">{s.type}</p>
-            <p className="text-muted" style={{ marginBottom: "0.3rem" }}>
-              Parameters: {s.parameters}
-            </p>
-            <p className="text-muted" style={{ marginBottom: "0.3rem" }}>
-              Coverage: {s.coverage}
-            </p>
-            <p className="text-muted" style={{ marginBottom: 0 }}>
-              {s.detail}
-            </p>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

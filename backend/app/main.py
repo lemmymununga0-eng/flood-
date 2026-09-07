@@ -1,42 +1,113 @@
-"""FloodShield Zambia backend — early skeleton (see docs/ROADMAP.md, Phase 10).
+"""FloodShield Zambia backend.
 
-Built ahead of the normal phase order at the user's explicit request, to demonstrate a
-real running system on top of the real (small, incomplete) data gathered in Phase 1.
-This is NOT a claim that Phase 10/11/12 are complete — no auth, no citizen
-reports, no trained model, minimal tests. See docs/ROADMAP.md for what's actually done.
+Built out of the normal phase order at the user's explicit request (see
+docs/ROADMAP.md, Phase 10), then substantially expanded under the "Complete Backend
+Implementation & End-to-End Integration" build: real JWT auth + RBAC, Alembic
+migrations, an expanded schema (users/roles, citizen reports, data-source catalog,
+audit log), and a consistent error-response format. Still NOT a claim that Phase 10 is
+fully complete — no trained model, no SHAP explanations, no alert delivery to an
+external channel. See docs/backend/backend-architecture.md for the current, honest
+state.
 """
 import logging
+from contextlib import asynccontextmanager
 
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+from slowapi.errors import RateLimitExceeded
 
 from app.api import (
     alerts,
+    auth,
+    citizen_reports,
+    data_sources,
     flood_events,
     health,
     locations,
+    model_registry,
     predictions,
     system_status,
     weather,
 )
 from app.core.config import get_settings
 from app.core.logging import configure_logging
-from app.database.session import Base, engine
+from app.core.rate_limit import limiter
 
 configure_logging()
 logger = logging.getLogger(__name__)
 settings = get_settings()
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    logger.info("FloodShield Zambia backend started (environment=%s)", settings.environment)
+    yield
+
+
 app = FastAPI(
     title="FloodShield Zambia API",
     description=(
-        "Early development skeleton. Flood-risk PREDICTIONS are model output; "
-        "flood-event and weather data below are OBSERVATIONS/reports — see "
-        "docs/RESEARCH-METHODOLOGY.md. No trained model exists yet, so /predictions "
-        "legitimately returns an empty list."
+        "Flood-risk PREDICTIONS are model output; flood-event and weather data are "
+        "OBSERVATIONS/reports — see docs/RESEARCH-METHODOLOGY.md. No trained model "
+        "exists yet, so /predictions legitimately returns an empty list. Schema is "
+        "managed by Alembic migrations (backend/alembic/) — run `alembic upgrade head` "
+        "before starting the server; the app no longer auto-creates tables."
     ),
-    version="0.1.0-skeleton",
+    version="0.2.0",
+    lifespan=lifespan,
 )
+
+app.state.limiter = limiter
+
+
+@app.exception_handler(RateLimitExceeded)
+def rate_limit_handler(request: Request, exc: RateLimitExceeded) -> JSONResponse:
+    return JSONResponse(
+        status_code=429,
+        content={"error": "rate_limited", "message": "Too many requests. Try again shortly."},
+    )
+
+
+@app.exception_handler(HTTPException)
+def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:
+    """Centralized error shape: {"error": <machine code>, "message": <human text>}.
+    Routes that already raise HTTPException with a dict detail pass through as-is;
+    routes using the older plain-string detail (or FastAPI's own validation errors)
+    are normalized here so every error response has the same shape."""
+    if isinstance(exc.detail, dict) and "error" in exc.detail:
+        body = exc.detail
+    else:
+        body = {"error": "http_error", "message": str(exc.detail)}
+    return JSONResponse(status_code=exc.status_code, content=body)
+
+
+@app.exception_handler(RequestValidationError)
+def validation_exception_handler(request: Request, exc: RequestValidationError) -> JSONResponse:
+    """Pydantic/FastAPI request-validation failures (bad JSON shape, wrong type,
+    failed constraint) get the same {"error", "message"} shape as every other error,
+    plus the real per-field detail list — never swallowed or genericized away."""
+    return JSONResponse(
+        status_code=422,
+        content={
+            "error": "validation_error",
+            "message": "Request failed validation.",
+            "fields": exc.errors(),
+        },
+    )
+
+
+@app.exception_handler(Exception)
+def unhandled_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    """Last-resort handler for anything not already caught. Logs the real exception
+    server-side and returns a generic message to the client — never fabricates a
+    friendlier error or exposes a stack trace to the caller."""
+    logger.exception("Unhandled exception on %s %s", request.method, request.url.path)
+    return JSONResponse(
+        status_code=500,
+        content={"error": "internal_error", "message": "An unexpected server error occurred."},
+    )
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -47,15 +118,13 @@ app.add_middleware(
 )
 
 app.include_router(health.router)
+app.include_router(auth.router, prefix=settings.api_v1_prefix)
 app.include_router(locations.router, prefix=settings.api_v1_prefix)
 app.include_router(flood_events.router, prefix=settings.api_v1_prefix)
 app.include_router(weather.router, prefix=settings.api_v1_prefix)
 app.include_router(predictions.router, prefix=settings.api_v1_prefix)
 app.include_router(alerts.router, prefix=settings.api_v1_prefix)
+app.include_router(citizen_reports.router, prefix=settings.api_v1_prefix)
+app.include_router(model_registry.router, prefix=settings.api_v1_prefix)
+app.include_router(data_sources.router, prefix=settings.api_v1_prefix)
 app.include_router(system_status.router, prefix=settings.api_v1_prefix)
-
-
-@app.on_event("startup")
-def on_startup() -> None:
-    Base.metadata.create_all(bind=engine)
-    logger.info("FloodShield Zambia backend started (environment=%s)", settings.environment)

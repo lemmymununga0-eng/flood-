@@ -23,6 +23,12 @@ class Settings(BaseSettings):
     model_artifact_dir: str = "./ai-engine/models"
     active_model_version: str = ""
 
+    # Auth (JWT). secret_key above is reused as the signing key — see .env.example;
+    # it MUST be overridden in any non-local environment (default is a dev placeholder).
+    jwt_algorithm: str = "HS256"
+    access_token_expire_minutes: int = 30
+    refresh_token_expire_days: int = 7
+
     @property
     def cors_origins_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]

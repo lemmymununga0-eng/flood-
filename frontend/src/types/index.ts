@@ -65,6 +65,74 @@ export interface AlertCreateInput {
   channels?: string;
 }
 
+export interface AuthUser {
+  id: number;
+  email: string;
+  full_name: string;
+  role: "ADMIN" | "ANALYST" | "OPERATOR" | "RESEARCHER" | "CITIZEN";
+  is_active: boolean;
+  created_at: string;
+}
+
+export interface TokenResponse {
+  access_token: string;
+  refresh_token: string;
+  token_type: string;
+  user: AuthUser;
+}
+
+export interface RegisterInput {
+  email: string;
+  password: string;
+  full_name?: string;
+}
+
+export interface LoginInputData {
+  email: string;
+  password: string;
+}
+
+export interface CitizenReport {
+  id: number;
+  reporter_user_id: number | null;
+  location_id: number | null;
+  description: string;
+  severity: string;
+  status: "pending" | "verified" | "rejected";
+  submitted_at: string;
+  reviewed_by_user_id: number | null;
+  reviewed_at: string | null;
+  review_note: string;
+}
+
+export interface CitizenReportCreateInput {
+  location_id?: number | null;
+  description: string;
+  severity?: string;
+}
+
+export interface DataSourceEntry {
+  id: number;
+  name: string;
+  category: string;
+  base_url: string;
+  description: string;
+  last_checked_at: string | null;
+  last_check_status: "unknown" | "ok" | "failed";
+  last_check_detail: string;
+}
+
+export interface ModelVersionEntry {
+  id: number;
+  version: string;
+  model_type: string;
+  training_period_start: string;
+  training_period_end: string;
+  metrics_json: string;
+  is_active: boolean;
+  registered_at: string;
+}
+
 export interface ComponentStatus {
   name: string;
   status: "operational" | "degraded" | "unavailable";

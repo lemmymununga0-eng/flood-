@@ -1,7 +1,11 @@
 from app.models.alert import Alert
+from app.models.audit_log import AuditLog
+from app.models.citizen_report import CitizenReport
+from app.models.data_source import DataSource
 from app.models.flood_event import FloodEvent
 from app.models.location import Location
 from app.models.prediction import ModelVersion, Prediction
+from app.models.user import Role, User
 from app.models.weather_observation import WeatherObservation
 
 __all__ = [
@@ -11,4 +15,9 @@ __all__ = [
     "ModelVersion",
     "Prediction",
     "Alert",
+    "Role",
+    "User",
+    "CitizenReport",
+    "DataSource",
+    "AuditLog",
 ]

@@ -13,6 +13,64 @@ Status tags used throughout this document and the rest of `/docs`:
 
 ---
 
+## 2026-09-07 — Full backend implementation & end-to-end integration build
+
+**Decision:** In response to a third, 79-section master prompt, built out real auth
+(JWT + bcrypt + 5-role RBAC), Alembic migrations, an expanded schema (users, roles,
+citizen reports, data-source catalog, audit log), new endpoints (citizen reports,
+model registry, data-source health checks), standardized error responses, pagination,
+rate limiting, a 42-test pytest suite against a real Postgres test database, and
+frontend integration for all of it (real login/signup, RBAC-gated alert creation,
+citizen reports and AI-model/data-source screens rebuilt from stubs/static content
+into real API-backed screens). Followed the prompt's own required order: an audit
+(`docs/backend/frontend-integration-matrix.md`) was written and committed *before* any
+backend code changed, inspecting the existing skeleton's models/schemas/API/services
+and every frontend page's real data needs.
+
+**Why:** Explicit user request (the full master prompt), continuing this project's
+established pattern of building real functionality against real data and documenting
+honestly what is and isn't done, rather than fabricating completeness.
+
+**Notable decisions made along the way:**
+- **Alert creation now requires authentication** (previously anonymous). An
+  unauthenticated public dashboard should not be able to issue flood alerts to a
+  citizen audience — this is a deliberate behavior change, recorded here rather than
+  silently shipped.
+- **Roles implemented as a real `roles` table**, not a hardcoded Python enum, so the
+  schema genuinely reflects the "Roles" entity the prompt specifies — at the cost of
+  needing a human/script to grant elevated roles (no admin UI for it yet).
+- **Password hashing switched from the spec's implied passlib+bcrypt to the `bcrypt`
+  library used directly.** passlib 1.7.4's bcrypt backend threw a real
+  `AttributeError: module 'bcrypt' has no attribute '__about__'` against
+  `bcrypt>=4.1` — a genuine dependency incompatibility, not a design choice avoided
+  for convenience. Verified real bcrypt hashing still happens (hashes start with
+  `$2b$`, round-trip correctly, 72-byte truncation handled) via
+  `backend/tests/unit/test_security.py`.
+- **One baseline Alembic migration**, not an incremental history matching the
+  skeleton's build order. The dev database was dropped and recreated from empty before
+  autogenerating it, since no data existed yet worth preserving through incremental
+  migrations — this is a one-time exception; all schema changes from here on get their
+  own migration.
+- **Explicitly not built this round** (see `docs/backend-architecture.md`, "Not yet
+  built" and `docs/ROADMAP.md`'s note on this build, for the full list): SHAP
+  explanations (no trained model exists to explain — building this now would mean
+  fabricating explanations against nothing), alert delivery to an external channel (no
+  SMS/email provider configured, unchanged from before), an admin role-management UI,
+  a `/auth/refresh` consumer (refresh tokens are issued but nothing exchanges them
+  yet), and a Playwright suite committed to the repo (QA was real — Playwright against
+  the real running stack — but the script lived in the session scratchpad, not
+  `frontend/tests/`).
+
+**Status:** VERIFIED (built and tested this session — 42/42 backend pytest tests
+passing against a real separate Postgres test database, frontend `tsc -b --noEmit`
+clean, full login→create-alert→sign-out→signup→submit-citizen-report flow verified
+end-to-end with a real headless-Chromium Playwright run against the real backend, no
+horizontal overflow at 1440px/390px on every touched screen). Full detail in
+`docs/backend-architecture.md`, `docs/api-inventory.md`, `docs/database-schema.md`,
+and `docs/verified-screens.md`.
+
+---
+
 ## 2026-09-07 — Dark design system + multi-screen UI built against a reference spec
 
 **Decision:** Implemented the user-supplied UI specification (dark navy/blue/green/gold

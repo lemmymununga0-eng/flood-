@@ -1,10 +1,14 @@
 # API — FloodShield Zambia
 
-Status: **early skeleton**, built 2026-09-07 ahead of the normal phase order at the
-user's explicit request, to demonstrate a real running system on the real (small,
-incomplete) data gathered in Phase 1. This is not a claim that Phase 10 (Backend) is
-complete — see "What's not here yet" below. Live reference: FastAPI's auto-generated
-OpenAPI/Swagger docs at `/docs` on the running backend.
+Status: substantially expanded 2026-09-07 ("Complete Backend Implementation &
+End-to-End Integration" build) beyond the original skeleton — real JWT auth, RBAC,
+Alembic migrations, citizen reports, a model registry endpoint, and a data-source
+catalog with live health checks. **The full, current endpoint list lives in
+`docs/api-inventory.md` — this file is kept for the "running it locally" instructions
+and history; treat api-inventory.md as authoritative for what endpoints exist.** This
+is still not a claim that Phase 10 (Backend) is 100% complete — see
+`docs/backend-architecture.md`, "Not yet built". Live reference: FastAPI's
+auto-generated OpenAPI/Swagger docs at `/docs` on the running backend.
 
 ## Running it locally
 
@@ -12,13 +16,17 @@ OpenAPI/Swagger docs at `/docs` on the running backend.
 cd backend
 cp ../.env.example ../.env   # fill in DATABASE_URL for your local Postgres
 pip install -r ../requirements.txt
-python3 scripts/seed_db.py     # loads real locations + the real flood-event CSV
+python3 -m alembic upgrade head              # applies the real schema (no more create_all())
+python3 scripts/seed_db.py                    # loads real locations, flood-event CSV, roles, data-source catalog
+# optional: FLOODSHIELD_DEV_ADMIN_PASSWORD=... python3 scripts/seed_db.py   # also creates a local dev ADMIN account
 python3 -m uvicorn app.main:app --reload --port 8000
 ```
 
 Requires a running PostgreSQL instance matching `DATABASE_URL` in `.env` — this project
 targets Postgres per `docs/ARCHITECTURE.md`; no SQLite substitution was needed since a
-local Postgres 16 instance was available in the build environment.
+local Postgres 16 instance was available in the build environment. Tests use a
+**separate** database (`floodshield_zambia_test`) — see
+`docs/backend-architecture.md`, "Testing".
 
 ## Endpoints implemented
 

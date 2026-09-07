@@ -16,12 +16,36 @@ section 41) — not merely scaffolded.
 | 7 | Model Evaluation | Not started |
 | 8 | Explainable AI | Not started |
 | 9 | Model Packaging | Not started |
-| 10 | Backend | **Skeleton only** (built 2026-09-07, out of normal order, at explicit user request — see below). Not "done" against §41. |
-| 11 | Database | **Skeleton only**, same caveat. Real PostgreSQL 16, matching the target architecture. |
-| 12 | Frontend | **Skeleton only**, same caveat. One dashboard screen. |
-| 13 | Alerts | Not started |
-| 14 | Testing | Ongoing per-phase from Phase 1 onward, plus a dedicated system-testing pass. Skeleton was manually verified (curl + headless-browser screenshots at two viewport widths) but has no automated test suite yet. |
+| 10 | Backend | **Substantially expanded** (2026-09-07 "Complete Backend Implementation" build): real JWT auth, RBAC, Alembic migrations, citizen reports, model registry, data-source catalog, audit log, standardized error format, pagination, rate limiting. Still not 100% against §41 — see `docs/backend-architecture.md`, "Not yet built" (no SHAP, no alert delivery, no admin role-management UI). |
+| 11 | Database | **Expanded to 11 tables**, real Alembic migrations (no more `create_all()`). See `docs/database-schema.md`. |
+| 12 | Frontend | **Expanded**: real login/signup, RBAC-aware UI, citizen reports and AI-model/data-sources screens now backend-driven instead of stubs/static content. See `docs/verified-screens.md`. |
+| 13 | Alerts | Core create/list done (Phase 12 note below); delivery to an external channel (SMS/email) still not started — no provider configured. |
+| 14 | Testing | Ongoing per-phase from Phase 1 onward. The 2026-09-07 backend build added a real automated suite: 42 pytest tests (unit/api/integration/database) against a real Postgres test database — see `docs/backend-architecture.md`, "Testing". Frontend still has no automated test suite (manual Playwright QA only, not committed to the repo). |
 | 15 | Deployment | Not started |
+
+## Note: backend implementation & end-to-end integration build (2026-09-07, third request)
+
+A 79-section master prompt asked for a full production-grade backend. Delivered this
+round: real JWT auth + bcrypt password hashing + 5-role RBAC enforced via FastAPI
+dependencies; Alembic migrations replacing `Base.metadata.create_all()`; an expanded
+schema (`users`, `roles`, `citizen_reports`, `data_sources`, `audit_logs`, plus
+`is_active`/`registered_at` added to `model_versions`); new endpoints for citizen
+reports (submit/list/moderate), the model registry, and the data-source catalog (with
+real live connectivity checks — see `docs/DATA-SOURCES.md`); a consistent
+`{"error", "message"}` error shape across every endpoint; pagination/filtering on list
+endpoints; rate limiting on `/auth/*`; CORS confirmed already non-wildcard; a real
+pytest suite (42 tests, 4 categories, run against a separate real Postgres test
+database); and frontend integration — real Login/Signup, RBAC-aware Create Alert,
+Citizen Reports rebuilt from a stub into a real form, AI Model and Data Sources
+rebuilt from static/stub content into real API-backed screens — all re-verified with
+Playwright against the real running stack (see `docs/verified-screens.md`). Required
+docs produced: `docs/backend/frontend-integration-matrix.md` (the Phase 0 audit,
+written before any code changed), `docs/api-inventory.md`, `docs/database-schema.md`,
+`docs/backend-architecture.md`, `docs/verified-screens.md`. Deliberately not built
+this round (recorded, not hidden): SHAP explanations (no trained model), alert
+delivery to an external channel, an admin role-management UI, a refresh-token
+exchange endpoint, and a committed (CI-running) Playwright suite. See
+`docs/PROJECT-MEMORY.md` for the decisions behind the scope cuts.
 
 ## Note: full UI redesign built (2026-09-07, same day, second request)
 

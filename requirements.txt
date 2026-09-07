@@ -22,7 +22,12 @@ sqlalchemy
 alembic
 psycopg2-binary
 pydantic
+pydantic[email]
 pydantic-settings
+python-jose[cryptography]   # JWT encode/decode
+bcrypt                      # password hashing (used directly - passlib's bcrypt
+                             # backend is incompatible with bcrypt>=4.1)
+slowapi                     # rate limiting on sensitive endpoints
 
 # Testing
 pytest
