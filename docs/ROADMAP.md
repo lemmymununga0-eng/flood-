@@ -16,12 +16,29 @@ section 41) — not merely scaffolded.
 | 7 | Model Evaluation | Not started |
 | 8 | Explainable AI | Not started |
 | 9 | Model Packaging | Not started |
-| 10 | Backend | Not started |
-| 11 | Database | Not started |
-| 12 | Frontend | Not started |
+| 10 | Backend | **Skeleton only** (built 2026-09-07, out of normal order, at explicit user request — see below). Not "done" against §41. |
+| 11 | Database | **Skeleton only**, same caveat. Real PostgreSQL 16, matching the target architecture. |
+| 12 | Frontend | **Skeleton only**, same caveat. One dashboard screen. |
 | 13 | Alerts | Not started |
-| 14 | Testing | Ongoing per-phase from Phase 1 onward, plus a dedicated system-testing pass |
+| 14 | Testing | Ongoing per-phase from Phase 1 onward, plus a dedicated system-testing pass. Skeleton was manually verified (curl + headless-browser screenshots at two viewport widths) but has no automated test suite yet. |
 | 15 | Deployment | Not started |
+
+## Note: Phases 10–12 built early (2026-09-07)
+
+The user explicitly asked to "run the app" and, when asked to clarify given nothing was
+buildable yet, chose to have a minimal real backend+frontend stood up immediately rather
+than wait for the full phase order. What exists now: a FastAPI backend against a real
+local PostgreSQL 16 database, seeded with the real location list and the real 11-row
+flood-event log (no synthetic data), a `/weather/{id}/ingest` endpoint that makes a
+genuine NASA POWER request and reports honest success/failure, a `/predictions` endpoint
+that correctly returns empty (no model exists), and a React+TypeScript dashboard
+rendering all of it with real loading/success/empty/error states — screenshotted via
+headless Chromium to confirm it actually runs. See `docs/API.md`, `docs/DATABASE.md`,
+and `docs/UI-UX.md` for exactly what is and is not implemented. This does **not**
+retroactively satisfy the Definition of Done for Phases 10–12 (no auth, no tests, no
+alerts, no citizen reports, no trained model to predict from) and does not change the
+fact that Phase 1's flood-label decision is still open — Phase 2+ ingestion/modelling
+work should still wait on that decision per the note below.
 
 ## Progress log (Phase 1)
 

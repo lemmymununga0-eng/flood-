@@ -18,6 +18,7 @@ node_modules/
 dist/
 build/
 .vite/
+*.tsbuildinfo
 
 # Data (raw/interim/processed are regenerable from documented sources —
 # do not commit large datasets to git; use DVC or documented re-download

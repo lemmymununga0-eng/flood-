@@ -1,6 +1,7 @@
 # FloodShield Zambia — root Python environment (AI engine + backend).
-# Pinned versions to be finalized once Phase 2 (data ingestion) begins;
-# this is a starter list reflecting the recommended stack, not yet installed/tested.
+# Backend section below is installed and running (see docs/API.md) as of 2026-09-07.
+# AI-engine section is still a starter list — not yet installed, pending Phase 1's
+# label decision. Versions are unpinned throughout; pin once Phase 2 begins in earnest.
 #
 # AI engine
 pandas

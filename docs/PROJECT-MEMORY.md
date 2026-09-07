@@ -13,6 +13,29 @@ Status tags used throughout this document and the rest of `/docs`:
 
 ---
 
+## 2026-09-07 — Backend/frontend skeleton built out of phase order
+
+**Decision:** Stood up a minimal but real FastAPI backend (PostgreSQL 16, provisioned
+locally) and a React+TypeScript dashboard — Phases 10–12 — before Phase 1's flood-label
+decision was resolved.
+
+**Why:** Explicit user request ("run the app"). When asked to clarify since nothing was
+buildable yet, the user chose to see a minimal real system now rather than wait for the
+phase order. This is a deliberate, requested exception to the project's own default
+sequencing (governing prompt §61's "do not build the entire system yet"), not a
+reversal of that principle — the skeleton only exposes data that already exists (the
+seeded locations and the 11-row flood-event log) plus honest empty/error states for
+everything that doesn't exist yet (predictions, weather observations). No fabricated
+data was introduced to make it "look more done." `docs/ROADMAP.md` records that Phases
+10–12 are "skeleton only," not complete, and that Phase 2+ substantive work should still
+wait on the Phase 1 label decision.
+
+**Status:** VERIFIED (built and manually tested this session — curl against every
+endpoint, headless-browser screenshots at desktop and mobile widths, one real bug found
+and fixed: error-message overflow causing horizontal scroll).
+
+---
+
 ## 2026-09-07 — Project initialization (Phase 0)
 
 **Decision:** Start FloodShield Zambia from an empty repository as a fresh build, not a
