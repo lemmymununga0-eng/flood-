@@ -9,11 +9,24 @@ No target variable has been defined yet. Candidate approaches, per the governing
 prompt's ranking from strongest to weakest evidentiary basis:
 
 1. **Historical flood-event records** — strongest if a reliable Zambian source can be
-   found (TO VALIDATE, see DATA-SOURCES.md).
+   found. **Update 2026-09-07:** no ready-made dataset located yet, but a real path
+   exists — DMMU (Zambia's national disaster authority) and ReliefWeb both publish
+   dated, located situation reports (e.g. the January 2023 Southern/Central/Lusaka
+   floods, and a January 2022 Southern Province event affecting ~15,000 people) that
+   could be hand-compiled into a small event table. See DATA-SOURCES.md for citations.
+   Still TO VALIDATE as a *sufficient volume* of events for training.
 2. **Official disaster/flood reports** — e.g. from a national disaster-management
-   authority or international humanitarian reporting (TO VALIDATE).
+   authority or international humanitarian reporting. **Update 2026-09-07:** DMMU
+   (Office of the Vice President) and WARMA (Water Resources Management Authority) are
+   confirmed as Zambia's authoritative bodies for this (VERIFIED via UN-SPIDER and
+   ReliefWeb); DMMU's own site was unreachable this session and needs a retry or direct
+   contact.
 3. **Remote-sensing-derived flood extent** — satellite-derived flood mapping for
-   specific events/regions (TO VALIDATE).
+   specific events/regions. **Update 2026-09-07:** a concrete, real precedent exists —
+   International Charter Space and Major Disasters Activation #796 (Jan–Feb 2023)
+   produced 10 Sentinel-2B-derived flood-extent products for Zambia (Luapula, Kafue, and
+   Zambezi river systems; Mkushi district). Public access path to the underlying rasters
+   is still TO VALIDATE.
 4. **Hydrological thresholds** — river-gauge or basin-model-derived thresholds, if
    accessible for Zambian catchments (TO VALIDATE, likely hard to obtain).
 5. **Rainfall-accumulation thresholds supported by literature** — a documented,

@@ -89,23 +89,28 @@ research question.
 
 ---
 
-## OPEN — Data source selection (Phase 1, not yet decided)
+## OPEN — Data source selection (Phase 1, partially validated 2026-09-07)
 
-**Status:** TO VALIDATE. NASA POWER is the prompt's suggested primary historical source
-(section 6) because it's free, global, does not require an API key for standard use, and
-provides daily precipitation/temperature/humidity/wind/soil-moisture-proxy variables —
-but this has not yet been re-verified against NASA POWER's current API terms and
-documented in `docs/DATA-SOURCES.md` with an actual test request. CHIRPS/ERA5-Land and a
-near-real-time provider (OpenWeather or equivalent) are candidates to investigate, not
-commitments. No data has been downloaded yet.
+**Status:** TO VALIDATE, updated. NASA POWER's Daily API endpoint, required/optional
+parameters, format options, and rate-limit caution were confirmed against NASA's own
+current documentation this session (see `docs/DATA-SOURCES.md`). A live JSON request for
+a Zambian coordinate was attempted but blocked by this environment's fetch-approval gate
+— that step still needs to be completed (either with the fetch approved, or by a human
+running the request and sharing the response) before ingestion code is written. CHIRPS/
+ERA5-Land and a near-real-time provider (OpenWeather or equivalent) remain candidates to
+investigate, not commitments. No data has been downloaded yet.
 
-## OPEN — Flood label / target methodology (Phase 1, not yet decided)
+## OPEN — Flood label / target methodology (Phase 1, partially validated 2026-09-07)
 
-**Status:** TO VALIDATE. This is flagged by the governing prompt itself as the single
-most important and highest-risk decision in the project (section 10). No target
-variable has been defined. See `docs/ML-METHODOLOGY.md` for the candidate approaches and
-`docs/RESEARCH-METHODOLOGY.md` for how this will be resolved. Do not proceed to feature
-engineering or modelling before this is settled and documented here.
+**Status:** TO VALIDATE, updated. This is flagged by the governing prompt itself as the
+single most important and highest-risk decision in the project (section 10). No target
+variable has been defined yet, but real candidate ground-truth paths were identified this
+session: DMMU (Zambia's Office of the Vice President disaster authority) and WARMA
+publish situation reports with dated, located flood events; International Charter
+Activation #796 produced real Sentinel-2B flood-extent products for Zambia in Jan–Feb
+2023. Neither has yet been turned into an actual dataset — see `docs/ML-METHODOLOGY.md`
+and `docs/DATA-SOURCES.md`. Do not proceed to feature engineering or modelling before
+this is settled and documented here.
 
 ## OPEN — Prediction horizon (Phase 1/6, not yet decided)
 
@@ -114,10 +119,25 @@ resolution of whichever historical dataset is selected (daily NASA POWER data do
 support an hourly-horizon claim). No horizon is committed to yet — see
 `docs/LIMITATIONS.md`.
 
-## OPEN — Geographic scope (Phase 1, not yet decided)
+## DECIDED (partially) — Geographic scope (Phase 1, updated 2026-09-07)
 
-**Status:** TO VALIDATE. Candidate areas named in the governing prompt (Lusaka, Kanyama,
-Misisi, other flood-prone settlements, agricultural/riverine districts) are *examples*
-from the prompt, not verified flood-prone designations. None of these should be
-presented in any UI or document as "officially flood-prone" without a citable
-authoritative source.
+**Decision so far:** Kanyama compound, Lusaka, is upgraded from "named in the governing
+prompt" to a **VERIFIED, independently-sourced candidate location** — it is documented
+as flood-affected in peer-reviewed/graduate research (a University of Zambia thesis and
+a journal article on flooding's effect on sanitation there), not merely asserted by the
+prompt. Ng'ombe settlement, Lusaka, is added as a second credible candidate on the same
+basis. The January 2023 flood event additionally documents real, dated flooding in
+Southern, Central, and Lusaka provinces, with district-level detail for Luapula,
+Kabompo, Lukulu, Senanga, Kitwe, Mambwe, and Solwezi (DMMU/WARMA via UN-SPIDER/Charter
+sources — see `docs/DATA-SOURCES.md`).
+
+**Why:** The governing prompt explicitly requires that no location be called
+"officially flood-prone" without a citable authoritative source (section 3). Kanyama and
+Ng'ombe now have one; the rest of the prompt's example list (Misisi, and "agricultural/
+riverine regions" generally) still does not and remains an unverified example, not a
+decision.
+
+**Still TO VALIDATE:** final selection of which 1–3 locations the MVP will actually
+model (a scope decision, not just an evidence question), and confirmation that NASA
+POWER's grid resolution meaningfully distinguishes these Lusaka-compound-level locations
+from each other (they are geographically close together).

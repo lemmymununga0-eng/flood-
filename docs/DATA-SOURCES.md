@@ -11,11 +11,28 @@ a confirmed integration.
   dataset, commonly used in agricultural and hydrological research.
 - **Candidate variables:** precipitation, temperature, humidity, wind, and soil-moisture-
   related variables where available.
-- **Status: TO VALIDATE.** This project has not yet made a live request against the NASA
-  POWER API this session. Before Phase 2 ingestion code is written, confirm: current base
-  URL and endpoint structure, whether an API key is required, rate limits, actual
-  temporal resolution available for the candidate Zambian coordinates, and current terms
-  of use for research/derivative-product use.
+- **VERIFIED (from official docs, checked 2026-09-07):** the Daily API's point endpoint
+  takes `longitude`, `latitude`, `start`, `end`, and `format` as required parameters and
+  `parameters` (up to 20 per request), `community` (e.g. `AG`), `time-standard`,
+  `site-elevation`, and `wind-elevation` as optional ones. Data is available from
+  1981-01-01 to near-real-time. Formats offered: NetCDF, ASCII, ICASA, JSON, CSV. The
+  docs do not state an API key is required (consistent with NASA POWER's longstanding
+  reputation as a keyless public API, but this project has not yet independently
+  confirmed that with a live request — see below). Docs source:
+  [NASA POWER Daily API docs](https://power.larc.nasa.gov/docs/services/api/temporal/daily/).
+- **Rate-limit caution (VERIFIED, from official docs):** the docs explicitly warn that an
+  application making repeated requests for the same location can be blocked — the
+  ingestion client (Phase 2) must cache/dedupe requests per coordinate rather than
+  re-fetching the same point repeatedly.
+- **Still TO VALIDATE:** an actual live JSON request against
+  `https://power.larc.nasa.gov/api/temporal/daily/point` for a candidate Zambian
+  coordinate was attempted this session and blocked by this environment's fetch
+  permission gate (direct `curl` is blocked by organizational egress policy; the fetch
+  tool's request for this specific URL was not approved in time). This needs to be
+  re-run — either with the fetch approved, or by having a human run the request once and
+  paste the response — before Phase 2 ingestion code is written against it. Current
+  terms of use for derivative/research products have also not been independently
+  re-confirmed this session.
 
 ## Candidate supplementary sources
 
@@ -37,11 +54,49 @@ a confirmed integration.
 
 ## Flood ground-truth / label sources (see also ML-METHODOLOGY.md)
 
-Not yet identified. Candidates to investigate in Phase 1: Zambian disaster-management
-authority reports, ReliefWeb/UN OCHA situation reports for Zambia, remote-sensing flood-
-extent products (e.g. from satellite-derived flood mapping services), and peer-reviewed
-literature on rainfall-accumulation flood thresholds applicable to the Zambian/Southern
-African context. None have been located or verified yet.
+**VERIFIED, checked 2026-09-07 (web research, not yet a data integration):**
+
+- **Disaster Management and Mitigation Unit (DMMU)**, Office of the Vice President of
+  Zambia, is the national authoritative disaster-management body, confirmed as the
+  requesting/coordinating authority for the January 2023 floods (Southern, Central, and
+  Lusaka provinces; worst-hit districts named as Luapula, Kabompo, Lukulu, Senanga,
+  Kitwe, Mambwe, and Solwezi) via
+  [UN-SPIDER's Zambia floods page](https://www.un-spider.org/advisory-support/emergency-support/13047/floods-zambia)
+  and [ReliefWeb's DMMU/OVP profile](https://www.preventionweb.net/organization/disaster-management-and-mitigation-unit).
+  DMMU publishes situation reports (e.g. a drought response situation report was found
+  on [ReliefWeb](https://reliefweb.int/report/zambia/republic-zambia-disaster-management-and-mitigation-unit-drought-response-situation-report-no-1-19th-april-2024)),
+  which is a plausible path to real historical flood-event records (approach 1/2 in
+  `ML-METHODOLOGY.md`). **TO VALIDATE:** DMMU's own site (dmmu-ovp.gov.zm) was
+  unreachable this session (redirect loop) — retry later or contact DMMU directly for
+  historical flood situation reports/data.
+- **Water Resources Management Authority (WARMA)** issues Zambia's flood early warnings
+  alongside DMMU (same UN-SPIDER source) — a second potential authoritative contact.
+- **International Charter Space and Major Disasters, Activation #796 (Jan–Feb 2023)**
+  produced 10 real satellite-derived flood-extent products for Zambia from Sentinel-2B
+  imagery, covering the Luapula, Kafue, and Zambezi river systems and Mkushi district,
+  requested by UNOOSA/UN-SPIDER on DMMU's behalf
+  ([Charter activation page](https://disasterscharter.org/activations/flood-large-in-zambia-activation-796-)).
+  This is a concrete example of approach 3 (remote-sensing-derived flood extent) — a
+  real, citable precedent, though this project has not yet obtained the underlying
+  products or confirmed a public access path to them.
+- **Documented flood-prone informal settlements in Lusaka**, per peer-reviewed and
+  graduate research: **Kanyama compound** (flooding effects on onsite sanitation,
+  [UNZA dspace thesis](https://dspace.unza.zm/items/7e1d043b-57bc-41e8-bda5-cbb85e15b091)
+  and [journal article](https://journals.eanso.org/index.php/ajccrs/article/view/1861))
+  and **Ng'ombe settlement** ([ResearchGate paper](https://www.researchgate.net/publication/387084120_Urban_Flooding_A_Case_of_Ng'ombe_Settlement_in_the_City_of_Lusaka_Zambia)),
+  plus general unplanned-settlement flood risk in Lusaka
+  ([Flood risk in unplanned settlements in Lusaka](https://www.researchgate.net/publication/229045504_Flood_risk_in_unplanned_settlements_in_Lusaka)).
+  This upgrades Kanyama specifically from "named in the governing prompt" to
+  **VERIFIED via independent academic literature** as a documented flood-affected area —
+  the first location in this project with that status. Ng'ombe is a credible addition
+  to the candidate location list.
+
+**Still not identified:** a downloadable, ready-to-use historical flood-event *dataset*
+(as opposed to narrative situation reports and one-off satellite products). Building the
+actual label will most likely require either (a) manually compiling event dates/locations
+from DMMU/ReliefWeb/Charter situation reports into a small hand-built event table, or
+(b) falling back to a documented rainfall-accumulation proxy threshold — see
+`docs/ML-METHODOLOGY.md` for how this decision will be made.
 
 ## Data source principle (non-negotiable)
 
