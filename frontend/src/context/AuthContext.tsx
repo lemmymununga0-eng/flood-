@@ -1,7 +1,8 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import type { AuthUser, LoginInputData, RegisterInput } from "../types";
-import { ApiError, fetchMe, getStoredToken, login as apiLogin, register as apiRegister, setStoredToken } from "../services/api";
+import { fetchMe, getStoredToken, login as apiLogin, register as apiRegister, setStoredToken } from "../services/api";
+import { ALERT_MANAGER_ROLES } from "../constants";
 
 interface AuthContextValue {
   user: AuthUser | null;
@@ -68,7 +69,5 @@ export function useAuth(): AuthContextValue {
 }
 
 export function canManageAlerts(user: AuthUser | null): boolean {
-  return !!user && ["ADMIN", "ANALYST", "OPERATOR"].includes(user.role);
+  return !!user && ALERT_MANAGER_ROLES.includes(user.role);
 }
-
-export { ApiError };

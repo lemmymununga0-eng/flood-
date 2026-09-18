@@ -1,6 +1,8 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { AuthProvider } from "./context/AuthContext";
-import AppShell from "./layouts/AppShell";
+import { AppProviders } from "./providers";
+import AuthLayout from "./layouts/AuthLayout";
+import DashboardLayout from "./layouts/DashboardLayout";
+import PublicLayout from "./layouts/PublicLayout";
 import About from "./pages/About";
 import AIModel from "./pages/AIModel";
 import Alerts from "./pages/Alerts";
@@ -25,15 +27,20 @@ import SystemStatus from "./pages/SystemStatus";
 
 export default function App() {
   return (
-    <AuthProvider>
+    <AppProviders>
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/about" element={<About />} />
+        <Route element={<PublicLayout />}>
+          <Route path="/" element={<Landing />} />
+          <Route path="/about" element={<About />} />
+        </Route>
 
-        <Route element={<AppShell />}>
+        <Route element={<AuthLayout />}>
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+        </Route>
+
+        <Route element={<DashboardLayout />}>
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/risk-map" element={<RiskMap />} />
           <Route path="/locations/:id" element={<LocationDetail />} />
@@ -56,6 +63,6 @@ export default function App() {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
-    </AuthProvider>
+    </AppProviders>
   );
 }

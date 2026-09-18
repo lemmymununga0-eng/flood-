@@ -1,3 +1,5 @@
+import type { Role } from "../constants";
+
 export interface Location {
   id: number;
   name: string;
@@ -69,7 +71,7 @@ export interface AuthUser {
   id: number;
   email: string;
   full_name: string;
-  role: "ADMIN" | "ANALYST" | "OPERATOR" | "RESEARCHER" | "CITIZEN";
+  role: Role;
   is_active: boolean;
   created_at: string;
 }
@@ -143,4 +145,17 @@ export interface ComponentStatus {
 export interface SystemStatus {
   checked_at: string;
   components: ComponentStatus[];
+}
+
+export interface Notification {
+  id: number;
+  user_id: number;
+  notification_type: string;
+  entity_type: string;
+  entity_id: number | null;
+  title: string;
+  message: string;
+  is_read: boolean;
+  read_at: string | null;
+  created_at: string;
 }

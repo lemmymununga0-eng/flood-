@@ -41,3 +41,49 @@ the limitations already knowable before any data has been pulled.
 
 This document must be updated (not just appended to indefinitely — condense as it grows)
 at the end of every phase with what was actually learned.
+
+## Update (2026-09-08): the real-event limitation, made precise
+
+The "11 events is a small sample" caveat above is now measured, not just anticipated. Three real
+bugs blocking the historical-event log from loading at all were found and fixed this phase
+(`docs/bug-register.md` BUG-12/14/15). With them fixed, the real, concrete finding is:
+
+**All 11 recorded events occurred in 2020 or later, so this project's own chronologically-split
+train set (2000-2016, using the only weather data ever trained against) contains zero of them.**
+7 fall in the validation split, 45 (all from one multi-day event) in the test split — verified by
+actually running the fixed ingestor against the real date range, not estimated. A model cannot be
+validly trained to recognize a pattern its training data never contains an example of. This is
+now the single most consequential open limitation in the project, ahead of the sample-size
+concern already noted above — it is a *coverage* problem (when the events happened), not merely a
+*count* problem (how many). See `docs/ML-METHODOLOGY.md`'s corresponding update for the two
+possible paths forward (more/older event records, or a non-chronological validation strategy),
+neither implemented yet.
+
+## Update (2026-09-09): the coverage gap was closed, and a real model was trained — new limitations replace the old one
+
+Three real pre-2020 events were added (now 14 total), giving the training split 243 real positive
+days (was 0). NASA POWER — previously blocked only by a sandbox's egress policy — was confirmed
+reachable from the real developer machine, so the first-ever real-weather, real-label, non-leaked
+training run in this project actually happened (`docs/ML-METHODOLOGY.md`'s corresponding update
+has the full results table). This resolves the specific limitation described above. It does not
+mean the ML pipeline is now limitation-free — it has new, different, real ones:
+
+- **Single monitoring point.** The real weather data pulled is for Lusaka only; the real flood
+  events span many provinces. The model is effectively learning "does Lusaka's weather correlate
+  with a flood being reported anywhere in Zambia," not location-specific risk — a genuine
+  geographic-mismatch limitation, not fixed by this update.
+- **Coarse, national-level label.** "A flood was reported somewhere in the country this day" is a
+  much weaker signal than "flooding is occurring at this specific monitored location," which is
+  what the application's per-`Location` prediction architecture implies it will eventually serve.
+- **Small effective test set.** 45 of the real test-set positive days come almost entirely from a
+  single event (`ZM-2023-01`). Precision/recall on this test set are therefore noisy indicators of
+  one event's detectability, not a robust estimate across many independent flood instances — with
+  only 14 source events total, this is a hard statistical-power ceiling, not a methodology error.
+- **No class-imbalance handling yet.** With ~3.4% positive days, the tree-ensemble baselines
+  (Random Forest, Gradient Boosting) collapsed toward predicting the majority class. This is an
+  honest, unfixed limitation of the current run, not evidence the underlying signal doesn't exist
+  (Logistic Regression's ROC-AUC of 0.85 suggests it does).
+- **Still true, unaffected by this update:** XGBoost, LSTM, and SHAP remain blocked by the Python
+  3.11 requirement; the proxy-label leakage issue (`docs/bug-register.md` BUG-13) is now moot for
+  this specific run (real labels were used, not the proxy formula) but the leaky code path itself
+  is still present and would still be a live risk in any future run that falls back to it.

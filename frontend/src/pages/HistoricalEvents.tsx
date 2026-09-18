@@ -1,11 +1,22 @@
 import { useCallback } from "react";
 import { Link } from "react-router-dom";
+import KpiCard from "../components/ui/KpiCard";
 import { EmptyState, ErrorState, LoadingState } from "../components/ui/States";
 import { useFetch } from "../hooks/useFetch";
 import { fetchFloodEvents } from "../services/api";
 
 export default function HistoricalEvents() {
   const [state, retry] = useFetch(useCallback(fetchFloodEvents, []));
+
+  const summary =
+    state.status === "success" && state.data.length > 0
+      ? (() => {
+          const provinces = new Set<string>();
+          state.data.forEach((ev) => ev.provinces.split(",").forEach((p) => provinces.add(p.trim())));
+          const dates = state.data.map((ev) => ev.start_date).sort();
+          return { provinceCount: provinces.size, earliest: dates[0], latest: dates[dates.length - 1] };
+        })()
+      : null;
 
   return (
     <div>
@@ -16,6 +27,14 @@ export default function HistoricalEvents() {
           label. Every row cites where it came from.
         </p>
       </div>
+
+      {summary && (
+        <div className="kpi-grid" style={{ marginBottom: "1rem" }}>
+          <KpiCard label="Total Events" value={state.status === "success" ? state.data.length : 0} icon="historical-events" accent="blue" />
+          <KpiCard label="Provinces Affected" value={summary.provinceCount} icon="geo" accent="gold" />
+          <KpiCard label="Date Range" value={`${summary.earliest} – ${summary.latest}`} icon="historical-events" accent="green" />
+        </div>
+      )}
 
       {state.status === "loading" && <LoadingState label="Loading historical events" />}
       {state.status === "error" && <ErrorState detail={state.message} onRetry={retry} />}

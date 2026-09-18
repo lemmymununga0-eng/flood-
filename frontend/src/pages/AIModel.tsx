@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+import { Icon } from "../components/ui/icons";
 import StatusBadge from "../components/ui/StatusBadge";
 import { EmptyState, ErrorState, LoadingState } from "../components/ui/States";
 import { useFetch } from "../hooks/useFetch";
@@ -10,7 +11,10 @@ export default function AIModel() {
   return (
     <div>
       <div className="page-header">
-        <h1>AI Model Intelligence</h1>
+        <h1 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <Icon name="ai-model" />
+          AI Model Intelligence
+        </h1>
         <p>Active model information, performance, and explainability — from the real model registry.</p>
       </div>
 
@@ -39,7 +43,7 @@ export default function AIModel() {
               <p className="text-muted" style={{ marginBottom: "0.3rem" }}>
                 Registered {new Date(m.registered_at).toLocaleString()}
               </p>
-              <pre style={{ whiteSpace: "pre-wrap", fontSize: "0.8rem" }}>{m.metrics_json}</pre>
+              <pre className="metrics-block">{m.metrics_json}</pre>
             </div>
           ))}
         </div>

@@ -1,26 +1,18 @@
 import { useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { NAV_PRIMARY, NAV_SECONDARY } from "../constants";
+import { Icon } from "../components/ui/icons";
 
-const NAV_PRIMARY = [
-  { to: "/dashboard", label: "Dashboard" },
-  { to: "/risk-map", label: "Risk Map" },
-  { to: "/predictions", label: "Predictions" },
-  { to: "/analytics", label: "Analytics" },
-  { to: "/historical-events", label: "Historical Events" },
-  { to: "/alerts", label: "Alerts" },
-  { to: "/reports", label: "Citizen Reports" },
-  { to: "/ai-model", label: "AI Model" },
-  { to: "/data-sources", label: "Data Sources" },
-  { to: "/system-status", label: "System Status" },
-];
+function initials(nameOrEmail: string): string {
+  const trimmed = nameOrEmail.trim();
+  if (!trimmed) return "?";
+  const parts = trimmed.split(/\s+/);
+  if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+  return trimmed.slice(0, 2).toUpperCase();
+}
 
-const NAV_SECONDARY = [
-  { to: "/settings", label: "Settings" },
-  { to: "/about", label: "Help & About" },
-];
-
-export default function AppShell() {
+export default function DashboardLayout() {
   const [open, setOpen] = useState(false);
   const { user, status, logout } = useAuth();
   const navigate = useNavigate();
@@ -44,6 +36,7 @@ export default function AppShell() {
               className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
               onClick={() => setOpen(false)}
             >
+              <Icon name={item.icon} />
               {item.label}
             </NavLink>
           ))}
@@ -55,6 +48,7 @@ export default function AppShell() {
               className={({ isActive }) => `nav-item ${isActive ? "active" : ""}`}
               onClick={() => setOpen(false)}
             >
+              <Icon name={item.icon} />
               {item.label}
             </NavLink>
           ))}
@@ -95,9 +89,16 @@ export default function AppShell() {
             ☰
           </button>
           <span className="topbar-title">Flood Intelligence Platform</span>
-          <NavLink to="/notifications" className="btn btn-secondary">
-            Notifications
-          </NavLink>
+          <div className="topbar-actions">
+            <NavLink to="/notifications" className="btn btn-secondary">
+              Notifications
+            </NavLink>
+            {status === "authenticated" && user && (
+              <NavLink to="/profile" className="avatar" title={user.full_name || user.email}>
+                {initials(user.full_name || user.email)}
+              </NavLink>
+            )}
+          </div>
         </header>
         <div className="page-content">
           <Outlet />

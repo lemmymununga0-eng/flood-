@@ -28,6 +28,8 @@ every endpoint share one shape: `{"error": <machine code>, "message": <human tex
 | GET | `/api/v1/data-sources` | public | The real data-source catalog (NASA POWER, DMMU, WARMA, the flood-event log), with the status of the last real connectivity check. |
 | POST | `/api/v1/data-sources/{id}/check` | **ADMIN, ANALYST, OPERATOR** | Runs a real HTTP check against that source right now and updates its stored status. |
 | GET | `/api/v1/system-status` | public | Computed at request time — DB ping, real row counts. Never hardcoded. |
+| GET | `/api/v1/notifications` | auth | **New 2026-09-08.** The only list endpoint scoped to the caller — returns only `current_user`'s own notifications, not a global list. Currently populated only by citizen-report moderation (notifies the reporter); alert issuance does not generate notifications yet. |
+| POST | `/api/v1/notifications/{id}/read` | auth | **New 2026-09-08.** Marks one of the caller's own notifications read (idempotent). 404 (not 403) if the id belongs to someone else, to avoid confirming its existence. |
 
 ## Auth error codes
 
@@ -46,6 +48,10 @@ every endpoint share one shape: `{"error": <machine code>, "message": <human tex
 
 `POST /api/v1/auth/refresh` (tokens are issued, nothing exchanges them yet), any
 admin endpoint to change a user's role, `/analytics/*` (no real aggregate data to
-serve yet), `/notifications/*` (no event source generates them yet), SHAP explanation
-endpoints (no trained model), alert-delivery status for external channels (no
-provider configured). See `docs/backend-architecture.md`, "Not yet built".
+serve yet), SHAP explanation endpoints (no trained model), alert-delivery status for
+external channels (no provider configured). See `docs/backend-architecture.md`, "Not
+yet built".
+
+`/notifications/*` now exists (2026-09-08) but only for citizen-report moderation
+outcomes — notifications for issued alerts, predictions, or data-source sync still
+don't exist, because none of those events has a real per-user recipient to target yet.

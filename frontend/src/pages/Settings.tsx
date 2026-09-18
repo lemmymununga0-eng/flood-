@@ -1,9 +1,17 @@
+import { Icon } from "../components/ui/icons";
+
 export default function Settings() {
   return (
     <div>
       <div className="page-header">
-        <h1>Settings</h1>
-        <p>General preferences. Not persisted yet — no user/session backend exists.</p>
+        <h1 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <Icon name="settings" />
+          Settings
+        </h1>
+        <p>
+          General preferences. Not persisted yet — real auth/session exist, but there's
+          no dedicated settings/preferences table to save these to.
+        </p>
       </div>
       <div className="card" style={{ maxWidth: 480 }}>
         <div className="field">
@@ -21,7 +29,8 @@ export default function Settings() {
           </label>
         </div>
         <p className="text-muted">
-          Disabled: no <code>SystemUser</code>/settings backend exists yet to save these to.
+          Disabled: no settings/preferences table exists yet to save these to (see
+          docs/missing-features.md).
         </p>
       </div>
     </div>

@@ -1,4 +1,6 @@
 import { useCallback } from "react";
+import { Icon } from "../components/ui/icons";
+import KpiCard from "../components/ui/KpiCard";
 import StatusBadge from "../components/ui/StatusBadge";
 import { ErrorState, LoadingState } from "../components/ui/States";
 import { useFetch } from "../hooks/useFetch";
@@ -10,7 +12,10 @@ export default function SystemStatusPage() {
   return (
     <div>
       <div className="page-header">
-        <h1>System Status</h1>
+        <h1 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <Icon name="system-status" />
+          System Status
+        </h1>
         <p>Live, computed at request time — nothing below is a hardcoded "Operational."</p>
       </div>
 
@@ -18,6 +23,26 @@ export default function SystemStatusPage() {
       {state.status === "error" && <ErrorState detail={state.message} onRetry={retry} />}
       {state.status === "success" && (
         <>
+          <div className="kpi-grid" style={{ marginBottom: "1rem" }}>
+            <KpiCard
+              label="Operational"
+              value={state.data.components.filter((c) => c.status === "operational").length}
+              icon="system-status"
+              accent="green"
+            />
+            <KpiCard
+              label="Degraded"
+              value={state.data.components.filter((c) => c.status === "degraded").length}
+              icon="warning"
+              accent="gold"
+            />
+            <KpiCard
+              label="Unavailable"
+              value={state.data.components.filter((c) => c.status === "unavailable").length}
+              icon="warning"
+              accent="critical"
+            />
+          </div>
           <p className="text-muted">
             Last checked: {new Date(state.data.checked_at).toLocaleString()}
           </p>

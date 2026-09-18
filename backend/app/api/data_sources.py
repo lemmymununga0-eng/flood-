@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 
 from app.core.deps import require_roles
 from app.database.session import get_db
+from app.integrations.http_health_checker import HttpHealthChecker, get_health_checker
 from app.models.data_source import DataSource
 from app.models.user import User
 from app.schemas.data_source import DataSourceOut
@@ -21,9 +22,10 @@ def list_data_sources(db: Session = Depends(get_db)) -> list[DataSource]:
 def check_source(
     source_id: int,
     db: Session = Depends(get_db),
+    checker: HttpHealthChecker = Depends(get_health_checker),
     _: User = Depends(require_roles("ADMIN", "ANALYST", "OPERATOR")),
 ) -> DataSource:
     source = db.get(DataSource, source_id)
     if source is None:
         raise HTTPException(status_code=404, detail={"error": "not_found", "message": "Data source not found"})
-    return check_data_source(db, source)
+    return check_data_source(db, source, checker)

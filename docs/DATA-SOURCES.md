@@ -24,23 +24,28 @@ a confirmed integration.
   application making repeated requests for the same location can be blocked — the
   ingestion client (Phase 2) must cache/dedupe requests per coordinate rather than
   re-fetching the same point repeatedly.
-- **Still TO VALIDATE — live request blocked in this environment, cause now identified:**
-  two independent attempts to make a live JSON request against
-  `https://power.larc.nasa.gov/api/temporal/daily/point` failed for two different
-  reasons: (1) this sandbox's egress proxy rejects a direct `curl` CONNECT to
-  `power.larc.nasa.gov` under organizational policy; (2) this session's web-fetch tool
-  refuses the same URL because NASA's `robots.txt` disallows automated fetching of
-  `/api/` paths — a policy aimed at crawlers, not at an application calling its own
-  documented public API with `requests`/`httpx`, but this tool respects it regardless.
-  **Practical conclusion:** this specific cloud session cannot independently verify a
-  live NASA POWER response. That is a constraint of *this development environment*, not
-  necessarily of wherever the AI engine's ingestion code actually runs — Phase 2's
-  ingestion client should still be written as a normal HTTP client against the
-  documented parameters above, and its first real run (in an environment that can reach
-  `power.larc.nasa.gov` directly, e.g. a developer machine or the eventual backend host)
-  becomes the live verification step, with the raw response saved under
-  `ai-engine/data/raw/` and its shape reconciled against this document. Current terms of
-  use for derivative/research products have also not been independently re-confirmed.
+- **RESOLVED 2026-09-09 — live request succeeded from the developer's real machine.**
+  Earlier sessions (2026-09-07/08) ran in sandboxed cloud environments where two
+  independent blockers prevented verification: (1) an egress proxy rejecting the direct
+  `curl` CONNECT to `power.larc.nasa.gov`, and (2) a web-fetch tool refusing the URL
+  per NASA's `robots.txt` (a crawler policy, not applicable to an application calling
+  its own documented API with `requests`/`httpx`, but respected by that tool regardless).
+  **Both were properties of those specific sandboxes, not of NASA POWER or this
+  project's code.** On 2026-09-09, from the actual developer machine this project runs
+  on, `NASAPowerIngestor.download()` (`ai-engine/src/ingestion/nasa_power_ingestor.py`)
+  was run for real — no code changes, the same client written back in Phase 2 — and
+  succeeded on the first attempt: `GET https://power.larc.nasa.gov/api/temporal/daily/point`
+  for Lusaka (-15.4167, 28.2833), 2000-01-01 through 2023-12-31, returned a real 8,766-row
+  daily dataset (`ai-engine/data/raw/nasa_power_zambia.csv`) in ~14 seconds, no retries
+  needed. This is now the first real, independently-verified success of this
+  integration anywhere in this project's history — recorded exactly as it happened, not
+  retroactively upgraded from "coded correctly" to "works" without evidence.
+  **Still true and worth keeping in mind:** this was a single point (Lusaka) — Zambia's
+  real flood events span many provinces, so a production system would need either
+  multiple monitored points (the ingestor already supports `download_multiple_locations()`
+  for this) or an accepted single-point-as-national-proxy limitation, stated explicitly
+  wherever predictions are shown. Current terms of use for derivative/research products
+  have also not been independently re-confirmed.
 
 ## Candidate supplementary sources
 

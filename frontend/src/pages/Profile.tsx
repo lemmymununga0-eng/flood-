@@ -1,6 +1,14 @@
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
+function initials(nameOrEmail: string): string {
+  const trimmed = nameOrEmail.trim();
+  if (!trimmed) return "?";
+  const parts = trimmed.split(/\s+/);
+  if (parts.length >= 2) return (parts[0][0] + parts[1][0]).toUpperCase();
+  return trimmed.slice(0, 2).toUpperCase();
+}
+
 export default function Profile() {
   const { user, status, logout } = useAuth();
 
@@ -37,6 +45,13 @@ export default function Profile() {
         <h1>Profile</h1>
       </div>
       <div className="card" style={{ maxWidth: 480 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: "1.25rem" }}>
+          <span className="avatar avatar-lg">{initials(user.full_name || user.email)}</span>
+          <div>
+            <div style={{ fontSize: "1.1rem", fontWeight: 700 }}>{user.full_name || user.email}</div>
+            <div className="text-muted">{user.role}</div>
+          </div>
+        </div>
         <dl style={{ margin: 0 }}>
           <dt className="text-muted">Name</dt>
           <dd style={{ marginLeft: 0, marginBottom: "0.75rem" }}>{user.full_name || "—"}</dd>

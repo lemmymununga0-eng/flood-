@@ -1,14 +1,17 @@
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { ErrorState, LoadingState } from "../components/ui/States";
 import { useFetch } from "../hooks/useFetch";
 import { fetchLocations } from "../services/api";
+import type { Location } from "../types";
 
 export default function RiskMap() {
   const [locState] = useFetch(useCallback(fetchLocations, []));
   const mapEl = useRef<HTMLDivElement | null>(null);
   const mapRef = useRef<L.Map | null>(null);
+  const [selected, setSelected] = useState<Location | null>(null);
 
   useEffect(() => {
     if (locState.status !== "success" || !mapEl.current || mapRef.current) return;
@@ -30,9 +33,7 @@ export default function RiskMap() {
         weight: 2,
       })
         .addTo(map)
-        .bindPopup(
-          `<strong>${loc.name}</strong><br/>${loc.province}<br/><span style="color:#666">No risk prediction available (no model trained yet)</span><br/><a href="/locations/${loc.id}">View location →</a>`,
-        );
+        .on("click", () => setSelected(loc));
     });
 
     return () => {
@@ -55,22 +56,42 @@ export default function RiskMap() {
       {locState.status === "loading" && <LoadingState label="Loading map" />}
       {locState.status === "error" && <ErrorState detail={locState.message} />}
 
-      <div className="card" style={{ padding: 0, overflow: "hidden" }}>
-        <div ref={mapEl} style={{ height: 480, width: "100%" }} />
-      </div>
+      <div className="map-layout">
+        <div className="map-side-panel">
+          <div className="card">
+            <h3 style={{ marginTop: 0 }}>Risk level</h3>
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+              <span className="risk-badge low">Low</span>
+              <span className="risk-badge moderate">Moderate</span>
+              <span className="risk-badge high">High</span>
+              <span className="risk-badge critical">Critical</span>
+            </div>
+            <p className="text-muted" style={{ marginBottom: 0 }}>
+              Defined but not currently applied to any location — no predictions exist
+              to color by.
+            </p>
+          </div>
 
-      <div className="card" style={{ marginTop: "1rem" }}>
-        <h3 style={{ marginTop: 0 }}>Legend</h3>
-        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-          <span className="risk-badge low">Low</span>
-          <span className="risk-badge moderate">Moderate</span>
-          <span className="risk-badge high">High</span>
-          <span className="risk-badge critical">Critical</span>
+          {selected && (
+            <div className="card">
+              <h3 style={{ marginTop: 0 }}>{selected.name}</h3>
+              <p className="text-secondary" style={{ margin: "0 0 0.4rem" }}>{selected.province}</p>
+              <p className="text-muted" style={{ margin: "0 0 0.6rem" }}>
+                {selected.latitude.toFixed(4)}, {selected.longitude.toFixed(4)}
+              </p>
+              <p className="text-secondary" style={{ margin: "0 0 0.8rem" }}>
+                No risk prediction available (no model trained yet).
+              </p>
+              <Link className="btn btn-primary" to={`/locations/${selected.id}`}>
+                View location
+              </Link>
+            </div>
+          )}
         </div>
-        <p className="text-muted" style={{ marginBottom: 0 }}>
-          Risk colors are defined but not currently applied to any location — no
-          predictions exist to color by.
-        </p>
+
+        <div className="card" style={{ padding: 0, overflow: "hidden" }}>
+          <div ref={mapEl} style={{ height: 560, width: "100%" }} />
+        </div>
       </div>
     </div>
   );

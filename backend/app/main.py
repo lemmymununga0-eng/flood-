@@ -27,6 +27,7 @@ from app.api import (
     health,
     locations,
     model_registry,
+    notifications,
     predictions,
     system_status,
     weather,
@@ -125,6 +126,7 @@ app.include_router(weather.router, prefix=settings.api_v1_prefix)
 app.include_router(predictions.router, prefix=settings.api_v1_prefix)
 app.include_router(alerts.router, prefix=settings.api_v1_prefix)
 app.include_router(citizen_reports.router, prefix=settings.api_v1_prefix)
+app.include_router(notifications.router, prefix=settings.api_v1_prefix)
 app.include_router(model_registry.router, prefix=settings.api_v1_prefix)
 app.include_router(data_sources.router, prefix=settings.api_v1_prefix)
 app.include_router(system_status.router, prefix=settings.api_v1_prefix)

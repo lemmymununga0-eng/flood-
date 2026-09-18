@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 
 from app.core.audit import record_audit_event
 from app.core.deps import get_current_user, require_roles
+from app.core.notifications import notify_user
 from app.core.pagination import Pagination, pagination_params
 from app.database.session import get_db
 from app.models.citizen_report import CitizenReport
@@ -71,6 +72,16 @@ def moderate_report(
         entity_id=report.id,
         detail=f"status={payload.status}",
     )
+    if report.reporter_user_id is not None:
+        notify_user(
+            db,
+            user_id=report.reporter_user_id,
+            notification_type="citizen_report_moderated",
+            title=f"Your report was {payload.status}",
+            message=payload.review_note,
+            entity_type="citizen_report",
+            entity_id=report.id,
+        )
     db.commit()
     db.refresh(report)
     return report

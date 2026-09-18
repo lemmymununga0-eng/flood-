@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Icon } from "../components/ui/icons";
 import { EmptyState, ErrorState, LoadingState } from "../components/ui/States";
 import { useFetch } from "../hooks/useFetch";
 import { fetchLocations, ingestWeather } from "../services/api";
@@ -53,6 +54,9 @@ export default function LocationDetail() {
 
       <div className="grid grid-auto">
         <div className="card">
+          <div className="icon-chip">
+            <Icon name="predictions" />
+          </div>
           <h3 style={{ marginTop: 0 }}>Current flood risk</h3>
           <EmptyState
             title="No prediction available"
@@ -61,6 +65,9 @@ export default function LocationDetail() {
         </div>
 
         <div className="card">
+          <div className="icon-chip">
+            <Icon name="data" />
+          </div>
           <h3 style={{ marginTop: 0 }}>Weather</h3>
           <p className="text-secondary">
             Attempts a real NASA POWER request. In this environment it is expected to
@@ -83,6 +90,9 @@ export default function LocationDetail() {
         </div>
 
         <div className="card">
+          <div className="icon-chip">
+            <Icon name="geo" />
+          </div>
           <h3 style={{ marginTop: 0 }}>Evidence for this location</h3>
           <p className="text-secondary">{location.evidence_note}</p>
           <a href={location.evidence_source_url} target="_blank" rel="noreferrer">

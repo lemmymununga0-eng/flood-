@@ -1,5 +1,6 @@
 import { useCallback, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { Icon } from "../components/ui/icons";
 import { ErrorState, LoadingState } from "../components/ui/States";
 import { canManageAlerts, useAuth } from "../context/AuthContext";
 import { useFetch } from "../hooks/useFetch";
@@ -72,7 +73,10 @@ export default function CreateAlert() {
   return (
     <div>
       <div className="page-header">
-        <h1>Create Alert</h1>
+        <h1 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <Icon name="alerts" />
+          Create Alert
+        </h1>
         <p>This creates a real record via the backend — visible on /alerts immediately.</p>
       </div>
 

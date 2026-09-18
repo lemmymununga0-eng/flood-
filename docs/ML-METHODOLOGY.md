@@ -91,3 +91,96 @@ Explanations describe correlation the model found, not asserted causal mechanism
 prediction" is valid; "flooding will definitely occur because soil saturation is 90%" is
 not, unless that value is an actual model input and the model's behavior genuinely
 supports that characterization.
+
+## Update (2026-09-08): a concrete, measured finding on option 1's viability
+
+This document's "Status: Phase 0/1 planning" framing above is stale — a real ai-engine pipeline
+now exists and has actually run once (see `docs/AUDIT-REPORT-2026-09-08.md` Section 5), and three
+real bugs preventing the historical-event log (option 1 above) from loading at all have since
+been found and fixed (`docs/bug-register.md` BUG-12/14/15). Fixing them surfaces a more precise,
+measured version of the "eleven events... small sample" caveat already noted above:
+
+**All 11 real recorded events postdate 2020.** Paired with the only weather dataset this project
+has ever trained against (`ai-engine/data/raw/synthetic_zambia_weather.csv`, 2000–2023) and this
+project's own chronological 70/15/15 train/val/test split (a deliberate, correct anti-leakage
+choice — see "Data leakage controls" above), the actual measured positive-day distribution is:
+
+```
+train (2000-01-01 -> 2016-10-19): 0 positive days
+val   (2016-10-19 -> 2020-05-26): 7 positive days
+test  (2020-05-26 -> 2023-12-31): 45 positive days
+```
+
+**A model cannot learn what its training split never contains an example of.** This is not a
+data-quality complaint about the 11 events themselves (their sourcing/confidence is unchanged and
+still documented in `zambia_flood_events_log.csv`'s own README) — it's a coverage mismatch between
+when the events happened and what a standard chronological split assumes. Two honest paths
+forward for this project's methodology (neither implemented yet, both worth naming explicitly for
+the eventual write-up):
+
+1. **More historical event records reaching further back than 2020** — the real fix, if such
+   records can be found (DMMU/WARMA archives, EM-DAT, older ReliefWeb/FloodList coverage).
+2. **A validation strategy that doesn't require positives in a contiguous early block** — e.g.
+   leave-one-event-out cross-validation, or stratifying the split to guarantee at least one real
+   event lands in each fold — trading some chronological purity for having any real signal to
+   learn from at all, and reporting that trade-off explicitly rather than hiding it.
+
+Neither is implemented in this codebase yet. Continuing to train against proxy labels (option 6)
+in the meantime is not a substitute for either — see `docs/LIMITATIONS.md`'s corresponding update
+and `docs/bug-register.md` BUG-13 for why the current proxy-label implementation has its own,
+separate, unresolved leakage problem.
+
+## Update (2026-09-09): path 1 above was actually done — real training run, real results
+
+Three pre-2020 events were researched and added to `zambia_flood_events_log.csv` (now 14 events,
+2007-2026 — see that file's README for full sourcing), specifically chosen to give the training
+split real positive examples. Verified by execution: this raised real positive days from 43 (all
+in the test split) to 295, distributed 243 train / 7 validation / 45 test. Separately, NASA POWER —
+previously blocked only by sandbox egress policy, not by anything wrong with this project's code —
+was confirmed reachable from the actual developer machine (see `docs/DATA-SOURCES.md`'s 2026-09-09
+update), so `main.py` was run for real, without `--use-synthetic`, for the first time in this
+project's history.
+
+**This is the first training run in this project using real weather data AND real, independent
+flood-event labels — no synthetic data, no leaky proxy formula.**
+`ai-engine/saved_models/model_metadata.json` records `"data_source": "nasa_power"`.
+
+Real test-set results (`ai-engine/reports/baseline_comparison.csv`, experiment runs 005-008):
+
+| Model | Accuracy | Precision | Recall | F1 | ROC-AUC |
+|---|---|---|---|---|---|
+| Logistic Regression | 0.917 | 0.204 | 0.489 | 0.288 | 0.850 |
+| Decision Tree | 0.903 | 0.082 | 0.178 | 0.112 | 0.553 |
+| Random Forest | 0.952 | 0.050 | 0.022 | 0.031 | 0.790 |
+| Gradient Boosting | 0.966 | 0.000 | 0.000 | 0.000 | 0.581 |
+
+**How to read these, honestly:**
+- These are real, modest, non-leaked numbers for a genuinely hard problem — not the suspiciously
+  strong metrics the old proxy-label run produced (which measured formula reconstruction, not
+  flood prediction; see `docs/bug-register.md` BUG-13). Logistic Regression's ROC-AUC of 0.85 with
+  49% recall is a plausible real signal, not a fabricated one.
+- **The test set's 45 positive days come almost entirely from one event** (`ZM-2023-01`, a 43-day
+  block) plus 2 days from elsewhere. A model doing well on this test set is substantially being
+  scored on whether it can flag one contiguous block, not on generalizing across many independent
+  flood instances — a real statistical-power limit from having only 14 source events, not a flaw
+  in this run's execution.
+- **The label is a national/coarse one** — "a flood was reported somewhere in Zambia this day" —
+  trained against **one point's** weather (Lusaka), regardless of which province the reported
+  event was actually in. This is a real geographic mismatch: the model is learning "does Lusaka's
+  local weather correlate with a flood being reported anywhere in the country," not "does local
+  weather predict local flooding" — a materially weaker claim than the per-location prediction the
+  application's own architecture (`Location`-scoped predictions) implies. Multi-location ingestion
+  (`NASAPowerIngestor.download_multiple_locations()` already exists for this) paired with
+  per-location event attribution is the natural next step, not yet done.
+- **The tree ensembles (Random Forest, Gradient Boosting) essentially collapsed to predicting the
+  majority class** (near-zero recall/F1 despite high accuracy — accuracy is a misleading metric
+  here given ~3.4% positive class). This is an honest, real finding about class-imbalance
+  handling, not a bug: none of these models currently use `class_weight="balanced"`, resampling
+  (SMOTE/undersampling), or a tuned decision threshold — all legitimate next steps for a follow-up
+  run.
+- XGBoost, LSTM, and SHAP remain unexercised — still blocked by the Python 3.11 requirement
+  (`docs/technical-debt.md` TD-12), unrelated to this update.
+
+This does not mean the model is "done" or ready to back a real prediction — it means this project
+now has, for the first time, a real, honestly-reported baseline result to improve on, instead of
+either a fabricated number or an admitted total absence of one.

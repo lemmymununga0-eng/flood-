@@ -5,15 +5,21 @@ project's backend recognizes.
 """
 from functools import lru_cache
 
+from pydantic import model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+_INSECURE_DEV_SECRET_KEY = "changeme"
+_INSECURE_DEV_DATABASE_URL = (
+    "postgresql://floodshield:changeme_dev_only@localhost:5432/floodshield_zambia"
+)
 
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
     environment: str = "development"
-    database_url: str = "postgresql://floodshield:changeme_dev_only@localhost:5432/floodshield_zambia"
-    secret_key: str = "changeme"
+    database_url: str = _INSECURE_DEV_DATABASE_URL
+    secret_key: str = _INSECURE_DEV_SECRET_KEY
     api_v1_prefix: str = "/api/v1"
     cors_origins: str = "http://localhost:5173"
 
@@ -32,6 +38,25 @@ class Settings(BaseSettings):
     @property
     def cors_origins_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
+
+    @model_validator(mode="after")
+    def _refuse_insecure_defaults_outside_development(self) -> "Settings":
+        # Fail fast instead of silently booting with a public, guessable JWT
+        # signing key / DB credential — see docs/deployment-readiness.md P0.
+        if self.environment.lower() != "development":
+            if self.secret_key == _INSECURE_DEV_SECRET_KEY:
+                raise ValueError(
+                    f"SECRET_KEY is still the insecure default 'changeme' while "
+                    f"ENVIRONMENT={self.environment!r}. Set a real random SECRET_KEY "
+                    f"in .env before starting outside development."
+                )
+            if self.database_url == _INSECURE_DEV_DATABASE_URL:
+                raise ValueError(
+                    f"DATABASE_URL is still the insecure default dev credential while "
+                    f"ENVIRONMENT={self.environment!r}. Set a real DATABASE_URL in .env "
+                    f"before starting outside development."
+                )
+        return self
 
 
 @lru_cache

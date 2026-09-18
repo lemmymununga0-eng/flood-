@@ -1,8 +1,9 @@
 import { useCallback } from "react";
 import { Link } from "react-router-dom";
 import KpiCard from "../components/ui/KpiCard";
+import RiskBadge from "../components/ui/RiskBadge";
 import StatusBadge from "../components/ui/StatusBadge";
-import { ErrorState, LoadingState } from "../components/ui/States";
+import { EmptyState, ErrorState, LoadingState } from "../components/ui/States";
 import { useFetch } from "../hooks/useFetch";
 import {
   fetchAlerts,
@@ -12,12 +13,20 @@ import {
   fetchSystemStatus,
 } from "../services/api";
 
+const RISK_KEYS = ["low", "moderate", "high", "critical"] as const;
+function normalizeRisk(r: string): (typeof RISK_KEYS)[number] {
+  const lower = r.toLowerCase();
+  return (RISK_KEYS as readonly string[]).includes(lower) ? (lower as any) : "moderate";
+}
+
 export default function Dashboard() {
   const [locState] = useFetch(useCallback(fetchLocations, []));
   const [eventsState] = useFetch(useCallback(fetchFloodEvents, []));
   const [alertsState] = useFetch(useCallback(fetchAlerts, []));
   const [predState] = useFetch(useCallback(fetchPredictions, []));
   const [statusState, retryStatus] = useFetch(useCallback(fetchSystemStatus, []));
+
+  const activeAlertsCount = alertsState.status === "success" ? alertsState.data.length : null;
 
   return (
     <div>
@@ -37,22 +46,30 @@ export default function Dashboard() {
       <div className="kpi-grid" style={{ marginBottom: "1rem" }}>
         <KpiCard
           label="Active Alerts"
-          value={alertsState.status === "success" ? alertsState.data.length : "…"}
+          value={activeAlertsCount ?? "…"}
           note="Dashboard-issued alerts"
+          icon="alerts"
+          accent={activeAlertsCount && activeAlertsCount > 0 ? "critical" : "blue"}
         />
         <KpiCard
           label="Monitored Locations"
           value={locState.status === "success" ? locState.data.length : "…"}
+          icon="map"
+          accent="green"
         />
         <KpiCard
           label="Flood Events on Record"
           value={eventsState.status === "success" ? eventsState.data.length : "…"}
           note="Reported, not a validated label"
+          icon="historical-events"
+          accent="gold"
         />
         <KpiCard
           label="Latest Prediction"
           value={predState.status === "success" && predState.data.length === 0 ? "None yet" : "…"}
           note="No model trained (Phases 5–9)"
+          icon="predictions"
+          accent="blue"
         />
       </div>
 
@@ -65,6 +82,33 @@ export default function Dashboard() {
           </p>
           <Link className="btn btn-primary" to="/risk-map">
             Open Risk Map
+          </Link>
+        </div>
+
+        <div className="card">
+          <h2>Recent warnings</h2>
+          {alertsState.status === "loading" && <LoadingState label="Loading alerts" />}
+          {alertsState.status === "error" && <ErrorState detail={alertsState.message} />}
+          {alertsState.status === "success" && alertsState.data.length === 0 && (
+            <EmptyState title="No warnings issued yet" />
+          )}
+          {alertsState.status === "success" && alertsState.data.length > 0 && (
+            <div>
+              {alertsState.data.slice(-4).reverse().map((a) => (
+                <div className="alert-row" key={a.id}>
+                  <div>
+                    <div>{a.title}</div>
+                    <div className="alert-meta">
+                      Location #{a.location_id} · {new Date(a.created_at).toLocaleString()}
+                    </div>
+                  </div>
+                  <RiskBadge level={normalizeRisk(a.risk_level)} />
+                </div>
+              ))}
+            </div>
+          )}
+          <Link className="btn btn-secondary" to="/alerts" style={{ marginTop: "0.6rem" }}>
+            View all
           </Link>
         </div>
 

@@ -7,16 +7,20 @@
   --bg-secondary: #0b1726;
   --surface: #101d2d;
   --surface-elevated: #142337;
+  --surface-highest: #192a40;
   --border: #1c2c40;
 
   /* Brand */
   --brand-blue: #1e5a7a;
   --brand-green: #2e8b68;
+  --brand-green-2: #3fa67c;
   --brand-gold: #c99a2e;
+  --brand-gold-2: #d8ac3a;
+  --on-gold: #1a1400;
 
   /* Risk */
   --risk-low: #3fa67c;
-  --risk-moderate: #d4a72c;
+  --risk-moderate: #d8ac3a;
   --risk-high: #d97732;
   --risk-critical: #c94a4a;
 

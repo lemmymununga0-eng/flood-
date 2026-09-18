@@ -1,5 +1,7 @@
 import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
+import { Icon } from "../components/ui/icons";
+import KpiCard from "../components/ui/KpiCard";
 import StatusBadge from "../components/ui/StatusBadge";
 import { EmptyState, ErrorState, LoadingState } from "../components/ui/States";
 import { canManageAlerts, useAuth } from "../context/AuthContext";
@@ -46,15 +48,39 @@ export default function CitizenReports() {
     }
   }
 
+  const counts =
+    state.status === "success"
+      ? state.data.reduce(
+          (acc, r) => {
+            if (r.status === "verified") acc.verified += 1;
+            else if (r.status === "rejected") acc.rejected += 1;
+            else acc.pending += 1;
+            return acc;
+          },
+          { pending: 0, verified: 0, rejected: 0 },
+        )
+      : null;
+
   return (
     <div>
       <div className="page-header">
-        <h1>Citizen Flood Reports</h1>
+        <h1 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <Icon name="reports" />
+          Citizen Flood Reports
+        </h1>
         <p>
           Community-submitted flooding reports, pending verification. Real submissions
           against the backend — see docs/api-inventory.md.
         </p>
       </div>
+
+      {counts && (
+        <div className="kpi-grid" style={{ marginBottom: "1rem" }}>
+          <KpiCard label="Pending" value={counts.pending} icon="reports" accent="gold" />
+          <KpiCard label="Verified" value={counts.verified} icon="reports" accent="green" />
+          <KpiCard label="Rejected" value={counts.rejected} icon="reports" accent="critical" />
+        </div>
+      )}
 
       {authStatus === "authenticated" ? (
         <form className="card" style={{ maxWidth: 520, marginBottom: "1.5rem" }} onSubmit={onSubmit}>

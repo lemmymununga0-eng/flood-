@@ -74,8 +74,9 @@ def system_status(db: Session = Depends(get_db)) -> SystemStatusOut:
                 name="Weather Data",
                 status="unavailable",
                 detail=(
-                    "No successful ingestion yet. NASA POWER requests from this "
-                    "environment are currently blocked - see docs/DATA-SOURCES.md."
+                    "No successful ingestion yet - POST /weather/{location_id}/ingest "
+                    "has not been run for any location. NASA POWER itself is reachable "
+                    "from this machine (verified 2026-09-18) - see docs/DATA-SOURCES.md."
                 ),
             )
         )

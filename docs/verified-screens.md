@@ -37,3 +37,67 @@ No automated Playwright test file was committed to the repository (`e2e_check.py
 lives in the session scratchpad, not `frontend/tests/` or `backend/tests/`) — it was a
 manual QA run, not a suite that runs in CI. Committing a maintained Playwright suite
 under `frontend/tests/e2e/` is recorded as follow-up work, not done this round.
+
+---
+
+## Update — 2026-09-08 re-audit
+
+No frontend source changed since this table was produced (confirmed via byte-identical build
+output), so every screen above is unchanged by non-regression. **No browser-automation tool was
+available in this session's audit pass**, so none of the live-navigation rows above were
+re-executed — they remain "last verified 2026-09-07," not re-confirmed today. Static-code
+inspection this session (route list, component reads, CSS breakpoints) found no evidence
+contradicting any row above, plus two new items not previously in this ledger:
+
+- `Settings.tsx` carries the same class of stale-content bug as `About.tsx` (see
+  `docs/bug-register.md` BUG-10) — not a regression, just not previously caught.
+- Screen count corrected to 21/26 registered routes (was reported as "22" previously) —
+  see `docs/project-requirements-matrix.md`'s 2026-09-08 update for the corrected list.
+
+---
+
+## Update — Phase 1 architecture-alignment refactor (2026-09-08)
+
+Re-screenshotted Dashboard, Login, and Create Alert (via puppeteer-core driving the local Chrome
+install, against the same live local backend/Postgres/frontend stack already running this
+session) immediately after the backend `repositories/`+`integrations/` split and the frontend
+`constants.ts`/layouts/`services/` split described in `docs/ARCHITECTURE.md`'s 2026-09-08 note.
+**Result: no visual regression** — all three screenshots are pixel-identical to the ones taken
+earlier in this same session, before the refactor. This is a live re-verification, not a
+code-read assumption.
+
+---
+
+## Update — Phase 2: Notifications screen goes live (2026-09-08)
+
+`/notifications` (`frontend/src/pages/Notifications.tsx`) was previously an honest static stub
+(no fetch, hardcoded `EmptyState`). Re-verified live this session as a real, backend-driven
+screen: a citizen account submitted a citizen report, an admin moderated it via the real
+`/reports` moderation flow, and — without any manual data seeding — the citizen's `/notifications`
+page rendered the real resulting notification card ("Your report was verified", the real review
+note text, an "Unread" badge, a real timestamp, and a working "Mark read" button), confirmed via
+a live puppeteer-core + local-Chrome screenshot (`.run_shots/notifications_populated.png`). This
+is the first screen in this project to go from "honest stub" to "real data" purely through backend
+work in this session, without any frontend-only mocking.
+
+---
+
+## Update — UI foundation pass (2026-09-08)
+
+Landing, Login, Signup, About, Dashboard, and Risk Map were restyled to the new "Premium
+Professional Dark Mode" token system (see `docs/UI-UX.md`'s 2026-09-08 update for full detail).
+**Re-verified live** via puppeteer-core + local Chrome at three widths — 1440px (desktop), 800px
+(tablet), 390px (mobile) — screenshots saved under `.run_shots/redesign/`:
+
+| Screen | 1440px | 800px | 390px | Notes |
+|---|---|---|---|---|
+| Landing | done | done | done | New hero SVG visual, icon-chip feature row |
+| Login | done | done | done | New split-panel layout; panel collapses to single column at or below 900px per CSS |
+| Signup | build-checked | - | - | Same pattern as Login, not separately re-screenshotted |
+| Dashboard | done | done | done | New icon KPI cards, new real "Recent warnings" card, sidebar icons + avatar all render correctly |
+| Risk Map | done | - | done | New two-column legend/map layout; map column stacks below legend at or below 900px, real marker click opens the new side panel |
+| About | build-checked | - | - | Icon chips + real methodology pipeline diagram, not separately re-screenshotted at other widths |
+
+This widens this repo's breakpoint coverage beyond the previously-recorded 2/8 (1440px/390px) —
+now includes a tablet-width (~800px) check for the two most layout-complex screens (Dashboard,
+Login). Full 8-breakpoint coverage remains an open item, tracked as before.

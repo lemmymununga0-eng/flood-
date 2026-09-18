@@ -5,6 +5,7 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.database.session import get_db
+from app.integrations.weather_provider import WeatherProvider, get_weather_provider
 from app.models.location import Location
 from app.models.weather_observation import WeatherObservation
 from app.schemas.weather import WeatherIngestResult, WeatherObservationOut
@@ -23,7 +24,11 @@ def list_observations(location_id: int, db: Session = Depends(get_db)) -> list[W
 
 
 @router.post("/{location_id}/ingest", response_model=WeatherIngestResult)
-def ingest_observations(location_id: int, db: Session = Depends(get_db)) -> dict:
+def ingest_observations(
+    location_id: int,
+    db: Session = Depends(get_db),
+    provider: WeatherProvider = Depends(get_weather_provider),
+) -> dict:
     """Attempt a real NASA POWER fetch for this location (last 10 days). Reports
     success or failure honestly — never substitutes fabricated data on failure."""
     location = db.get(Location, location_id)
@@ -33,6 +38,6 @@ def ingest_observations(location_id: int, db: Session = Depends(get_db)) -> dict
     end = datetime.now(timezone.utc).date()
     start = end - timedelta(days=10)
     result = fetch_and_store_nasa_power(
-        db, location, start.strftime("%Y%m%d"), end.strftime("%Y%m%d")
+        db, location, start.strftime("%Y%m%d"), end.strftime("%Y%m%d"), provider
     )
     return result

@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { Link, useParams } from "react-router-dom";
+import { Icon } from "../components/ui/icons";
 import { EmptyState, ErrorState, LoadingState } from "../components/ui/States";
 import { useFetch } from "../hooks/useFetch";
 import { fetchFloodEvents } from "../services/api";
@@ -40,6 +41,9 @@ export default function HistoricalEventDetail() {
       </div>
       <div className="grid grid-auto">
         <div className="card">
+          <div className="icon-chip">
+            <Icon name="historical-events" />
+          </div>
           <h3 style={{ marginTop: 0 }}>Reported impact</h3>
           <p className="text-secondary">{event.impact_note}</p>
           {event.deaths != null && <p className="text-secondary">Deaths reported: {event.deaths}</p>}
@@ -49,6 +53,9 @@ export default function HistoricalEventDetail() {
           <p className="text-secondary">{event.rivers || "Not specified in source"}</p>
         </div>
         <div className="card">
+          <div className="icon-chip">
+            <Icon name="data" />
+          </div>
           <h3 style={{ marginTop: 0 }}>Provenance</h3>
           <p className="text-secondary">
             <a href={event.source_url} target="_blank" rel="noreferrer">

@@ -6,89 +6,47 @@ reported honestly to the caller; no synthetic weather values are substituted. Se
 docs/DATA-SOURCES.md for why this specific call is expected to fail in this project's
 current cloud development sandbox (egress policy), while remaining expected to work
 from an unrestricted environment (a developer machine, or the eventual production host).
+
+The actual HTTP call and persistence are delegated to `app.integrations.weather_provider`
+and `app.repositories.weather_observation_repository` respectively — this module is pure
+orchestration so a test can inject a fake provider without a network dependency.
 """
 import logging
-from datetime import datetime, timezone
 
-import requests
 from sqlalchemy.orm import Session
 
-from app.core.config import get_settings
+from app.integrations.weather_provider import WeatherProvider
 from app.models.location import Location
-from app.models.weather_observation import WeatherObservation
+from app.repositories.weather_observation_repository import WeatherObservationRepository
 
 logger = logging.getLogger(__name__)
-settings = get_settings()
-
-NASA_POWER_PARAMETERS = "PRECTOTCORR,T2M,RH2M,WS2M"
 
 
 def fetch_and_store_nasa_power(
-    db: Session, location: Location, start: str, end: str, timeout_s: float = 15.0
+    db: Session, location: Location, start: str, end: str, provider: WeatherProvider, timeout_s: float = 15.0
 ) -> dict:
     """Attempt a real NASA POWER daily-point request for `location` between `start`
     and `end` (YYYYMMDD). Returns a dict describing exactly what happened — success or
     failure — for the API layer to relay honestly to clients."""
-    url = f"{settings.nasa_power_base_url}/daily/point"
-    params = {
-        "parameters": NASA_POWER_PARAMETERS,
-        "community": "AG",
-        "longitude": location.longitude,
-        "latitude": location.latitude,
-        "start": start,
-        "end": end,
-        "format": "JSON",
-    }
-    full_url = requests.Request("GET", url, params=params).prepare().url
+    outcome = provider.fetch_daily_point(
+        latitude=location.latitude, longitude=location.longitude, start=start, end=end, timeout_s=timeout_s
+    )
 
-    try:
-        response = requests.get(url, params=params, timeout=timeout_s)
-        response.raise_for_status()
-        payload = response.json()
-    except requests.RequestException as exc:
-        logger.warning("NASA POWER request failed for location_id=%s: %s", location.id, exc)
+    if outcome.status == "failed":
+        logger.warning("NASA POWER request failed for location_id=%s: %s", location.id, outcome.error_detail)
         return {
             "status": "failed",
             "location_id": location.id,
-            "source_url_attempted": full_url,
+            "source_url_attempted": outcome.source_url_attempted,
             "observations_stored": 0,
-            "error_detail": f"{type(exc).__name__}: {exc}",
+            "error_detail": outcome.error_detail,
         }
 
-    try:
-        params_block = payload["properties"]["parameter"]
-    except (KeyError, TypeError) as exc:
-        logger.warning("NASA POWER response shape unexpected for location_id=%s: %s", location.id, exc)
-        return {
-            "status": "failed",
-            "location_id": location.id,
-            "source_url_attempted": full_url,
-            "observations_stored": 0,
-            "error_detail": f"Unexpected response shape: {exc}",
-        }
-
-    stored = 0
-    now = datetime.now(timezone.utc)
-    dates = params_block.get("PRECTOTCORR", {}).keys()
-    for date_str in dates:
-        obs = WeatherObservation(
-            location_id=location.id,
-            observed_date=datetime.strptime(date_str, "%Y%m%d"),
-            precipitation_mm=params_block.get("PRECTOTCORR", {}).get(date_str),
-            temperature_c=params_block.get("T2M", {}).get(date_str),
-            relative_humidity_pct=params_block.get("RH2M", {}).get(date_str),
-            wind_speed_ms=params_block.get("WS2M", {}).get(date_str),
-            source="NASA POWER",
-            retrieved_at=now,
-        )
-        db.add(obs)
-        stored += 1
-    db.commit()
-
+    stored = WeatherObservationRepository(db).bulk_add(location.id, outcome.records)
     return {
         "status": "success",
         "location_id": location.id,
-        "source_url_attempted": full_url,
+        "source_url_attempted": outcome.source_url_attempted,
         "observations_stored": stored,
         "error_detail": None,
     }

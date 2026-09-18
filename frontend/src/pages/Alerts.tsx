@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 import { Link } from "react-router-dom";
+import KpiCard from "../components/ui/KpiCard";
 import RiskBadge from "../components/ui/RiskBadge";
 import { EmptyState, ErrorState, LoadingState } from "../components/ui/States";
 import { useFetch } from "../hooks/useFetch";
@@ -14,12 +15,32 @@ function normalizeRisk(r: string): (typeof RISK_KEYS)[number] {
 export default function Alerts() {
   const [state, retry] = useFetch(useCallback(fetchAlerts, []));
 
+  const counts =
+    state.status === "success"
+      ? state.data.reduce(
+          (acc, a) => {
+            acc[normalizeRisk(a.risk_level)] += 1;
+            return acc;
+          },
+          { low: 0, moderate: 0, high: 0, critical: 0 },
+        )
+      : null;
+
   return (
     <div>
       <div className="page-header">
-        <h1>Early Warning & Alerts</h1>
+        <h1>Early Warning &amp; Alerts</h1>
         <p>Dashboard-issued alerts. No SMS/email provider is configured in this build.</p>
       </div>
+
+      {state.status === "success" && (
+        <div className="kpi-grid" style={{ marginBottom: "1rem" }}>
+          <KpiCard label="Total Alerts" value={state.data.length} icon="alerts" accent="blue" />
+          <KpiCard label="Critical" value={counts!.critical} icon="warning" accent="critical" />
+          <KpiCard label="High" value={counts!.high} icon="warning" accent="gold" />
+          <KpiCard label="Low / Moderate" value={counts!.low + counts!.moderate} icon="alerts" accent="green" />
+        </div>
+      )}
 
       <div style={{ marginBottom: "1rem" }}>
         <Link className="btn btn-primary" to="/alerts/create">

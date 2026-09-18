@@ -1,4 +1,6 @@
 import { useCallback, useState } from "react";
+import { Icon } from "../components/ui/icons";
+import KpiCard from "../components/ui/KpiCard";
 import StatusBadge from "../components/ui/StatusBadge";
 import { ErrorState, LoadingState } from "../components/ui/States";
 import { canManageAlerts, useAuth } from "../context/AuthContext";
@@ -34,13 +36,39 @@ export default function DataSources() {
   return (
     <div>
       <div className="page-header">
-        <h1>Data Sources</h1>
+        <h1 style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <Icon name="data-sources" />
+          Data Sources
+        </h1>
         <p>
           The real catalog of external data this project depends on. Status reflects the
           last real connectivity check — see docs/DATA-SOURCES.md for why NASA POWER and
           DMMU/WARMA are currently unreachable from this development environment.
         </p>
       </div>
+
+      {state.status === "success" && (
+        <div className="kpi-grid" style={{ marginBottom: "1rem" }}>
+          <KpiCard
+            label="Operational"
+            value={state.data.filter((s) => s.last_check_status === "ok").length}
+            icon="data-sources"
+            accent="green"
+          />
+          <KpiCard
+            label="Failed"
+            value={state.data.filter((s) => s.last_check_status === "failed").length}
+            icon="warning"
+            accent="critical"
+          />
+          <KpiCard
+            label="Unknown"
+            value={state.data.filter((s) => s.last_check_status === "unknown").length}
+            icon="data-sources"
+            accent="gold"
+          />
+        </div>
+      )}
 
       {state.status === "loading" && <LoadingState label="Loading data sources" />}
       {state.status === "error" && <ErrorState detail={state.message} onRetry={retry} />}
