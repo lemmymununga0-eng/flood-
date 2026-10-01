@@ -1,12 +1,38 @@
+import html
+import re
 from datetime import datetime
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
+
+# Citizen reports are free text submitted by the public and are rendered back to
+# moderators. React escapes on render today, so stored markup is inert in THIS
+# client -- but storing it means any future consumer (an export, an email digest, a
+# native app, a templated PDF) inherits the hazard. Sanitize at the boundary instead
+# of relying on every downstream renderer to be careful.
+_TAG_RE = re.compile(r"<[^>]*>")
+
+
+def _strip_markup(value: str) -> str:
+    """Remove HTML tags and decode entities, preserving the human text."""
+    without_tags = _TAG_RE.sub("", value)
+    return html.unescape(without_tags).strip()
 
 
 class CitizenReportCreate(BaseModel):
     location_id: int | None = None
     description: str = Field(min_length=5)
     severity: str = "unknown"
+
+    @field_validator("description")
+    @classmethod
+    def strip_markup(cls, v: str) -> str:
+        cleaned = _strip_markup(v)
+        if len(cleaned) < 5:
+            raise ValueError(
+                "description must contain at least 5 characters of actual text "
+                "once HTML markup is removed"
+            )
+        return cleaned
 
 
 class CitizenReportOut(BaseModel):

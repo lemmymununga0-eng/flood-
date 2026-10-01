@@ -3,6 +3,7 @@
 No secrets are hardcoded here. See ../../../.env.example for every variable this
 project's backend recognizes.
 """
+import pathlib
 from functools import lru_cache
 
 from pydantic import model_validator
@@ -26,7 +27,7 @@ class Settings(BaseSettings):
     nasa_power_base_url: str = "https://power.larc.nasa.gov/api/temporal"
     openweather_api_key: str = ""
 
-    model_artifact_dir: str = "./ai-engine/models"
+    model_artifact_dir: str = "./ml_artifacts"
     active_model_version: str = ""
 
     # Auth (JWT). secret_key above is reused as the signing key — see .env.example;
@@ -38,6 +39,21 @@ class Settings(BaseSettings):
     @property
     def cors_origins_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
+
+    @property
+    def model_artifact_path(self) -> pathlib.Path:
+        """Absolute artifact directory.
+
+        `model_artifact_dir` defaults to the relative "./ml_artifacts", which silently
+        resolved against the current working directory — so inference succeeded when
+        launched from backend/ and raised ModelArtifactsUnavailable when launched from
+        the repository root or from a test runner. A relative value is now anchored to
+        the backend package root instead of the CWD.
+        """
+        p = pathlib.Path(self.model_artifact_dir).expanduser()
+        if p.is_absolute():
+            return p
+        return (pathlib.Path(__file__).resolve().parents[2] / p).resolve()
 
     @model_validator(mode="after")
     def _refuse_insecure_defaults_outside_development(self) -> "Settings":

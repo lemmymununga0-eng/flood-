@@ -1,7 +1,9 @@
 // Shared HTTP plumbing used by every domain service file in this folder — the API
 // base URL, token storage, error type, and the two low-level request helpers.
 
-const API_BASE = "http://localhost:8000/api/v1";
+// Overridable per deployment/dev-port via VITE_API_BASE_URL; falls back to the
+// long-standing local default so existing setups keep working unchanged.
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "http://localhost:8000/api/v1";
 const TOKEN_STORAGE_KEY = "floodshield_access_token";
 
 export function getStoredToken(): string | null {

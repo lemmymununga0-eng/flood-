@@ -1,22 +1,12 @@
 import { Link } from "react-router-dom";
+import BrandMark from "../components/ui/BrandMark";
 import { Icon } from "../components/ui/icons";
 
 export default function Landing() {
   return (
     <div className="public-page">
       <header className="public-topbar">
-        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", fontWeight: 700 }}>
-          <span
-            aria-hidden="true"
-            style={{
-              width: 28,
-              height: 28,
-              borderRadius: 7,
-              background: "linear-gradient(135deg, var(--brand-blue), var(--brand-green))",
-            }}
-          />
-          FLOODSHIELD ZAMBIA
-        </div>
+        <BrandMark />
         <nav>
           <Link className="btn btn-secondary" to="/about">
             How It Works
@@ -37,7 +27,7 @@ export default function Landing() {
             Predict Risk. Act Earlier. <span className="accent">Protect Communities.</span>
           </h1>
           <p>
-            FloodShield Zambia transforms weather and environmental data into
+            Flood Prediction System ZM transforms weather and environmental data into
             understandable flood-risk intelligence and early-warning information for
             disaster management, local authorities, researchers, and communities across
             Zambia.

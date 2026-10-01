@@ -12,9 +12,9 @@ const PIPELINE_STEPS = [
 
 export default function About() {
   return (
-    <div>
+    <div className="page-content">
       <div className="page-header">
-        <h1>About FloodShield Zambia</h1>
+        <h1>About Flood Prediction System ZM</h1>
       </div>
 
       <div className="grid grid-auto" style={{ marginBottom: "1.25rem" }}>
@@ -58,7 +58,7 @@ export default function About() {
 
       <div className="card" style={{ maxWidth: 900 }}>
         <p className="text-secondary">
-          FloodShield Zambia is an AI-powered flood prediction and early-warning
+          Flood Prediction System ZM is an AI-powered flood prediction and early-warning
           research system for the Zambian context. It uses historical and near-real-time
           meteorological data, machine learning, and explainable AI to estimate flood
           risk and provide actionable early warnings for citizens, communities, farmers,
@@ -67,7 +67,7 @@ export default function About() {
         </p>
         <p className="text-secondary">
           <strong>
-            FloodShield predictions are risk estimates generated from available data and
+            Flood Prediction System ZM's predictions are risk estimates generated from available data and
             should support, not replace, professional emergency-management decisions.
           </strong>
         </p>

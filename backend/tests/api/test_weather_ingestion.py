@@ -20,14 +20,18 @@ def test_ingest_success_stores_observations(client, seeded_location):
             precipitation_mm=12.5,
             temperature_c=24.0,
             relative_humidity_pct=80.0,
-            wind_speed_ms=3.1,
+            temperature_max_c=29.4,
+            temperature_min_c=18.2,
+            wind_speed_10m_ms=3.1,
         ),
         WeatherRecord(
             observed_date=datetime(2026, 1, 2, tzinfo=timezone.utc),
             precipitation_mm=0.0,
             temperature_c=26.5,
             relative_humidity_pct=55.0,
-            wind_speed_ms=2.0,
+            temperature_max_c=27.1,
+            temperature_min_c=17.0,
+            wind_speed_10m_ms=2.0,
         ),
     ]
     _override_provider(client, WeatherFetchOutcome("success", "https://example.test/mock", records, None))

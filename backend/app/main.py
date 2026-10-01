@@ -12,11 +12,17 @@ state.
 import logging
 from contextlib import asynccontextmanager
 
-from fastapi import FastAPI, HTTPException, Request
+from fastapi import FastAPI, Request
+from fastapi.encoders import jsonable_encoder
 from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from slowapi.errors import RateLimitExceeded
+# Starlette's base HTTPException, NOT fastapi's subclass. The router itself raises
+# the base class for an unknown path or a disallowed method, so a handler registered
+# only on fastapi.HTTPException never saw those and they escaped with Starlette's
+# default {"detail": ...} body instead of this app's {"error", "message"} shape.
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.api import (
     alerts,
@@ -70,12 +76,16 @@ def rate_limit_handler(request: Request, exc: RateLimitExceeded) -> JSONResponse
     )
 
 
-@app.exception_handler(HTTPException)
-def http_exception_handler(request: Request, exc: HTTPException) -> JSONResponse:
+@app.exception_handler(StarletteHTTPException)
+def http_exception_handler(request: Request, exc: StarletteHTTPException) -> JSONResponse:
     """Centralized error shape: {"error": <machine code>, "message": <human text>}.
     Routes that already raise HTTPException with a dict detail pass through as-is;
     routes using the older plain-string detail (or FastAPI's own validation errors)
-    are normalized here so every error response has the same shape."""
+    are normalized here so every error response has the same shape.
+
+    Registered on Starlette's base HTTPException so that router-level 404s and 405s --
+    which Starlette raises directly, bypassing fastapi.HTTPException -- are normalized
+    too. fastapi.HTTPException subclasses it, so route-raised errors still match."""
     if isinstance(exc.detail, dict) and "error" in exc.detail:
         body = exc.detail
     else:
@@ -93,7 +103,10 @@ def validation_exception_handler(request: Request, exc: RequestValidationError) 
         content={
             "error": "validation_error",
             "message": "Request failed validation.",
-            "fields": exc.errors(),
+            # jsonable_encoder: a custom field_validator that raises puts the raised
+            # exception object into each error's "ctx", which json.dumps cannot
+            # serialize -- without this the 422 became a 500 inside the handler.
+            "fields": jsonable_encoder(exc.errors()),
         },
     )
 

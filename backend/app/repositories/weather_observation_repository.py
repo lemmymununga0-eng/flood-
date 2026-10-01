@@ -24,8 +24,10 @@ class WeatherObservationRepository:
                     observed_date=record.observed_date,
                     precipitation_mm=record.precipitation_mm,
                     temperature_c=record.temperature_c,
+                    temperature_max_c=record.temperature_max_c,
+                    temperature_min_c=record.temperature_min_c,
                     relative_humidity_pct=record.relative_humidity_pct,
-                    wind_speed_ms=record.wind_speed_ms,
+                    wind_speed_10m_ms=record.wind_speed_10m_ms,
                     source=source,
                     retrieved_at=now,
                 )

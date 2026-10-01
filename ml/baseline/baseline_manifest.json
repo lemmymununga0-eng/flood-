@@ -1,0 +1,362 @@
+{
+  "generated_utc": "2026-09-26T16:26:39.969222+00:00",
+  "purpose": "Frozen inventory of CURRENT_RESEARCH_BASELINE. The corrected pipeline writes only to OUT_ROOT and never modifies anything listed here.",
+  "data_root": "C:\\Users\\Humphrey\\OneDrive\\Desktop\\flooddata",
+  "inputs": {
+    "locations": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\locations.csv",
+      "exists": true,
+      "bytes": 5029,
+      "modified_utc": "2026-09-18T11:11:31.330493+00:00",
+      "sha256": "a0ea8530e876b463c29f1a467fcd2f02a024e47d81fe300549a0d7143443d2e0"
+    },
+    "weather_nasa_power": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\nasa_power_zambia_flood_locations.csv",
+      "exists": true,
+      "bytes": 61942494,
+      "modified_utc": "2026-09-25T09:15:06.452793+00:00",
+      "sha256": "d94c5e720933039ceeb15620f510d8a740374df923d0131fd403e93ee2acea73"
+    },
+    "events_desinventar": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\zambia_desinventar_flood_events_full.csv",
+      "exists": true,
+      "bytes": 72810,
+      "modified_utc": "2026-09-16T13:14:34.401454+00:00",
+      "sha256": "79f11e2fcc160ea285c2c76544292b47c8242f199f971fb988476880ade3d66f"
+    },
+    "events_dfo": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\external\\dfo_zambia_events.csv",
+      "exists": true,
+      "bytes": 6445,
+      "modified_utc": "2026-09-25T06:43:59.903529+00:00",
+      "sha256": "2a5a38d79ff8e13b1bae77b49edbf39963b31ff16f02de0805c92ba00910cc04"
+    },
+    "events_curated_log": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\FloodShield-Zambia\\ai-engine\\data\\external\\zambia_flood_events_log.csv",
+      "exists": true,
+      "bytes": 6814,
+      "modified_utc": "2026-09-08T22:15:56.901820+00:00",
+      "sha256": "b0d61076a3e3f8c419b23966bb2efae49ed4864b344f639d69fe2c79c8595b50"
+    },
+    "climate_nino34": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\noaa_nino34_hadisst_1980_2026.csv",
+      "exists": true,
+      "bytes": 9807,
+      "modified_utc": "2026-09-16T10:01:26.494035+00:00",
+      "sha256": "b583de45c6f60ea78ce8a3cc8a2310c6da9d03fa65400976eca400e358b58b85"
+    },
+    "climate_dmi": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\noaa_dmi_had_1980_2026.csv",
+      "exists": true,
+      "bytes": 9804,
+      "modified_utc": "2026-09-16T10:00:58.631135+00:00",
+      "sha256": "b5ed64f35b4bfbb3938367ff2ede98239e7483e850e73dd00b3e5eab863fd76f"
+    },
+    "glofas_discharge": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\glofas_river_discharge.csv",
+      "exists": true,
+      "bytes": 5122929,
+      "modified_utc": "2026-09-25T06:50:07.421870+00:00",
+      "sha256": "932b95ae9248aeffaa2a4d782779956b465e50f710b613e83ccc01e8a8186297"
+    },
+    "master_dataset": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\flood_master_dataset.csv",
+      "exists": true,
+      "bytes": 160628923,
+      "modified_utc": "2026-09-18T10:03:09.196034+00:00",
+      "sha256": "3ea431a7177578508da00b188009de038c52055278293dcb19f0d4372e67c8e6"
+    }
+  },
+  "baseline_artifacts": {
+    "research_bundle": {
+      "calibration_metadata.json": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\models\\logistic_regression\\calibration_metadata.json",
+        "exists": true,
+        "bytes": 343,
+        "modified_utc": "2026-09-25T00:02:29.897737+00:00",
+        "sha256": "e7a29b81712ed5accc091fc2215927e0bc9e5604b301830a2a4556ca1b80afc6"
+      },
+      "calibrator.joblib": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\models\\logistic_regression\\calibrator.joblib",
+        "exists": true,
+        "bytes": 1539,
+        "modified_utc": "2026-09-25T00:02:29.892421+00:00",
+        "sha256": "1fc40e7fd3d0e95a252a76ab5d57566f22f373e9cf09b9b1a70c64182e941891"
+      },
+      "experiment.json": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\models\\logistic_regression\\experiment.json",
+        "exists": true,
+        "bytes": 152,
+        "modified_utc": "2026-09-24T23:58:47.588342+00:00",
+        "sha256": "41289972598867b7cf93845ec542701a5ae2d74ef66af49c208827be63665b05"
+      },
+      "feature_columns.json": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\models\\logistic_regression\\feature_columns.json",
+        "exists": true,
+        "bytes": 82,
+        "modified_utc": "2026-09-24T23:58:47.586510+00:00",
+        "sha256": "9f539ec71a7f9fbffd8ca45c79faf62b8703f6f4d54d1ff8acf7004643ef68fc"
+      },
+      "model.joblib": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\models\\logistic_regression\\model.joblib",
+        "exists": true,
+        "bytes": 911,
+        "modified_utc": "2026-09-24T23:58:47.574189+00:00",
+        "sha256": "82a7eb45723f1eee95ba7d11e6f0f9e8a092cc4414d66531b8fbceb1e2364464"
+      },
+      "scaler.joblib": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\models\\logistic_regression\\scaler.joblib",
+        "exists": true,
+        "bytes": 599,
+        "modified_utc": "2026-09-24T23:58:47.580656+00:00",
+        "sha256": "7924a7e1511feb42fdb6ab39b9c7a3199189e1429dfa154087c2ec8696254cfb"
+      },
+      "threshold_metadata.json": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\models\\logistic_regression\\threshold_metadata.json",
+        "exists": true,
+        "bytes": 1186,
+        "modified_utc": "2026-09-25T00:02:52.867629+00:00",
+        "sha256": "5ea477af22665e61fb972a77f86a341ade43b5c5027fb37c36fbfd86184788d7"
+      }
+    },
+    "backend_deployed": {
+      "calibration_metadata.json": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\FloodShield-Zambia\\backend\\ml_artifacts\\flood_risk_lr_v1\\calibration_metadata.json",
+        "exists": true,
+        "bytes": 343,
+        "modified_utc": "2026-09-25T04:04:09.044992+00:00",
+        "sha256": "e7a29b81712ed5accc091fc2215927e0bc9e5604b301830a2a4556ca1b80afc6"
+      },
+      "calibrator.joblib": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\FloodShield-Zambia\\backend\\ml_artifacts\\flood_risk_lr_v1\\calibrator.joblib",
+        "exists": true,
+        "bytes": 1539,
+        "modified_utc": "2026-09-25T04:04:08.881891+00:00",
+        "sha256": "1fc40e7fd3d0e95a252a76ab5d57566f22f373e9cf09b9b1a70c64182e941891"
+      },
+      "feature_columns.json": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\FloodShield-Zambia\\backend\\ml_artifacts\\flood_risk_lr_v1\\feature_columns.json",
+        "exists": true,
+        "bytes": 82,
+        "modified_utc": "2026-09-25T04:04:08.922226+00:00",
+        "sha256": "9f539ec71a7f9fbffd8ca45c79faf62b8703f6f4d54d1ff8acf7004643ef68fc"
+      },
+      "model.joblib": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\FloodShield-Zambia\\backend\\ml_artifacts\\flood_risk_lr_v1\\model.joblib",
+        "exists": true,
+        "bytes": 911,
+        "modified_utc": "2026-09-25T04:04:08.786450+00:00",
+        "sha256": "82a7eb45723f1eee95ba7d11e6f0f9e8a092cc4414d66531b8fbceb1e2364464"
+      },
+      "scaler.joblib": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\FloodShield-Zambia\\backend\\ml_artifacts\\flood_risk_lr_v1\\scaler.joblib",
+        "exists": true,
+        "bytes": 599,
+        "modified_utc": "2026-09-25T04:04:08.830074+00:00",
+        "sha256": "7924a7e1511feb42fdb6ab39b9c7a3199189e1429dfa154087c2ec8696254cfb"
+      },
+      "threshold_metadata.json": {
+        "path": "Users\\Humphrey\\OneDrive\\Desktop\\FloodShield-Zambia\\backend\\ml_artifacts\\flood_risk_lr_v1\\threshold_metadata.json",
+        "exists": true,
+        "bytes": 1186,
+        "modified_utc": "2026-09-25T04:04:08.991150+00:00",
+        "sha256": "5ea477af22665e61fb972a77f86a341ade43b5c5027fb37c36fbfd86184788d7"
+      }
+    }
+  },
+  "baseline_processed": {
+    "train.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\processed\\train.csv",
+      "exists": true,
+      "bytes": 178434384,
+      "modified_utc": "2026-09-18T11:12:19.514744+00:00"
+    },
+    "validation.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\processed\\validation.csv",
+      "exists": true,
+      "bytes": 38529240,
+      "modified_utc": "2026-09-18T11:12:27.395251+00:00"
+    },
+    "test.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\processed\\test.csv",
+      "exists": true,
+      "bytes": 38838934,
+      "modified_utc": "2026-09-18T11:12:35.030281+00:00"
+    }
+  },
+  "baseline_reports": {
+    "calibration_curve_isotonic.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\calibration_curve_isotonic.csv",
+      "exists": true,
+      "bytes": 228,
+      "modified_utc": "2026-09-18T11:13:52.660647+00:00",
+      "sha256": "c05b3957389b604db61eab8b4b754c6ddcd63203fe50ee5a1acff814aac3c2ec"
+    },
+    "calibration_curve_raw.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\calibration_curve_raw.csv",
+      "exists": true,
+      "bytes": 410,
+      "modified_utc": "2026-09-18T11:13:52.404563+00:00",
+      "sha256": "bf55705f033bcd1434539126dec708b4341d9a2f3a81ca505e51d0ec34f19bbb"
+    },
+    "calibration_curve_sigmoid.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\calibration_curve_sigmoid.csv",
+      "exists": true,
+      "bytes": 430,
+      "modified_utc": "2026-09-18T11:13:52.533641+00:00",
+      "sha256": "ee94828551c5fd3fd2681903dc83983f782dc973dbf952f6fd9a11ac2740a658"
+    },
+    "calibration_summary.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\calibration_summary.csv",
+      "exists": true,
+      "bytes": 163,
+      "modified_utc": "2026-09-18T11:13:52.664646+00:00",
+      "sha256": "4ade6e987a9ff0aebfcd6533cfbfcb4d78c7c534e3ee2b07b6290136e36ae035"
+    },
+    "coordinate_updates.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\coordinate_updates.csv",
+      "exists": true,
+      "bytes": 2574,
+      "modified_utc": "2026-09-18T11:11:31.333498+00:00",
+      "sha256": "b5c5e392090ba73ef443efe444008b4bdb753bae76b5a4316f8d4b3e1d4a5fbd"
+    },
+    "experiment_results.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\experiment_results.csv",
+      "exists": true,
+      "bytes": 7620,
+      "modified_utc": "2026-09-18T11:57:33.173023+00:00",
+      "sha256": "58fd7d67b948b9f454da2cdd307b573e8bfc0df513e99246530133e3d6d9d38b"
+    },
+    "false_negatives.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\false_negatives.csv",
+      "exists": true,
+      "bytes": 594,
+      "modified_utc": "2026-09-24T23:59:09.349332+00:00",
+      "sha256": "6f05a75745483b3e96824957bdf7ce140415e7fde3f374b3e8abd06c68eba6e5"
+    },
+    "false_positives_sample.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\false_positives_sample.csv",
+      "exists": true,
+      "bytes": 2476,
+      "modified_utc": "2026-09-24T23:59:26.179557+00:00",
+      "sha256": "bd3a1e50074c74cf39fab66034d7fc855ebba77336cac18b37cdc6dbfa8cc6b8"
+    },
+    "rainfall_window_analysis.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\rainfall_window_analysis.csv",
+      "exists": true,
+      "bytes": 556,
+      "modified_utc": "2026-09-18T11:15:24.507506+00:00",
+      "sha256": "c518cc56327c4567bb31a9602d47ec4a0c861b9324b8cbc00636075c748bbac5"
+    },
+    "shap_example_prediction_logistic_regression.json": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\shap_example_prediction_logistic_regression.json",
+      "exists": true,
+      "bytes": 287,
+      "modified_utc": "2026-09-18T10:32:21.139089+00:00",
+      "sha256": "26032f77b24c5ea347cdd4a46a301793fea6c2f876c63d27c99db980f8a92ec0"
+    },
+    "shap_global_importance_logistic_regression.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\shap_global_importance_logistic_regression.csv",
+      "exists": true,
+      "bytes": 191,
+      "modified_utc": "2026-09-18T10:32:21.133717+00:00",
+      "sha256": "d04077b5bedbce842e7809e88be3b12e4655084500c81d712b95e8940a9c5d31"
+    },
+    "threshold_candidates.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\threshold_candidates.csv",
+      "exists": true,
+      "bytes": 618,
+      "modified_utc": "2026-09-18T11:10:34.747930+00:00",
+      "sha256": "50193a712acedbfbd71c09a745c094b488690d3425df12fba87420c713ced37c"
+    },
+    "threshold_sweep_validation.csv": {
+      "path": "Users\\Humphrey\\OneDrive\\Desktop\\flooddata\\data\\reports\\threshold_sweep_validation.csv",
+      "exists": true,
+      "bytes": 11140,
+      "modified_utc": "2026-09-18T11:10:33.533902+00:00",
+      "sha256": "3956a5e90faa0c4539fbe28c438bdc7c3032343b193df469d8ffa5b34bb610ff"
+    }
+  },
+  "baseline_metrics": {
+    "n_runs": 40,
+    "selected_model": "LogisticRegression / A_weather_only",
+    "by_split": {
+      "val": {
+        "roc_auc": 0.6011752718141395,
+        "pr_auc": 0.0022685363594252,
+        "precision": 0.0027776715976708,
+        "recall": 0.7032258064516129,
+        "f1": 0.0055334864772251,
+        "brier": 0.2475656366162644,
+        "tp": 218,
+        "fp": 78265,
+        "tn": 85343,
+        "fn": 92
+      },
+      "test": {
+        "roc_auc": 0.7772217790313057,
+        "pr_auc": 0.0013642876677452,
+        "precision": 0.0006346328195829,
+        "recall": 0.8888888888888888,
+        "f1": 0.0012683600783665,
+        "brier": 0.2678012578337621,
+        "tp": 56,
+        "fp": 88184,
+        "tn": 75671,
+        "fn": 7
+      }
+    },
+    "validation_ranking_top3": [
+      {
+        "experiment": "A_weather_only",
+        "model": "GradientBoosting",
+        "roc_auc": 0.6180925276151809
+      },
+      {
+        "experiment": "A_weather_only",
+        "model": "LogisticRegression",
+        "roc_auc": 0.6011752718141395
+      },
+      {
+        "experiment": "B_weather_plus_rainfall_accum",
+        "model": "LogisticRegression",
+        "roc_auc": 0.597622819138113
+      }
+    ],
+    "selection_contamination_note": "Model selection was contaminated by test-set inspection. On the validation split GradientBoosting/A_weather_only ranks first (0.618) ahead of LogisticRegression/A_weather_only (0.601); the latter was selected citing its test ROC-AUC of 0.777. Recorded here so the baseline's provenance is not misrepresented."
+  },
+  "target_definition": {
+    "column": "flood_next_7d",
+    "rule": "1 iff a day- or month-precision DesInventar event occurs at the same location within (t, t+7]",
+    "year_precision_events": "excluded from positives; implicitly treated as NEGATIVE days, which the corrected pipeline changes",
+    "sources_used": [
+      "DesInventar (UNDRR)"
+    ]
+  },
+  "splits": {
+    "train": {
+      "rows": 765224,
+      "date_min": "1990-01-01",
+      "date_max": "2015-07-20",
+      "locations": 82,
+      "positives": 1213,
+      "positive_rate": 0.00158516
+    },
+    "validation": {
+      "rows": 163918,
+      "date_min": "2015-07-21",
+      "date_max": "2021-01-08",
+      "locations": 82,
+      "positives": 310,
+      "positive_rate": 0.00189119
+    },
+    "test": {
+      "rows": 163918,
+      "date_min": "2021-01-09",
+      "date_max": "2026-06-30",
+      "locations": 82,
+      "positives": 63,
+      "positive_rate": 0.00038434
+    }
+  }
+}

@@ -9,8 +9,9 @@
 .sidebar {
   width: var(--sidebar-w);
   flex-shrink: 0;
-  background: var(--bg-secondary);
-  border-right: 1px solid var(--border);
+  background: var(--nav-bg);
+  color: var(--nav-text);
+  border-right: 1px solid var(--nav-border);
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -28,15 +29,34 @@
   gap: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.02em;
-  border-bottom: 1px solid var(--border);
+  color: var(--nav-text-strong);
+  border-bottom: 1px solid var(--nav-border);
 }
 
-.sidebar-brand .mark {
-  width: 28px;
-  height: 28px;
-  border-radius: 7px;
-  background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
-  flex-shrink: 0;
+.sidebar-brand .sidebar-close {
+  /* Qualified by the parent so it outranks `.btn { display: inline-flex }`, which is
+     defined later in this file at equal specificity. Same trap as .menu-toggle. */
+  display: none;
+  margin-left: auto;
+  padding: 0.3rem 0.55rem;
+  background: transparent;
+  border-color: var(--nav-border);
+  color: var(--nav-text-strong);
+}
+
+.sidebar-brand .sidebar-close:hover {
+  border-color: var(--nav-text);
+}
+
+.sidebar-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  border: none;
+  padding: 0;
+  background: rgba(10, 8, 20, 0.45);
+  z-index: 39;
+  cursor: default;
 }
 
 .sidebar-nav {
@@ -51,7 +71,7 @@
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--text-muted);
+  color: var(--nav-label);
   padding: 0.9rem 0.6rem 0.3rem;
 }
 
@@ -59,9 +79,10 @@
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  transition: background-color var(--transition), color var(--transition);
   padding: 0.55rem 0.7rem;
   border-radius: var(--radius-sm);
-  color: var(--text-secondary);
+  color: var(--nav-text);
   text-decoration: none;
   font-size: 0.88rem;
   cursor: pointer;
@@ -72,13 +93,13 @@
 }
 
 .nav-item:hover {
-  background: var(--surface-elevated);
-  color: var(--text-primary);
+  background: var(--nav-bg-hover);
+  color: var(--nav-text-strong);
 }
 
 .nav-item.active {
-  background: var(--surface-elevated);
-  color: var(--text-primary);
+  background: var(--nav-bg-hover);
+  color: var(--nav-text-strong);
   box-shadow: inset 3px 0 0 var(--brand-gold);
 }
 
@@ -90,7 +111,7 @@
 
 .sidebar-footer {
   padding: 0.75rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--nav-border);
 }
 
 .topbar {
@@ -123,7 +144,9 @@
   border-radius: 50%;
   flex-shrink: 0;
   background: linear-gradient(135deg, var(--brand-blue), var(--brand-green));
-  color: var(--text-primary);
+  /* Dark initials on the blue->green gradient fail contrast; white clears it. */
+  color: #ffffff;
+  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -131,7 +154,13 @@
   font-weight: 700;
 }
 
-.menu-toggle {
+/* The toggle is mobile-only (see the max-width: 900px block below).
+   It carries both `btn` and `menu-toggle`, and `.btn` sets display: inline-flex
+   further down this file — at equal specificity the later rule wins, so a bare
+   `.menu-toggle` selector lost and the control rendered at every width, where it
+   does nothing because the sidebar is static above 900px. Qualifying by the parent
+   raises specificity so the intended hide survives regardless of source order. */
+.topbar .menu-toggle {
   display: none;
 }
 
@@ -153,7 +182,9 @@
 
 .page-header h1 {
   margin: 0 0 0.3rem 0;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .page-header p {
@@ -175,6 +206,9 @@
 
 /* ---- Cards / grid ---- */
 .card {
+  /* Safety net: a long unbroken string (a slash-joined role list, a URL)
+     otherwise pushes past the card edge on narrow screens. */
+  overflow-wrap: break-word;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -239,7 +273,7 @@
 .kpi-icon {
   width: 38px;
   height: 38px;
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -380,6 +414,8 @@
   color: var(--text-primary);
   cursor: pointer;
   text-decoration: none;
+  transition: border-color var(--transition), background-color var(--transition),
+    filter var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 
 .btn:hover {
@@ -394,6 +430,12 @@
 
 .btn-primary:hover {
   filter: brightness(1.05);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
 }
 
 .btn-secondary {
@@ -563,8 +605,10 @@ tr:last-child td {
 }
 
 .hero h1 {
-  font-size: 2.2rem;
-  line-height: 1.15;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
   margin: 0 0 1rem;
 }
 
@@ -606,7 +650,7 @@ tr:last-child td {
 .icon-chip {
   width: 40px;
   height: 40px;
-  border-radius: var(--radius-sm);
+  border-radius: 50%;
   background: var(--surface-elevated);
   display: flex;
   align-items: center;
@@ -726,8 +770,24 @@ tr:last-child td {
   .sidebar.open {
     transform: translateX(0);
   }
-  .menu-toggle {
+  .topbar .menu-toggle {
     display: inline-flex;
+  }
+  .sidebar-brand .sidebar-close {
+    display: inline-flex;
+  }
+  .sidebar-backdrop {
+    display: block;
+  }
+  /* The landing header's nav buttons wrap mid-word at phone widths. */
+  .public-topbar {
+    flex-wrap: wrap;
+    row-gap: 0.6rem;
+  }
+  .public-topbar nav {
+    width: 100%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
   }
   .table-wrap table {
     display: none;
@@ -766,4 +826,83 @@ tr:last-child td {
   .auth-panel {
     padding: 2rem 1.25rem;
   }
+}
+
+/* Horizontal meter used by Analytics to show real proportions without pulling in a
+   charting dependency. Colors come from the existing risk/brand tokens only. */
+.bar-row {
+  display: grid;
+  grid-template-columns: minmax(110px, 1.2fr) 3fr auto;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem 0;
+  font-size: 0.83rem;
+}
+
+.bar-track {
+  display: block;
+  background: var(--surface-highest);
+  border-radius: 999px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.bar-fill {
+  display: block;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--brand-blue);
+}
+
+.bar-fill.low { background: var(--risk-low); }
+.bar-fill.moderate { background: var(--risk-moderate); }
+.bar-fill.high { background: var(--risk-high); }
+.bar-fill.critical { background: var(--risk-critical); }
+.bar-fill.gold { background: var(--brand-gold); }
+
+.bar-value {
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+  min-width: 52px;
+  text-align: right;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+
+.stat-row:last-child { border-bottom: none; }
+.stat-row .stat-label { color: var(--text-muted); }
+.stat-row .stat-value { font-variant-numeric: tabular-nums; }
+
+/* Tab bar — used by Prediction Detail and Analytics. Colors from existing tokens. */
+.tab-bar {
+  display: flex;
+  gap: 0.25rem;
+  border-bottom: 1px solid var(--border);
+  margin: -0.2rem -0.25rem 0.4rem;
+  flex-wrap: wrap;
+}
+
+.tab {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.tab:hover { color: var(--text-primary); }
+
+.tab.active {
+  color: var(--text-primary);
+  border-bottom-color: var(--brand-gold);
 }

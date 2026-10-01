@@ -1,0 +1,118 @@
+{
+  "contract_version": "1.0.0",
+  "created": "2026-09-26",
+  "purpose": "Phase 2. Binds every model input to one unambiguous physical definition that training and production inference must both satisfy. A production feature is conformant only when its semantic definition, unit, temporal meaning, spatial meaning and preprocessing are identical to the training feature. Where an exact production value cannot be obtained the feature is marked unavailable - never silently substituted.",
+  "provider": {
+    "name": "NASA POWER",
+    "dataset": "MERRA-2 reanalysis (daily, point)",
+    "endpoint": "https://power.larc.nasa.gov/api/temporal/daily/point",
+    "community": "AG",
+    "spatial_resolution": "0.5 deg latitude x 0.625 deg longitude (~55 x 60 km)",
+    "temporal_resolution": "daily, 00:00-24:00 UTC aggregation",
+    "latency_days": 3,
+    "fill_value": -999.0,
+    "fill_value_handling": "rejected as null, never stored and never imputed"
+  },
+  "preprocessing": {
+    "scaler": "RobustScaler",
+    "fitted_on": "training split only",
+    "order": "features must be presented in the exact order of feature_columns",
+    "imputation": "none - a missing required feature aborts the prediction"
+  },
+  "features": [
+    {
+      "name": "PRECTOTCORR",
+      "training_definition": "Precipitation Corrected - bias-corrected total daily precipitation at the surface",
+      "production_definition": "Precipitation Corrected - identical NASA POWER daily point variable",
+      "unit": "mm/day",
+      "temporal_meaning": "total accumulated over day t (00:00-24:00 UTC); no forward information",
+      "spatial_meaning": "value of the single MERRA-2 grid cell containing the district coordinate",
+      "source_parameter": "PRECTOTCORR",
+      "status": "CONFORMANT"
+    },
+    {
+      "name": "T2M",
+      "training_definition": "Temperature at 2 Meters - daily mean air temperature",
+      "production_definition": "Temperature at 2 Meters - identical NASA POWER daily point variable",
+      "unit": "degrees Celsius",
+      "temporal_meaning": "daily mean over day t",
+      "spatial_meaning": "single MERRA-2 grid cell at the district coordinate",
+      "source_parameter": "T2M",
+      "status": "CONFORMANT"
+    },
+    {
+      "name": "T2M_MAX",
+      "training_definition": "Maximum Temperature at 2 Meters - highest hourly 2 m air temperature within day t",
+      "production_definition": "Maximum Temperature at 2 Meters - same variable, now fetched explicitly",
+      "unit": "degrees Celsius",
+      "temporal_meaning": "daily maximum over day t",
+      "spatial_meaning": "single MERRA-2 grid cell at the district coordinate",
+      "source_parameter": "T2M_MAX",
+      "status": "REPAIRED",
+      "defect_before_repair": "Production did not fetch this parameter and substituted the daily MEAN (T2M) for it. Measured consequence on the locked test split: mean predicted probability shifted 0.491 -> 0.243 and the alert decision at threshold 0.50 flipped on 49.8% of rows. The discarded information is a real mean daily spread of 6.58 C.",
+      "repair": "Added T2M_MAX to the weather provider parameter list and to the weather_observations schema as temperature_max_c."
+    },
+    {
+      "name": "T2M_MIN",
+      "training_definition": "Minimum Temperature at 2 Meters - lowest hourly 2 m air temperature within day t",
+      "production_definition": "Minimum Temperature at 2 Meters - same variable, now fetched explicitly",
+      "unit": "degrees Celsius",
+      "temporal_meaning": "daily minimum over day t",
+      "spatial_meaning": "single MERRA-2 grid cell at the district coordinate",
+      "source_parameter": "T2M_MIN",
+      "status": "REPAIRED",
+      "defect_before_repair": "Production substituted the daily MEAN (T2M). Mean discarded spread was 5.72 C.",
+      "repair": "Added T2M_MIN to the provider parameter list and to weather_observations as temperature_min_c."
+    },
+    {
+      "name": "RH2M",
+      "training_definition": "Relative Humidity at 2 Meters - daily mean relative humidity",
+      "production_definition": "Relative Humidity at 2 Meters - identical NASA POWER daily point variable",
+      "unit": "percent (0-100)",
+      "temporal_meaning": "daily mean over day t",
+      "spatial_meaning": "single MERRA-2 grid cell at the district coordinate",
+      "source_parameter": "RH2M",
+      "status": "CONFORMANT"
+    },
+    {
+      "name": "WS10M",
+      "training_definition": "Wind Speed at 10 Meters - daily mean wind speed at 10 m above the surface",
+      "production_definition": "Wind Speed at 10 Meters - same variable, now fetched explicitly",
+      "unit": "m/s",
+      "temporal_meaning": "daily mean over day t",
+      "spatial_meaning": "single MERRA-2 grid cell at the district coordinate",
+      "source_parameter": "WS10M",
+      "status": "REPAIRED",
+      "defect_before_repair": "Production fetched WS2M (Wind Speed at 2 Meters) and fed it into the WS10M input slot. These are physically different variables: under the logarithmic wind profile WS10M exceeds WS2M by roughly 25-40% over open terrain, so every stored value was systematically low. The error was numerically small only because this feature's fitted coefficient is -0.025.",
+      "repair": "Replaced WS2M with WS10M in the provider parameter list. NOT a column rename - the request itself now asks for the correct physical variable."
+    }
+  ],
+  "unavailable_features": [],
+  "candidate_features_available_but_unused": [
+    {
+      "name": "GWETROOT",
+      "definition": "Root Zone Soil Wetness - fraction of saturation in the root zone",
+      "unit": "dimensionless fraction 0-1",
+      "historical_coverage": "1990-01-01 onward, all 82 locations, already fetched",
+      "operational_availability": "yes, same NASA POWER endpoint, T-3 latency",
+      "note": "Physically motivated: saturated soil converts moderate rain into runoff. Reserved for controlled Phase 13 experiments."
+    },
+    {
+      "name": "GWETPROF",
+      "definition": "Profile Soil Moisture - fraction of saturation through the soil profile",
+      "unit": "dimensionless fraction 0-1",
+      "historical_coverage": "1990-01-01 onward, already fetched",
+      "operational_availability": "yes, T-3 latency",
+      "note": "Reserved for Phase 13."
+    },
+    {
+      "name": "rain_3day / rain_7day / rain_14day",
+      "definition": "Backward-looking rolling sums of PRECTOTCORR over the stated window ending at day t inclusive",
+      "unit": "mm",
+      "historical_coverage": "derived, full period",
+      "operational_availability": "yes, requires the provider to return a trailing window rather than a single day",
+      "note": "Phase 7 investigates these directly. Strictly backward-looking; no forward information."
+    }
+  ],
+  "conformance_test": "ml/tests/test_feature_parity.py - asserts the provider's parameter list covers every contract feature, that no contract feature maps to a different source parameter, and that the training and inference paths produce identical feature vectors for the same historical observation within a stated tolerance."
+}

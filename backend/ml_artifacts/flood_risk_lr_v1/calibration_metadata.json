@@ -1,0 +1,5 @@
+{
+  "method": "sigmoid",
+  "fit_on": "validation split only (2015-07-21 to 2021-01-08)",
+  "reason": "Fixes Brier score by ~3 orders of magnitude with zero ROC-AUC cost (strictly monotonic remap) -- see docs/CALIBRATION_ANALYSIS.md. Isotonic was tested and rejected: it hurts ROC-AUC (0.777->0.694) given only ~310 validation positives."
+}

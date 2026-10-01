@@ -14,7 +14,15 @@ import requests
 
 from app.core.config import get_settings
 
-NASA_POWER_PARAMETERS = "PRECTOTCORR,T2M,RH2M,WS2M"
+# Exactly the six variables the production model was trained on, per
+# ml/contracts/feature_contract.json. Two corrections are encoded here:
+#   * T2M_MAX / T2M_MIN are now requested. They were previously absent, and the
+#     inference path substituted the daily mean for both -- which flipped the
+#     alert decision on 49.8% of rows on the locked test split.
+#   * WS10M replaces WS2M. Those are different physical variables (10 m vs 2 m
+#     wind), and the model expects WS10M. This is a corrected request, not a
+#     column rename.
+NASA_POWER_PARAMETERS = "PRECTOTCORR,T2M,T2M_MAX,T2M_MIN,RH2M,WS10M"
 
 # NASA POWER's documented sentinel for "no data yet" (near-real-time days a few days
 # behind, or any other gap) -- the response's own "fill_value" field confirms this.
@@ -31,11 +39,18 @@ def _clean(value: float | None) -> float | None:
 
 @dataclass
 class WeatherRecord:
+    """One daily observation. Field names carry the contract's physical meaning:
+    `wind_speed_10m_ms` is wind at 10 m (WS10M), not the 2 m value this pipeline
+    used to fetch, and the max/min temperatures are real daily extremes rather
+    than a repeated mean."""
+
     observed_date: datetime
     precipitation_mm: float | None
     temperature_c: float | None
+    temperature_max_c: float | None
+    temperature_min_c: float | None
     relative_humidity_pct: float | None
-    wind_speed_ms: float | None
+    wind_speed_10m_ms: float | None
 
 
 @dataclass
@@ -93,8 +108,10 @@ class NasaPowerWeatherProvider:
                 observed_date=datetime.strptime(date_str, "%Y%m%d"),
                 precipitation_mm=_clean(params_block.get("PRECTOTCORR", {}).get(date_str)),
                 temperature_c=_clean(params_block.get("T2M", {}).get(date_str)),
+                temperature_max_c=_clean(params_block.get("T2M_MAX", {}).get(date_str)),
+                temperature_min_c=_clean(params_block.get("T2M_MIN", {}).get(date_str)),
                 relative_humidity_pct=_clean(params_block.get("RH2M", {}).get(date_str)),
-                wind_speed_ms=_clean(params_block.get("WS2M", {}).get(date_str)),
+                wind_speed_10m_ms=_clean(params_block.get("WS10M", {}).get(date_str)),
             )
             for date_str in params_block.get("PRECTOTCORR", {}).keys()
         ]

@@ -1,0 +1,7 @@
+{
+  "threshold": 0.5,
+  "selected_on": "validation split only (2015-07-21 to 2021-01-08), applied once to test",
+  "decision_support_objective": "For a flood early-warning system, a missed real flood (false negative) is far costlier than an extra alert (false positive), so the operating point is chosen to maximize recall rather than precision.",
+  "rationale": "Every threshold tested in the 0.01-0.99 sweep (docs/THRESHOLD_ANALYSIS.md) leaves precision unusably low (0.05-0.4%), because the real-world positive rate itself is only ~0.04-0.19%. No small threshold shift fixes this. The default 0.5 already gives the best recall (0.703 val, 0.889 test) of any candidate tested, without materially more false alarms than the alternatives (all remain in the tens of thousands regardless) -- so it is retained as the selected operating point, not replaced with an arbitrarily different value.",
+  "known_limitation": "This threshold is NOT usable for a real deployed alert system as-is (88,184 false alarms per 56 true alerts on test) -- see docs/THRESHOLD_ANALYSIS.md. Retained here as the scientifically justified choice given the evidence, not claimed to be production-usable."
+}

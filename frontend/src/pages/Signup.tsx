@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import BrandMark from "../components/ui/BrandMark";
 import { useAuth } from "../context/AuthContext";
 import { ApiError } from "../services/api";
 
@@ -29,23 +30,14 @@ export default function Signup() {
   return (
     <div className="auth-split">
       <div className="auth-panel">
-        <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", fontWeight: 700, marginBottom: "2rem" }}>
-          <span
-            aria-hidden="true"
-            style={{
-              width: 28,
-              height: 28,
-              borderRadius: 7,
-              background: "linear-gradient(135deg, var(--brand-blue), var(--brand-green))",
-            }}
-          />
-          FLOODSHIELD ZAMBIA
+        <div style={{ marginBottom: "2rem" }}>
+          <BrandMark />
         </div>
         <div className="card auth-card">
           <h1 style={{ marginTop: 0 }}>Create an account</h1>
           <p className="text-secondary" style={{ marginTop: 0 }}>
             Public self-registration always creates a CITIZEN account (can submit ground
-            reports). ADMIN/ANALYST/OPERATOR/RESEARCHER accounts are granted separately —
+            reports). ADMIN / ANALYST / OPERATOR / RESEARCHER accounts are granted separately —
             see <code>docs/backend-architecture.md</code>.
           </p>
           <form onSubmit={onSubmit}>

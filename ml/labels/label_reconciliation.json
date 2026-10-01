@@ -1,0 +1,32 @@
+{
+  "generated": "2026-09-26",
+  "sources": {
+    "DesInventar (UNDRR)": 444,
+    "Dartmouth Flood Observatory": 14,
+    "Curated log (DMMU/WARMA/ReliefWeb/FloodList/Charter)": 14
+  },
+  "decisions": {
+    "POSITIVE_DAY": 282,
+    "MASK_YEAR": 163,
+    "MASK_EPISODE": 13,
+    "POSITIVE_DAY_ONSET_ONLY": 8,
+    "EXCLUDE": 3,
+    "POSITIVE_MONTH": 3
+  },
+  "date_precision": {
+    "day": 303,
+    "year": 163,
+    "month": 6
+  },
+  "authoritative_intervals": {
+    "POSITIVE": 337,
+    "MASK": 374,
+    "distinct_locations": 82
+  },
+  "rules": {
+    "MAX_MONTH_WINDOW_DAYS": 31,
+    "MAX_DAY_WINDOW_DAYS": 14,
+    "year_precision": "masked, never positive and never negative",
+    "district_matching": "exact case-insensitive word-boundary match; no fuzzy matching"
+  }
+}

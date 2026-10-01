@@ -18,6 +18,7 @@ import LocationDetail from "./pages/LocationDetail";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import Notifications from "./pages/Notifications";
+import PredictionDetail from "./pages/PredictionDetail";
 import Predictions from "./pages/Predictions";
 import Profile from "./pages/Profile";
 import RiskMap from "./pages/RiskMap";
@@ -45,6 +46,7 @@ export default function App() {
           <Route path="/risk-map" element={<RiskMap />} />
           <Route path="/locations/:id" element={<LocationDetail />} />
           <Route path="/predictions" element={<Predictions />} />
+          <Route path="/predictions/:id" element={<PredictionDetail />} />
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/historical-events" element={<HistoricalEvents />} />
           <Route path="/historical-events/:id" element={<HistoricalEventDetail />} />

@@ -41,4 +41,13 @@ class Prediction(Base):
     prediction_probability: Mapped[float] = mapped_column(Float)
     risk_level: Mapped[str] = mapped_column(String(20))
     prediction_horizon: Mapped[str] = mapped_column(String(40))
+    # A 7-day forecast that does not record WHICH 7 days it refers to can never be
+    # verified after the fact. observation_date is the date of the weather the
+    # prediction was computed from; the target window is the (t, t+7] interval the
+    # probability actually describes.
+    observation_date: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    target_window_start: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    target_window_end: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
+    feature_contract_version: Mapped[str | None] = mapped_column(String(20), nullable=True)
+    is_stale: Mapped[bool] = mapped_column(Boolean, default=False)
     explanation: Mapped[str] = mapped_column(Text, default="")

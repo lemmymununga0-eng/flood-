@@ -11,7 +11,10 @@ class WeatherObservationOut(BaseModel):
     observed_date: datetime
     precipitation_mm: float | None
     temperature_c: float | None
+    temperature_max_c: float | None
+    temperature_min_c: float | None
     relative_humidity_pct: float | None
+    wind_speed_10m_ms: float | None
     wind_speed_ms: float | None
     source: str
     retrieved_at: datetime

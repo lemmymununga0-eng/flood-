@@ -2,6 +2,7 @@ import { useState } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { NAV_PRIMARY, NAV_SECONDARY } from "../constants";
+import BrandMark from "../components/ui/BrandMark";
 import { Icon } from "../components/ui/icons";
 
 function initials(nameOrEmail: string): string {
@@ -19,14 +20,28 @@ export default function DashboardLayout() {
 
   return (
     <div className="app-shell">
+      {/* The drawer (z-index 40) sits above the topbar (z-index 30) that holds the
+          hamburger, so once open the toggle is covered and cannot close it. This
+          backdrop and the in-drawer close button below give it two ways out. */}
+      {open && (
+        <button
+          type="button"
+          className="sidebar-backdrop"
+          aria-label="Close navigation"
+          onClick={() => setOpen(false)}
+        />
+      )}
       <aside className={`sidebar ${open ? "open" : ""}`} aria-label="Primary navigation">
         <div className="sidebar-brand">
-          <span className="mark" aria-hidden="true" />
-          <span>
-            FLOODSHIELD
-            <br />
-            ZAMBIA
-          </span>
+          <BrandMark variant="stacked" size={32} />
+          <button
+            type="button"
+            className="btn sidebar-close"
+            aria-label="Close navigation"
+            onClick={() => setOpen(false)}
+          >
+            ✕
+          </button>
         </div>
         <nav className="sidebar-nav">
           {NAV_PRIMARY.map((item) => (

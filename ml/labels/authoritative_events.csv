@@ -1,0 +1,712 @@
+location,start,end,kind,precision,event_id,source
+Nchelenge,201-08-21,201-08-21,MASK,episode,DI-48,DesInventar (UNDRR)
+Lunga,201-08-21,201-08-21,MASK,episode,DI-48,DesInventar (UNDRR)
+Samfya,201-08-21,201-08-21,MASK,episode,DI-48,DesInventar (UNDRR)
+Kawambwa,201-08-21,201-08-21,MASK,episode,DI-48,DesInventar (UNDRR)
+Mansa,201-08-21,201-08-21,MASK,episode,DI-48,DesInventar (UNDRR)
+Milengi,201-08-21,201-08-21,MASK,episode,DI-48,DesInventar (UNDRR)
+Mwense,201-08-21,201-08-21,MASK,episode,DI-48,DesInventar (UNDRR)
+Chipili,201-08-21,201-08-21,MASK,episode,DI-48,DesInventar (UNDRR)
+Chiengi,201-08-21,201-08-21,MASK,episode,DI-48,DesInventar (UNDRR)
+Chongwe,211-02-09,211-02-09,POSITIVE,day,DI-97,DesInventar (UNDRR)
+Chilanga,1989-02-01,1989-02-10,POSITIVE,day,DFO-284.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Lusaka,1989-02-01,1989-02-10,POSITIVE,day,DFO-284.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Chipata,1998-03-17,1998-03-19,POSITIVE,day,DFO-1322.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kitwe,1998-03-17,1998-03-19,POSITIVE,day,DFO-1322.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mumbwa,2000-04-13,2000-04-13,POSITIVE,day,DI-150,DesInventar (UNDRR)
+Serenje,2000-05-03,2000-05-03,POSITIVE,day,DI-60,DesInventar (UNDRR)
+Serenje,2001-01-23,2001-01-23,POSITIVE,day,DI-169,DesInventar (UNDRR)
+Serenje,2001-02-01,2001-02-01,POSITIVE,day,DI-110,DesInventar (UNDRR)
+Serenje,2001-02-03,2001-02-03,POSITIVE,day,DI-132,DesInventar (UNDRR)
+Kabwe,2001-02-07,2001-02-07,POSITIVE,day,DI-168,DesInventar (UNDRR)
+Kapiri Mposhi,2001-02-08,2001-02-08,POSITIVE,day,DI-170,DesInventar (UNDRR)
+Chavuma,2003-01-15,2003-01-15,POSITIVE,day,DFO-2161.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Chavuma,2003-01-16,2003-07-01,MASK,episode,DFO-2161.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kalabo,2003-01-15,2003-01-15,POSITIVE,day,DFO-2161.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kalabo,2003-01-16,2003-07-01,MASK,episode,DFO-2161.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mongu,2003-01-15,2003-01-15,POSITIVE,day,DFO-2161.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mongu,2003-01-16,2003-07-01,MASK,episode,DFO-2161.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Sesheke,2003-01-15,2003-01-15,POSITIVE,day,DFO-2161.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Sesheke,2003-01-16,2003-07-01,MASK,episode,DFO-2161.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Zambezi,2003-01-15,2003-01-15,POSITIVE,day,DFO-2161.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Zambezi,2003-01-16,2003-07-01,MASK,episode,DFO-2161.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kabwe,2003-02-05,2003-02-07,POSITIVE,day,DFO-2153.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Gwembe,2003-03-11,2003-03-15,POSITIVE,day,DFO-2181.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mazabuka,2003-03-11,2003-03-15,POSITIVE,day,DFO-2181.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Senanga,2004-02-01,2004-02-01,POSITIVE,day,DFO-2430.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Senanga,2004-02-02,2004-06-02,MASK,episode,DFO-2430.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Sesheke,2004-02-01,2004-02-01,POSITIVE,day,DFO-2430.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Sesheke,2004-02-02,2004-06-02,MASK,episode,DFO-2430.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Chavuma,2004-03-31,2004-03-31,POSITIVE,day,DI-143,DesInventar (UNDRR)
+Senanga,2004-03-31,2004-03-31,POSITIVE,day,DI-145,DesInventar (UNDRR)
+Mongu,2004-03-31,2004-03-31,POSITIVE,day,DI-146,DesInventar (UNDRR)
+Lukulu,2004-03-31,2004-03-31,POSITIVE,day,DI-147,DesInventar (UNDRR)
+Kalabo,2004-03-31,2004-03-31,POSITIVE,day,DI-148,DesInventar (UNDRR)
+Kapiri Mposhi,2006-01-01,2006-12-31,MASK,year,DI-92,DesInventar (UNDRR)
+Kaoma,2006-03-11,2006-03-11,POSITIVE,day,DI-192,DesInventar (UNDRR)
+Mufumbwe,2006-03-14,2006-03-14,POSITIVE,day,DI-162,DesInventar (UNDRR)
+Serenje,2006-05-06,2006-05-06,POSITIVE,day,DI-58,DesInventar (UNDRR)
+Mpulungu,2006-12-12,2006-12-12,POSITIVE,day,DI-184,DesInventar (UNDRR)
+Nyimba,2007-01-01,2007-12-31,MASK,year,DI-125,DesInventar (UNDRR)
+Chongwe,2007-01-01,2007-12-31,MASK,year,DI-64,DesInventar (UNDRR)
+Kabwe,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Kapiri Mposhi,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Serenje,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Mumbwa,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Luano,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Mkushi,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Chibombo,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Itezhi-tezhi,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Kasama,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Luwingu,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Mpulungu,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Kaputa,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Chilubi,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Mporokoso,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Nsama,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Mungwi,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Solwezi,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Mufumbwe,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Zambezi,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Chavuma,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Mwinilunga,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Kabompo,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Manyinga,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Mongu,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Kalabo,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Lukulu,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Senanga,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Sesheke,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Mitete,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Kaoma,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Mwandi,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Limulunga,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Shangombo,2007-01-01,2007-04-30,MASK,episode,ZM-2007-01,Curated log: DMMU rapid multi-sectoral flood impact assessment (via ReliefWeb)
+Chavuma,2007-01-10,2007-01-10,POSITIVE,day,DFO-3018.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Chavuma,2007-01-11,2007-05-10,MASK,episode,DFO-3018.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mpulungu,2007-01-10,2007-01-10,POSITIVE,day,DFO-3018.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mpulungu,2007-01-11,2007-05-10,MASK,episode,DFO-3018.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mwinilunga,2007-01-10,2007-01-10,POSITIVE,day,DFO-3018.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mwinilunga,2007-01-11,2007-05-10,MASK,episode,DFO-3018.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Solwezi,2007-01-10,2007-01-10,POSITIVE,day,DFO-3018.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Solwezi,2007-01-11,2007-05-10,MASK,episode,DFO-3018.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Zambezi,2007-01-10,2007-01-10,POSITIVE,day,DFO-3018.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Zambezi,2007-01-11,2007-05-10,MASK,episode,DFO-3018.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Chama,2007-01-20,2007-01-20,POSITIVE,day,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Chama,2007-01-21,2007-03-10,MASK,episode,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kabwe,2007-01-20,2007-01-20,POSITIVE,day,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kabwe,2007-01-21,2007-03-10,MASK,episode,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kapiri Mposhi,2007-01-20,2007-01-20,POSITIVE,day,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kapiri Mposhi,2007-01-21,2007-03-10,MASK,episode,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Luangwa,2007-01-20,2007-01-20,POSITIVE,day,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Luangwa,2007-01-21,2007-03-10,MASK,episode,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Lundazi,2007-01-20,2007-01-20,POSITIVE,day,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Lundazi,2007-01-21,2007-03-10,MASK,episode,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Lusaka,2007-01-20,2007-01-20,POSITIVE,day,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Lusaka,2007-01-21,2007-03-10,MASK,episode,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mambwe,2007-01-20,2007-01-20,POSITIVE,day,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mambwe,2007-01-21,2007-03-10,MASK,episode,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mpulungu,2007-01-20,2007-01-20,POSITIVE,day,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mpulungu,2007-01-21,2007-03-10,MASK,episode,DFO-3023.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mongu,2007-01-29,2007-01-29,POSITIVE,day,DI-174,DesInventar (UNDRR)
+Chilubi,2007-02-22,2007-02-22,POSITIVE,day,DI-150,DesInventar (UNDRR)
+Lusaka,2007-05-04,2007-05-04,POSITIVE,day,DI-95,DesInventar (UNDRR)
+Kapiri Mposhi,2007-08-20,2007-08-20,POSITIVE,day,DI-59,DesInventar (UNDRR)
+Kafue,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Chongwe,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Rufunsa,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Luangwa,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Lusaka,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Shibuyunji,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Chirundu,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Chilanga,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Chipata,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Lundazi,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Sinda,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Petauke,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Chadiza,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Mambwe,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Katete,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Nyimba,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Mongu,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Kalabo,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Lukulu,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Senanga,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Sesheke,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Mitete,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Kaoma,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Mwandi,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Limulunga,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Shangombo,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Gwembe,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Livingstone,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Choma,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Sinazongwe,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Kazungula,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Monze,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Mazabuka,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Siavonga,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Namwala,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Kalomo,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Zimba,2007-12-01,2008-01-31,MASK,episode,ZM-2007-02,Curated log: Government of Zambia Vulnerability Assessment Committee (via ReliefWeb); NASA Earth Observatory
+Chibombo,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Chibombo,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Choma,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Choma,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Itezhi-tezhi,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Itezhi-tezhi,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kafue,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kafue,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Lusaka,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Lusaka,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mazabuka,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mazabuka,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Monze,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Monze,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mumbwa,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mumbwa,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Namwala,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Namwala,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Siavonga,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Siavonga,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Sinazongwe,2007-12-30,2007-12-30,POSITIVE,day,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Sinazongwe,2007-12-31,2008-04-01,MASK,episode,DFO-3250.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Serenje,2008-01-01,2008-12-31,MASK,year,DI-57,DesInventar (UNDRR)
+Monze,2008-01-03,2008-01-03,POSITIVE,day,DI-121,DesInventar (UNDRR)
+Monze,2008-01-03,2008-01-03,POSITIVE,day,DI-195,DesInventar (UNDRR)
+Mumbwa,2008-01-21,2008-01-21,POSITIVE,day,DI-194,DesInventar (UNDRR)
+Mkushi,2008-01-24,2008-01-24,POSITIVE,day,DI-190,DesInventar (UNDRR)
+Chavuma,2008-02-09,2008-02-09,POSITIVE,day,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Chavuma,2008-02-10,2008-05-01,MASK,episode,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kabompo,2008-02-09,2008-02-09,POSITIVE,day,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kabompo,2008-02-10,2008-05-01,MASK,episode,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mongu,2008-02-09,2008-02-09,POSITIVE,day,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mongu,2008-02-10,2008-05-01,MASK,episode,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Monze,2008-02-09,2008-02-09,POSITIVE,day,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Monze,2008-02-10,2008-05-01,MASK,episode,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mufumbwe,2008-02-09,2008-02-09,POSITIVE,day,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mufumbwe,2008-02-10,2008-05-01,MASK,episode,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Zambezi,2008-02-09,2008-02-09,POSITIVE,day,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Zambezi,2008-02-10,2008-05-01,MASK,episode,DFO-3273.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Lusaka,2008-03-06,2008-03-06,POSITIVE,day,DI-96,DesInventar (UNDRR)
+Lusaka,2008-03-08,2008-03-08,POSITIVE,day,DI-132,DesInventar (UNDRR)
+Lusaka,2008-03-08,2008-03-08,POSITIVE,day,DI-93,DesInventar (UNDRR)
+Lusaka,2008-03-08,2008-03-08,POSITIVE,day,DI-98,DesInventar (UNDRR)
+Nchelenge,2008-03-23,2008-03-23,POSITIVE,day,DI-203,DesInventar (UNDRR)
+Lusaka,2008-05-03,2008-05-03,POSITIVE,day,DI-94,DesInventar (UNDRR)
+Lusaka,2008-12-29,2008-12-29,POSITIVE,day,DI-100,DesInventar (UNDRR)
+Lusaka,2008-12-29,2008-12-29,POSITIVE,day,DI-99,DesInventar (UNDRR)
+Shangombo,2009-01-01,2009-12-31,MASK,year,DI-107,DesInventar (UNDRR)
+Shangombo,2009-01-01,2009-12-31,MASK,year,DI-108,DesInventar (UNDRR)
+Shangombo,2009-01-01,2009-12-31,MASK,year,DI-138,DesInventar (UNDRR)
+Shangombo,2009-01-01,2009-12-31,MASK,year,DI-139,DesInventar (UNDRR)
+Shangombo,2009-01-01,2009-12-31,MASK,year,DI-141,DesInventar (UNDRR)
+Serenje,2009-01-01,2009-12-31,MASK,year,DI-186,DesInventar (UNDRR)
+Kalabo,2009-01-01,2009-12-31,MASK,year,DI-205,DesInventar (UNDRR)
+Kalabo,2009-01-01,2009-12-31,MASK,year,DI-207,DesInventar (UNDRR)
+Kalabo,2009-01-01,2009-12-31,MASK,year,DI-208,DesInventar (UNDRR)
+Kalabo,2009-01-01,2009-12-31,MASK,year,DI-210,DesInventar (UNDRR)
+Chongwe,2009-01-01,2009-12-31,MASK,year,DI-52,DesInventar (UNDRR)
+Serenje,2009-01-01,2009-12-31,MASK,year,DI-52,DesInventar (UNDRR)
+Mwinilunga,2009-02-06,2009-02-06,POSITIVE,day,DI-60,DesInventar (UNDRR)
+Mansa,2009-02-11,2009-02-11,POSITIVE,day,DI-111,DesInventar (UNDRR)
+Kawambwa,2009-02-11,2009-02-11,POSITIVE,day,DI-112,DesInventar (UNDRR)
+Kawambwa,2009-02-11,2009-02-11,POSITIVE,day,DI-113,DesInventar (UNDRR)
+Kawambwa,2009-02-11,2009-02-11,POSITIVE,day,DI-114,DesInventar (UNDRR)
+Kawambwa,2009-02-11,2009-02-11,POSITIVE,day,DI-115,DesInventar (UNDRR)
+Kawambwa,2009-02-18,2009-02-18,POSITIVE,day,DI-56,DesInventar (UNDRR)
+Shangombo,2009-03-01,2009-04-30,MASK,episode,ZM-2009-01,Curated log: Wikipedia secondary synthesis; DMMU Shangombo rapid assessment (via ReliefWeb)
+Kabwe,2009-03-09,2009-03-09,POSITIVE,day,DI-57,DesInventar (UNDRR)
+Chipata,2009-03-27,2009-03-27,POSITIVE,day,DI-198,DesInventar (UNDRR)
+Chipata,2009-03-27,2009-03-27,POSITIVE,day,DI-199,DesInventar (UNDRR)
+Chipata,2009-03-27,2009-03-27,POSITIVE,day,DI-200,DesInventar (UNDRR)
+Chipata,2009-03-27,2009-03-27,POSITIVE,day,DI-201,DesInventar (UNDRR)
+Chipata,2009-03-27,2009-03-27,POSITIVE,day,DI-202,DesInventar (UNDRR)
+Mpika,2009-03-27,2009-03-27,POSITIVE,day,DI-51,DesInventar (UNDRR)
+Serenje,2009-04-03,2009-04-03,POSITIVE,day,DI-50,DesInventar (UNDRR)
+Kalabo,2009-05-19,2009-05-19,POSITIVE,day,DI-213,DesInventar (UNDRR)
+Mungwi,2009-05-30,2009-05-30,POSITIVE,day,DI-49,DesInventar (UNDRR)
+Serenje,2010-01-01,2010-12-31,MASK,year,DI-144,DesInventar (UNDRR)
+Solwezi,2010-01-01,2010-12-31,MASK,year,DI-183,DesInventar (UNDRR)
+Mansa,2010-01-01,2010-12-31,MASK,year,DI-184,DesInventar (UNDRR)
+Serenje,2010-01-01,2010-12-31,MASK,year,DI-189,DesInventar (UNDRR)
+Serenje,2010-01-01,2010-12-31,MASK,year,DI-190,DesInventar (UNDRR)
+Chavuma,2010-01-01,2010-12-31,MASK,year,DI-191,DesInventar (UNDRR)
+Gwembe,2010-01-01,2010-12-31,MASK,year,DI-192,DesInventar (UNDRR)
+Kazungula,2010-01-01,2010-12-31,MASK,year,DI-193,DesInventar (UNDRR)
+Namwala,2010-01-01,2010-12-31,MASK,year,DI-194,DesInventar (UNDRR)
+Kalabo,2010-01-01,2010-12-31,MASK,year,DI-195,DesInventar (UNDRR)
+Lukulu,2010-01-01,2010-12-31,MASK,year,DI-196,DesInventar (UNDRR)
+Lukulu,2010-01-01,2010-12-31,MASK,year,DI-197,DesInventar (UNDRR)
+Mongu,2010-01-01,2010-12-31,MASK,year,DI-198,DesInventar (UNDRR)
+Mongu,2010-01-01,2010-12-31,MASK,year,DI-199,DesInventar (UNDRR)
+Senanga,2010-01-01,2010-12-31,MASK,year,DI-200,DesInventar (UNDRR)
+Senanga,2010-01-01,2010-12-31,MASK,year,DI-201,DesInventar (UNDRR)
+Senanga,2010-01-01,2010-12-31,MASK,year,DI-202,DesInventar (UNDRR)
+Senanga,2010-01-01,2010-12-31,MASK,year,DI-203,DesInventar (UNDRR)
+Kazungula,2010-01-01,2010-12-31,MASK,year,DI-205,DesInventar (UNDRR)
+Namwala,2010-01-01,2010-12-31,MASK,year,DI-206,DesInventar (UNDRR)
+Sinazongwe,2010-01-01,2010-12-31,MASK,year,DI-207,DesInventar (UNDRR)
+Kalabo,2010-01-01,2010-12-31,MASK,year,DI-208,DesInventar (UNDRR)
+Lukulu,2010-01-01,2010-12-31,MASK,year,DI-209,DesInventar (UNDRR)
+Mongu,2010-01-01,2010-12-31,MASK,year,DI-210,DesInventar (UNDRR)
+Senanga,2010-01-01,2010-12-31,MASK,year,DI-211,DesInventar (UNDRR)
+Shangombo,2010-01-01,2010-12-31,MASK,year,DI-212,DesInventar (UNDRR)
+Sesheke,2010-01-01,2010-12-31,MASK,year,DI-213,DesInventar (UNDRR)
+Lufwanyama,2010-01-01,2010-12-31,MASK,year,DI-56,DesInventar (UNDRR)
+Kalabo,2010-02-25,2010-02-25,POSITIVE,day,DI-58,DesInventar (UNDRR)
+Lusaka,2010-03-01,2010-03-01,POSITIVE,day,DFO-3616.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Lusaka,2010-03-02,2010-03-17,MASK,episode,DFO-3616.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mpulungu,2010-03-01,2010-03-01,POSITIVE,day,DFO-3616.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Mpulungu,2010-03-02,2010-03-17,MASK,episode,DFO-3616.0,"Dartmouth Flood Observatory (Brakenridge, Univ. of Colorado)"
+Kabwe,2010-03-08,2010-03-08,POSITIVE,day,DI-51,DesInventar (UNDRR)
+Mambwe,2010-03-10,2010-03-10,POSITIVE,day,DI-54,DesInventar (UNDRR)
+Petauke,2010-03-10,2010-03-10,POSITIVE,day,DI-56,DesInventar (UNDRR)
+Livingstone,2010-03-28,2010-03-28,POSITIVE,day,DI-47,DesInventar (UNDRR)
+Katete,2010-04-01,2010-04-30,POSITIVE,month,DI-69,DesInventar (UNDRR)
+Luangwa,2010-04-26,2010-04-26,POSITIVE,day,DI-68,DesInventar (UNDRR)
+Zambezi,2010-08-10,2010-08-10,POSITIVE,day,DI-70,DesInventar (UNDRR)
+Mwinilunga,2010-10-31,2010-10-31,POSITIVE,day,DI-65,DesInventar (UNDRR)
+Mwinilunga,2010-10-31,2010-10-31,POSITIVE,day,DI-66,DesInventar (UNDRR)
+Mwinilunga,2010-10-31,2010-10-31,POSITIVE,day,DI-67,DesInventar (UNDRR)
+Mongu,2010-11-22,2010-11-22,POSITIVE,day,DI-108,DesInventar (UNDRR)
+Mongu,2010-11-22,2010-11-22,POSITIVE,day,DI-109,DesInventar (UNDRR)
+Mongu,2010-11-22,2010-11-22,POSITIVE,day,DI-110,DesInventar (UNDRR)
+Kabwe,2011-01-01,2011-12-31,MASK,year,DI-101,DesInventar (UNDRR)
+Chiengi,2011-01-01,2011-12-31,MASK,year,DI-101,DesInventar (UNDRR)
+Kapiri Mposhi,2011-01-01,2011-12-31,MASK,year,DI-102,DesInventar (UNDRR)
+Mkushi,2011-01-01,2011-12-31,MASK,year,DI-103,DesInventar (UNDRR)
+Chibombo,2011-01-01,2011-12-31,MASK,year,DI-103,DesInventar (UNDRR)
+Serenje,2011-01-01,2011-12-31,MASK,year,DI-104,DesInventar (UNDRR)
+Mansa,2011-01-01,2011-12-31,MASK,year,DI-104,DesInventar (UNDRR)
+Kabwe,2011-01-01,2011-12-31,MASK,year,DI-106,DesInventar (UNDRR)
+Mansa,2011-01-01,2011-12-31,MASK,year,DI-159,DesInventar (UNDRR)
+Luanshya,2011-01-01,2011-12-31,MASK,year,DI-47,DesInventar (UNDRR)
+Luanshya,2011-01-01,2011-12-31,MASK,year,DI-49,DesInventar (UNDRR)
+Kasama,2011-01-01,2011-12-31,MASK,year,DI-50,DesInventar (UNDRR)
+Luanshya,2011-01-01,2011-12-31,MASK,year,DI-51,DesInventar (UNDRR)
+Kasama,2011-01-01,2011-12-31,MASK,year,DI-53,DesInventar (UNDRR)
+Mpika,2011-01-01,2011-12-31,MASK,year,DI-55,DesInventar (UNDRR)
+Kasama,2011-01-01,2011-12-31,MASK,year,DI-57,DesInventar (UNDRR)
+Mkushi,2011-01-01,2011-12-31,MASK,year,DI-59,DesInventar (UNDRR)
+Sinda,2011-01-01,2011-12-31,MASK,year,DI-62,DesInventar (UNDRR)
+Kalabo,2011-01-01,2011-12-31,MASK,year,DI-63,DesInventar (UNDRR)
+Petauke,2011-01-01,2011-12-31,MASK,year,DI-69,DesInventar (UNDRR)
+Mpulungu,2011-01-01,2011-12-31,MASK,year,DI-70,DesInventar (UNDRR)
+Solwezi,2011-01-01,2011-12-31,MASK,year,DI-72,DesInventar (UNDRR)
+Lundazi,2011-01-01,2011-12-31,MASK,year,DI-75,DesInventar (UNDRR)
+Lundazi,2011-01-01,2011-12-31,MASK,year,DI-76,DesInventar (UNDRR)
+Chipata,2011-01-01,2011-12-31,MASK,year,DI-79,DesInventar (UNDRR)
+Lundazi,2011-01-01,2011-12-31,MASK,year,DI-80,DesInventar (UNDRR)
+Lundazi,2011-01-01,2011-12-31,MASK,year,DI-83,DesInventar (UNDRR)
+Lundazi,2011-01-01,2011-12-31,MASK,year,DI-85,DesInventar (UNDRR)
+Lundazi,2011-01-01,2011-12-31,MASK,year,DI-86,DesInventar (UNDRR)
+Lundazi,2011-01-01,2011-12-31,MASK,year,DI-87,DesInventar (UNDRR)
+Lundazi,2011-01-01,2011-12-31,MASK,year,DI-89,DesInventar (UNDRR)
+Kapiri Mposhi,2011-01-01,2011-12-31,MASK,year,DI-90,DesInventar (UNDRR)
+Kapiri Mposhi,2011-01-01,2011-12-31,MASK,year,DI-93,DesInventar (UNDRR)
+Serenje,2011-01-01,2011-12-31,MASK,year,DI-98,DesInventar (UNDRR)
+Kalomo,2011-01-01,2011-12-31,MASK,year,DI-98,DesInventar (UNDRR)
+Serenje,2011-01-01,2011-12-31,MASK,year,DI-99,DesInventar (UNDRR)
+Kasama,2011-01-01,2011-12-31,MASK,year,DI-99,DesInventar (UNDRR)
+Lufwanyama,2011-01-05,2011-01-05,POSITIVE,day,DI-59,DesInventar (UNDRR)
+Chipata,2011-01-07,2011-01-07,POSITIVE,day,DI-94,DesInventar (UNDRR)
+Lufwanyama,2011-01-11,2011-01-11,POSITIVE,day,DI-102,DesInventar (UNDRR)
+Zimba,2011-01-17,2011-01-17,POSITIVE,day,DI-96,DesInventar (UNDRR)
+Chipata,2011-01-18,2011-01-18,POSITIVE,day,DI-95,DesInventar (UNDRR)
+Kabwe,2011-05-04,2011-05-04,POSITIVE,day,DI-100,DesInventar (UNDRR)
+Serenje,2011-06-01,2011-06-01,POSITIVE,day,DI-97,DesInventar (UNDRR)
+Mkushi,2011-06-04,2011-06-04,POSITIVE,day,DI-95,DesInventar (UNDRR)
+Serenje,2011-06-04,2011-06-04,POSITIVE,day,DI-96,DesInventar (UNDRR)
+Chama,2011-07-13,2011-07-13,POSITIVE,day,DI-66,DesInventar (UNDRR)
+Milengi,2011-07-20,2011-07-20,POSITIVE,day,DI-61,DesInventar (UNDRR)
+Kaputa,2011-08-31,2011-08-31,POSITIVE,day,DI-168,DesInventar (UNDRR)
+Chibombo,2011-09-02,2011-09-02,POSITIVE,day,DI-100,DesInventar (UNDRR)
+Ndola,2011-09-12,2011-09-12,POSITIVE,day,DI-64,DesInventar (UNDRR)
+Serenje,2011-10-04,2011-10-04,POSITIVE,day,DI-116,DesInventar (UNDRR)
+Mongu,2011-10-05,2011-10-05,POSITIVE,day,DI-85,DesInventar (UNDRR)
+Chipata,2011-11-03,2011-11-03,POSITIVE,day,DI-117,DesInventar (UNDRR)
+Sesheke,2011-12-05,2011-12-05,POSITIVE,day,DI-118,DesInventar (UNDRR)
+Lusaka,2011-12-16,2011-12-16,POSITIVE,day,DI-98,DesInventar (UNDRR)
+Lusaka,2012-01-01,2012-12-31,MASK,year,DI-105,DesInventar (UNDRR)
+Kitwe,2012-01-01,2012-12-31,MASK,year,DI-106,DesInventar (UNDRR)
+Chongwe,2012-01-01,2012-12-31,MASK,year,DI-109,DesInventar (UNDRR)
+Lusaka,2012-01-01,2012-12-31,MASK,year,DI-110,DesInventar (UNDRR)
+Livingstone,2012-01-01,2012-12-31,MASK,year,DI-111,DesInventar (UNDRR)
+Petauke,2012-01-01,2012-12-31,MASK,year,DI-112,DesInventar (UNDRR)
+Mambwe,2012-01-01,2012-12-31,MASK,year,DI-113,DesInventar (UNDRR)
+Livingstone,2012-01-01,2012-12-31,MASK,year,DI-115,DesInventar (UNDRR)
+Chipata,2012-01-01,2012-12-31,MASK,year,DI-116,DesInventar (UNDRR)
+Mkushi,2012-01-01,2012-12-31,MASK,year,DI-117,DesInventar (UNDRR)
+Kabwe,2012-01-01,2012-12-31,MASK,year,DI-118,DesInventar (UNDRR)
+Mongu,2012-01-01,2012-12-31,MASK,year,DI-119,DesInventar (UNDRR)
+Kaputa,2012-01-01,2012-12-31,MASK,year,DI-120,DesInventar (UNDRR)
+Mongu,2012-01-01,2012-12-31,MASK,year,DI-121,DesInventar (UNDRR)
+Ndola,2012-01-01,2012-12-31,MASK,year,DI-122,DesInventar (UNDRR)
+Mansa,2012-01-01,2012-12-31,MASK,year,DI-142,DesInventar (UNDRR)
+Kitwe,2012-01-01,2012-12-31,MASK,year,DI-46,DesInventar (UNDRR)
+Lufwanyama,2012-01-01,2012-12-31,MASK,year,DI-58,DesInventar (UNDRR)
+Chadiza,2012-01-01,2012-12-31,MASK,year,DI-74,DesInventar (UNDRR)
+Lundazi,2012-01-01,2012-12-31,MASK,year,DI-78,DesInventar (UNDRR)
+Mazabuka,2012-01-01,2012-12-31,MASK,year,DI-81,DesInventar (UNDRR)
+Nakonde,2012-01-01,2012-12-31,MASK,year,DI-82,DesInventar (UNDRR)
+Kalulushi,2012-01-01,2012-12-31,MASK,year,DI-91,DesInventar (UNDRR)
+Kabwe,2012-01-16,2012-01-16,POSITIVE,day,DI-105,DesInventar (UNDRR)
+Mkushi,2012-02-01,2012-02-01,POSITIVE,day,DI-94,DesInventar (UNDRR)
+Kabwe,2012-02-09,2012-02-09,POSITIVE,day,DI-166,DesInventar (UNDRR)
+Sinda,2012-02-14,2012-02-14,POSITIVE,day,DI-65,DesInventar (UNDRR)
+Luwingu,2012-03-12,2012-03-12,POSITIVE,day,DI-45,DesInventar (UNDRR)
+Mansa,2012-03-29,2012-03-29,POSITIVE,day,DI-48,DesInventar (UNDRR)
+Lusaka,2012-04-01,2012-04-30,POSITIVE,month,DI-61,DesInventar (UNDRR)
+Kazungula,2012-05-03,2012-05-03,POSITIVE,day,DI-70,DesInventar (UNDRR)
+Kazungula,2012-05-03,2012-05-03,POSITIVE,day,DI-71,DesInventar (UNDRR)
+Kazungula,2012-05-03,2012-05-03,POSITIVE,day,DI-72,DesInventar (UNDRR)
+Kazungula,2012-05-03,2012-05-03,POSITIVE,day,DI-73,DesInventar (UNDRR)
+Kazungula,2012-05-03,2012-05-03,POSITIVE,day,DI-75,DesInventar (UNDRR)
+Chipata,2012-05-04,2012-05-04,POSITIVE,day,DI-105,DesInventar (UNDRR)
+Chipata,2012-05-04,2012-05-04,POSITIVE,day,DI-90,DesInventar (UNDRR)
+Lunga,2012-06-26,2012-06-26,POSITIVE,day,DI-192,DesInventar (UNDRR)
+Mpika,2012-07-15,2012-07-15,POSITIVE,day,DI-195,DesInventar (UNDRR)
+Mwinilunga,2012-10-05,2012-10-05,POSITIVE,day,DI-87,DesInventar (UNDRR)
+Kasama,2012-10-05,2012-10-05,POSITIVE,day,DI-88,DesInventar (UNDRR)
+Mansa,2012-10-05,2012-10-05,POSITIVE,day,DI-89,DesInventar (UNDRR)
+Ndola,2012-10-05,2012-10-05,POSITIVE,day,DI-91,DesInventar (UNDRR)
+Kabwe,2012-10-05,2012-10-05,POSITIVE,day,DI-92,DesInventar (UNDRR)
+Lusaka,2012-10-05,2012-10-05,POSITIVE,day,DI-93,DesInventar (UNDRR)
+Mpika,2012-11-03,2012-11-03,POSITIVE,day,DI-50,DesInventar (UNDRR)
+Nakonde,2012-11-16,2012-11-16,POSITIVE,day,DI-173,DesInventar (UNDRR)
+Lusaka,2012-11-30,2012-11-30,POSITIVE,day,DI-52,DesInventar (UNDRR)
+Katete,2012-12-03,2012-12-03,POSITIVE,day,DI-152,DesInventar (UNDRR)
+Milengi,2012-12-03,2012-12-03,POSITIVE,day,DI-49,DesInventar (UNDRR)
+Chadiza,2012-12-13,2012-12-13,POSITIVE,day,DI-74,DesInventar (UNDRR)
+Chinsali,2013-01-01,2013-12-31,MASK,year,DI-158,DesInventar (UNDRR)
+Chibombo,2013-01-01,2013-12-31,MASK,year,DI-167,DesInventar (UNDRR)
+Chibombo,2013-01-01,2013-12-31,MASK,year,DI-168,DesInventar (UNDRR)
+Chibombo,2013-01-01,2013-12-31,MASK,year,DI-170,DesInventar (UNDRR)
+Chibombo,2013-01-01,2013-12-31,MASK,year,DI-171,DesInventar (UNDRR)
+Chibombo,2013-01-01,2013-12-31,MASK,year,DI-174,DesInventar (UNDRR)
+Itezhi-tezhi,2013-01-01,2013-12-31,MASK,year,DI-175,DesInventar (UNDRR)
+Itezhi-tezhi,2013-01-01,2013-12-31,MASK,year,DI-176,DesInventar (UNDRR)
+Itezhi-tezhi,2013-01-01,2013-12-31,MASK,year,DI-177,DesInventar (UNDRR)
+Mkushi,2013-01-01,2013-12-31,MASK,year,DI-178,DesInventar (UNDRR)
+Mkushi,2013-01-01,2013-12-31,MASK,year,DI-179,DesInventar (UNDRR)
+Mumbwa,2013-01-01,2013-12-31,MASK,year,DI-180,DesInventar (UNDRR)
+Shibuyunji,2013-01-01,2013-12-31,MASK,year,DI-181,DesInventar (UNDRR)
+Shibuyunji,2013-01-01,2013-12-31,MASK,year,DI-182,DesInventar (UNDRR)
+Shibuyunji,2013-01-01,2013-12-31,MASK,year,DI-183,DesInventar (UNDRR)
+Chipata,2013-01-01,2013-12-31,MASK,year,DI-184,DesInventar (UNDRR)
+Zambezi,2013-01-01,2013-12-31,MASK,year,DI-185,DesInventar (UNDRR)
+Kalomo,2013-01-01,2013-12-31,MASK,year,DI-186,DesInventar (UNDRR)
+Monze,2013-01-01,2013-12-31,MASK,year,DI-187,DesInventar (UNDRR)
+Namwala,2013-01-01,2013-12-31,MASK,year,DI-188,DesInventar (UNDRR)
+Namwala,2013-01-01,2013-12-31,MASK,year,DI-189,DesInventar (UNDRR)
+Namwala,2013-01-01,2013-12-31,MASK,year,DI-190,DesInventar (UNDRR)
+Kalabo,2013-01-01,2013-12-31,MASK,year,DI-191,DesInventar (UNDRR)
+Kalabo,2013-01-01,2013-12-31,MASK,year,DI-192,DesInventar (UNDRR)
+Kalabo,2013-01-01,2013-12-31,MASK,year,DI-193,DesInventar (UNDRR)
+Kalabo,2013-01-01,2013-12-31,MASK,year,DI-194,DesInventar (UNDRR)
+Kalabo,2013-01-01,2013-12-31,MASK,year,DI-195,DesInventar (UNDRR)
+Kalabo,2013-01-01,2013-12-31,MASK,year,DI-196,DesInventar (UNDRR)
+Kalabo,2013-01-01,2013-12-31,MASK,year,DI-197,DesInventar (UNDRR)
+Limulunga,2013-01-01,2013-12-31,MASK,year,DI-198,DesInventar (UNDRR)
+Limulunga,2013-01-01,2013-12-31,MASK,year,DI-199,DesInventar (UNDRR)
+Limulunga,2013-01-01,2013-12-31,MASK,year,DI-200,DesInventar (UNDRR)
+Mitete,2013-01-01,2013-12-31,MASK,year,DI-201,DesInventar (UNDRR)
+Mwandi,2013-01-01,2013-12-31,MASK,year,DI-202,DesInventar (UNDRR)
+Mwandi,2013-01-01,2013-12-31,MASK,year,DI-203,DesInventar (UNDRR)
+Mazabuka,2013-01-07,2013-01-07,POSITIVE,day,DI-174,DesInventar (UNDRR)
+Gwembe,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Livingstone,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Choma,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Sinazongwe,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Kazungula,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Monze,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Mazabuka,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Siavonga,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Namwala,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Kalomo,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Zimba,2013-01-09,2013-01-09,MASK,episode,DI-179,DesInventar (UNDRR)
+Ndola,2013-01-15,2013-01-15,POSITIVE,day,DI-69,DesInventar (UNDRR)
+Kabompo,2013-01-20,2013-01-20,POSITIVE,day,DI-139,DesInventar (UNDRR)
+Kabompo,2013-01-20,2013-01-20,POSITIVE,day,DI-141,DesInventar (UNDRR)
+Kabompo,2013-01-20,2013-01-20,POSITIVE,day,DI-142,DesInventar (UNDRR)
+Kalulushi,2013-01-20,2013-01-20,POSITIVE,day,DI-231,DesInventar (UNDRR)
+Lusaka,2013-01-27,2013-01-27,POSITIVE,day,DI-153,DesInventar (UNDRR)
+Lunga,2013-01-28,2013-01-28,POSITIVE,day,DI-76,DesInventar (UNDRR)
+Zambezi,2013-02-16,2013-02-16,POSITIVE,day,DI-176,DesInventar (UNDRR)
+Sinazongwe,2013-02-28,2013-02-28,POSITIVE,day,DI-68,DesInventar (UNDRR)
+Kalulushi,2013-03-01,2013-03-31,POSITIVE,month,DI-62,DesInventar (UNDRR)
+Lusaka,2013-03-11,2013-03-11,POSITIVE,day,DI-67,DesInventar (UNDRR)
+Kasama,2013-03-13,2013-03-13,POSITIVE,day,DI-224,DesInventar (UNDRR)
+Sinazongwe,2013-03-14,2013-03-14,POSITIVE,day,DI-78,DesInventar (UNDRR)
+Kazungula,2013-05-03,2013-05-03,POSITIVE,day,DI-74,DesInventar (UNDRR)
+Choma,2013-05-03,2013-05-03,POSITIVE,day,DI-80,DesInventar (UNDRR)
+Petauke,2013-05-03,2013-05-03,POSITIVE,day,DI-80,DesInventar (UNDRR)
+Petauke,2013-05-04,2013-05-04,POSITIVE,day,DI-149,DesInventar (UNDRR)
+Luano,2013-06-05,2013-06-05,POSITIVE,day,DI-253,DesInventar (UNDRR)
+Kawambwa,2013-06-06,2013-06-06,POSITIVE,day,DI-254,DesInventar (UNDRR)
+Kawambwa,2013-06-06,2013-06-06,POSITIVE,day,DI-256,DesInventar (UNDRR)
+Kawambwa,2013-06-06,2013-06-06,POSITIVE,day,DI-258,DesInventar (UNDRR)
+Kawambwa,2013-06-06,2013-06-06,POSITIVE,day,DI-259,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-260,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-261,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-262,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-263,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-264,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-265,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-266,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-267,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-268,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-269,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-270,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-271,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-272,DesInventar (UNDRR)
+Nchelenge,2013-06-06,2013-06-06,POSITIVE,day,DI-273,DesInventar (UNDRR)
+Shiwang'andu,2013-06-06,2013-06-06,POSITIVE,day,DI-278,DesInventar (UNDRR)
+Mpika,2013-06-06,2013-06-06,MASK,episode,DI-280,DesInventar (UNDRR)
+Shiwang'andu,2013-06-06,2013-06-06,MASK,episode,DI-280,DesInventar (UNDRR)
+Chama,2013-06-06,2013-06-06,MASK,episode,DI-280,DesInventar (UNDRR)
+Chinsali,2013-06-06,2013-06-06,MASK,episode,DI-280,DesInventar (UNDRR)
+Nakonde,2013-06-06,2013-06-06,MASK,episode,DI-280,DesInventar (UNDRR)
+Lusaka,2013-09-16,2013-09-16,POSITIVE,day,DI-172,DesInventar (UNDRR)
+Lusaka,2013-10-13,2013-10-13,POSITIVE,day,DI-79,DesInventar (UNDRR)
+Lusaka,2013-10-13,2013-10-13,POSITIVE,day,DI-81,DesInventar (UNDRR)
+Lusaka,2013-10-13,2013-10-13,POSITIVE,day,DI-82,DesInventar (UNDRR)
+Mitete,2013-10-31,2013-10-31,POSITIVE,day,DI-208,DesInventar (UNDRR)
+Katete,2013-11-27,2013-11-27,POSITIVE,day,DI-151,DesInventar (UNDRR)
+Luanshya,2013-12-13,2013-12-13,POSITIVE,day,DI-70,DesInventar (UNDRR)
+Kitwe,2013-12-13,2013-12-13,POSITIVE,day,DI-71,DesInventar (UNDRR)
+Luanshya,2013-12-13,2013-12-13,POSITIVE,day,DI-72,DesInventar (UNDRR)
+Mporokoso,2013-12-13,2013-12-13,POSITIVE,day,DI-73,DesInventar (UNDRR)
+Chadiza,2013-12-13,2013-12-13,POSITIVE,day,DI-75,DesInventar (UNDRR)
+Chadiza,2013-12-13,2013-12-13,POSITIVE,day,DI-76,DesInventar (UNDRR)
+Chadiza,2013-12-13,2013-12-13,POSITIVE,day,DI-77,DesInventar (UNDRR)
+Sinda,2013-12-16,2013-12-16,POSITIVE,day,DI-78,DesInventar (UNDRR)
+Chibombo,2013-12-25,2013-12-25,POSITIVE,day,DI-63,DesInventar (UNDRR)
+Chibombo,2013-12-25,2013-12-25,POSITIVE,day,DI-69,DesInventar (UNDRR)
+Kasama,2014-01-01,2014-12-31,MASK,year,DI-123,DesInventar (UNDRR)
+Chilanga,2014-01-01,2014-12-31,MASK,year,DI-126,DesInventar (UNDRR)
+Mambwe,2014-01-01,2014-12-31,MASK,year,DI-143,DesInventar (UNDRR)
+Masaiti,2014-01-01,2014-12-31,MASK,year,DI-157,DesInventar (UNDRR)
+Mpulungu,2014-01-01,2014-12-31,MASK,year,DI-164,DesInventar (UNDRR)
+Livingstone,2014-01-01,2014-12-31,MASK,year,DI-177,DesInventar (UNDRR)
+Nchelenge,2014-01-01,2014-12-31,MASK,year,DI-181,DesInventar (UNDRR)
+Lunga,2014-01-01,2014-12-31,MASK,year,DI-221,DesInventar (UNDRR)
+Lunga,2014-01-01,2014-12-31,MASK,year,DI-222,DesInventar (UNDRR)
+Nchelenge,2014-01-01,2014-12-31,MASK,year,DI-225,DesInventar (UNDRR)
+Rufunsa,2014-01-01,2014-12-31,MASK,year,DI-61,DesInventar (UNDRR)
+Senanga,2014-01-09,2014-01-09,POSITIVE,day,DI-185,DesInventar (UNDRR)
+Chililabombwe,2014-01-14,2014-01-14,POSITIVE,day,DI-66,DesInventar (UNDRR)
+Luwingu,2014-01-14,2014-01-14,POSITIVE,day,DI-90,DesInventar (UNDRR)
+Chama,2014-02-04,2014-02-04,POSITIVE,day,DI-154,DesInventar (UNDRR)
+Manyinga,2014-02-07,2014-02-07,POSITIVE,day,DI-165,DesInventar (UNDRR)
+Manyinga,2014-02-07,2014-02-07,POSITIVE,day,DI-166,DesInventar (UNDRR)
+Lusaka,2014-02-08,2014-02-08,POSITIVE,day,DI-97,DesInventar (UNDRR)
+Kitwe,2014-02-14,2014-02-14,POSITIVE,day,DI-87,DesInventar (UNDRR)
+Kasama,2014-02-14,2014-02-14,POSITIVE,day,DI-92,DesInventar (UNDRR)
+Kitwe,2014-02-27,2014-02-27,POSITIVE,day,DI-145,DesInventar (UNDRR)
+Kasama,2014-03-01,2014-03-01,POSITIVE,day,DI-64,DesInventar (UNDRR)
+Manyinga,2014-03-05,2014-03-05,POSITIVE,day,DI-167,DesInventar (UNDRR)
+Chipata,2014-03-05,2014-03-05,POSITIVE,day,DI-65,DesInventar (UNDRR)
+Kabwe,2014-03-08,2014-03-08,POSITIVE,day,DI-64,DesInventar (UNDRR)
+Mporokoso,2014-03-14,2014-03-14,POSITIVE,day,DI-111,DesInventar (UNDRR)
+Monze,2014-03-14,2014-03-14,POSITIVE,day,DI-63,DesInventar (UNDRR)
+Kaputa,2014-03-17,2014-03-17,POSITIVE,day,DI-158,DesInventar (UNDRR)
+Nakonde,2014-03-30,2014-03-30,POSITIVE,day,DI-62,DesInventar (UNDRR)
+Zambezi,2014-03-31,2014-03-31,POSITIVE,day,DI-144,DesInventar (UNDRR)
+Senanga,2014-04-04,2014-04-04,POSITIVE,day,DI-227,DesInventar (UNDRR)
+Nsama,2014-04-08,2014-04-08,POSITIVE,day,DI-103,DesInventar (UNDRR)
+Nsama,2014-04-08,2014-04-08,POSITIVE,day,DI-107,DesInventar (UNDRR)
+Nsama,2014-04-08,2014-04-08,POSITIVE,day,DI-47,DesInventar (UNDRR)
+Nsama,2014-04-08,2014-04-08,POSITIVE,day,DI-80,DesInventar (UNDRR)
+Mwense,2014-04-10,2014-04-10,POSITIVE,day,DI-178,DesInventar (UNDRR)
+Kabompo,2014-04-14,2014-04-14,POSITIVE,day,DI-159,DesInventar (UNDRR)
+Mwinilunga,2014-05-02,2014-05-02,POSITIVE,day,DI-35,DesInventar (UNDRR)
+Mkushi,2014-05-04,2014-05-04,POSITIVE,day,DI-112,DesInventar (UNDRR)
+Mwinilunga,2014-05-08,2014-05-08,POSITIVE,day,DI-83,DesInventar (UNDRR)
+Mwinilunga,2014-10-04,2014-10-04,POSITIVE,day,DI-84,DesInventar (UNDRR)
+Sinda,2014-10-14,2014-10-14,POSITIVE,day,DI-103,DesInventar (UNDRR)
+Luano,2014-10-28,2014-10-28,POSITIVE,day,DI-107,DesInventar (UNDRR)
+Lusaka,2014-11-03,2014-11-03,POSITIVE,day,DI-87,DesInventar (UNDRR)
+Chilanga,2014-12-01,2014-12-01,POSITIVE,day,DI-91,DesInventar (UNDRR)
+Nchelenge,2014-12-13,2014-12-13,POSITIVE,day,DI-71,DesInventar (UNDRR)
+Kasama,2015-01-01,2015-12-31,MASK,year,DI-148,DesInventar (UNDRR)
+Mporokoso,2015-01-01,2015-12-31,MASK,year,DI-149,DesInventar (UNDRR)
+Mporokoso,2015-01-01,2015-12-31,MASK,year,DI-150,DesInventar (UNDRR)
+Samfya,2015-01-01,2015-12-31,MASK,year,DI-152,DesInventar (UNDRR)
+Chipili,2015-01-01,2015-12-31,MASK,year,DI-153,DesInventar (UNDRR)
+Chipili,2015-01-01,2015-12-31,MASK,year,DI-154,DesInventar (UNDRR)
+Kabwe,2015-01-01,2015-12-31,MASK,year,DI-60,DesInventar (UNDRR)
+Zambezi,2015-01-01,2015-12-31,MASK,year,DI-65,DesInventar (UNDRR)
+Luano,2015-01-01,2015-12-31,MASK,year,DI-73,DesInventar (UNDRR)
+Lusaka,2015-01-05,2015-01-05,POSITIVE,day,DI-89,DesInventar (UNDRR)
+Lusaka,2015-01-09,2015-01-09,POSITIVE,day,DI-130,DesInventar (UNDRR)
+Chirundu,2015-01-11,2015-01-11,POSITIVE,day,DI-239,DesInventar (UNDRR)
+Sinda,2015-02-03,2015-02-03,POSITIVE,day,DI-88,DesInventar (UNDRR)
+Lundazi,2015-02-10,2015-02-10,POSITIVE,day,DI-79,DesInventar (UNDRR)
+Kaputa,2015-04-10,2015-04-10,POSITIVE,day,DI-177,DesInventar (UNDRR)
+Petauke,2015-04-18,2015-04-18,POSITIVE,day,DI-163,DesInventar (UNDRR)
+Luwingu,2015-05-11,2015-05-11,POSITIVE,day,DI-81,DesInventar (UNDRR)
+Shiwang'andu,2015-05-11,2015-05-11,POSITIVE,day,DI-82,DesInventar (UNDRR)
+Chinsali,2015-06-10,2015-06-10,POSITIVE,day,DI-221,DesInventar (UNDRR)
+Shiwang'andu,2015-06-14,2015-06-14,POSITIVE,day,DI-155,DesInventar (UNDRR)
+Solwezi,2015-06-16,2015-06-16,POSITIVE,day,DI-156,DesInventar (UNDRR)
+Solwezi,2015-06-18,2015-06-18,POSITIVE,day,DI-46,DesInventar (UNDRR)
+Mpika,2015-07-11,2015-07-11,POSITIVE,day,DI-194,DesInventar (UNDRR)
+Kabompo,2015-08-07,2015-08-07,POSITIVE,day,DI-68,DesInventar (UNDRR)
+Solwezi,2015-08-27,2015-08-27,POSITIVE,day,DI-67,DesInventar (UNDRR)
+Lukulu,2015-09-11,2015-09-11,POSITIVE,day,DI-181,DesInventar (UNDRR)
+Chipata,2015-09-24,2015-09-24,POSITIVE,day,DI-66,DesInventar (UNDRR)
+Nyimba,2015-11-06,2015-11-06,POSITIVE,day,DI-86,DesInventar (UNDRR)
+Samfya,2015-11-15,2015-11-15,POSITIVE,day,DI-176,DesInventar (UNDRR)
+Mazabuka,2015-12-17,2015-12-17,POSITIVE,day,DI-122,DesInventar (UNDRR)
+Shibuyunji,2015-12-29,2015-12-29,POSITIVE,day,DI-242,DesInventar (UNDRR)
+Mufumbwe,2016-01-01,2016-12-31,MASK,year,DI-187,DesInventar (UNDRR)
+Siavonga,2016-01-16,2016-01-16,POSITIVE,day,DI-60,DesInventar (UNDRR)
+Solwezi,2016-02-25,2016-02-25,POSITIVE,day,DI-178,DesInventar (UNDRR)
+Kafue,2016-03-18,2016-03-18,POSITIVE,day,DI-236,DesInventar (UNDRR)
+Solwezi,2016-06-20,2016-06-20,POSITIVE,day,DI-83,DesInventar (UNDRR)
+Luangwa,2016-11-16,2016-11-16,POSITIVE,day,DI-104,DesInventar (UNDRR)
+Nakonde,2016-12-09,2016-12-09,POSITIVE,day,DI-120,DesInventar (UNDRR)
+Chirundu,2016-12-25,2016-12-25,POSITIVE,day,DI-167,DesInventar (UNDRR)
+Milengi,2016-12-26,2016-12-26,POSITIVE,day,DI-165,DesInventar (UNDRR)
+Lunga,2017-01-01,2017-12-31,MASK,year,DI-220,DesInventar (UNDRR)
+Lundazi,2017-01-01,2017-12-31,MASK,year,DI-77,DesInventar (UNDRR)
+Lundazi,2017-01-01,2017-12-31,MASK,year,DI-88,DesInventar (UNDRR)
+Samfya,2017-01-04,2017-01-04,POSITIVE,day,DI-123,DesInventar (UNDRR)
+Samfya,2017-01-04,2017-01-04,POSITIVE,day,DI-486,DesInventar (UNDRR)
+Mwandi,2017-01-17,2017-01-17,POSITIVE,day,DI-107,DesInventar (UNDRR)
+Chipata,2017-01-17,2017-01-17,POSITIVE,day,DI-122,DesInventar (UNDRR)
+Choma,2017-02-17,2017-02-17,POSITIVE,day,DI-108,DesInventar (UNDRR)
+Chadiza,2017-03-10,2017-03-10,POSITIVE,day,DI-55,DesInventar (UNDRR)
+Mwinilunga,2017-04-09,2017-04-09,POSITIVE,day,DI-67,DesInventar (UNDRR)
+Kitwe,2017-05-03,2017-05-03,POSITIVE,day,DI-46,DesInventar (UNDRR)
+Mwense,2017-05-03,2017-05-03,POSITIVE,day,DI-48,DesInventar (UNDRR)
+Luanshya,2017-05-03,2017-05-03,POSITIVE,day,DI-48,DesInventar (UNDRR)
+Kaoma,2017-05-03,2017-05-03,POSITIVE,day,DI-53,DesInventar (UNDRR)
+Kaoma,2017-05-03,2017-05-03,POSITIVE,day,DI-54,DesInventar (UNDRR)
+Kaoma,2017-05-03,2017-05-03,POSITIVE,day,DI-55,DesInventar (UNDRR)
+Kaoma,2017-05-03,2017-05-03,POSITIVE,day,DI-56,DesInventar (UNDRR)
+Mwinilunga,2017-05-03,2017-05-03,POSITIVE,day,DI-57,DesInventar (UNDRR)
+Mwinilunga,2017-05-03,2017-05-03,POSITIVE,day,DI-58,DesInventar (UNDRR)
+Solwezi,2017-05-03,2017-05-03,POSITIVE,day,DI-59,DesInventar (UNDRR)
+Lusaka,2017-05-03,2017-05-03,POSITIVE,day,DI-62,DesInventar (UNDRR)
+Chingola,2017-05-03,2017-05-03,POSITIVE,day,DI-68,DesInventar (UNDRR)
+Kitwe,2017-05-03,2017-05-03,POSITIVE,day,DI-71,DesInventar (UNDRR)
+Nsama,2017-05-03,2017-05-03,POSITIVE,day,DI-74,DesInventar (UNDRR)
+Kafue,2017-05-03,2017-05-03,POSITIVE,day,DI-77,DesInventar (UNDRR)
+Kitwe,2017-05-04,2017-05-04,POSITIVE,day,DI-106,DesInventar (UNDRR)
+Lusaka,2017-05-04,2017-05-04,POSITIVE,day,DI-108,DesInventar (UNDRR)
+Petauke,2017-05-04,2017-05-04,POSITIVE,day,DI-117,DesInventar (UNDRR)
+Itezhi-tezhi,2017-05-04,2017-05-04,POSITIVE,day,DI-84,DesInventar (UNDRR)
+Chadiza,2017-05-08,2017-05-08,POSITIVE,day,DI-182,DesInventar (UNDRR)
+Shibuyunji,2017-05-09,2017-05-09,POSITIVE,day,DI-171,DesInventar (UNDRR)
+Lukulu,2017-05-11,2017-05-11,POSITIVE,day,DI-179,DesInventar (UNDRR)
+Luwingu,2017-05-11,2017-05-11,POSITIVE,day,DI-222,DesInventar (UNDRR)
+Chongwe,2017-05-22,2017-05-22,POSITIVE,day,DI-240,DesInventar (UNDRR)
+Lusaka,2017-05-22,2017-05-22,POSITIVE,day,DI-241,DesInventar (UNDRR)
+Kalabo,2017-05-23,2017-05-23,POSITIVE,day,DI-206,DesInventar (UNDRR)
+Kalabo,2017-05-23,2017-05-23,POSITIVE,day,DI-209,DesInventar (UNDRR)
+Kalabo,2017-05-23,2017-05-23,POSITIVE,day,DI-211,DesInventar (UNDRR)
+Kasama,2017-05-29,2017-05-29,POSITIVE,day,DI-124,DesInventar (UNDRR)
+Kabwe,2017-06-05,2017-06-05,MASK,episode,DI-173,DesInventar (UNDRR)
+Kapiri Mposhi,2017-06-05,2017-06-05,MASK,episode,DI-173,DesInventar (UNDRR)
+Serenje,2017-06-05,2017-06-05,MASK,episode,DI-173,DesInventar (UNDRR)
+Mumbwa,2017-06-05,2017-06-05,MASK,episode,DI-173,DesInventar (UNDRR)
+Luano,2017-06-05,2017-06-05,MASK,episode,DI-173,DesInventar (UNDRR)
+Mkushi,2017-06-05,2017-06-05,MASK,episode,DI-173,DesInventar (UNDRR)
+Chibombo,2017-06-05,2017-06-05,MASK,episode,DI-173,DesInventar (UNDRR)
+Itezhi-tezhi,2017-06-05,2017-06-05,MASK,episode,DI-173,DesInventar (UNDRR)
+Gwembe,2017-06-06,2017-06-06,POSITIVE,day,DI-204,DesInventar (UNDRR)
+Kawambwa,2017-06-06,2017-06-06,POSITIVE,day,DI-257,DesInventar (UNDRR)
+Chipata,2020-01-03,2020-01-03,MASK,episode,ZM-2020-01,Curated log: FloodList
+Lundazi,2020-01-03,2020-01-03,MASK,episode,ZM-2020-01,Curated log: FloodList
+Sinda,2020-01-03,2020-01-03,MASK,episode,ZM-2020-01,Curated log: FloodList
+Petauke,2020-01-03,2020-01-03,MASK,episode,ZM-2020-01,Curated log: FloodList
+Chadiza,2020-01-03,2020-01-03,MASK,episode,ZM-2020-01,Curated log: FloodList
+Mambwe,2020-01-03,2020-01-03,MASK,episode,ZM-2020-01,Curated log: FloodList
+Katete,2020-01-03,2020-01-03,MASK,episode,ZM-2020-01,Curated log: FloodList
+Nyimba,2020-01-03,2020-01-03,MASK,episode,ZM-2020-01,Curated log: FloodList
+Gwembe,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Livingstone,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Choma,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Sinazongwe,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Kazungula,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Monze,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Mazabuka,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Siavonga,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Namwala,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Kalomo,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Zimba,2020-01-17,2020-01-17,MASK,episode,ZM-2020-02,Curated log: FloodList
+Chipata,2020-01-24,2020-01-24,MASK,episode,ZM-2020-03,Curated log: FloodList
+Lundazi,2020-01-24,2020-01-24,MASK,episode,ZM-2020-03,Curated log: FloodList
+Sinda,2020-01-24,2020-01-24,MASK,episode,ZM-2020-03,Curated log: FloodList
+Petauke,2020-01-24,2020-01-24,MASK,episode,ZM-2020-03,Curated log: FloodList
+Chadiza,2020-01-24,2020-01-24,MASK,episode,ZM-2020-03,Curated log: FloodList
+Mambwe,2020-01-24,2020-01-24,MASK,episode,ZM-2020-03,Curated log: FloodList
+Katete,2020-01-24,2020-01-24,MASK,episode,ZM-2020-03,Curated log: FloodList
+Nyimba,2020-01-24,2020-01-24,MASK,episode,ZM-2020-03,Curated log: FloodList
+Chipata,2020-02-06,2020-02-06,MASK,episode,ZM-2020-04,Curated log: FloodList
+Lundazi,2020-02-06,2020-02-06,MASK,episode,ZM-2020-04,Curated log: FloodList
+Sinda,2020-02-06,2020-02-06,MASK,episode,ZM-2020-04,Curated log: FloodList
+Petauke,2020-02-06,2020-02-06,MASK,episode,ZM-2020-04,Curated log: FloodList
+Chadiza,2020-02-06,2020-02-06,MASK,episode,ZM-2020-04,Curated log: FloodList
+Mambwe,2020-02-06,2020-02-06,MASK,episode,ZM-2020-04,Curated log: FloodList
+Katete,2020-02-06,2020-02-06,MASK,episode,ZM-2020-04,Curated log: FloodList
+Nyimba,2020-02-06,2020-02-06,MASK,episode,ZM-2020-04,Curated log: FloodList
+Lunga,2020-03-11,2020-03-11,POSITIVE,day,ZM-2020-05,Curated log: FloodList (cites satellite imagery)
+Samfya,2020-03-24,2020-03-24,POSITIVE,day,ZM-2020-06,Curated log: FloodList
+Nchelenge,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Lunga,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Samfya,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Kawambwa,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Mansa,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Milengi,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Mwense,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Chipili,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Chiengi,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Mpika,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Shiwang'andu,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Chama,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Chinsali,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Nakonde,2020-04-02,2020-04-02,MASK,episode,ZM-2020-07,Curated log: FloodList
+Mumbwa,2021-01-08,2021-01-08,POSITIVE,day,ZM-2021-01,Curated log: FloodList
+Gwembe,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Livingstone,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Choma,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Sinazongwe,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Kazungula,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Monze,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Mazabuka,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Siavonga,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Namwala,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Kalomo,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Zimba,2022-01-20,2022-01-20,MASK,episode,ZM-2022-01,Curated log: FloodList; corroborated by ReliefWeb ECHO Daily Flash (31 Jan 2022)
+Mongu,2022-02-14,2022-02-14,POSITIVE,day,DI-2199,DesInventar (UNDRR)
+Chongwe,2023-01-16,2023-01-16,POSITIVE,day,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Chongwe,2023-01-17,2023-02-27,MASK,episode,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Luangwa,2023-01-16,2023-01-16,POSITIVE,day,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Luangwa,2023-01-17,2023-02-27,MASK,episode,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Luano,2023-01-16,2023-01-16,POSITIVE,day,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Luano,2023-01-17,2023-02-27,MASK,episode,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Lusaka,2023-01-16,2023-01-16,POSITIVE,day,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Lusaka,2023-01-17,2023-02-27,MASK,episode,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Mazabuka,2023-01-16,2023-01-16,POSITIVE,day,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Mazabuka,2023-01-17,2023-02-27,MASK,episode,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Monze,2023-01-16,2023-01-16,POSITIVE,day,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Monze,2023-01-17,2023-02-27,MASK,episode,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Mumbwa,2023-01-16,2023-01-16,POSITIVE,day,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Mumbwa,2023-01-17,2023-02-27,MASK,episode,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Namwala,2023-01-16,2023-01-16,POSITIVE,day,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Namwala,2023-01-17,2023-02-27,MASK,episode,ZM-2023-01,"Curated log: DMMU, WARMA (via UN-SPIDER); International Charter Activation #796 (10 Sentinel-2B-derived flood-extent products)"
+Lusaka,2023-11-22,2023-11-22,POSITIVE,day,DI-2197,DesInventar (UNDRR)
+Gwembe,2025-01-23,2025-01-23,POSITIVE,day,DI-2253,DesInventar (UNDRR)
+Lusaka,2025-01-25,2025-01-25,POSITIVE,day,DI-2252,DesInventar (UNDRR)
+Chinsali,2025-12-30,2026-01-03,POSITIVE,day,ZM-2025-01,Curated log: International Charter Activation #1009 (8 satellite-derived products); International Water Management Institute (project management)
+Lundazi,2025-12-30,2026-01-03,POSITIVE,day,ZM-2025-01,Curated log: International Charter Activation #1009 (8 satellite-derived products); International Water Management Institute (project management)
+Nakonde,2025-12-30,2026-01-03,POSITIVE,day,ZM-2025-01,Curated log: International Charter Activation #1009 (8 satellite-derived products); International Water Management Institute (project management)
+Luangwa,2026-01-17,2026-01-17,POSITIVE,day,DI-2259,DesInventar (UNDRR)
+Rufunsa,2026-01-18,2026-01-18,POSITIVE,day,DI-2260,DesInventar (UNDRR)
+Chongwe,2026-01-18,2026-01-18,POSITIVE,day,DI-2261,DesInventar (UNDRR)
+Kafue,2026-01-18,2026-01-18,POSITIVE,day,DI-2263,DesInventar (UNDRR)
+Kabwe,2026-01-23,2026-01-23,POSITIVE,day,DI-2256,DesInventar (UNDRR)

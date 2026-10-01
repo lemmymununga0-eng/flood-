@@ -37,6 +37,66 @@ export interface Prediction {
   explanation: string;
 }
 
+export interface RiskPredictionRequest {
+  location_id?: number;
+  location_name?: string;
+  precipitation_mm: number;
+  temperature_c: number;
+  temperature_max_c: number;
+  temperature_min_c: number;
+  relative_humidity_pct: number;
+  /** WS10M — wind at 10 m, the variable the model was trained on (not 2 m wind). */
+  wind_speed_10m_ms: number;
+  observation_date?: string;
+}
+
+export interface FeatureContribution {
+  feature: string;
+  contribution: number;
+  direction: string;
+}
+
+export interface RiskPredictionResponse {
+  location: string;
+  latitude: number | null;
+  longitude: number | null;
+  prediction_horizon_days: number;
+  risk_probability_raw: number;
+  risk_probability_calibrated: number;
+  risk_level: string;
+  would_alert_at_threshold: boolean;
+  decision_threshold: number;
+  model_version: string;
+  generated_at: string;
+  observation_date: string | null;
+  /** The (t, t+7] window this probability refers to, so a stored prediction can be
+   * checked against what actually happened. */
+  target_window_start: string | null;
+  target_window_end: string | null;
+  feature_contract_version: string;
+  explanation: FeatureContribution[];
+  caveats: string[];
+}
+
+/** Mirrors backend WeatherObservationOut. The max/min temperature and 10 m wind
+ * fields are the feature-contract columns added 2026-09-26; rows ingested before that
+ * migration carry null for them, which is why every numeric field is nullable here. */
+export interface WeatherObservation {
+  id: number;
+  location_id: number;
+  observed_date: string;
+  precipitation_mm: number | null;
+  temperature_c: number | null;
+  temperature_max_c: number | null;
+  temperature_min_c: number | null;
+  relative_humidity_pct: number | null;
+  wind_speed_10m_ms: number | null;
+  /** Legacy 2 m wind, retained so historical rows are not reinterpreted. */
+  wind_speed_ms: number | null;
+  source: string;
+  retrieved_at: string;
+}
+
 export interface WeatherIngestResult {
   status: "success" | "failed";
   location_id: number;

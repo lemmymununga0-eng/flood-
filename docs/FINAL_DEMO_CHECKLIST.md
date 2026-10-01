@@ -11,25 +11,31 @@ executions — not documentation claims.
 - [x] Backend starts — same as above, real `uvicorn` process, real startup log
 - [x] Database connects — live Supabase Postgres 17.6, confirmed via the app's own
       SQLAlchemy engine, not a raw driver test
-- [ ] Frontend loads — not attempted this pass (needs port 8000 freed, or a
-      `VITE_API_BASE_URL` override wired in first — currently hardcoded to `localhost:8000`)
+- [x] Frontend loads — **yes.** `VITE_API_BASE_URL` override added (falls back to the old
+      hardcoded default), so the SPA can point at a backend on any port. Verified in a real
+      headless Chrome session against the live backend
 - [x] Zambia location can be selected — `GET /locations` confirmed 3 real seeded locations
       (Kanyama compound, Lusaka city, Ng'ombe settlement); frontend has real dropdown/map-click
       selection UI
 - [x] Real meteorological data can be obtained — live NASA POWER call verified working end to
       end this session (11 real observations fetched and stored)
-- [ ] Real ML model loads — **no.** `backend/app/ml/` is empty; nothing in the backend ever
-      imports `joblib` or loads a `.joblib` file
-- [ ] Prediction is generated — **no.** No `POST /predict`-equivalent endpoint exists anywhere
-- [ ] Calibrated risk probability is returned — **no.** No calibration artifact exists for any
-      `ai-engine/` model, and nothing is served anyway
-- [ ] Risk level is displayed — the UI component (`RiskBadge`) exists and works, but has no
-      real model-derived risk level to ever display (`predictions` table is empty)
+- [x] Real ML model loads — **yes, as of 2026-09-25.** `backend/app/ml/predictor.py` loads real
+      artifacts from `backend/ml_artifacts/flood_risk_lr_v1/` (model, scaler, sigmoid calibrator,
+      feature order, threshold). Registered in `model_versions` (id 1, `is_active=True`), so
+      `GET /api/v1/models` and `system-status` now report it as operational
+- [x] Prediction is generated — **yes.** `POST /api/v1/predictions/predict` runs real inference;
+      verified live (wet-season input → HIGH, dry-season input → LOW)
+- [x] Calibrated risk probability is returned — **yes.** Sigmoid calibrator applied at inference;
+      response carries both `risk_probability_raw` and `risk_probability_calibrated`
+- [x] Risk level is displayed **in the UI** — **yes.** The Predictions page now has a "Run a
+      prediction" form (approved `.card`/`.field`/`.btn-primary` patterns, existing `RiskBadge`).
+      Verified in-browser: wet-season input returned **High**, 0.41% calibrated, raw 0.7963,
+      "Above alert threshold: Yes (≥ 0.5)", model `flood_risk_lr_v1`
 - [x] Historical information is displayed — real: 14 real flood events render in
       `HistoricalEvents.tsx`, table + KPI summary
-- [ ] Model explanation is displayed — **no.** No SHAP/feature-importance UI exists in the
-      frontend even conceptually, and SHAP has never actually been run in `ai-engine/` (zero
-      output files exist, though the code to do so is real and complete)
+- [x] Model explanation is displayed **in the UI** — **yes.** The result card renders a
+      "Contributing factors" table (feature, signed contribution, direction) plus the model's
+      caveats, including that contributions are correlational and that risk level is *relative*
 - [x] API works — 21 real, DB-backed endpoints, 19/21 with test coverage, live-tested this
       session
 - [x] Error handling works — real `ErrorState` component with retry, used on every
@@ -40,11 +46,21 @@ executions — not documentation claims.
 - [x] Security checks pass — no secrets committed, no SQL/command injection, no path
       traversal, real auth/RBAC, P0 config fail-fast fix verified present and working; one
       real gap remains (`/docs` always exposed — see below)
-- [x] Tests pass — 49/49 backend + 31/31 ai-engine, both **actually run** this session
-      against real data. (Frontend: no test framework exists — N/A, not a failure)
-- [ ] End-to-end flow works — **no, blocked at the ML-serving gap.** Everything up to and
-      including real data ingestion and storage works end-to-end; the chain breaks the moment
-      a prediction is needed, because that code path doesn't exist yet
+- [x] Tests pass — **57/57 backend** (49 existing + 8 new inference tests) + 31/31 ai-engine +
+      13/13 research-pipeline tests, all **actually run**. (Frontend: no test framework exists)
+- [x] End-to-end flow works — **yes, demonstrated in a real browser on 2026-09-25.** Full chain:
+      user selects a Zambian location → enters a weather observation → frontend POSTs to
+      `/api/v1/predictions/predict` → backend loads the real model artifacts → scales features →
+      scores → applies sigmoid calibration → assigns a risk band → returns explanation + caveats →
+      UI renders it in the approved design. Screenshot captured.
+
+### Known environment quirks (not app defects)
+
+Two of this machine's ports are occupied by unrelated projects of yours: **8000** (a "CRISPOOL
+LOGISTICS" site) and **5173** on `0.0.0.0`/`::1` (a "Weapons of Power Ministry International"
+app). FloodShield was therefore run on backend **8010** and frontend **127.0.0.1:5173**, with
+`http://127.0.0.1:5173` added to `CORS_ORIGINS` in the gitignored dev `.env`. Nothing was changed
+in those other projects. On a clean machine the default ports work unchanged.
 
 ### What's actually blocking a full demo, in order
 

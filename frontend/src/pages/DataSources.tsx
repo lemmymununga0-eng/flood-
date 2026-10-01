@@ -41,9 +41,9 @@ export default function DataSources() {
           Data Sources
         </h1>
         <p>
-          The real catalog of external data this project depends on. Status reflects the
-          last real connectivity check — see docs/DATA-SOURCES.md for why NASA POWER and
-          DMMU/WARMA are currently unreachable from this development environment.
+          The real catalog of external data this project depends on. Every status below
+          comes from an actual live HTTP probe, not a stored assumption — a source marked
+          failed genuinely did not respond when it was last checked.
         </p>
       </div>
 
