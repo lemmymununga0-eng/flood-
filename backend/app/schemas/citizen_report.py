@@ -13,9 +13,26 @@ _TAG_RE = re.compile(r"<[^>]*>")
 
 
 def _strip_markup(value: str) -> str:
-    """Remove HTML tags and decode entities, preserving the human text."""
-    without_tags = _TAG_RE.sub("", value)
-    return html.unescape(without_tags).strip()
+    """Remove HTML tags and decode entities, preserving the human text.
+
+    Order matters, and the first version of this got it wrong. Stripping tags before
+    decoding entities meant an entity-encoded payload contained no literal "<", matched
+    nothing, and was then reconstituted into live markup by unescape() -- so
+    "&lt;img src=x onerror=...&gt;" was stored as "<img src=x onerror=...>". Decoding
+    first closes that. Iterating to a fixed point additionally defeats nested
+    constructions like "<scr<x>ipt>", which a single pass collapses INTO a valid tag.
+
+    The bound is belt-and-braces: the loop converges in one or two passes for any real
+    input, and the cap stops a pathological one from spinning.
+    """
+    previous = None
+    current = value
+    for _ in range(8):
+        if current == previous:
+            break
+        previous = current
+        current = _TAG_RE.sub("", html.unescape(current))
+    return current.strip()
 
 
 class CitizenReportCreate(BaseModel):

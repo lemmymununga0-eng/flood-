@@ -56,8 +56,10 @@ app = FastAPI(
     title="FloodShield Zambia API",
     description=(
         "Flood-risk PREDICTIONS are model output; flood-event and weather data are "
-        "OBSERVATIONS/reports — see docs/RESEARCH-METHODOLOGY.md. No trained model "
-        "exists yet, so /predictions legitimately returns an empty list. Schema is "
+        "OBSERVATIONS/reports — see docs/RESEARCH-METHODOLOGY.md. A trained model IS "
+        "served, but it does not demonstrate skill beyond seasonal climatology "
+        "(see docs/MODEL-EVALUATION.md); research use only, not for public warnings. "
+        "Schema is "
         "managed by Alembic migrations (backend/alembic/) — run `alembic upgrade head` "
         "before starting the server; the app no longer auto-creates tables."
     ),
