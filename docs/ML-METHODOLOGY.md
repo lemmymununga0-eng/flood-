@@ -1,6 +1,10 @@
 # ML Methodology — FloodShield Zambia
 
-Status: Phase 0/1 planning document. No model has been trained. No figures in this
+Status: updated 2026-10-01. Models HAVE been trained and a corrected study completed;
+its measured results are in `docs/MODEL-EVALUATION.md` and the headline is that no model
+beat a seasonal climatology baseline (`DO_NOT_DEPLOY`). The methodology below is what
+that study followed. Historical note: this began as a planning document, and figures in
+its original form
 document are results — they are the plan for producing results.
 
 ## Flood target / label design (the highest-risk decision in this project)

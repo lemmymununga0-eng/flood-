@@ -1,5 +1,11 @@
 # FloodShield-Zambia — Full System Audit
 
+> **HISTORICAL RECORD — superseded.** This document was accurate when written and has
+> deliberately **not** been edited, so the project's audit trail stays honest. It does not
+> describe the system as it stands now: a model is trained and served, 82 districts of
+> weather data are ingested, and the corrected study's verdict is `DO_NOT_DEPLOY`.
+> For the current state see **`docs/CURRENT-STATE-2026-10-01.md`**.
+
 Produced 2026-09-18. Every claim below was verified this session against actual code, an
 actual live database (Supabase Postgres, connected for the first time this session), actual
 running backend endpoints, and actual test-suite executions — not re-derived from prior

@@ -1,6 +1,8 @@
 # Testing — FloodShield Zambia
 
-Status: Phase 0 policy document. No tests exist yet — there is no code to test. This
+Status: updated 2026-10-01. Tests now exist across three suites; counts and what can
+and cannot currently be executed are recorded in `docs/CURRENT-STATE-2026-10-01.md`.
+The policy below still governs what a test is allowed to assert. This
 records the testing standard every subsequent phase must meet before being marked done.
 
 ## Standard (applies to every phase from Phase 1 onward)

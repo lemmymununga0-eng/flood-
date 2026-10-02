@@ -12,8 +12,9 @@ target architecture — no SQLite substitution.
 |---|---|---|
 | `locations` | `backend/scripts/seed_db.py` | 3 real rows: Lusaka (city), Kanyama compound, Ng'ombe settlement. Coordinates are city-approximate, not surveyed — see `coordinate_confidence` column. |
 | `flood_events` | `backend/scripts/seed_db.py`, from `ai-engine/data/external/zambia_flood_events_log.csv` | 11 real, sourced rows. Not a validated label — see `docs/ML-METHODOLOGY.md`. |
-| `weather_observations` | `POST /api/v1/weather/{id}/ingest` only | Empty by default; only ever populated by a real successful NASA POWER fetch, never seeded with placeholder values. |
-| `model_versions`, `predictions` | Nothing yet | Exist as schema only — no model has been trained (Phases 5–9 not started), so these are legitimately empty. |
+| `weather_observations` | `POST /api/v1/weather/{id}/ingest`, `backend/scripts/populate_real_data.py` | Only ever populated by a real successful NASA POWER fetch, never seeded with placeholder values. Carries `temperature_max_c`, `temperature_min_c` and `wind_speed_10m_ms` as of migration `b4c1a7e92f30`; rows ingested before it hold NULL there and are skipped by inference rather than substituted. |
+| `model_versions` | `backend/scripts/register_model.py` | Holds the registered served model and its honestly-reported metrics, including the corrected study's finding that it does not beat a seasonal baseline. |
+| `predictions` | `backend/scripts/populate_real_data.py` | Real model output over real weather. Each row records `observation_date`, the `(t, t+7]` target window, the feature-contract version and a staleness flag, so a stored prediction can be checked against what actually happened. |
 | `alerts` | `POST /api/v1/alerts` (real, via the Create Alert screen) | Genuinely persisted. No workflow states beyond a fixed `"issued"` status — see `docs/API.md`. |
 
 ## Not yet implemented

@@ -1,5 +1,11 @@
 # Project Memory
 
+> **HISTORICAL RECORD — superseded.** This document was accurate when written and has
+> deliberately **not** been edited, so the project's audit trail stays honest. It does not
+> describe the system as it stands now: a model is trained and served, 82 districts of
+> weather data are ingested, and the corrected study's verdict is `DO_NOT_DEPLOY`.
+> For the current state see **`docs/CURRENT-STATE-2026-10-01.md`**.
+
 The source of truth for why FloodShield Zambia is built the way it is. Every major
 decision is recorded here when made, with its rationale and status. When a decision
 changes, the entry is updated in place with the new decision, the reason for the change,

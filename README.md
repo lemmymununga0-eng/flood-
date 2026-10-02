@@ -1,10 +1,10 @@
-# FloodShield Zambia
+# Flood Prediction System ZM
 
 An AI/ML-powered flood-risk intelligence and decision-support system focused on Zambia. It turns
 historical and meteorological data into flood-risk estimates, presented alongside real citizen
 reports, early-warning alerts, and model transparency information, through a web application.
 
-FloodShield Zambia is a **decision-support layer**, not a replacement for Zambia's official
+Flood Prediction System ZM is a **decision-support layer**, not a replacement for Zambia's official
 disaster-management authorities (DMMU, WARMA) or any national warning system. It does not claim
 real-time national flood forecasting, guaranteed prediction accuracy, or operational deployment —
 see [Project Status](#project-status) and [Machine Learning Status](#machine-learning-status)
@@ -17,15 +17,23 @@ rather than copied from an earlier draft.
 
 ## Project Status
 
-**Current stage: Development / Integration.** The web application (auth, database, real backend
-API, redesigned frontend) is functional for development testing today. The ML pipeline has
-produced its first real, non-synthetic trained model, but that model is **not yet connected** to
-the running application — see [Machine Learning Status](#machine-learning-status). This project
-is **not** production-ready and does not claim to be: no deployment automation exists (no Docker,
-no CI/CD), and a known security-configuration issue (a fallback default secret key) has not been
-fixed. Full, dated audit evidence for every claim in this README lives in
-[`docs/AUDIT-REPORT-2026-09-09.md`](docs/AUDIT-REPORT-2026-09-09.md) and
-[`docs/ML-INTEGRATION-AUDIT-2026-09-09.md`](docs/ML-INTEGRATION-AUDIT-2026-09-09.md).
+**Current stage: research prototype, fully integrated.** The web application (auth, database,
+real backend API, redesigned frontend) runs end to end, and a trained model **is** connected and
+served — 82 Zambian districts, 1,099,374 daily weather rows, real predictions in the database.
+
+**The headline research finding is a negative one, and it is the most important thing in this
+repository.** Across 25 model configurations on corrected labels, evaluated over 15
+rolling-origin folds and 10 spatio-temporal folds, **no machine-learning model beat a
+day-of-year seasonal climatology baseline that uses no weather data at all.** The formal
+deployment gate returned `DO_NOT_DEPLOY` (2 of 5 pre-declared criteria passed) and exported
+nothing. The limiting factor is flood-label completeness, not model capacity.
+
+**This must not be used to issue public or institutional flood warnings.** At its documented
+operating point it produces roughly one false alarm per district every two days.
+
+Current state, with evidence: [`docs/CURRENT-STATE-2026-10-01.md`](docs/CURRENT-STATE-2026-10-01.md).
+Measured results: [`docs/MODEL-EVALUATION.md`](docs/MODEL-EVALUATION.md). Earlier dated audits are
+retained unedited as a historical record and are explicitly superseded.
 
 ## Architecture
 
@@ -80,7 +88,7 @@ automated frontend test suite exists (`frontend/tests/` is an empty placeholder 
 | Citizen reports (submit/list/moderate) | **Implemented** | Real, persisted, RBAC-gated moderation |
 | Notifications | **Implemented** | Real, user-scoped; currently generated only when a citizen report is moderated |
 | Weather ingestion (NASA POWER) | **Implemented** | Real HTTP integration; honest failure reporting if the request fails |
-| Flood-risk predictions (API + UI) | **Partially implemented** | The screens and API endpoint are real and correctly show an honest empty state; no model is being served yet, so the list is always empty today |
+| Flood-risk predictions (API + UI) | **Implemented** | Model served; real predictions stored and rendered. The model does not beat a seasonal baseline — see Machine Learning Status |
 | AI Model registry (API + UI) | **Partially implemented** | Same as above — real, empty, honest |
 | Prediction/Citizen-report detail pages | **Planned** | Not built yet — there's no real per-item data to show until predictions exist |
 | SHAP explainability in the UI | **Planned** | No SHAP output has ever been generated (see above) |
@@ -121,7 +129,7 @@ POWER, behind a swappable interface), `models/` (SQLAlchemy ORM), `schemas/` (Py
 | GET | `/api/v1/flood-events` | List historical flood events | Implemented |
 | GET | `/api/v1/weather/{location_id}` | List stored weather observations | Implemented |
 | POST | `/api/v1/weather/{location_id}/ingest` | Fetch real NASA POWER data | Implemented |
-| GET | `/api/v1/predictions` | List predictions | Implemented — currently always empty, no model served |
+| GET | `/api/v1/predictions` | List stored predictions | Implemented — returns real rows |
 | GET | `/api/v1/alerts` | List alerts | Implemented |
 | POST | `/api/v1/alerts` | Create alert (RBAC) | Implemented |
 | GET | `/api/v1/citizen-reports` | List citizen reports | Implemented |
@@ -129,14 +137,17 @@ POWER, behind a swappable interface), `models/` (SQLAlchemy ORM), `schemas/` (Py
 | POST | `/api/v1/citizen-reports/{id}/moderate` | Verify/reject a report (RBAC) | Implemented |
 | GET | `/api/v1/notifications` | List the caller's own notifications | Implemented |
 | POST | `/api/v1/notifications/{id}/read` | Mark a notification read | Implemented |
-| GET | `/api/v1/models` | List registered model versions | Implemented — currently always empty, see below |
+| GET | `/api/v1/models` | List registered model versions | Implemented — returns the served model and its honestly-reported metrics |
 | GET | `/api/v1/models/{id}` | Get one model version | Implemented |
 | GET | `/api/v1/data-sources` | List the data-source catalog | Implemented |
 | POST | `/api/v1/data-sources/{id}/check` | Run a live connectivity check (RBAC) | Implemented |
 | GET | `/api/v1/system-status` | Live-computed component health | Implemented |
 
-There is no `POST /api/v1/predictions` or any other endpoint that triggers model inference — that
-does not exist yet.
+`POST /api/v1/predictions/predict` scores a supplied weather observation against the served
+model and returns a calibrated probability, a risk band, the `(t, t+7]` target window, per-feature
+contributions and explicit caveats. It does not fetch live weather and does not persist. Inputs
+must satisfy [`ml/contracts/feature_contract.json`](ml/contracts/feature_contract.json) — a
+degenerate `T2M_MAX == T2M == T2M_MIN` triple is rejected, not scored.
 
 ## Database
 

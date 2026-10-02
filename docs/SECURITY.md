@@ -1,6 +1,8 @@
 # Security — FloodShield Zambia
 
-Status: Phase 0 policy document — no backend code exists yet to audit against this yet.
+Status: updated 2026-10-01. The backend exists and has been audited against this policy;
+findings and their current state are in `docs/CURRENT-STATE-2026-10-01.md` and
+`docs/SYSTEM-FIX-PASS-2026-10-01.md`.
 This records the requirements the implementation must meet from Phase 10 onward.
 
 ## Secrets

@@ -1,6 +1,10 @@
 # Data Sources — FloodShield Zambia
 
-Status: Phase 0/1. **No data has been downloaded yet.** This document records candidate
+Status: updated 2026-10-01. **Data has since been downloaded and used.** NASA POWER now
+provides 1,099,374 daily rows across 82 Zambian districts (1990-01-01 to 2026-09-15);
+flood events come from DesInventar, the Dartmouth Flood Observatory and a hand-compiled
+DMMU/WARMA/ReliefWeb/International-Charter log. See `ml/labels/LABEL_PROVENANCE.md`.
+The assessments below record candidate
 sources and what needs to be verified before any of them is relied on — nothing below is
 a confirmed integration.
 

@@ -1,5 +1,11 @@
 # FloodShield Zambia — Full Codebase Audit & Deployment-Readiness Report
 
+> **HISTORICAL RECORD — superseded.** This document was accurate when written and has
+> deliberately **not** been edited, so the project's audit trail stays honest. It does not
+> describe the system as it stands now: a model is trained and served, 82 districts of
+> weather data are ingested, and the corrected study's verdict is `DO_NOT_DEPLOY`.
+> For the current state see **`docs/CURRENT-STATE-2026-10-01.md`**.
+
 **Audit date:** 2026-09-09
 **Baseline:** `docs/AUDIT-REPORT-2026-09-07.md` (48%) and `docs/AUDIT-REPORT-2026-09-08.md` (51%)
 **Scope of this audit:** everything built since 2026-09-08 — a Phase 1 architecture-alignment pass

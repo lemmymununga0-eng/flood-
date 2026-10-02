@@ -1,5 +1,11 @@
 # FloodShield Zambia — ML Model & Prediction Integration Audit
 
+> **HISTORICAL RECORD — superseded.** This document was accurate when written and has
+> deliberately **not** been edited, so the project's audit trail stays honest. It does not
+> describe the system as it stands now: a model is trained and served, 82 districts of
+> weather data are ingested, and the corrected study's verdict is `DO_NOT_DEPLOY`.
+> For the current state see **`docs/CURRENT-STATE-2026-10-01.md`**.
+
 **Audit date:** 2026-09-09
 **Scope:** inspection and analysis only, per the governing prompt's explicit rule — no files were
 edited, created, or deleted as part of this audit. Every claim below is backed by a file actually

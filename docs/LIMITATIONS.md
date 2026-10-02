@@ -1,9 +1,34 @@
 # Known Limitations — FloodShield Zambia
 
-Status: Phase 0. This file will grow substantially once real data is ingested; these are
-the limitations already knowable before any data has been pulled.
+Status: updated 2026-10-01. The sections below are kept as a dated record of how the
+project's understanding of its own limits developed — the 2026-09-07 list was written
+before any data existed and is **no longer current**. For the limitations that apply
+today, read the next section first; `docs/CURRENT-STATE-2026-10-01.md` is the single
+source of truth.
 
-## Current-state limitations (true today, 2026-09-07)
+## Current limitations (2026-10-01)
+
+1. **The flood labels are incomplete, and this is the binding constraint.** Nine
+   independently documented floods were negatives in the predecessor dataset.
+   1990-1997, 1999, 2018, 2019 and 2024 still contain no documented district-level
+   Zambian events, so those years' negatives remain unverified.
+2. **The model shows no skill beyond seasonality.** Across 25 configurations, 15
+   rolling-origin folds and 10 spatio-temporal folds, nothing beat a day-of-year
+   climatology. Formal verdict: `DO_NOT_DEPLOY`, 2 of 5 criteria passed.
+3. **There is no forecast capability.** The system predicts seven days ahead from NASA
+   POWER weather that lags 2-3 days, so the deployed horizon is fictional until forecast
+   meteorology is added.
+4. **Precision is unusable for alerting** - roughly one false alarm per district every
+   two days at the documented operating point.
+5. **Spatial resolution is too coarse for urban flooding.** A ~55 km reanalysis cell
+   cannot resolve a storm over a Lusaka settlement.
+6. **No scheduler.** Predictions come from a manual script run.
+7. **The 57-test backend suite has never been executed** - it needs a local PostgreSQL
+   that this machine does not have. No pass count is claimed for it anywhere.
+8. **Flood mechanisms are pooled.** Pluvial, riverine and one dam-spillway failure share
+   a single target.
+
+## Superseded: limitations as understood on 2026-09-07 (historical)
 
 - **No data has been ingested yet.** Every downstream claim about dataset availability,
   quality, or coverage in this project is currently unverified.
