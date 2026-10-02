@@ -1,5 +1,37 @@
 # FloodShield-Zambia — AI Engine
 
+> ## SUPERSEDED — do not use this pipeline for results
+>
+> **This directory's training code is retained for history only. It was never used to
+> produce the served model, and it contains defects that would invalidate any result
+> taken from it.** The pipeline that produced the project's actual findings is `ml/`
+> (see `ml/README.md` and `docs/MODEL-EVALUATION.md`).
+>
+> Specific, verified defects in the code below — the reasons it is not used:
+>
+> 1. **Scaling leakage.** `main.py` calls `fe.scale_features(df_features, fit=True)` on
+>    the entire dataset *before* `splitter.split()`, so the scaler is fitted on validation
+>    and test rows.
+> 2. **No held-out validation.** `train_baselines.py` trains on
+>    `vstack([X_train, X_val])` and then ranks models by their **test** F1 — model
+>    selection on the test set.
+> 3. **Single monitoring point.** Its NASA POWER configuration pulls one grid point
+>    (Lusaka) while the flood labels span many provinces, so it correlates Lusaka weather
+>    with floods reported anywhere in Zambia.
+> 4. **Same-day target.** Its label is nowcasting, not the forward-looking
+>    `flood_next_7d` the research question requires.
+> 5. **A synthetic data generator** sits in the ingestion path as an offline fallback.
+>    Nothing here distinguishes a synthetic run from a real one in its outputs.
+>
+> The description below ("production-quality", "deep learning", "LSTM") is aspirational
+> and was written before any of it ran. **No LSTM was ever trained** — TensorFlow is not
+> installed on the project's Python version.
+>
+> **Still live and still used:** `ai-engine/data/external/zambia_flood_events_log.csv`,
+> the hand-compiled, individually-sourced flood-event log. `ml/` reads it as one of three
+> label sources (see `ml/labels/LABEL_PROVENANCE.md`). That file is good work and is not
+> deprecated — only the training code around it is.
+
 > **AI-Powered Real-Time Flood Prediction and Early Warning System for Zambia**  
 > Final Year Computer Science Project | Distinction-Level AI Module  
 > Python · TensorFlow · Scikit-Learn · SHAP · Loguru

@@ -70,3 +70,13 @@ class CitizenReportOut(BaseModel):
 class CitizenReportModerate(BaseModel):
     status: str = Field(pattern="^(verified|rejected)$")
     review_note: str = ""
+
+    @field_validator("review_note")
+    @classmethod
+    def strip_markup(cls, v: str) -> str:
+        # Same boundary rule as `description`. Moderator-supplied rather than public, but
+        # the stated policy is to sanitize at the boundary rather than rely on every
+        # downstream renderer, and this field is copied into notification messages.
+        # An empty note is legitimate here, so unlike `description` there is no length
+        # floor — only the markup is removed.
+        return _strip_markup(v)

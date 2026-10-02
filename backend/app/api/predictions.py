@@ -1,3 +1,5 @@
+import logging
+
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy import select
 from sqlalchemy.orm import Session
@@ -8,6 +10,8 @@ from app.models.location import Location
 from app.models.prediction import Prediction
 from app.schemas.inference import RiskPredictionRequest, RiskPredictionResponse
 from app.schemas.prediction import PredictionOut
+
+logger = logging.getLogger(__name__)
 
 router = APIRouter(prefix="/predictions", tags=["predictions"])
 
@@ -64,9 +68,17 @@ def predict(payload: RiskPredictionRequest, db: Session = Depends(get_db)) -> di
         )
     except ModelArtifactsUnavailable as exc:
         # Reported honestly as unavailable — never substituted with a synthetic result.
+        # The detailed reason (which interpolates an absolute server path, and at the
+        # second raise site arbitrary loader text) stays server-side: this route is
+        # unauthenticated, so returning it would hand an anonymous caller the deployment
+        # root and OS account name.
+        logger.warning("Model artifacts unavailable: %s", exc)
         raise HTTPException(
             status_code=503,
-            detail={"error": "model_unavailable", "message": str(exc)},
+            detail={
+                "error": "model_unavailable",
+                "message": "The prediction model is not currently available.",
+            },
         ) from exc
     except ValueError as exc:
         raise HTTPException(
