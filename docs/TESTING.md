@@ -1,7 +1,7 @@
 # Testing — FloodShield Zambia
 
-Status: updated 2026-10-01. Tests now exist across three suites; counts and what can
-and cannot currently be executed are recorded in `docs/CURRENT-STATE-2026-10-01.md`.
+Status: updated 2026-10-02. Three suites, all passing: backend 57, ML 37, frontend 11.
+See `docs/RUNNING-THE-TESTS.md` for how to run each one.
 The policy below still governs what a test is allowed to assert. This
 records the testing standard every subsequent phase must meet before being marked done.
 

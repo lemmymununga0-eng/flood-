@@ -31,6 +31,9 @@ nothing. The limiting factor is flood-label completeness, not model capacity.
 **This must not be used to issue public or institutional flood warnings.** At its documented
 operating point it produces roughly one false alarm per district every two days.
 
+Tests: **backend 57/57, ML 37/37, frontend 11/11** — all passing, all measured
+([`docs/RUNNING-THE-TESTS.md`](docs/RUNNING-THE-TESTS.md)).
+
 Current state, with evidence: [`docs/CURRENT-STATE-2026-10-01.md`](docs/CURRENT-STATE-2026-10-01.md).
 Measured results: [`docs/MODEL-EVALUATION.md`](docs/MODEL-EVALUATION.md). Earlier dated audits are
 retained unedited as a historical record and are explicitly superseded.

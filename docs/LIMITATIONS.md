@@ -23,8 +23,9 @@ source of truth.
 5. **Spatial resolution is too coarse for urban flooding.** A ~55 km reanalysis cell
    cannot resolve a storm over a Lusaka settlement.
 6. **No scheduler.** Predictions come from a manual script run.
-7. **The 57-test backend suite has never been executed** - it needs a local PostgreSQL
-   that this machine does not have. No pass count is claimed for it anywhere.
+7. **Resolved 2026-10-02.** The 57-test backend suite had never been executed for want
+   of a local PostgreSQL; it now runs and passes (57/57). See
+   `docs/RUNNING-THE-TESTS.md`.
 8. **Flood mechanisms are pooled.** Pluvial, riverine and one dam-spillway failure share
    a single target.
 
