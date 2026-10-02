@@ -1,25 +1,11 @@
 import { Link } from "react-router-dom";
-import BrandMark from "../components/ui/BrandMark";
 import { Icon } from "../components/ui/icons";
 
 export default function Landing() {
+  // The page wrapper and header now come from PublicLayout, so every public page
+  // shares one header and none can be reached without a way back.
   return (
-    <div className="public-page">
-      <header className="public-topbar">
-        <BrandMark />
-        <nav>
-          <Link className="btn btn-secondary" to="/about">
-            How It Works
-          </Link>
-          <Link className="btn btn-secondary" to="/risk-map">
-            Public Risk Map
-          </Link>
-          <Link className="btn btn-primary" to="/login">
-            Sign In
-          </Link>
-        </nav>
-      </header>
-
+    <>
       <section className="hero-split">
         <div className="hero">
           <div className="demo-banner">Demonstration Environment — early development build, not a deployed public service.</div>
@@ -104,6 +90,6 @@ export default function Landing() {
       <footer style={{ padding: "1.5rem", color: "var(--text-muted)", fontSize: "0.8rem" }}>
         Model-estimated flood risk is decision-support only, not an official warning.
       </footer>
-    </div>
+    </>
   );
 }
