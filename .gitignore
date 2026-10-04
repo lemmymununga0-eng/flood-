@@ -2,6 +2,9 @@
 .env
 .env.local
 *.env
+.env.*
+.env.backup*
+*.env.backup*
 !.env.example
 
 # Python

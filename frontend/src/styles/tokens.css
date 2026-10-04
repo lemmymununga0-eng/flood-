@@ -57,7 +57,13 @@
 html,
 body {
   margin: 0;
-  overflow-x: hidden;
+  /* NO overflow-x here. Setting overflow-x: hidden makes the browser compute
+     overflow-y as `auto`, which turns html/body into scroll containers and silently
+     breaks `position: sticky` for every descendant — the sidebar and the topbar both
+     scrolled off the page instead of staying pinned. Horizontal overflow is contained
+     where it actually arises instead: `.table-wrap` scrolls its own table, and
+     `.card` has overflow-wrap: break-word. Verified 0px horizontal overflow at
+     1440/1024/768/390px across every route. */
 }
 
 body {
