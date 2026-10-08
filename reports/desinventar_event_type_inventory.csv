@@ -1,0 +1,47 @@
+event_type,records,role,records_with_flood_keywords,records_with_explicit_flood_words,declared_in_eventos_table
+PEST,1234,excluded_not_flood,1,0,True
+FLOOD,436,included_flood,341,99,True
+INSECT INFESTATION,247,excluded_not_flood,2,1,True
+STORM,102,review_possibly_flood_related,48,0,True
+ANIMAL INCIDENT,40,excluded_not_flood,8,3,True
+HAILSTORM,39,review_possibly_flood_related,27,2,True
+WINDSTORM,35,review_possibly_flood_related,3,0,True
+STRUCTURAL COLLAPSE,33,review_possibly_flood_related,7,1,True
+FIRE,21,excluded_not_flood,0,0,True
+ROAD TRAFFIC ACCIDENT,9,excluded_not_flood,0,0,True
+FLASH FLOODS,8,included_flood,8,6,True
+STRONG WINDS,7,review_possibly_flood_related,6,0,True
+MINE DISASTER,6,excluded_not_flood,0,0,True
+CHOLERA,4,excluded_not_flood,0,0,True
+EPIDEMIC,4,excluded_not_flood,0,0,True
+DROUGHT,4,excluded_not_flood,0,0,True
+Monkey Pox,3,excluded_not_flood,0,0,True
+DROWNING,3,review_possibly_flood_related,1,0,True
+LIGHTENING,2,excluded_not_flood,2,0,True
+KONZO,1,excluded_not_flood,0,0,True
+WETLAND LOSS/DEGRADATION,1,excluded_not_flood,0,0,True
+EARTHQUAKE,0,excluded_not_flood,0,0,True
+ARSON,0,excluded_not_flood,0,0,True
+DEFORESTATION,0,excluded_not_flood,0,0,True
+DESERTIFICATION,0,excluded_not_flood,0,0,True
+DISEASE OUTBREAK (HUMAN),0,excluded_not_flood,0,0,True
+CONFLICT,0,excluded_not_flood,0,0,True
+AVIATION ACCIDENT,0,excluded_not_flood,0,0,True
+CHEMICAL SPILL,0,excluded_not_flood,0,0,True
+CIVIL INCIDENT,0,excluded_not_flood,0,0,True
+OIL SPILL,0,excluded_not_flood,0,0,True
+NAVIGATION ACCIDENT,0,excluded_not_flood,0,0,True
+LANDSLIDE,0,review_possibly_flood_related,0,0,True
+INDUSTRIAL DISASTER,0,excluded_not_flood,0,0,True
+EXTREME TEMPERATURE,0,excluded_not_flood,0,0,True
+EXPLOSION,0,excluded_not_flood,0,0,True
+EPIZOOTIC,0,excluded_not_flood,0,0,True
+PANDEMIC,0,excluded_not_flood,0,0,True
+RADIATION CONTAMINATION,0,excluded_not_flood,0,0,True
+RAIL ACCIDENT,0,excluded_not_flood,0,0,True
+POLLUTION,0,excluded_not_flood,0,0,True
+POWER OUTAGE,0,excluded_not_flood,0,0,True
+TROPICAL CYCLONE,0,review_possibly_flood_related,0,0,True
+STRUCTURAL DAMAGE,0,review_possibly_flood_related,0,0,True
+VOLCANIC ACTIVITY,0,excluded_not_flood,0,0,True
+WILDFIRE,0,excluded_not_flood,0,0,True

@@ -1,0 +1,48 @@
+{
+  "generated_utc": "2026-10-07T20:22:42+00:00",
+  "dem": {
+    "min": 98.0,
+    "max": 2920.0,
+    "nodata_cells": 0
+  },
+  "terrain": {
+    "rows": 101,
+    "missing_cells": 0,
+    "out_of_range": 0
+  },
+  "HydroSHEDS (terrain and hydrology)": {
+    "status": "COMPLETE"
+  },
+  "ESA WorldCover 2021": {
+    "status": "COMPLETE"
+  },
+  "WorldPop population (exposure layer)": {
+    "status": "COMPLETE"
+  },
+  "soil_rain_overlap_spearman": {
+    "GWETTOP": {
+      "7d": 0.767,
+      "30d": 0.825,
+      "90d": 0.894
+    },
+    "GWETROOT": {
+      "7d": 0.7,
+      "30d": 0.796,
+      "90d": 0.898
+    },
+    "GWETPROF": {
+      "7d": 0.463,
+      "30d": 0.608,
+      "90d": 0.859
+    }
+  },
+  "Soil wetness (NASA POWER GWETTOP/GWETROOT/GWETPROF — optional experiment)": {
+    "status": "COMPLETE"
+  },
+  "Climate indices (ONI, Niño 3.4, DMI/IOD)": {
+    "status": "COMPLETE"
+  },
+  "Dartmouth Flood Observatory archive (optional validation)": {
+    "status": "MISSING"
+  }
+}

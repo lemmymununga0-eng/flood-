@@ -1,0 +1,51 @@
+dataset,check,result,detail
+DesInventar,record count from original ZIP (regex parser),PASS,2239 records
+DesInventar,flood record set identical to processed table,PASS,raw 444 vs processed 444; only-raw []
+DesInventar,every field of every flood record equals the raw XML (17 fields x 444 records),PASS,0 mismatches
+DesInventar,FLOOD / FLASH FLOODS counts,PASS,"FLOOD 436, FLASH 8"
+DesInventar,date-confidence classes sum to all flood records,PASS,"{'NO EXACT DATE': 168, 'UNCERTAIN EVENT DATE': 102, 'HIGH-CONFIDENCE EVENT DATE': 91, 'UNLIKELY EVENT DATE': 83}"
+DesInventar,date precision recomputed from raw fields,PASS,"{'day': 276, 'year': 163, 'month': 3, 'invalid': 2}"
+Locations,101 unique location IDs,PASS,101
+Locations,no duplicate coordinates,PASS,0
+Locations,every coordinate inside Zambia,PASS,101/101
+Locations,every coordinate inside a polygon carrying its district code,PASS,101/101
+Locations,province of every district agrees with the raw DesInventar geography,PASS,[]
+Locations,all 10 provinces present,PASS,"['Central', 'Copperbelt', 'Eastern', 'Luapula', 'Lusaka', 'Muchinga', 'North-Western', 'Northern', 'Southern', 'Western']"
+NASA POWER,every value in CSV equals raw JSON (101 files),PASS,0 mismatching values
+NASA POWER,units identical in every raw file,PASS,"{'{""PRECTOTCORR"": ""mm/day"", ""RH2M"": ""%"", ""T2M"": ""C"", ""T2M_MAX"": ""C"", ""T2M_MIN"": ""C"", ""WS10M"": ""m/s""}'}"
+NASA POWER,API version identical in every raw file,PASS,{'v2.10.0'}
+NASA POWER,suspicious constant runs / temperature jumps,PASS,0 location-variable flags (see data/quality_flags/)
+Soil wetness,every value in CSV equals raw JSON (101 files),PASS,0 mismatching values
+Soil wetness,units identical in every raw file,PASS,"{'{""GWETPROF"": ""1"", ""GWETROOT"": ""1"", ""GWETTOP"": ""1""}'}"
+Soil wetness,API version identical in every raw file,PASS,{'v2.10.0'}
+Soil wetness,suspicious constant runs / temperature jumps,WARN,303 location-variable flags (see data/quality_flags/)
+CHIRPS,"point CSV equals values recomputed from NetCDFs (101 locations, all days)",PASS,0 mismatches
+CHIRPS,continuous daily time axis across yearly files,PASS,9789 vs 9789
+CHIRPS,each day's source URL matches its date,PASS,0
+CHIRPS,units attribute,PASS,{'mm/day'}
+CHIRPS,5 random location-days re-read from official CHC COGs,PASS,max |diff| 0.000000
+Alignment,POWER vs CHIRPS rainfall correlation peaks at lag 0 (no date shift),PASS,"{-2: 0.379, -1: 0.437, 0: 0.51, 1: 0.458, 2: 0.387}"
+GloFAS historical,time series collected,WARN,DEFERRED by researcher decision 2026-10-08 (no EWDS credentials); static river maps collected; scripts/download_glofas.py + extract_glofas.py ready
+HydroSHEDS,Zambia DEM subset identical to the same window inside the original ZIP,PASS,"(2544, 2976)"
+WorldCover,17 tiles: product version V2.0.0 + official source URL,PASS,17
+WorldCover,CRS EPSG:4326 and 1/4-overview resolution (3/9000 deg),PASS,
+WorldCover,only valid class codes,PASS,"[10, 20, 30, 40, 50, 60, 80, 90]"
+WorldPop,21 yearly rasters; national total rises every year,PASS,"21 files; 9,722,400 -> 18,776,980"
+Climate indices,ONI tidy table equals raw text (every season),PASS,0 mismatches
+Climate indices,DMI tidy table equals raw text (every month),PASS,0 mismatches
+GloFAS static,"3 river-network maps (upArea, ldd, chan) present",PASS,"['chan_Global_03min_zambia.nc', 'ldd_repaired_zambia.nc', 'upArea_repaired_zambia.nc']"
+GloFAS static,chan_Global_03min_zambia.nc identical to the same window of the original,PASS,
+GloFAS static,ldd_repaired_zambia.nc identical to the same window of the original,PASS,
+GloFAS static,upArea_repaired_zambia.nc identical to the same window of the original,PASS,
+Global Surface Water,4 occurrence tiles present,PASS,"['occurrence_20E_0Nv1_4_2021.tif', 'occurrence_20E_10Sv1_4_2021.tif', 'occurrence_30E_0Nv1_4_2021.tif', 'occurrence_30E_10Sv1_4_2021.tif']"
+Global Surface Water,"101 districts, percentages within 0-100",PASS,
+Global Surface Water,intermittent + permanent = ever water,PASS,
+Cross-dataset,GSW permanent water vs WorldCover permanent water (independent sensors/years),PASS,Spearman 0.927
+Files,every raw file's sha256 equals its provenance record,PASS,239 hashed; mismatches []
+Files,no duplicate raw files (identical content under two names),PASS,[]
+Files,every raw folder is documented,PASS,[]
+Files,empty CSVs are only empty sections of the official DesInventar export,PASS,"['data/raw/desinventar/extracted/tables/attribute_metadata.csv', 'data/raw/desinventar/extracted/tables/extensioncodes.csv', 'data/raw/desinventar/extracted/tables/info_maps.csv', 'data/raw/desinventar/extracted/tables/lev2.csv', 'data/raw/desinventar/extracted/tables/metadata_element_costs.csv', 'data/raw/desinventar/extracted/tables/metadata_national_values.csv']"
+Leakage,no target columns (flood_next_*) anywhere in data/,PASS,[]
+Leakage,no post-event consequence columns outside DesInventar tables,PASS,[]
+Leakage,population appears only in the separate exposure folder,PASS,[]
+Files,failed-request log reviewed,PASS,"{'chirps': 988, 'global_surface_water': 1, 'glofas': 1, 'glofas_static': 1, 'hydrosheds': 4, 'nasa_power_soil': 46, 'worldcover': 16}"

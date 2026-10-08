@@ -1,0 +1,800 @@
+{
+  "generated_utc": "2026-10-07T20:25:25+00:00",
+  "window": {
+    "start": "1999-04-14",
+    "end": "2026-01-30"
+  },
+  "desinventar": {
+    "total_records_all_types": 2239,
+    "event_type_counts_all": {
+      "PEST": 1234,
+      "FLOOD": 436,
+      "INSECT INFESTATION": 247,
+      "STORM": 102,
+      "ANIMAL INCIDENT": 40,
+      "HAILSTORM": 39,
+      "WINDSTORM": 35,
+      "STRUCTURAL COLLAPSE": 33,
+      "FIRE": 21,
+      "ROAD TRAFFIC ACCIDENT": 9,
+      "FLASH FLOODS": 8,
+      "STRONG WINDS": 7,
+      "MINE DISASTER": 6,
+      "EPIDEMIC": 4,
+      "CHOLERA": 4,
+      "DROUGHT": 4,
+      "Monkey Pox": 3,
+      "DROWNING": 3,
+      "LIGHTENING": 2,
+      "WETLAND LOSS/DEGRADATION": 1,
+      "KONZO": 1
+    },
+    "flood_records": 444,
+    "flood_records_by_type": {
+      "FLOOD": 436,
+      "FLASH FLOODS": 8
+    },
+    "date_precision": {
+      "day": 276,
+      "year": 163,
+      "month": 3,
+      "invalid": 2
+    },
+    "date_range_day_precision": [
+      "2000-04-13",
+      "2026-01-23"
+    ],
+    "date_range_all_valid_years": [
+      "2000",
+      "2026"
+    ],
+    "records_without_exact_day": 168,
+    "records_by_year": {
+      "2013": 91,
+      "2011": 56,
+      "2012": 51,
+      "2014": 46,
+      "2017": 42,
+      "2010": 42,
+      "2015": 31,
+      "2009": 29,
+      "2008": 13,
+      "2016": 9,
+      "2007": 6,
+      "2006": 5,
+      "2001": 5,
+      "2004": 5,
+      "2026": 5,
+      "2000": 2,
+      "2025": 2,
+      "211": 1,
+      "2023": 1,
+      "2022": 1,
+      "201": 1
+    },
+    "records_by_month_day_precision": {
+      "5": 52,
+      "1": 39,
+      "3": 39,
+      "6": 33,
+      "2": 30,
+      "12": 25,
+      "10": 18,
+      "11": 13,
+      "4": 13,
+      "9": 5,
+      "8": 5,
+      "7": 4
+    },
+    "suspicious_dates": {
+      "entered_before_event": 3,
+      "implausible_year:211": 1,
+      "implausible_year:201": 1
+    },
+    "suspicious_date_records": [
+      {
+        "record_id": "60",
+        "serial": "97",
+        "date_flag": "implausible_year:211"
+      },
+      {
+        "record_id": "1700",
+        "serial": "48",
+        "date_flag": "implausible_year:201"
+      },
+      {
+        "record_id": "86",
+        "serial": "124",
+        "date_flag": "entered_before_event"
+      },
+      {
+        "record_id": "1841",
+        "serial": "206",
+        "date_flag": "entered_before_event"
+      },
+      {
+        "record_id": "1844",
+        "serial": "209",
+        "date_flag": "entered_before_event"
+      }
+    ],
+    "duplicate_serial_numbers": 377,
+    "duplicate_record_ids": 0,
+    "exact_duplicate_records": 0,
+    "exact_duplicate_groups": 0,
+    "probable_duplicate_records": 54,
+    "same_district_same_day_records": 79,
+    "missing_district": 4,
+    "missing_province": 0,
+    "missing_place_text": 13,
+    "records_with_coordinates": 1,
+    "records_missing_coordinates": 443,
+    "province_distribution": {
+      "Western": 67,
+      "Central": 66,
+      "Eastern": 55,
+      "Luapula": 53,
+      "Lusaka": 52,
+      "Southern": 37,
+      "North-Western": 36,
+      "Northern": 33,
+      "Copperbelt": 28,
+      "Muchinga": 17
+    },
+    "district_distribution": {
+      "Lusaka": 29,
+      "Kalabo": 20,
+      "Nchelenge": 18,
+      "Serenje": 18,
+      "Chipata": 16,
+      "Kabwe": 13,
+      "Mongu": 12,
+      "Lundazi": 12,
+      "Mwinilunga": 11,
+      "Kasama": 11,
+      "Kawambwa": 10,
+      "Mkushi": 9,
+      "Chibombo": 9,
+      "Kitwe": 8,
+      "Solwezi": 8,
+      "Kazungula": 8,
+      "Senanga": 8,
+      "Petauke": 7,
+      "Chadiza": 7,
+      "Mansa": 7,
+      "Chongwe": 6,
+      "Lukulu": 6,
+      "Luanshya": 6,
+      "Kapiri Mposhi": 6,
+      "Shangombo": 6,
+      "Mpika": 5,
+      "Sinda": 5,
+      "Zambezi": 5,
+      "Kabompo": 5,
+      "Namwala": 5,
+      "Nsama": 5,
+      "Kaoma": 5,
+      "Shibuyunji": 5,
+      "Lunga": 5,
+      "(none)": 4,
+      "Lufwanyama": 4,
+      "Nakonde": 4,
+      "Livingstone": 4,
+      "Kaputa": 4,
+      "Ndola": 4,
+      "Mporokoso": 4,
+      "Samfya": 4,
+      "Itezhi-tezhi": 4,
+      "Monze": 4,
+      "Luwingu": 4,
+      "Shiwang&#39;andu": 3,
+      "Limulunga": 3,
+      "Mpulungu": 3,
+      "Luano": 3,
+      "Mazabuka": 3,
+      "Kalulushi": 3,
+      "Mambwe": 3,
+      "Manyinga": 3,
+      "Gwembe": 3,
+      "Sinazongwe": 3,
+      "Mumbwa": 3,
+      "Luangwa": 3,
+      "Katete": 3,
+      "Mwandi": 3,
+      "Milengi": 3,
+      "Kafue": 3,
+      "Rufunsa": 2,
+      "Kalomo": 2,
+      "Nyimba": 2,
+      "Chilanga": 2,
+      "Chipili": 2,
+      "Mitete": 2,
+      "Mwense": 2,
+      "Mufumbwe": 2,
+      "Chavuma": 2,
+      "Sesheke": 2,
+      "Chinsali": 2,
+      "Choma": 2,
+      "Chama": 2,
+      "Chirundu": 2,
+      "Zimba": 1,
+      "Chiengi": 1,
+      "Masaiti": 1,
+      "Mungwi": 1,
+      "Siavonga": 1,
+      "Chililabombwe": 1,
+      "Chingola": 1,
+      "Chilubi": 1
+    },
+    "provinces_represented": 10,
+    "districts_represented": 82,
+    "invalid_numeric_fields": {},
+    "location_resolution": {
+      "district": 440,
+      "province_only": 4
+    }
+  },
+  "nasa_power": {
+    "locations_expected": 101,
+    "locations_present": 101,
+    "locations_missing": [],
+    "date_range": [
+      "1999-04-14",
+      "2026-01-30"
+    ],
+    "expected_days_per_location": 9789,
+    "total_observations": 988689,
+    "missing_value_pct": {
+      "PRECTOTCORR": 0.0,
+      "T2M": 0.0,
+      "T2M_MAX": 0.0,
+      "T2M_MIN": 0.0,
+      "RH2M": 0.0,
+      "WS10M": 0.0
+    },
+    "missing_value_count": {
+      "PRECTOTCORR": 0,
+      "T2M": 0,
+      "T2M_MAX": 0,
+      "T2M_MIN": 0,
+      "RH2M": 0,
+      "WS10M": 0
+    },
+    "locations_incomplete_coverage": {},
+    "duplicate_location_dates": 0,
+    "flagged_values": {
+      "extreme_rain_check:PRECTOTCORR": 31,
+      "outside_bounds:PRECTOTCORR": 2
+    },
+    "summary_stats": {
+      "PRECTOTCORR": {
+        "count": 988689.0,
+        "mean": 2.641,
+        "std": 6.071,
+        "min": 0.0,
+        "25%": 0.0,
+        "50%": 0.04,
+        "75%": 2.67,
+        "max": 338.3
+      },
+      "T2M": {
+        "count": 988689.0,
+        "mean": 22.251,
+        "std": 3.542,
+        "min": 9.8,
+        "25%": 19.99,
+        "50%": 22.08,
+        "75%": 24.43,
+        "max": 35.99
+      },
+      "T2M_MAX": {
+        "count": 988689.0,
+        "mean": 29.041,
+        "std": 3.989,
+        "min": 15.5,
+        "25%": 26.12,
+        "50%": 28.33,
+        "75%": 31.65,
+        "max": 45.03
+      },
+      "T2M_MIN": {
+        "count": 988689.0,
+        "mean": 16.308,
+        "std": 3.934,
+        "min": 0.73,
+        "25%": 13.3,
+        "50%": 17.11,
+        "75%": 19.12,
+        "max": 31.51
+      },
+      "RH2M": {
+        "count": 988689.0,
+        "mean": 60.299,
+        "std": 19.944,
+        "min": 8.14,
+        "25%": 43.61,
+        "50%": 61.86,
+        "75%": 78.83,
+        "max": 96.28
+      },
+      "WS10M": {
+        "count": 988689.0,
+        "mean": 3.626,
+        "std": 1.314,
+        "min": 0.38,
+        "25%": 2.64,
+        "50%": 3.54,
+        "75%": 4.49,
+        "max": 12.17
+      }
+    },
+    "locations_sharing_identical_series": [
+      [
+        "ZMB-D-0502",
+        "ZMB-D-0506"
+      ],
+      [
+        "ZMB-D-0107",
+        "ZMB-D-0111"
+      ],
+      [
+        "ZMB-D-0203",
+        "ZMB-D-0204",
+        "ZMB-D-0207"
+      ],
+      [
+        "ZMB-D-0202",
+        "ZMB-D-0209"
+      ],
+      [
+        "ZMB-D-0303",
+        "ZMB-D-0308"
+      ],
+      [
+        "ZMB-D-0407",
+        "ZMB-D-0809"
+      ],
+      [
+        "ZMB-D-0501",
+        "ZMB-D-0507"
+      ],
+      [
+        "ZMB-D-0908",
+        "ZMB-D-0910"
+      ]
+    ],
+    "api_failures": 0
+  },
+  "chirps": {
+    "files": 28,
+    "date_range": [
+      "1999-04-14",
+      "2026-01-30"
+    ],
+    "days_expected": 9789,
+    "days_present": 9789,
+    "duplicate_dates": 0,
+    "missing_dates": [],
+    "missing_dates_count": 0,
+    "grid": {
+      "lat_min": -18.175001164898276,
+      "lat_max": -8.125001015141606,
+      "lon_min": 21.925003008916974,
+      "lon_max": 33.775003185495734,
+      "n_lat": 202,
+      "n_lon": 238
+    },
+    "bbox_requested": {
+      "lon_min": 21.9,
+      "lon_max": 33.8,
+      "lat_min": -18.2,
+      "lat_max": -8.1
+    },
+    "resolution_deg": 0.05,
+    "pixel_days": 470615964,
+    "nan_pixel_days": 0,
+    "nodata_pixel_days": 0,
+    "negative_pixel_days": 0,
+    "missing_pixel_pct": 0.0,
+    "per_year": {
+      "chirps-v3.0.rnl.zambia.1999.nc": {
+        "days": 262,
+        "first": "1999-04-14",
+        "last": "1999-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 90.91416931152344,
+        "mean_mm": 1.242
+      },
+      "chirps-v3.0.rnl.zambia.2000.nc": {
+        "days": 366,
+        "first": "2000-01-01",
+        "last": "2000-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 123.60356140136719,
+        "mean_mm": 3.095
+      },
+      "chirps-v3.0.rnl.zambia.2001.nc": {
+        "days": 365,
+        "first": "2001-01-01",
+        "last": "2001-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 116.5174560546875,
+        "mean_mm": 3.135
+      },
+      "chirps-v3.0.rnl.zambia.2002.nc": {
+        "days": 365,
+        "first": "2002-01-01",
+        "last": "2002-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 107.83342742919922,
+        "mean_mm": 2.654
+      },
+      "chirps-v3.0.rnl.zambia.2003.nc": {
+        "days": 365,
+        "first": "2003-01-01",
+        "last": "2003-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 137.9809112548828,
+        "mean_mm": 2.752
+      },
+      "chirps-v3.0.rnl.zambia.2004.nc": {
+        "days": 366,
+        "first": "2004-01-01",
+        "last": "2004-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 8,
+        "max_mm": 192.5159149169922,
+        "mean_mm": 3.146
+      },
+      "chirps-v3.0.rnl.zambia.2005.nc": {
+        "days": 365,
+        "first": "2005-01-01",
+        "last": "2005-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 99.34683990478516,
+        "mean_mm": 2.524
+      },
+      "chirps-v3.0.rnl.zambia.2006.nc": {
+        "days": 365,
+        "first": "2006-01-01",
+        "last": "2006-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 130.23509216308594,
+        "mean_mm": 3.26
+      },
+      "chirps-v3.0.rnl.zambia.2007.nc": {
+        "days": 365,
+        "first": "2007-01-01",
+        "last": "2007-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 143.34744262695312,
+        "mean_mm": 3.234
+      },
+      "chirps-v3.0.rnl.zambia.2008.nc": {
+        "days": 366,
+        "first": "2008-01-01",
+        "last": "2008-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 120.24686431884766,
+        "mean_mm": 2.991
+      },
+      "chirps-v3.0.rnl.zambia.2009.nc": {
+        "days": 365,
+        "first": "2009-01-01",
+        "last": "2009-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 10,
+        "pixels_over_extreme": 97,
+        "max_mm": 401.96209716796875,
+        "mean_mm": 3.333
+      },
+      "chirps-v3.0.rnl.zambia.2010.nc": {
+        "days": 365,
+        "first": "2010-01-01",
+        "last": "2010-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 139.51370239257812,
+        "mean_mm": 3.184
+      },
+      "chirps-v3.0.rnl.zambia.2011.nc": {
+        "days": 365,
+        "first": "2011-01-01",
+        "last": "2011-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 16,
+        "max_mm": 193.52874755859375,
+        "mean_mm": 2.85
+      },
+      "chirps-v3.0.rnl.zambia.2012.nc": {
+        "days": 366,
+        "first": "2012-01-01",
+        "last": "2012-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 132.46563720703125,
+        "mean_mm": 2.957
+      },
+      "chirps-v3.0.rnl.zambia.2013.nc": {
+        "days": 365,
+        "first": "2013-01-01",
+        "last": "2013-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 137.99302673339844,
+        "mean_mm": 2.733
+      },
+      "chirps-v3.0.rnl.zambia.2014.nc": {
+        "days": 365,
+        "first": "2014-01-01",
+        "last": "2014-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 3,
+        "max_mm": 166.38172912597656,
+        "mean_mm": 2.957
+      },
+      "chirps-v3.0.rnl.zambia.2015.nc": {
+        "days": 365,
+        "first": "2015-01-01",
+        "last": "2015-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 142.1963653564453,
+        "mean_mm": 2.724
+      },
+      "chirps-v3.0.rnl.zambia.2016.nc": {
+        "days": 366,
+        "first": "2016-01-01",
+        "last": "2016-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 10,
+        "max_mm": 188.0259246826172,
+        "mean_mm": 2.74
+      },
+      "chirps-v3.0.rnl.zambia.2017.nc": {
+        "days": 365,
+        "first": "2017-01-01",
+        "last": "2017-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 126,
+        "max_mm": 208.72238159179688,
+        "mean_mm": 3.34
+      },
+      "chirps-v3.0.rnl.zambia.2018.nc": {
+        "days": 365,
+        "first": "2018-01-01",
+        "last": "2018-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 93,
+        "max_mm": 267.912109375,
+        "mean_mm": 3.122
+      },
+      "chirps-v3.0.rnl.zambia.2019.nc": {
+        "days": 365,
+        "first": "2019-01-01",
+        "last": "2019-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 17,
+        "max_mm": 222.53228759765625,
+        "mean_mm": 2.877
+      },
+      "chirps-v3.0.rnl.zambia.2020.nc": {
+        "days": 366,
+        "first": "2020-01-01",
+        "last": "2020-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 3,
+        "max_mm": 173.3796844482422,
+        "mean_mm": 2.911
+      },
+      "chirps-v3.0.rnl.zambia.2021.nc": {
+        "days": 365,
+        "first": "2021-01-01",
+        "last": "2021-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 31,
+        "max_mm": 210.6514434814453,
+        "mean_mm": 2.629
+      },
+      "chirps-v3.0.rnl.zambia.2022.nc": {
+        "days": 365,
+        "first": "2022-01-01",
+        "last": "2022-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 10,
+        "pixels_over_extreme": 175,
+        "max_mm": 336.34637451171875,
+        "mean_mm": 2.972
+      },
+      "chirps-v3.0.rnl.zambia.2023.nc": {
+        "days": 365,
+        "first": "2023-01-01",
+        "last": "2023-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 4,
+        "max_mm": 162.0071563720703,
+        "mean_mm": 2.861
+      },
+      "chirps-v3.0.rnl.zambia.2024.nc": {
+        "days": 366,
+        "first": "2024-01-01",
+        "last": "2024-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 2,
+        "max_mm": 182.36343383789062,
+        "mean_mm": 2.133
+      },
+      "chirps-v3.0.rnl.zambia.2025.nc": {
+        "days": 365,
+        "first": "2025-01-01",
+        "last": "2025-12-31",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 4,
+        "max_mm": 164.39332580566406,
+        "mean_mm": 3.006
+      },
+      "chirps-v3.0.rnl.zambia.2026.nc": {
+        "days": 30,
+        "first": "2026-01-01",
+        "last": "2026-01-30",
+        "nan_pixels": 0,
+        "nodata_pixels": 0,
+        "negative_pixels": 0,
+        "pixels_over_max": 0,
+        "pixels_over_extreme": 0,
+        "max_mm": 129.18658447265625,
+        "mean_mm": 7.449
+      }
+    },
+    "download_status": {
+      "ok": 9378,
+      "failed": 713
+    },
+    "locations_inside_grid": 101,
+    "locations_outside_grid": 0,
+    "point_extraction_rows": 988689,
+    "point_extraction_missing_pct": 0.0,
+    "point_extraction_duplicates": 0
+  },
+  "cross_source": {
+    "overlap_rows": 988689,
+    "monthly_total_corr_median": 0.902,
+    "monthly_total_corr_min": 0.839,
+    "daily_corr_median": 0.521,
+    "mean_daily_mm_power": 2.641,
+    "mean_daily_mm_chirps": 2.836
+  },
+  "checksums": {
+    "files_hashed": 130,
+    "files_with_recorded_hash": 102,
+    "mismatches": []
+  },
+  "failures": {
+    "total_failed_attempts": 1057,
+    "chirps": {
+      "failed_attempts": 988,
+      "recovered_on_rerun": 988,
+      "outstanding_dates": []
+    },
+    "global_surface_water": {
+      "failed_attempts": 1,
+      "recovered_on_rerun": 1,
+      "outstanding": []
+    },
+    "glofas": {
+      "failed_attempts": 1,
+      "recovered_on_rerun": 0,
+      "outstanding": [
+        "credentials"
+      ]
+    },
+    "glofas_static": {
+      "failed_attempts": 1,
+      "recovered_on_rerun": 1,
+      "outstanding": []
+    },
+    "hydrosheds": {
+      "failed_attempts": 4,
+      "recovered_on_rerun": 4,
+      "outstanding": []
+    },
+    "nasa_power_soil": {
+      "failed_attempts": 46,
+      "recovered_on_rerun": 46,
+      "outstanding": []
+    },
+    "worldcover": {
+      "failed_attempts": 16,
+      "recovered_on_rerun": 16,
+      "outstanding": []
+    }
+  }
+}

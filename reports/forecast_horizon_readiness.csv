@@ -1,0 +1,6 @@
+horizon_days,high_confidence_district_days,high_confidence_with_full_365d_history,plus_uncertain_district_days,districts_with_high_confidence_event,high_confidence_events_in_glofas_reforecast_period,reforecast_lead_covers_horizon,month_precision_records_usable,date_error_tolerance,assessment
+1,82,81,166,49,71,True,no,none — dates must be exact,weak: too few reliable exact dates; day-level date errors dominate
+3,82,81,166,49,71,True,no,±1 day,possible but fragile (date errors)
+7,82,81,166,49,71,True,no,±2–3 days,PRIMARY: supported (high-confidence dates; uncertain as sensitivity)
+14,82,81,166,49,71,True,no,±5 days,"supported; more positives per event, less timing precision"
+30,82,81,166,49,71,True,only for monthly-resolution sensitivity analysis,±1–2 weeks,supported as a seasonal-risk horizon; little forecast skill expected from weather alone

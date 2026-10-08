@@ -1,0 +1,16 @@
+dataset,coverage_score,completeness_score,spatial_score,temporal_score,quality_score,forecast_relevance,leakage_risk,role,final_decision
+DesInventar flood events,0.81,1.0,0.81,1.0,1.0,LABEL,HIGH (post-event fields),LABEL SOURCE,KEEP — labels only from HIGH-CONFIDENCE dates (UNCERTAIN as sensitivity); never a feature
+Location master,1.0,1.0,1.0,1.0,1.0,LOW,MEDIUM (rule needed),SPATIAL KEY,KEEP
+NASA POWER weather,1.0,1.0,1.0,1.0,1.0,HIGH,LOW,CORE,KEEP
+CHIRPS v3.0 rainfall,1.0,1.0,1.0,1.0,1.0,HIGH,LOW,CORE,KEEP — Stage 3 must justify using one or both rainfall sources
+HydroSHEDS terrain/hydrology,1.0,1.0,1.0,1.0,1.0,MEDIUM,LOW,CORE (static),KEEP
+NASA POWER soil wetness,1.0,1.0,1.0,1.0,0.88,MEDIUM,LOW,OPTIONAL,KEEP as optional experiment (overlaps antecedent rainfall)
+ESA WorldCover 2021,0.5,1.0,1.0,0.5,1.0,MEDIUM,LOW,OPTIONAL,KEEP as optional static context
+JRC Global Surface Water occurrence,0.5,1.0,1.0,0.5,1.0,MEDIUM,MEDIUM (rule needed),OPTIONAL,KEEP as optional static flood-susceptibility
+"Climate indices (ONI, Niño 3.4, DMI)",1.0,1.0,1.0,1.0,1.0,MEDIUM,MEDIUM (rule needed),OPTIONAL,KEEP as lagged monthly/seasonal experiment
+WorldPop,0.75,1.0,1.0,0.75,1.0,LOW,LOW,EXPOSURE,"KEEP — separate exposure layer, never an occurrence predictor"
+GloFAS v4.0 river-network static maps,1.0,1.0,1.0,1.0,1.0,MEDIUM,LOW,CORE support,KEEP — defines river-network extraction pixels
+"GloFAS v4.0 historical (discharge, runoff, soil wetness)",0.0,0.0,0.0,0.0,0.5,HIGH,MEDIUM (rule needed),DEFERRED (was CORE),DEFERRED by researcher decision 2026-10-08 — no EWDS credentials; scripts ready to add later
+"GloFAS v4.0 reforecasts (discharge, 2003-2023)",0.0,0.0,0.0,0.0,0.0,HIGH,MEDIUM (rule needed),DEFERRED (optional forecast experiment),DEFERRED with GloFAS historical (2026-10-08); script ready
+DFO flood archive,0.0,0.0,0.0,0.0,0.0,LOW,HIGH (post-event),VALIDATION,NOT COLLECTED — server unreachable; optional
+GRDC river gauges,0.0,0.0,0.0,0.0,0.0,MEDIUM,LOW,VALIDATION,NOT COLLECTED — request-only; optional

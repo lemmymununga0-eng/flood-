@@ -1,0 +1,6 @@
+location_id,district,C_upstream_km2,hydrorivers_max_upland_km2,C_vs_hydrorivers_ratio,flag,note
+ZMB-D-1001,Shangombo,8657.740234375,56490.2,0.1532609237420827,glofas_vs_hydrorivers_upstream_area_differs_gt_x2,grid-cell vs vector-line boundary effect; check main-river pixel before using discharge
+ZMB-D-0504,Rufunsa,44133.39453125,142734.5,0.3091992092398824,glofas_vs_hydrorivers_upstream_area_differs_gt_x2,grid-cell vs vector-line boundary effect; check main-river pixel before using discharge
+ZMB-D-0102,Chibombo,13935.0712890625,50642.6,0.2751650051352518,glofas_vs_hydrorivers_upstream_area_differs_gt_x2,grid-cell vs vector-line boundary effect; check main-river pixel before using discharge
+ZMB-D-0703,Mufumbwe,34603.3515625,92641.4,0.3735193073776951,glofas_vs_hydrorivers_upstream_area_differs_gt_x2,grid-cell vs vector-line boundary effect; check main-river pixel before using discharge
+ZMB-D-0507,Chilanga,3746.28759765625,251.4,14.90170086577665,glofas_vs_hydrorivers_upstream_area_differs_gt_x2,grid-cell vs vector-line boundary effect; check main-river pixel before using discharge

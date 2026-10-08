@@ -1,0 +1,225 @@
+# FloodShield-Zambia — Stage 1 raw data collection configuration.
+# All scripts in scripts/ read this file; paths are relative to the project root.
+# Stage 1 = COLLECT -> STORE -> VALIDATE -> DOCUMENT. No targets, no models.
+
+paths:
+  raw_desinventar_original: data/raw/desinventar/original
+  raw_desinventar_extracted: data/raw/desinventar/extracted
+  raw_nasa_power: data/raw/nasa_power/daily_weather
+  raw_chirps: data/raw/chirps/daily_rainfall
+  raw_nasa_power_soil: data/raw/nasa_power/daily_soil_moisture
+  raw_hydrosheds: data/raw/hydrosheds
+  raw_glofas: data/raw/glofas
+  raw_other: data/raw/other
+  quality_flags: data/quality_flags
+  raw_landcover: data/raw/landcover
+  raw_era5_land: data/raw/era5_land
+  raw_hydrology: data/raw/hydrology
+  raw_satellite_flood: data/raw/satellite_flood
+  raw_climate_indices: data/raw/climate_indices
+  raw_worldpop: data/raw/worldpop
+  final: data/final
+  processed: data/processed
+  reports: reports
+  docs: docs
+
+logging:
+  level: INFO
+  file: reports/collection.log
+  format: "%(asctime)s %(levelname)-7s [%(name)s] %(message)s"
+
+http:
+  timeout_seconds: 120
+  max_retries: 5
+  backoff_base_seconds: 2      # wait = base * 2**attempt (+ jitter)
+  backoff_max_seconds: 120
+  retry_status_codes: [429, 500, 502, 503, 504]
+  user_agent: "FloodShield-Zambia research data collection (academic, non-commercial)"
+
+desinventar:
+  name: DesInventar Sendai — Zambia national disaster loss database
+  country_profile_url: "https://www.desinventar.net/DesInventar/country_profile.jsp?countrycode=zmb&lang=EN"
+  database_url: "https://www.desinventar.net/DesInventar/"
+  download_page_url: "https://www.desinventar.net/download.html"
+  export_zip_url: "https://www.desinventar.net/DesInventar/download/DI_export_zmb.zip"
+  export_zip_filename: DI_export_zmb.zip
+  # Event types treated as flood events in this study (exact DesInventar 'evento' values).
+  flood_event_types: ["FLOOD", "FLASH FLOODS"]
+  # Other categories that MAY be flood-related. They are inventoried and reported
+  # separately and are NOT included unless the researcher confirms.
+  review_event_types: ["STORM", "HAILSTORM", "WINDSTORM", "STRONG WINDS", "LANDSLIDE",
+                       "STRUCTURAL COLLAPSE", "STRUCTURAL DAMAGE", "DROWNING", "TROPICAL CYCLONE"]
+  # Keywords searched in free text of non-flood records to surface possible mis-categorised floods.
+  flood_keywords: ["flood", "flooding", "flooded", "inundat", "overflow", "submerged", "heavy rain"]
+  valid_year_min: 1900
+
+# Weather collection window. 'auto' = derived from valid DesInventar flood dates:
+#   start = earliest valid flood start date - lookback_days
+#   end   = latest valid flood start date + horizon_days (capped at what the source has published)
+collection_window:
+  start: auto
+  end: auto
+  lookback_days: 365     # antecedent period so later features (t-1..t-N) exist for the earliest event
+  horizon_days: 7        # the (t, t+7] window used by the eventual target definition
+
+location_master:
+  # Spatial unit = DesInventar level-1 administrative unit (district). Coordinates come from the
+  # DesInventar export's own 'regiones' table (district representative point), verified against
+  # the district polygons shipped in the same export.
+  location_id_prefix: "ZMB-D-"
+  zambia_bbox: {lon_min: 21.9, lon_max: 33.8, lat_min: -18.2, lat_max: -8.1}
+  # Which districts get weather data: 'all' = every district in the DesInventar geography
+  # (needed so that non-flood districts can later supply negatives), 'flood_only' = only districts
+  # with at least one flood record.
+  weather_locations: all
+
+nasa_power:
+  name: NASA POWER (Prediction Of Worldwide Energy Resources) Daily API
+  home_url: "https://power.larc.nasa.gov/"
+  docs_url: "https://power.larc.nasa.gov/docs/services/api/temporal/daily/"
+  api_url: "https://power.larc.nasa.gov/api/temporal/daily/point"
+  parameters_url: "https://power.larc.nasa.gov/api/system/manager/parameters"
+  community: AG
+  parameters: [PRECTOTCORR, T2M, T2M_MAX, T2M_MIN, RH2M, WS10M]
+  time_standard: LST
+  fill_value: -999.0
+  # Polite pacing: requests are sequential by default with a pause between them.
+  max_workers: 1
+  pause_seconds: 1.0
+  # The daily point API returns a multi-decade range in a single request, so one request
+  # per location (per missing period) is enough. Split very long ranges into chunks of N years.
+  max_years_per_request: 40
+
+chirps:
+  name: CHIRPS v3.0 daily (Climate Hazards Center, UCSB)
+  home_url: "https://www.chc.ucsb.edu/data/chirps3"
+  data_root: "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/"
+  # Daily CHIRPS v3 is a disaggregation of pentadal CHIRPS v3. Two variants exist:
+  #   rnl = disaggregated with ERA5 daily precipitation (1981 -> present)
+  #   sat = disaggregated with IMERG Late V07 (1998 -> present)
+  # 'rnl' is used because it covers the full collection window from a single, consistent method.
+  variant: rnl
+  stream: final
+  cog_url_template: "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/{stream}/{variant}/cogs/{year}/chirps-v3.0.{variant}.{year}.{month:02d}.{day:02d}.cog"
+  # Only the Zambia window is read from each global file (HTTP range requests on Cloud-Optimised
+  # GeoTIFFs), instead of downloading 17 MB global GeoTIFFs or 3.6 GB yearly global NetCDFs.
+  bbox: {lon_min: 21.9, lon_max: 33.8, lat_min: -18.2, lat_max: -8.1}
+  max_workers: 8
+  nodata_values: [-9999.0]
+  # Extract the nearest-pixel daily series at each location-master coordinate (validation/comparison aid).
+  extract_points: true
+
+validation:
+  # Physical plausibility bounds. Values outside are FLAGGED, never deleted or altered.
+  bounds:
+    PRECTOTCORR: {min: 0, max: 300}
+    T2M: {min: -10, max: 50}
+    T2M_MAX: {min: -5, max: 50}
+    T2M_MIN: {min: -15, max: 40}
+    RH2M: {min: 0, max: 100}
+    WS10M: {min: 0, max: 40}
+    chirps_precip: {min: 0, max: 300}
+  # Daily rainfall above this is listed as an "extreme, check" value even if within bounds.
+  extreme_rain_mm: 150
+
+# ---------------------------------------------------------------------------------------------
+# Stage 2 additions: environmental, exposure, validation and context sources
+# ---------------------------------------------------------------------------------------------
+
+# District polygons for zonal statistics: the DesInventar export's own districts.shp (same source as
+# the location master). Areas/distances use an equal-area projection for Africa.
+spatial:
+  district_polygons: data/raw/desinventar/extracted/districts.shp
+  projected_crs: "ESRI:102022"   # Africa Albers Equal Area Conic (metres)
+
+nasa_power_soil:
+  # Optional experiment: MERRA-2 soil wetness via the same NASA POWER Daily API (no credentials).
+  parameters: [GWETTOP, GWETROOT, GWETPROF]
+  community: AG
+
+hydrosheds:
+  name: HydroSHEDS v1 (WWF / USGS / McGill)
+  home_url: "https://www.hydrosheds.org/"
+  downloads_url: "https://www.hydrosheds.org/hydrosheds-core-downloads"
+  files:
+    dem_15s: "https://data.hydrosheds.org/file/hydrosheds-v1-dem/hyd_af_dem_15s.zip"
+    hydrorivers: "https://data.hydrosheds.org/file/HydroRIVERS/HydroRIVERS_v10_af_shp.zip"
+    hydrobasins_lev04: "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_af_lev04_v1c.zip"
+    hydrobasins_lev06: "https://data.hydrosheds.org/file/hydrobasins/standard/hybas_af_lev06_v1c.zip"
+  # Not downloaded: flow direction / flow accumulation rasters. HydroRIVERS reaches carry the upstream
+  # area (UPLAND_SKM) derived from those rasters, which is what a district-level join needs.
+  river_upland_thresholds_km2: [100, 1000, 10000]
+  river_buffer_km: 5
+  flat_slope_deg: 0.5
+
+worldcover:
+  name: ESA WorldCover 10 m 2021 v200
+  home_url: "https://esa-worldcover.org/en/data-access"
+  tile_url_template: "https://esa-worldcover.s3.eu-central-1.amazonaws.com/v200/2021/map/ESA_WorldCover_10m_2021_v200_{tile}_Map.tif"
+  # Internal COG overview used (1 = factor 4 -> ~40 m). Bias vs full 10 m measured over Lusaka:
+  # <= 0.6 percentage points for every major class (see docs/DATA_REQUIREMENTS_MATRIX.md).
+  overview_level: 1
+  classes: {10: tree_cover, 20: shrubland, 30: grassland, 40: cropland, 50: built_up,
+            60: bare_sparse, 70: snow_ice, 80: permanent_water, 90: herbaceous_wetland,
+            95: mangroves, 100: moss_lichen}
+
+worldpop:
+  name: WorldPop unconstrained individual-country population counts, 1 km (people per pixel, not UN-adjusted)
+  api_url: "https://www.worldpop.org/rest/data/pop/wpic1km?iso3=ZMB"
+  years: [2000, 2020]
+
+climate_indices:
+  oni: "https://www.cpc.ncep.noaa.gov/data/indices/oni.ascii.txt"
+  nino34_monthly: "https://www.cpc.ncep.noaa.gov/data/indices/ersst5.nino.mth.91-20.ascii"
+  dmi_monthly_psl: "https://psl.noaa.gov/gcos_wgsp/Timeseries/Data/dmi.had.long.data"
+  iod_weekly_bom: "https://www.bom.gov.au/clim_data/IDCK000072/iod_1.txt"
+
+flood_observations:
+  dfo_archive: "https://floodobservatory.colorado.edu/temp/FloodArchive.xlsx"
+
+hydrology:
+  grdc_portal: "https://portal.grdc.bafg.de/applications/public.html?publicuser=PublicUser"
+  grdc_kiwis: "https://portal.grdc.bafg.de/KiWIS/KiWIS"
+
+# ---------------------------------------------------------------------------------------------
+# GloFAS (Copernicus Emergency Management Service — Global Flood Awareness System)
+# ---------------------------------------------------------------------------------------------
+glofas:
+  # Researcher decision 2026-10-08: GloFAS time series DEFERRED (no EWDS credentials available). Stage 2 closes
+  # without them; the static river-network maps are collected and the download/extraction scripts are ready.
+  # Set to "required" to make the audit treat missing GloFAS series as a failure again.
+  collection_status: deferred
+  decision_date: "2026-10-08"
+  # Time series are only distributed through the Early Warning Data Store (EWDS) API, which needs the
+  # researcher's own ECMWF account and personal access token in ~/.cdsapirc:
+  #   url: https://ewds.climate.copernicus.eu/api
+  #   key: <PERSONAL-ACCESS-TOKEN>
+  ewds_url: "https://ewds.climate.copernicus.eu/api"
+  catalogue_url: "https://ewds.climate.copernicus.eu/api/catalogue/v1/collections/"
+  historical:
+    dataset: cems-glofas-historical
+    system_version: version_4_0          # operational; v5.0 is pre-operational (form default) - not used
+    hydrological_model: lisflood
+    product_type: consolidated           # consolidated ERA5 forcing (not ERA5T 'intermediate')
+    variables: [river_discharge_in_the_last_24_hours, runoff_water_equivalent, soil_wetness_index]
+    data_format: grib2
+  reforecast:                             # for honest historical forecast experiments (twice weekly inits)
+    dataset: cems-glofas-reforecast
+    system_version: version_4_0          # 2003-2023 in v4.0
+    hydrological_model: lisflood
+    product_type: [control_reforecast, ensemble_perturbed_reforecast]
+    variables: [river_discharge_in_the_last_24_hours]
+    leadtime_hours: [24, 48, 72, 96, 120, 144, 168, 336, 720]
+  forecast:
+    dataset: cems-glofas-forecast
+    system_version: operational
+  # Area (N, W, S, E): Zambia + 0.25 deg (same window as HydroSHEDS). GloFAS discharge at a pixel is
+  # routed: it already integrates all upstream runoff, including from Angola/DRC, so cropping the grid
+  # does not remove upstream hydrological information for discharge.
+  area: [-7.85, 21.65, -18.45, 34.05]
+  static_base_url: "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/CEMS-GLOFAS/LISFLOOD_static_and_parameter_maps_for_GloFAS/v1.1.1_OS-LISFLOOD-v4.x/"
+  static_files:
+    - Catchments_morphology_and_river_network/upArea_repaired.nc
+    - Catchments_morphology_and_river_network/ldd_repaired.nc
+    - Catchments_morphology_and_river_network/chan_Global_03min.nc
+  river_upstream_min_km2: 1000          # "significant river" threshold for nearest-river extraction

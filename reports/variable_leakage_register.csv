@@ -1,0 +1,477 @@
+dataset,file,variable,category,rule
+desinventar,data/processed/desinventar_flood_events.csv,serial,NOT A PREDICTOR,Identifier/provenance.
+desinventar,data/processed/desinventar_flood_events.csv,level0,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,level1,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,level2,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,name0,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,name1,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,name2,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,evento,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,lugar,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,fechano,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,fechames,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,fechadia,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,muertos,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,heridos,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,desaparece,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,afectados,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,vivdest,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,vivafec,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,otros,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,fuentes,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,valorloc,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,valorus,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,fechapor,NOT A PREDICTOR,Identifier/provenance.
+desinventar,data/processed/desinventar_flood_events.csv,fechafec,NOT A PREDICTOR,Identifier/provenance.
+desinventar,data/processed/desinventar_flood_events.csv,hay_muertos,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hay_heridos,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hay_deasparece,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hay_afectados,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hay_vivdest,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hay_vivafec,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hay_otros,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,socorro,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,salud,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,educacion,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,agropecuario,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,industrias,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,acueducto,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,alcantarillado,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,energia,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,comunicaciones,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,causa,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,descausa,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,transporte,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,magnitud2,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,nhospitales,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,nescuelas,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,nhectareas,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,cabezas,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,kmvias,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,duracion,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damnificados,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,evacuados,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hay_damnificados,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hay_evacuados,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hay_reubicados,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,reubicados,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,clave,NOT A PREDICTOR,Identifier/provenance.
+desinventar,data/processed/desinventar_flood_events.csv,glide,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,defaultab,NOT A PREDICTOR,Identifier/provenance.
+desinventar,data/processed/desinventar_flood_events.csv,approved,NOT A PREDICTOR,Identifier/provenance.
+desinventar,data/processed/desinventar_flood_events.csv,latitude,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,longitude,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,uu_id,NOT A PREDICTOR,Identifier/provenance.
+desinventar,data/processed/desinventar_flood_events.csv,di_comments,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,clave_ext,NOT A PREDICTOR,Identifier/provenance.
+desinventar,data/processed/desinventar_flood_events.csv,bridges_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,bus_terminals_affected,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,children_injured,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,children_killed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,clinics_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,clinics_destroyed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,cows_lost,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,cultural_centers_museums_damag,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,cultural_centers_museums_destr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,distribution_lines_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,estimated_agricultural_losses,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,ferry_terminals_affected,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,goats_lost,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hospitals_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,hospitals_destroyed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,maize_crops_lost,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,men_injured,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,men_killed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,national_monuments_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,other_education_centers_damage,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,other_eductation_centers_destr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,pipelines_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,pipelines_destroyed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,ports_affected,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,power_stations_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,primary_schools_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,primary_schools_destroyed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,rice_crops_lost,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,rural_water_supply_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,rural_water_supply_destroyed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,secondary_schools_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,secondary_schools_destroyed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,temples_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,temples_destroyed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,tertiary_schools_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,tertiary_schools_destroyed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,transmission_lines_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,unesco_designated_areas,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,urban_water_supply_damaged,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,urban_water_supply_destroyed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,women_injured,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,women_killed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,deaths_female,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,deaths_male,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,deaths_children,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,deaths_adults,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,deaths_elder,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,deaths_disabled,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,deaths_poor,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,missing_female,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,missing_male,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,missing_children,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,missing_adults,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,missing_elder,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,missing_disabled,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,missing_poor,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,injured_female,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,injured_male,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,injured_children,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,injured_adults,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,injured_elder,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,injured_disabled,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,injured_poor,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dmgd_dwellings,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dmgd_dwellings_female,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dmgd_dwellings_male,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dmgd_dwellings_children,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dmgd_dwellings_adults,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dmgd_dwellings_elder,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dmgd_dwellings_disabled,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dmgd_dwellings_poor,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dstr_dwellings,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dstr_dwellings_female,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dstr_dwellings_male,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dstr_dwellings_children,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dstr_dwellings_adults,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dstr_dwellings_elder,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dstr_dwellings_disabled,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,living_dstr_dwellings_poor,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,livelihood_afctd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,livelihoods_female,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,livelihoods_male,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,livelihoods_children,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,livelihoods_adults,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,livelihoods_elder,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,livelihoods_disabled,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,livelihoods_poor,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,ha_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,ha_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_crops,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,livestock_total,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,livestock_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_livestock_total,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,ha_forest_total,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,ha_forest_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,ha_forest_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_forest_total,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,ha_aquaculture_total,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,ha_aquaculture_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,ha_aquaculture_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_aquaculture_total,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,vessels_total,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,vessels_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,vessels_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_vessels_total,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,stock_facilities_afctd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,stock_facilities_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,stock_facilities_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,stock_loss_afctd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,agri_assets_afctd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,agri_assets_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,agri_assets_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,agri_assets_loss_afctd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,productive_assets_afctd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,productive_assets_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,productive_assets_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,productive_assets_loss_afctd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,houses_total,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_dwellings,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_dwellings_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss__dwellingsdstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,health_facilities_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,health_facilities_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_health_facilities,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,education_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,education_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_education,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,number_infrastructures,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,number_dmgd_infrastructures,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,number_dstr_infrastructures,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_infrastructures,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_cultural_fixed,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_cultural_mobile_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_cultural_mobile_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,cultural_fixed_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,cultural_fixed_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,cultural_mobile_dmgd,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,cultural_mobile_dstr,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_357,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_357,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_357,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_357,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,a_1,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,a_2,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,a_3,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,b_1,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,b_1a,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,c_1,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,c_1a,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,economic_loss_c2,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,economic_loss_c3,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,economic_loss_c4,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,economic_loss_c4dm,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,economic_loss_c4dy,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,economic_loss_c5,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,economic_loss_health,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,economic_loss_edu,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,economic_loss_c6,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,public_admin_service,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,solid_waste_service,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_363,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_363,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_363,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_363,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_51,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_51,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_51,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_51,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_63,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_63,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_63,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_63,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_131,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_131,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_131,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_131,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_28,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_28,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_28,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_28,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_5,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_5,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_5,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_5,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_82,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_82,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_82,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_82,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_9,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_9,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_9,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_9,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_176,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_176,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_176,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_176,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,loss_437,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,total_437,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,damaged_437,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,destryd_437,POST-EVENT,DesInventar extension loss/impact field (diccionario). Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,event_start_date,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,date_precision,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,date_quality_flag,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,event_end_date_from_duration,POST-EVENT,Consequence/response/after-event text. Audit only.
+desinventar,data/processed/desinventar_flood_events.csv,province_original,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,district_original,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,location_original,NOT A PREDICTOR,Label/event metadata (defines the target; never a feature).
+desinventar,data/processed/desinventar_flood_events.csv,retrieved_utc,NOT A PREDICTOR,Identifier/provenance.
+desinventar,data/processed/desinventar_flood_events.csv,source,NOT A PREDICTOR,Identifier/provenance.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,record_id,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,serial,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,evento,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,event_start_date,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,date_precision,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,date_quality_flag,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,name0,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,name1,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,lugar,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,fuentes,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,fechafec,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,dry_season,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,records_on_same_date,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,batch_date,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,admin_text,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,admin_text_match,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,n_flags,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,date_reliability,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_date_reliability,data/processed/desinventar_flood_date_reliability.csv,assessed_utc,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,record_id,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,serial,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,event_type,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,event_date,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,date_precision,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,province,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,district,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,place_text,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,location_id,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,resolution_level,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,record_latitude,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,record_longitude,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,description,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,source_reported,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,flood_evidence,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,date_confidence,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,location_confidence,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+flood_event_audit,data/processed/desinventar_flood_event_audit.csv,use_note,NOT A PREDICTOR,Label-quality metadata; must not become a feature.
+location_master,data/processed/location_master.csv,location_id,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,location_name,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,location_name_original,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,district,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,province,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,district_code,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,province_code,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,latitude,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,longitude,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,coordinate_source,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,coordinate_quality,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,spatial_unit,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,district_area_km2,STATIC ENVIRONMENTAL,Static location attribute.
+location_master,data/processed/location_master.csv,approx_km_to_polygon_centroid,STATIC ENVIRONMENTAL,Static location attribute.
+location_master,data/processed/location_master.csv,in_boundary_file,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,n_flood_records,POTENTIAL LEAKAGE,Counts all floods incl. future ones — never a feature.
+location_master,data/processed/location_master.csv,n_flood_records_day_precision,POTENTIAL LEAKAGE,Counts all floods incl. future ones — never a feature.
+location_master,data/processed/location_master.csv,in_weather_collection,NOT A PREDICTOR,Key/identifier/provenance.
+location_master,data/processed/location_master.csv,created_utc,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,location_id,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,latitude,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,longitude,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,date,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,PRECTOTCORR,HISTORICAL OBSERVATION,SAFE FOR PREDICTION only for days <= t (trailing windows); values after t are LEAKAGE.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,T2M,HISTORICAL OBSERVATION,SAFE FOR PREDICTION only for days <= t (trailing windows); values after t are LEAKAGE.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,T2M_MAX,HISTORICAL OBSERVATION,SAFE FOR PREDICTION only for days <= t (trailing windows); values after t are LEAKAGE.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,T2M_MIN,HISTORICAL OBSERVATION,SAFE FOR PREDICTION only for days <= t (trailing windows); values after t are LEAKAGE.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,RH2M,HISTORICAL OBSERVATION,SAFE FOR PREDICTION only for days <= t (trailing windows); values after t are LEAKAGE.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,WS10M,HISTORICAL OBSERVATION,SAFE FOR PREDICTION only for days <= t (trailing windows); values after t are LEAKAGE.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,power_point_longitude,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,power_point_latitude,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,source,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,community,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,time_standard,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,retrieval_timestamp_utc,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_weather,data/raw/nasa_power/nasa_power_daily.csv,raw_file,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,location_id,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,latitude,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,longitude,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,date,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,GWETTOP,HISTORICAL OBSERVATION,Model-derived soil wetness; days <= t only (optional experiment).
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,GWETROOT,HISTORICAL OBSERVATION,Model-derived soil wetness; days <= t only (optional experiment).
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,GWETPROF,HISTORICAL OBSERVATION,Model-derived soil wetness; days <= t only (optional experiment).
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,power_point_longitude,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,power_point_latitude,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,source,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,community,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,time_standard,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,retrieval_timestamp_utc,NOT A PREDICTOR,Key/identifier/provenance.
+nasa_power_soil,data/raw/nasa_power/nasa_power_daily_soil_moisture.csv,raw_file,NOT A PREDICTOR,Key/identifier/provenance.
+chirps,data/processed/chirps_daily_at_locations.csv,location_id,NOT A PREDICTOR,Key/identifier/provenance.
+chirps,data/processed/chirps_daily_at_locations.csv,date,NOT A PREDICTOR,Key/identifier/provenance.
+chirps,data/processed/chirps_daily_at_locations.csv,chirps_precip_mm,HISTORICAL OBSERVATION,SAFE FOR PREDICTION only for days <= t (trailing windows); values after t are LEAKAGE.
+chirps,data/processed/chirps_daily_at_locations.csv,pixel_lat,NOT A PREDICTOR,Key/identifier/provenance.
+chirps,data/processed/chirps_daily_at_locations.csv,pixel_lon,NOT A PREDICTOR,Key/identifier/provenance.
+chirps,data/processed/chirps_daily_at_locations.csv,source_file,NOT A PREDICTOR,Key/identifier/provenance.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,location_id,NOT A PREDICTOR,Key/identifier/provenance.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,dem_cells,NOT A PREDICTOR,Key/identifier/provenance.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,elev_point_m,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,slope_point_deg,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,elev_district_mean_m,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,elev_district_median_m,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,elev_district_min_m,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,elev_district_max_m,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,elev_district_std_m,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,elev_district_p10_m,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,elev_district_p90_m,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,slope_district_mean_deg,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,slope_district_median_deg,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,flat_fraction_slope_lt_0.5deg,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,dist_point_to_river_upland_ge_100km2_km,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,upland_km2_of_nearest_river_ge_100km2,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,dist_point_to_river_upland_ge_1000km2_km,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,upland_km2_of_nearest_river_ge_1000km2,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,dist_point_to_river_upland_ge_10000km2_km,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,upland_km2_of_nearest_river_ge_10000km2,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,dist_district_min_to_river_upland_ge_1000km2_km,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,dist_district_mean_to_river_upland_ge_1000km2_km,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,dist_district_median_to_river_upland_ge_1000km2_km,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,river_proximity_sample_points,NOT A PREDICTOR,Key/identifier/provenance.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,dist_district_min_to_river_upland_ge_10000km2_km,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,dist_district_mean_to_river_upland_ge_10000km2_km,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,dist_district_median_to_river_upland_ge_10000km2_km,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,district_area_km2,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,max_upland_km2_in_district,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,max_dis_av_cms_in_district,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,river_density_upland_ge_100km2_km_per_km2,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,frac_district_within_5km_of_river_upland_ge_1000km2,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,hybas_lev04_id_point,NOT A PREDICTOR,Key/identifier/provenance.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,hybas_main_basin_id_point,NOT A PREDICTOR,Key/identifier/provenance.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,hybas_lev04_up_area_km2_point,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,hybas_lev04_id_district_dominant,NOT A PREDICTOR,Key/identifier/provenance.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,hybas_lev04_district_dominant_share,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,hybas_lev06_id_point,NOT A PREDICTOR,Key/identifier/provenance.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,hybas_lev06_up_area_km2_point,STATIC ENVIRONMENTAL,Time-invariant terrain/drainage descriptor.
+terrain_hydrology,data/processed/district_terrain_hydrology.csv,created_utc,NOT A PREDICTOR,Key/identifier/provenance.
+landcover,data/processed/district_landcover.csv,location_id,NOT A PREDICTOR,Key/identifier/provenance.
+landcover,data/processed/district_landcover.csv,cells_sampled,NOT A PREDICTOR,Key/identifier/provenance.
+landcover,data/processed/district_landcover.csv,nodata_cells,NOT A PREDICTOR,Key/identifier/provenance.
+landcover,data/processed/district_landcover.csv,overview_factor,NOT A PREDICTOR,Key/identifier/provenance.
+landcover,data/processed/district_landcover.csv,pct_tree_cover,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,pct_shrubland,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,pct_grassland,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,pct_cropland,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,pct_built_up,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,pct_bare_sparse,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,pct_snow_ice,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,pct_permanent_water,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,pct_herbaceous_wetland,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,pct_mangroves,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,pct_moss_lichen,STATIC ENVIRONMENTAL,"2021 snapshot (post-dates most events): quasi-static, optional, flag anachronism."
+landcover,data/processed/district_landcover.csv,class_at_point,STATIC ENVIRONMENTAL,Land-cover class at the district point (2021 snapshot).
+landcover,data/processed/district_landcover.csv,created_utc,NOT A PREDICTOR,Key/identifier/provenance.
+surface_water,data/processed/environmental/district_surface_water.csv,location_id,NOT A PREDICTOR,Key/identifier/provenance.
+surface_water,data/processed/environmental/district_surface_water.csv,cells,NOT A PREDICTOR,Key/identifier/provenance.
+surface_water,data/processed/environmental/district_surface_water.csv,pct_ever_water,POTENTIAL LEAKAGE,"Occurrence aggregates 1984-2021 incl. years after events: static susceptibility only, optional; test with care."
+surface_water,data/processed/environmental/district_surface_water.csv,pct_intermittent_water_1_to_74,POTENTIAL LEAKAGE,"Occurrence aggregates 1984-2021 incl. years after events: static susceptibility only, optional; test with care."
+surface_water,data/processed/environmental/district_surface_water.csv,pct_permanent_water_ge_75,POTENTIAL LEAKAGE,"Occurrence aggregates 1984-2021 incl. years after events: static susceptibility only, optional; test with care."
+surface_water,data/processed/environmental/district_surface_water.csv,mean_occurrence_pct,POTENTIAL LEAKAGE,"Occurrence aggregates 1984-2021 incl. years after events: static susceptibility only, optional; test with care."
+surface_water,data/processed/environmental/district_surface_water.csv,source,NOT A PREDICTOR,Key/identifier/provenance.
+surface_water,data/processed/environmental/district_surface_water.csv,created_utc,NOT A PREDICTOR,Key/identifier/provenance.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,location_id,NOT A PREDICTOR,Key/identifier/provenance.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,population_year,NOT A PREDICTOR,Key/identifier/provenance.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,population,EXPOSURE ONLY,Impact/exposure layer — not an occurrence predictor.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,population_density_per_km2,EXPOSURE ONLY,Impact/exposure layer — not an occurrence predictor.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,district_area_km2,EXPOSURE ONLY,Impact/exposure layer — not an occurrence predictor.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,pop_in_point_cell,EXPOSURE ONLY,Impact/exposure layer — not an occurrence predictor.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,source,NOT A PREDICTOR,Key/identifier/provenance.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,version,NOT A PREDICTOR,Key/identifier/provenance.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,source_file,NOT A PREDICTOR,Key/identifier/provenance.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,role,NOT A PREDICTOR,Key/identifier/provenance.
+worldpop,data/processed/exposure/worldpop_district_exposure.csv,created_utc,NOT A PREDICTOR,Key/identifier/provenance.
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,location_id,NOT A PREDICTOR,Key/identifier/provenance.
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,district,NOT A PREDICTOR,Key/identifier/provenance.
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,A_centroid_lat,NOT A PREDICTOR,"Extraction-cell coordinates (where GloFAS is read), not a feature."
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,A_centroid_lon,NOT A PREDICTOR,"Extraction-cell coordinates (where GloFAS is read), not a feature."
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,A_upstream_km2,STATIC ENVIRONMENTAL,Static river-network descriptor (upstream area / distance).
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,A_on_significant_river,STATIC ENVIRONMENTAL,Static river-network descriptor (upstream area / distance).
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,B_zonal_cells,NOT A PREDICTOR,Key/identifier/provenance.
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,C_main_river_lat,NOT A PREDICTOR,"Extraction-cell coordinates (where GloFAS is read), not a feature."
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,C_main_river_lon,NOT A PREDICTOR,"Extraction-cell coordinates (where GloFAS is read), not a feature."
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,C_upstream_km2,STATIC ENVIRONMENTAL,Static river-network descriptor (upstream area / distance).
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,D_nearest_river_lat,NOT A PREDICTOR,"Extraction-cell coordinates (where GloFAS is read), not a feature."
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,D_nearest_river_lon,NOT A PREDICTOR,"Extraction-cell coordinates (where GloFAS is read), not a feature."
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,D_upstream_km2,STATIC ENVIRONMENTAL,Static river-network descriptor (upstream area / distance).
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,D_distance_km,STATIC ENVIRONMENTAL,Static river-network descriptor (upstream area / distance).
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,D_inside_district,STATIC ENVIRONMENTAL,Static river-network descriptor (upstream area / distance).
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,hydrorivers_max_upland_km2,STATIC ENVIRONMENTAL,Static river-network descriptor (upstream area / distance).
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,C_vs_hydrorivers_ratio,STATIC ENVIRONMENTAL,Static river-network descriptor (upstream area / distance).
+glofas_points,data/processed/hydrology/glofas_district_extraction_points.csv,created_utc,NOT A PREDICTOR,Key/identifier/provenance.
+climate_indices,data/processed/climate_indices_monthly.csv,year,NOT A PREDICTOR,Key/identifier/provenance.
+climate_indices,data/processed/climate_indices_monthly.csv,month,NOT A PREDICTOR,Key/identifier/provenance.
+climate_indices,data/processed/climate_indices_monthly.csv,oni,POTENTIAL LEAKAGE,ONI season centred on month m needs month m+1: use season centred on month(t)-2 at the latest.
+climate_indices,data/processed/climate_indices_monthly.csv,oni_total_c,POTENTIAL LEAKAGE,ONI season centred on month m needs month m+1: use season centred on month(t)-2 at the latest.
+climate_indices,data/processed/climate_indices_monthly.csv,oni_season,POTENTIAL LEAKAGE,ONI season centred on month m needs month m+1: use season centred on month(t)-2 at the latest.
+climate_indices,data/processed/climate_indices_monthly.csv,nino34_sst_c,POTENTIAL LEAKAGE,Published after month end: use month(t)-1 at the latest.
+climate_indices,data/processed/climate_indices_monthly.csv,nino34_anom,POTENTIAL LEAKAGE,Published after month end: use month(t)-1 at the latest.
+climate_indices,data/processed/climate_indices_monthly.csv,dmi_hadisst,POTENTIAL LEAKAGE,Published after month end: use month(t)-1 at the latest.
+climate_indices,data/processed/climate_indices_monthly.csv,note,NOT A PREDICTOR,Key/identifier/provenance.
+dfo,data\processed\dfo_zambia_events.csv,(file not present),n/a,dataset not collected
+glofas,data/raw/glofas/...,historical: river_discharge / runoff_water_equivalent / soil_wetness_index,HISTORICAL OBSERVATION,ERA5-forced reanalysis: days <= t only. Observed/reanalysed discharge after t is LEAKAGE.
+glofas,data/raw/glofas/...,reforecast: river_discharge at lead L issued on date i,FORECAST VARIABLE,Safe only if issue date i <= t; never mix with reanalysis values after t.
+glofas,data/raw/glofas/...,forecast (operational): river_discharge / runoff / soil wetness,FORECAST VARIABLE,Deployment only; system version changes over time (v2.1/v3.1/v4.x).
+glofas,data/raw/glofas/...,upArea / ldd / chan (static maps),STATIC ENVIRONMENTAL,River-network geometry; used to choose extraction pixels.
+glofas,data/raw/glofas/...,rainfall or discharge observed after t (any source),POTENTIAL LEAKAGE,LEAKAGE unless it is a genuine forecast issued at or before t.

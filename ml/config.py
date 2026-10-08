@@ -97,3 +97,51 @@ if __name__ == "__main__":
         ("dmi", DMI_CSV), ("glofas", GLOFAS_CSV),
     ]:
         print(f"  {'OK ' if p.exists() else 'MISSING'}  {name:12s} {p}")
+
+# ---------------------------------------------------------------------------
+# Stage 3 (2026-10-08 collection). Lives IN the repo under data/, unlike the
+# Stage 1/2 research bundle which sits outside it. The Stage 1/2 paths above are
+# left untouched so the earlier pipeline stays reproducible.
+# ---------------------------------------------------------------------------
+S3_DATA = REPO_ROOT / "data"
+S3_PROCESSED = S3_DATA / "processed"
+S3_RAW = S3_DATA / "raw"
+S3_REPORTS = REPO_ROOT / "reports"
+
+S3_CHIRPS = S3_PROCESSED / "chirps_daily_at_locations.csv"
+S3_POWER = S3_RAW / "nasa_power" / "nasa_power_daily.csv"
+S3_SOIL = S3_RAW / "nasa_power" / "nasa_power_daily_soil_moisture.csv"
+S3_TERRAIN = S3_PROCESSED / "district_terrain_hydrology.csv"
+S3_LANDCOVER = S3_PROCESSED / "district_landcover.csv"
+S3_SURFACE_WATER = S3_PROCESSED / "environmental" / "district_surface_water.csv"
+S3_CLIMATE = S3_PROCESSED / "climate_indices_monthly.csv"
+S3_EVENT_AUDIT = S3_PROCESSED / "desinventar_flood_event_audit.csv"
+S3_DATE_RELIABILITY = S3_PROCESSED / "desinventar_flood_date_reliability.csv"
+S3_LOCATIONS = S3_PROCESSED / "location_master.csv"
+
+S3_OUT = _env_path("FLOODSHIELD_S3_OUT", OUT_ROOT / "stage3")
+S3_OUT_PROCESSED = S3_OUT / "processed"
+S3_OUT_REPORTS = S3_OUT / "reports"
+S3_OUT_ARTIFACTS = S3_OUT / "artifacts"
+
+# Forecast horizons under investigation. H+1 is excluded: the collection's own
+# readiness report concludes even high-confidence DesInventar dates can be off by a
+# day, so a 1-day target is not defensible with these labels.
+S3_HORIZONS = (3, 7, 14, 20, 30)
+S3_PRIMARY_HORIZON = 7
+
+
+def ensure_s3_dirs() -> None:
+    for d in (S3_OUT, S3_OUT_PROCESSED, S3_OUT_REPORTS, S3_OUT_ARTIFACTS):
+        d.mkdir(parents=True, exist_ok=True)
+
+
+if __name__ == "__main__":
+    print(describe())
+    for name, p in [
+        ("locations", LOCATIONS_CSV), ("weather", WEATHER_CSV),
+        ("desinventar", DESINVENTAR_CSV), ("dfo", DFO_CSV),
+        ("curated", CURATED_EVENTS_CSV), ("nino34", NINO34_CSV),
+        ("dmi", DMI_CSV), ("glofas", GLOFAS_CSV),
+    ]:
+        print(f"  {'OK ' if p.exists() else 'MISSING'}  {name:12s} {p}")

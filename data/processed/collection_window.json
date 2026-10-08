@@ -1,0 +1,11 @@
+{
+  "earliest_flood_date": "2000-04-13",
+  "latest_flood_date": "2026-01-23",
+  "lookback_days": 365,
+  "horizon_days": 7,
+  "start": "1999-04-14",
+  "end": "2026-01-30",
+  "basis": "valid day- and month-precision FLOOD/FLASH FLOODS start dates (month precision counted as the whole month); year-only and invalid dates excluded",
+  "n_records_used": 279,
+  "derived_utc": "2026-10-06T12:29:33+00:00"
+}

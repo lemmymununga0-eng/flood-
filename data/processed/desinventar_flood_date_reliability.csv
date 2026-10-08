@@ -1,0 +1,445 @@
+record_id,serial,evento,event_start_date,date_precision,date_quality_flag,name0,name1,lugar,fuentes,fechafec,dry_season,records_on_same_date,batch_date,admin_text,admin_text_match,n_flags,date_reliability,assessed_utc
+60,97,FLOOD,,invalid,implausible_year:211,Lusaka,Chongwe,chongwe,National Coordinator DMMU,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+1271,82,FLOOD,2013-10-13,day,,Lusaka,Lusaka,LUSAKA,MOSES MWELWA,2017-05-03,True,3,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1237,46,FLOOD,2017-05-03,day,,Copperbelt,Kitwe,kitwe,hon. M chishimba,2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+114,155,FLOOD,2015-06-14,day,,Muchinga,Shiwang&#39;andu,Sele primary school ,DMMU,2017-05-08,True,1,False,True,construction,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1447,278,FLOOD,2013-06-06,day,,Muchinga,Shiwang&#39;andu,SELE,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1731,82,FLOOD,2015-05-11,day,,Muchinga,Shiwang&#39;andu,SHIWANG'ANDU ,DMMU ,2017-05-03,True,2,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+57,94,FLOOD,2011-01-07,day,,Eastern,Chipata,kapalo,National Coordinator DMMU,2017-05-04,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+2189,2197,FLASH FLOODS,2023-11-22,day,,Lusaka,Lusaka,Matero,REGIONAL COORDINATOR - LUSAKA PROVINCE,22/11/2023,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+2191,2199,FLASH FLOODS,2022-02-14,day,,Western,Mongu,"Nakanya Ward, Nalikwanda Constituency",REGIONAL COORDINATOR  - WESTERN PROVINCE,23/11/2023,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+765,198,FLOOD,2013,year,,Western,Limulunga,Limulunga primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+1700,48,FLOOD,,invalid,implausible_year:201,Luapula,,,,2017-05-03,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+1817,179,FLOOD,2017-05-11,day,,Western,Lukulu,LIPEHO ,CHRISTOPHER KALULA MP,2017-05-11,True,2,False,True,construction,2,onset_unlikely,2026-10-07T19:37:17+00:00
+7,35,FLOOD,2014-05-02,day,,North-Western,Mwinilunga,Nswena bridge-Kanyama chiefdom,Satellite Disaster Management Committee,2016-09-26,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+11,46,FLOOD,2012,year,,Copperbelt,Kitwe,kanfinsa,kitwe city councle,2017/05/03,False,0,False,True,request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+12,47,FLOOD,2011,year,,Copperbelt,Luanshya,,National Coordinator DMMU,2017/05/03,False,0,False,True,construction;request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+13,48,FLOOD,2017-05-03,day,,Copperbelt,Luanshya,luanshya area,National Coordinator DMMU,2017/05/03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+14,49,FLOOD,2011,year,,Copperbelt,Luanshya,luanshya area,National Coordinator DMMU,2017/05/03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+15,50,FLOOD,2011,year,,Northern,Kasama,kasama area,National Coordinator DMMU,2017/05/03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+16,51,FLOOD,2011,year,,Copperbelt,Luanshya,,National Coordinator DMMU,2017/05/03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+17,52,FLOOD,2012-11-30,day,,Lusaka,Lusaka,Emmasdale,Town clerk,2017-05-03,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+18,53,FLOOD,2011,year,,Northern,Kasama,,National Coordinator DMMU,2017-05-03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+19,55,FLOOD,2011,year,,Muchinga,Mpika,,Road Devevelopment Agency Chinsali,2017-05-03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+20,56,FLOOD,2010,year,,Copperbelt,Lufwanyama,lufwanyama constituency,District Planning officer ,2017-05-03,False,0,False,True,repair,1,no_exact_date,2026-10-07T19:37:17+00:00
+21,57,FLOOD,2011,year,,Northern,Kasama,,National Coordinator DMMU,2017-05-03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+22,58,FLOOD,2012,year,,Copperbelt,Lufwanyama,,Road Superintendent,2017-05-03,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+23,59,FLOOD,2011,year,,Central,Mkushi,,MP Mkushi south constituency,2017-05-03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+24,60,FLOOD,2015,year,,Central,Kabwe,kabwe area,National Coordinator DMMU,2017-05-03,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+25,61,FLOOD,2014,year,,Lusaka,Rufunsa,,Area MP,2017-05-03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+26,62,FLOOD,2011,year,,Eastern,Sinda,kasangazi area,Regional Coordinator,2017-05-03,False,0,False,True,construction;request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+27,63,FLOOD,2011,year,,Western,Kalabo,Nalolo,Western Regional officer,2017-05-03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+28,64,FLOOD,2014-03-08,day,,Central,Kabwe,kabwe area,District Commissioner,2017-05-03,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+29,65,FLOOD,2015,year,,North-Western,Zambezi,Zambezi west ,Regional Coordinator,2017-05-03,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+30,66,FLOOD,2015-09-24,day,,Eastern,Chipata,Mtenguleni Road,PERMANENT SECRETRAY,2017-05-03,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+31,67,FLOOD,2015-08-27,day,,North-Western,Solwezi,solwezi,Regional Coordinator DMMU,2017/05/03,True,1,False,True,construction,2,onset_unlikely,2026-10-07T19:37:17+00:00
+32,68,FLOOD,2015-08-07,day,,North-Western,Kabompo,Kabompo area,Regional Coordinator,2017-05-03,True,1,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+33,69,FLOOD,2011,year,,Eastern,Petauke,singozi ward ,Acting National Coordinator,2017-05-03,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+34,70,FLOOD,2011,year,,Northern,Mpulungu,kapata village ,DMMU Northern,2017-05-03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+35,71,FLOOD,2014-12-13,day,,Luapula,Nchelenge,Nchelenge area ,Regional Manager RDA,2017-05-04,False,1,False,True,budget;construction;repair,1,onset_uncertain,2026-10-07T19:37:17+00:00
+36,72,FLOOD,2011,year,,North-Western,Solwezi,Solwezi area ,National Coordinator DMMU,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+37,73,FLOOD,2015,year,,Central,Luano,Mkushi south Constituency,Regional Coordinator DMMU,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+38,74,FLOOD,2012,year,,Eastern,Chadiza,Mtwalo school,Area MP,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+39,75,FLOOD,2011,year,,Eastern,Lundazi,Swamp area,Regional Coordinator DMMU,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+40,76,FLOOD,2011,year,,Eastern,Lundazi,Kamzoole Egichikeni,Regional Coordinator DMMU,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+41,77,FLOOD,2017,year,,Eastern,Lundazi,Katete sream ,Regional Coordinator DMMU,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+42,78,FLOOD,2012,year,,Eastern,Lundazi,Lundazi Chasefu Costituency,National Coordinator DMMU,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+43,79,FLOOD,2011,year,,Eastern,Chipata,Mpamba Nyalubanga road,Regional Coordinator DMMU,2017-05-04,False,0,False,True,construction;rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+44,80,FLOOD,2011,year,,Eastern,Lundazi,Kamzoole Egichikeni,Regional Coordinator DMMU,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+45,81,FLOOD,2012,year,,Southern,Mazabuka,Magoye constituency,MP Magoye,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+46,82,FLOOD,2012,year,,Muchinga,Nakonde,Stevenson township,RDA Chinsali,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+47,83,FLOOD,2011,year,,Eastern,Lundazi,Dambo ,Regional Coordinator DMMU,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+48,85,FLOOD,2011,year,,Eastern,Lundazi,Kamzoole ,Regional Coordinator DMMU,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+49,86,FLOOD,2011,year,,Eastern,Lundazi,Mpakamalaza road,Regional Coordinator DMMU,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+50,87,FLOOD,2011,year,,Eastern,Lundazi,Khumbilo,Regional Coordinator DMMU,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+51,88,FLOOD,2017,year,,Eastern,Lundazi,Rusayila and Gumbo,Regional Coordinator DMMU,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+52,89,FLOOD,2011,year,,Eastern,Lundazi,magodi ward,Regional Coordinator DMMU,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+53,90,FLOOD,2011,year,,Central,Kapiri Mposhi,kapili mposhi constituency,District Commissioner,2017-05-04,False,0,False,True,request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+54,91,FLOOD,2012,year,,Copperbelt,Kalulushi,Chambeshi area,Regional Coordinator,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+55,92,FLOOD,2006,year,,Central,Kapiri Mposhi,kapili Mposhi area,District Commissioner,2017-05-04,False,0,False,True,construction;request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+56,93,FLOOD,2011,year,,Central,Kapiri Mposhi,kapili mposhi,Regional Coordinator,2017-05-04,False,0,False,True,construction;request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+58,95,FLOOD,2011-01-18,day,,Eastern,Chipata,katete and Nyanje,PERMANENT SECRETRAY,2017-05-04,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+59,96,FLOOD,2011-01-17,day,,Southern,Zimba,Maamba Batoka,Acting Director RDA,2017-05-04,False,1,False,True,repair,1,onset_uncertain,2026-10-07T19:37:17+00:00
+61,98,FLOOD,2011,year,,Southern,Kalomo,kalomo Road,DIRECTOR OF WORKS FOR COUNCIL,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+62,99,FLOOD,2011,year,,Northern,Kasama,Mpolokoso,Regional Coordinator DMMU,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+63,100,FLOOD,2011-09-02,day,,Central,Chibombo,Keembe constituency,Regional Engineer,2017-05-04,True,1,False,True,repair;request for funds,2,onset_unlikely,2026-10-07T19:37:17+00:00
+64,101,FLOOD,2011,year,,Luapula,Chiengi,Mansa,Regional Coordinator,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+65,102,FLOOD,2011-01-11,day,,Copperbelt,Lufwanyama,Mpompo,DMMU Coordinator,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+66,103,FLOOD,2011,year,,Central,Chibombo,Chief chamuka,Regional Coordinator ,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+67,104,FLOOD,2011,year,,Luapula,Mansa,mansa area,DMMU Luapula Province,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+68,105,FLOOD,2012,year,,Lusaka,Lusaka,,Director National Road fund Agency,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+69,106,FLOOD,2012,year,,Copperbelt,Kitwe,kitwe area,Regional Engineer,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+70,107,FLOOD,2009,year,,Western,Shangombo,Mambolomoka,School of mines UNZA,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+71,108,FLOOD,2009,year,,Western,Shangombo,Nanjucha ward ,School of mines UNZA,2017-05-04,False,0,False,True,construction;request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+72,109,FLOOD,2012,year,,Lusaka,Chongwe,chongwe,Regional Coordinator Lusaka,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+73,110,FLOOD,2012,year,,Lusaka,Lusaka,chongwe,Regional Coordinator,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+74,111,FLOOD,2012,year,,Southern,Livingstone,livingstone area,Regional Coordinator,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+75,112,FLOOD,2012,year,,Eastern,Petauke,petauke area,Regional Coordinator,2017-05-04,False,0,False,True,construction;request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+76,113,FLOOD,2012,year,,Eastern,Mambwe,Mambwe area,Regional Coordinator DMMU,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+77,115,FLOOD,2012,year,,Southern,Livingstone,livingstone area,Regional Coordinator,2017-05-04,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+78,116,FLOOD,2012,year,,Eastern,Chipata,,Regional Coordinator,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+79,117,FLOOD,2012,year,,Central,Mkushi,Chief Chitina area ,Regional Office Kabwe,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+80,118,FLOOD,2012,year,,Central,Kabwe,Great North ,Regional Engineer Central,2017-05-04,False,0,False,True,repair,1,no_exact_date,2026-10-07T19:37:17+00:00
+81,119,FLOOD,2012,year,,Western,Mongu,Chief Mwanangumune ,Mongu regional Office ,2017-05-04,False,0,False,True,construction;request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+82,120,FLOOD,2012,year,,Northern,Kaputa,Kaputa road ,Road Development Agency,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+83,121,FLOOD,2012,year,,Western,Mongu,Mayukwayukwa luena river,Regional Coordinator Mungu,2017-05-04,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+84,122,FLOOD,2012,year,,Copperbelt,Ndola,Ndola,Regional Engineer,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+85,123,FLOOD,2014,year,,Northern,Kasama,Mwamba road ,District Commissioner,2017-05-04,False,0,False,True,maintenance,1,no_exact_date,2026-10-07T19:37:17+00:00
+86,124,FLOOD,2017-05-29,day,,Northern,Kasama,CHamfubu Resettlement Scheme,Regional Coordinator Kasama,2017-05-04,True,1,False,True,construction,2,onset_unlikely,2026-10-07T19:37:17+00:00
+87,125,FLOOD,2007,year,,Eastern,Nyimba,,Provincial Disaster Management Committee,2017-05-04,False,0,False,True,construction;request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+88,126,FLOOD,2014,year,,Lusaka,Chilanga,Petroda falling station ,Regional Coordinator DMMU,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+98,138,FLOOD,2009,year,,Western,Shangombo,Simu ward,School of mines UNZA,2017-05-05,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+99,139,FLOOD,2009,year,,Western,Shangombo,Sipuma ward,School of mines UNZA,2017-05-05,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+101,141,FLOOD,2009,year,,Western,Shangombo,Sipuma ward,School of mines UNZA,2017-05-05,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+102,142,FLOOD,2012,year,,Luapula,Mansa,St.Clement Secondary school,PERMANENT SECRETRAY,2017-05-05,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+103,143,FLOOD,2014,year,,Eastern,Mambwe,Deporable state ,PERMANENT SECRETRAY,2017-05-05,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+104,144,FLOOD,2010,year,,Central,Serenje,Chief Chisomo village,Royal Highness Chief Chisomo,2017-05-05,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+105,145,FLOOD,2014-02-27,day,,Copperbelt,Kitwe,kawama and twatasha,Regional Coordinator Copperbelt,2017-05-05,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+108,148,FLOOD,2015,year,,Northern,Kasama,Luyeye primary school,PERMANENT SECRETRAY,2017-05-08,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+109,149,FLOOD,2015,year,,Northern,Mporokoso,Chitoshi primary school,DMMU,2017-05-08,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+110,150,FLOOD,2015,year,,Northern,Mporokoso,Luli primary school,DMMU,2017-05-08,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+111,152,FLOOD,2015,year,,Luapula,Samfya,Chitondo primary school,Regional Coordinator,2017-05-08,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+112,153,FLOOD,2015,year,,Luapula,Chipili,Chinshinki primary school,Regional Coordinator,2017-05-08,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+113,154,FLOOD,2015,year,,Luapula,Chipili,Mulundu primary school,Regional Coordinator,2017-05-08,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+115,156,FLOOD,2015-06-16,day,,North-Western,Solwezi,lubinga primary school,DMMU,2017-05-08,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+116,157,FLOOD,2014,year,,Copperbelt,Masaiti,Ipusukilo ,Regional Coordinator Copperbelt,2017-05-08,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+150,196,FLOOD,2010,year,,Western,Lukulu,lukulu area ,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+1386,208,FLOOD,2013-10-31,day,,Western,Mitete,NANGOMA,NELSON PHIRI,2017-05-11,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+120,163,FLOOD,2015-04-18,day,,Eastern,Petauke,juction of petauke-chipungu road,Senior Roads Inspecter,2017-05-11,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+121,164,FLOOD,2014,year,,Northern,Mpulungu,Robert village,Regional Manager RDA,2017-05-11,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+122,165,FLOOD,2014-02-07,day,,North-Western,Manyinga,Senior chief Sikufela,Regional Coordinator,2017-05-11,False,2,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+123,166,FLOOD,2014-02-07,day,,North-Western,Manyinga,Senior Chief Sikufela's area,Regional Coordinator,2017-05-11,False,2,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+124,167,FLOOD,2014-03-05,day,,North-Western,Manyinga,Senior Chief Sikufela's area,Regional Coordinator,2017-05-11,False,2,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+125,168,FLOOD,2011-08-31,day,,Northern,Kaputa,Nsama-nkhoshya roadb,Acting Regional Engineer,2017-05-11,True,1,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+129,172,FLOOD,2013-09-16,day,,Lusaka,Lusaka,Garden house ,National Coordinator DMMU,2017-05-11,True,1,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+130,173,FLOOD,2012-11-16,day,,Muchinga,Nakonde,kanchibeya constituency ,Regional Engineer RDA,2017-05-11,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+132,177,FLOOD,2015-04-10,day,,Northern,Kaputa,kaputa area,Regional Coordinator DMMU,2017-05-11,False,1,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+133,178,FLOOD,2014-04-10,day,,Luapula,Mwense,Mwense constituency,Road Development Agency,2017-05-11,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+135,181,FLOOD,2014,year,,Luapula,Nchelenge,Nchelenge area,The director RDA luapula,2017-05-11,False,0,False,True,construction;repair;request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+137,183,FLOOD,2010,year,,North-Western,Solwezi,Chief Mumena's area ,DMMU OFFICE ,2017-05-24,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+138,184,FLOOD,2010,year,,Luapula,Mansa,heavy rains,Regional Coordinator,2017-05-24,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+140,186,FLOOD,2009,year,,Central,Serenje,lulimala ward,District Disaster management committee ,2017-05-24,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+141,187,FLOOD,2016,year,,North-Western,Mufumbwe,kalambo,Regional Coordinator,2017-05-24,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+143,189,FLOOD,2010,year,,Central,Serenje,Serenje area,ZVAC ASSESMENT REPORT,2017-06-05,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+144,190,FLOOD,2010,year,,Central,Serenje,muchinka,ZVAC ASSESMENT REPORT,2017-06-05,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+145,191,FLOOD,2010,year,,North-Western,Chavuma,Nyantanda healthy post ,ZVAC ASSESMENT REPORT,2017-06-05,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+146,192,FLOOD,2010,year,,Southern,Gwembe,Gwembe area ,ZVAC ASSESMENT REPORT,2017-06-05,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+147,193,FLOOD,2010,year,,Southern,Kazungula,kazungula area ,ZVAC ASSESMENT REPORT,2017-06-05,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+148,194,FLOOD,2010,year,,Southern,Namwala,namwala area,ZVAC ASSESMENT REPORT,2017-06-05,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+149,195,FLOOD,2010,year,,Western,Kalabo,kalabo area ,ZVAC ASSESMENT REPORT,2017-06-05,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+151,197,FLOOD,2010,year,,Western,Lukulu,lukulu area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+152,198,FLOOD,2010,year,,Western,Mongu,mongu area ,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+153,199,FLOOD,2010,year,,Western,Mongu,mongu area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+154,200,FLOOD,2010,year,,Western,Senanga,senanga area ,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+155,201,FLOOD,2010,year,,Western,Senanga,senanga area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+156,202,FLOOD,2010,year,,Western,Senanga,senanga area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+157,203,FLOOD,2010,year,,Western,Senanga,senanga area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+158,204,FLOOD,2017-06-06,day,,Southern,Gwembe,Gwembe area,ZVAC ASSESMENT REPORT,2017-06-06,True,2,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+159,205,FLOOD,2010,year,,Southern,Kazungula,kazungula area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+160,206,FLOOD,2010,year,,Southern,Namwala,namwala area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+161,207,FLOOD,2010,year,,Southern,Sinazongwe,sinazongwe area ,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+162,208,FLOOD,2010,year,,Western,Kalabo,kalabo area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+163,209,FLOOD,2010,year,,Western,Lukulu,lukulu area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+164,210,FLOOD,2010,year,,Western,Mongu,mongu area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+165,211,FLOOD,2010,year,,Western,Senanga,senanga area,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+166,212,FLOOD,2010,year,,Western,Shangombo,shangombo area ,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+167,213,FLOOD,2010,year,,Western,Sesheke,sesheke area ,ZVAC ASSESMENT REPORT,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+1287,98,FLOOD,2008-03-08,day,,Lusaka,Lusaka,NORTH GREAT ROAD,TIMOTHY M. HAKUYU,2017-05-04,False,3,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1372,194,FLOOD,2008-01-21,day,,Central,Mumbwa,MWEMBESHI,P.S,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+640,47,FLOOD,2014-04-08,day,,Northern,Nsama,MWEMBESHI,District Commisioner,2017-05-03,False,4,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+641,48,FLOOD,2017-05-03,day,,Luapula,Mwense,Sesa-Chindoloma-Kapesa road,District Commisioner,2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+642,49,FLOOD,2009-05-30,day,,Northern,Mungwi,MALOLE,Emmanuel Munaile (MP),2017-05-03,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+643,50,FLOOD,2009-04-03,day,,Central,Serenje,Chitambo,Ministry of lands,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+644,51,FLOOD,2009-03-27,day,,Muchinga,Mpika,Kanchibiya,District Commisioner,2017-05-03,False,6,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+645,52,FLOOD,2009,year,,Central,Serenje,Chief Mailo's area,District Commisioner,2017-05-03,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+646,53,FLOOD,2017-05-03,day,,Western,Kaoma,Luampa,Moses Chinyama,2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+647,54,FLOOD,2017-05-03,day,,Western,Kaoma,Luampa,Moses Chinyama (DC),2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+648,55,FLOOD,2017-05-03,day,,Western,Kaoma,Kaoma central constituency,Moses Chinyama (DC),2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+649,56,FLOOD,2017-05-03,day,,Western,Kaoma,Mangango,Moses Chinyama (DC),2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+650,57,FLOOD,2017-05-03,day,,North-Western,Mwinilunga,chief Ntambu's area,,2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+651,58,FLOOD,2017-05-03,day,,North-Western,Mwinilunga,chief Ntambu's area,,2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+652,59,FLOOD,2017-05-03,day,,North-Western,Solwezi,Solwezi East,District Commisioner,2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+653,60,FLOOD,2009-02-06,day,,North-Western,Mwinilunga,chief Ntambu's area,,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+654,61,FLOOD,2012-04,month,,Lusaka,Lusaka,Matero,District Commisioner,2017-05-03,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+655,62,FLOOD,2013-03,month,,Copperbelt,Kalulushi,Lukoshi,Joyce. B. Nsamba (DC),2017-05-03,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+656,63,FLOOD,2013-12-25,day,,Central,Chibombo,Izovu,,2017-05-03,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+657,64,FLOOD,2007,year,,Lusaka,Chongwe,Bunda Bunda,District Commisioner,2017-05-03,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+658,65,FLOOD,2010-10-31,day,,North-Western,Mwinilunga,Kasanjiko,Report by DMMU,2017-05-03,True,3,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+659,66,FLOOD,2010-10-31,day,,North-Western,Mwinilunga,Musangila, Report by DMMU,2017-05-03,True,3,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+660,67,FLOOD,2010-10-31,day,,North-Western,Mwinilunga,Kasanghezi,Report by DMMU,2017-05-03,True,3,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+661,68,FLOOD,2010-04-26,day,,Lusaka,Luangwa,Luangwa bridge,Zambia wildlife Authority,2017-05-03,False,1,False,True,repair,1,onset_uncertain,2026-10-07T19:37:17+00:00
+662,69,FLOOD,2010-04,month,,Eastern,Katete,Chichele,Zambia wildlife Authority,2017-05-03,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+663,70,FLOOD,2010-08-10,day,,North-Western,Zambezi,Mize,DMMU Regional office,2017-05-03,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+664,71,FLOOD,2017-05-03,day,,Copperbelt,Kitwe,Mwekere,District Commisioner,2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+667,74,FLOOD,2017-05-03,day,,Northern,Nsama,MWEMBESHI,District Commisioner,2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+673,80,FLOOD,2014-04-08,day,,Northern,Nsama,MWEMBESHI,District Commisioner,2017-05-03,False,4,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+676,84,FLOOD,2017-05-04,day,,Central,Itezhi-tezhi,Lubanda,District Commisioner,2017-05-04,True,4,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+679,87,FLOOD,2014-11-03,day,,Lusaka,Lusaka,Mtendere,District Commisioner,2017-05-04,False,1,False,True,tender,1,onset_uncertain,2026-10-07T19:37:17+00:00
+680,98,FLOOD,2011-12-16,day,,Lusaka,Lusaka,Kaunda Square stage1,District Commisioner,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+684,103,FLOOD,2014-04-08,day,,Northern,Nsama,MWEMBESHI,District Commisioner,2017-05-04,False,4,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+687,107,FLOOD,2014-04-08,day,,Northern,Nsama,MWEMBESHI,District Commisioner,2017-05-04,False,4,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+688,108,FLOOD,2017-05-04,day,,Lusaka,Lusaka,Chawama,,2017-05-04,True,4,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+698,121,FLOOD,2008-01-03,day,,Southern,Monze,Mabonde bridge,DMMU report,2017-05-08,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+699,122,FLOOD,2015-12-17,day,,Southern,Mazabuka,Mazabuka central business area,DMMU report,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+713,139,FLOOD,2013-01-20,day,,North-Western,Kabompo,Mishivi bridge,District administration office,2017-05-11,False,4,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+715,141,FLOOD,2013-01-20,day,,North-Western,Kabompo,Maveve bridge,District administration office,2017-05-11,False,4,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+716,142,FLOOD,2013-01-20,day,,North-Western,Kabompo,Kasalya bridge,District administration office,2017-05-11,False,4,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+728,158,FLOOD,2013,year,,Muchinga,Chinsali,Mwalala primary school,District Education board,2017-05-11,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+729,159,FLOOD,2011,year,,Luapula,Mansa,Musaila primary school,DMMU Regional office,2017-05-11,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+736,167,FLOOD,2013,year,,Central,Chibombo,Itombwe,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+737,168,FLOOD,2013,year,,Central,Chibombo,Kalala primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+738,170,FLOOD,2013,year,,Central,Chibombo,Kalebuka primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+739,171,FLOOD,2013,year,,Central,Chibombo,Muwanju primary school,ZVAC/ Assessment reports,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+740,173,FLOOD,2017-06-05,day,,Central,,,,2017-06-05,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+741,174,FLOOD,2013,year,,Central,Chibombo,Shimbilo primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+742,175,FLOOD,2013,year,,Central,Itezhi-tezhi,Baanga primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+743,176,FLOOD,2013,year,,Central,Itezhi-tezhi,Babizhi,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+744,177,FLOOD,2013,year,,Central,Itezhi-tezhi,Yomena primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+745,178,FLOOD,2013,year,,Central,Mkushi,Shamboze primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+746,179,FLOOD,2013,year,,Central,Mkushi,Lukunka primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+747,180,FLOOD,2013,year,,Central,Mumbwa,Kabulwe bulwe,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+748,181,FLOOD,2013,year,,Lusaka,Shibuyunji,Munyati primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+749,182,FLOOD,2013,year,,Lusaka,Shibuyunji,Nampundwe,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+750,183,FLOOD,2013,year,,Lusaka,Shibuyunji,Shabaso primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+751,184,FLOOD,2013,year,,Eastern,Chipata,Kapita primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+767,200,FLOOD,2013,year,,Western,Limulunga,Mabili community school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+752,185,FLOOD,2013,year,,North-Western,Zambezi,Kalengwa primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+753,186,FLOOD,2013,year,,Southern,Kalomo,Maramba primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+754,187,FLOOD,2013,year,,Southern,Monze,Hakunkula primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+755,188,FLOOD,2013,year,,Southern,Namwala,Nakaunda primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+756,189,FLOOD,2013,year,,Southern,Namwala,Tapa primary school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+757,190,FLOOD,2013,year,,Southern,Namwala,Kasonkomwa community school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+758,191,FLOOD,2013,year,,Western,Kalabo,Ikatulamwa community school,ZVAC/ Assessment report,2017-06-05,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+759,192,FLOOD,2013,year,,Western,Kalabo,Nangole primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+760,193,FLOOD,2013,year,,Western,Kalabo,Silanda primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+761,194,FLOOD,2013,year,,Western,Kalabo,Muchicha primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+762,195,FLOOD,2013,year,,Western,Kalabo,Salunda primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+763,196,FLOOD,2013,year,,Western,Kalabo,Muweshi primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+764,197,FLOOD,2013,year,,Western,Kalabo,Nguluma primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+766,199,FLOOD,2013,year,,Western,Limulunga,Limulunga primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+768,201,FLOOD,2013,year,,Western,Mitete,Lwambi primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+769,202,FLOOD,2013,year,,Western,Mwandi,Mande primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+770,203,FLOOD,2013,year,,Western,Mwandi,Mangwanyi primary school,ZVAC/ Assessment report,2017-06-06,False,0,False,True,assess,1,no_exact_date,2026-10-07T19:37:17+00:00
+1236,45,FLOOD,2012-03-12,day,,Northern,Luwingu,KALOMBOSHI,MAMBWE KATONTOKA,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1238,48,FLOOD,2012-03-29,day,,Luapula,Mansa,LUAMFUMU,MFUTA.K. CHRISTOPHER,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1239,49,FLOOD,2012-12-03,day,,Luapula,Milengi,MILENGI,H. KALABA,2017-05-03,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1240,50,FLOOD,2012-11-03,day,,Muchinga,Mpika,MPIKA,HON. MALAMA,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1246,56,FLOOD,2009-02-18,day,,Luapula,Kawambwa,CHAMBESHI,ELIZABETH CHITIKA,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1247,57,FLOOD,2009-03-09,day,,Central,Kabwe,LUSIWASI,GEORGE KUNDA,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1248,58,FLOOD,2006-05-06,day,,Central,Serenje,SERENJE,MAKOYE CHISUTA,2017-05-03,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1249,59,FLOOD,2007-08-20,day,,Central,Kapiri Mposhi,KAPIRI,JESTON.D. MULANDO,2017-05-03,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1250,60,FLOOD,2016-01-16,day,,Southern,Siavonga,SIAVONGA,CAROL C NKANDAWIRE,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1251,62,FLOOD,2014-03-30,day,,Muchinga,Nakonde,ISOKA,BERNARD CHIWALA,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1252,63,FLOOD,2014-03-14,day,,Southern,Monze,MONZE,EDWIN.J. PETER,2017-05-03,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1253,64,FLOOD,2014-03-01,day,,Northern,Kasama,KASAMA,Simon chimwando,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1254,65,FLOOD,2014-03-05,day,,Eastern,Chipata,CHIPATA,INGRIBET BONDO,2017-05-03,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1255,66,FLOOD,2014-01-14,day,,Copperbelt,Chililabombwe,CHILILABOMBWE,EDWIN. M,2017-05-03,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1256,67,FLOOD,2017-04-09,day,,North-Western,Mwinilunga,MWINILUNGA,PETER KABASO,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1257,68,FLOOD,2017-05-03,day,,Copperbelt,Chingola,CHINGOLA,MARY.N. CHIBESA,2017-05-03,True,15,True,False,,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1258,69,FLOOD,2013-12-25,day,,Central,Chibombo,CHIBOMBO,BOYD SIYANGA,2017-05-03,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1259,70,FLOOD,2013-12-13,day,,Copperbelt,Luanshya,CHITWE,EDWIN. MUYUNDA,2017-05-03,False,7,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1260,71,FLOOD,2013-12-13,day,,Copperbelt,Kitwe,MUTUPA,EDWIN. MUYUNDA,2017-05-03,False,7,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1261,72,FLOOD,2013-12-13,day,,Copperbelt,Luanshya,LUANSHYA,EDWIN. MUYUNDA,2017-05-03,False,7,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1262,73,FLOOD,2013-12-13,day,,Northern,Mporokoso,NSAMA,PAUL M MUYONGO,2017-05-03,False,7,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1263,74,FLOOD,2012-12-13,day,,Eastern,Chadiza,CHADIZA,INGRIBET BONDO,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1264,75,FLOOD,2013-12-13,day,,Eastern,Chadiza,KAPHINDE,INGRIBET BONDO,2017-05-03,False,7,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1265,76,FLOOD,2013-12-13,day,,Eastern,Chadiza,CHADIZA,INGRIBET BONDO,2017-05-03,False,7,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1266,77,FLOOD,2013-12-13,day,,Eastern,Chadiza,CHADIZA,INGRIBET BONDO,2017-05-03,False,7,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1267,78,FLOOD,2013-12-16,day,,Eastern,Sinda,SINDA,INGRIBET BONDO,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1268,79,FLOOD,2013-10-13,day,,Lusaka,Lusaka,LUSAKA,ASHELL KAMPENGELE,2017-05-03,True,3,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1269,80,FLOOD,2013-05-03,day,,Eastern,Petauke,SANDWE,INGRIBET BONDO,2017-05-03,True,3,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1272,83,FLOOD,2016-06-20,day,,North-Western,Solwezi,SOLWEZI,ELIAS MWAPE,2017-05-03,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1275,86,FLOOD,2015-11-06,day,,Eastern,Nyimba,NYIMBA,PETER KUNDA,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1276,87,FLOOD,2014-02-14,day,,Copperbelt,Kitwe,KITWE,EDWIN. MUYUNDA,2017-05-03,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1277,88,FLOOD,2015-02-03,day,,Eastern,Sinda,KASANGAZI,INGRIBET BONDO,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1278,89,FLOOD,2015-01-05,day,,Lusaka,Lusaka,LUSAKA,CUSTOM THEWO,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1279,90,FLOOD,2014-01-14,day,,Northern,Luwingu,LUWINGU,PAUL M MUYONGO,2017-05-03,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1280,91,FLOOD,2014-12-01,day,,Lusaka,Chilanga,CHILANGA,S.CHABALA,2017-05-03,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1281,92,FLOOD,2014-02-14,day,,Northern,Kasama,LUKULU,PAUL M MUYONGO,2017-05-03,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1282,93,FLOOD,2008-03-08,day,,Lusaka,Lusaka,LUSAKA,ERASMUS.M.CHILUNDIKA,2017-05-03,False,3,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1283,94,FLOOD,2008-05-03,day,,Lusaka,Lusaka,MANDEVU,TIMOTHY.M.HAKUKU,2017-05-03,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1284,95,FLOOD,2007-05-04,day,,Lusaka,Lusaka,LUSAKA WEST,A.M. MUSONDA,2017-05-04,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1285,96,FLOOD,2008-03-06,day,,Lusaka,Lusaka,LUSAKA,TIMOTHY M. HAKUYU,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1286,97,FLOOD,2014-02-08,day,,Lusaka,Lusaka,LUSAKA,D.MULENGA,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1288,99,FLOOD,2008-12-29,day,,Lusaka,Lusaka,LUSAKA,DR.H.V. MWEENE,2017-05-04,False,2,False,True,tender,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1289,100,FLOOD,2008-12-29,day,,Lusaka,Lusaka,LUSAKA,MR. MINYOI . I,2017-05-04,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1292,103,FLOOD,2014-10-14,day,,Eastern,Sinda,"sinda, mambwe & katete",caroline mwanza,2017-05-04,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1293,104,FLOOD,2016-11-16,day,,Lusaka,Luangwa,luangwa,titus ng'andu,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1294,105,FLOOD,2012-05-04,day,,Eastern,Chipata,chipata,G. MVALA,2017-05-04,True,2,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1295,106,FLOOD,2017-05-04,day,,Copperbelt,Kitwe,MULENGA COMPOUND,ELALIO MUSOND,2017-05-04,True,4,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1296,107,FLOOD,2017-01-17,day,,Western,Mwandi,MWANDI,GIVEN SICHEEBA,2017-05-04,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1297,108,FLOOD,2017-02-17,day,,Southern,Choma,CHOMA,FRED C. CHAATILA,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1299,110,FLOOD,2001-02-01,day,,Central,Serenje,selenge,MNI-MILAMBO,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1300,111,FLOOD,2014-03-14,day,,Northern,Mporokoso,MPOROKOSO,PAUL M MUYONGO,2017-05-04,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1301,112,FLOOD,2014-05-04,day,,Central,Mkushi,mkushi,mwila kunda,2017-05-04,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1338,150,FLOOD,2007-02-22,day,,Northern,Chilubi,CHILUBI,D.MULENGA,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1306,117,FLOOD,2017-05-04,day,,Eastern,Petauke,petauke,assessment report,2017-05-04,True,4,False,True,assess,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1309,120,FLOOD,2016-12-09,day,,Muchinga,Nakonde,NAKONDE,BANDA JOSHUA,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1311,122,FLOOD,2017-01-17,day,,Eastern,Chipata,CHIPATA,DR ALLAN LINGAMBE,2017-05-04,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1312,123,FLOOD,2017-01-04,day,,Luapula,Samfya,MATONGO,MARTIN CHIFUKWA,2017-05-04,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1319,130,FLOOD,2015-01-09,day,,Lusaka,Lusaka,ROMA,CHAKUPALESA.E,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1321,132,FLOOD,2008-03-08,day,,Lusaka,Lusaka,CHIBOLYA,B. TAMBATAMBA,2017-05-04,False,3,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1337,149,FLOOD,2013-05-04,day,,Eastern,Petauke,petauke,DORA SILIYA MP,2017-05-04,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1340,152,FLOOD,2012-12-03,day,,Eastern,Katete,KATETE,PETER KUNDA,2017-05-04,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1341,154,FLOOD,2014-02-04,day,,Muchinga,Chama,CHAMA,INGRIBET BONDO,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1344,158,FLOOD,2014-03-17,day,,Northern,Kaputa,KAPUTA,PAUL M MUYONGO,2017-05-05,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1345,159,FLOOD,2014-04-14,day,,North-Western,Kabompo,KABOMPO,A.L. LUFUMA.HON,2017-05-05,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1348,165,FLOOD,2016-12-26,day,,Luapula,Milengi,MILENGI,HON. MWANSA MBULAKULIMA,2017-05-05,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1350,167,FLOOD,2016-12-25,day,,Lusaka,Chirundu,CHIRUNDU,titus ng'andu,2017-05-05,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1355,174,FLOOD,2013-01-07,day,,Southern,Mazabuka,MAZABUKA,EUGINE MUNYAMA,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1357,176,FLOOD,2013-02-16,day,,North-Western,Zambezi,ZAMBEZI,CATHERINE MUKUMA,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1359,179,FLOOD,2013-01-09,day,,Southern,,CHIKANKATA,EDWIN. MUYUNDA,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1362,182,FLOOD,2017-05-08,day,,Eastern,Chadiza,CHADIZA,PATRICK KANGWA,2017-05-08,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1364,184,FLOOD,2006-12-12,day,,Northern,Mpulungu,MPULUNGU,MALAMBO.NNL,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1365,185,FLOOD,2014-01-09,day,,Western,Senanga,SENENGA,PUMULO MUBULA,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1369,190,FLOOD,2008-01-24,day,,Central,Mkushi,CHIBANGA,P.S,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1370,192,FLOOD,2006-03-11,day,,Western,Kaoma,LUAMBUINA,D.S.M.C,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1373,195,FLOOD,2008-01-03,day,,Southern,Monze,MWEENGWA,DMMU/101/4/9,2017-05-08,False,2,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1398,221,FLOOD,2015-06-10,day,,Muchinga,Chinsali,KALUNGU,OLIVE-CHISOLA DARIS,2017-05-11,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1399,222,FLOOD,2017-05-11,day,,Northern,Luwingu,KAFINSA,GEORGE MANYELE,2017-05-11,True,2,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1401,224,FLOOD,2013-03-13,day,,Northern,Kasama,NAMULUNDU,KALANGA W BWALYA,2017-05-11,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1404,227,FLOOD,2014-04-04,day,,Western,Senanga,KAUNGA,GERSHOM MWAGOMBA,2017-05-11,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1408,231,FLOOD,2013-01-20,day,,Copperbelt,Kalulushi,KALULUSHI,RAYFORD MBULU,2017-05-11,False,4,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1339,151,FLOOD,2013-11-27,day,,Eastern,Katete,KATETE,CAROLINE MWANSA,2017-05-04,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1412,236,FLOOD,2016-03-18,day,,Lusaka,Kafue,chikupi area,titus ng'andu,2017-05-22,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1415,239,FLOOD,2015-01-11,day,,Lusaka,Chirundu, KAMWAYA AREA,alfred T. HAMUNJO,2017-05-22,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1416,240,FLOOD,2017-05-22,day,,Lusaka,Chongwe,LWIMBA WARD,titus ng'andu,2017-05-22,True,2,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1417,241,FLOOD,2017-05-22,day,,Lusaka,Lusaka,BAULENI,titus ng'andu,2017-05-22,True,2,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1418,242,FLOOD,2015-12-29,day,,Lusaka,Shibuyunji,SHIBUYUNJI AREA,titus ng'andu,2017-05-22,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1423,253,FLOOD,2013-06-05,day,,Central,Luano,luano,assessment report,2017-06-05,True,1,False,True,assess,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1424,254,FLOOD,2013-06-06,day,,Luapula,Kawambwa,chipundu,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1426,256,FLOOD,2013-06-06,day,,Luapula,Kawambwa,CHIBOLYA,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1427,257,FLOOD,2017-06-06,day,,Luapula,Kawambwa,kafubashi,assessment report,2017-06-06,True,2,False,True,assess,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1428,258,FLOOD,2013-06-06,day,,Luapula,Kawambwa,mpanta,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1429,259,FLOOD,2013-06-06,day,,Luapula,Kawambwa,kawambwa,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1430,260,FLOOD,2013-06-06,day,,Luapula,Nchelenge,kabeke,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1431,261,FLOOD,2013-06-06,day,,Luapula,Nchelenge,mukumbwa,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1432,262,FLOOD,2013-06-06,day,,Luapula,Nchelenge,chisenga,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1433,263,FLOOD,2013-06-06,day,,Luapula,Nchelenge,mantapala,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1434,264,FLOOD,2013-06-06,day,,Luapula,Nchelenge,kambwali,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1435,265,FLOOD,2013-06-06,day,,Luapula,Nchelenge,shimulundu,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1436,266,FLOOD,2013-06-06,day,,Luapula,Nchelenge,kampampi,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1437,267,FLOOD,2013-06-06,day,,Luapula,Nchelenge,shanyemba,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1438,268,FLOOD,2013-06-06,day,,Luapula,Nchelenge,mubamba,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1439,269,FLOOD,2013-06-06,day,,Luapula,Nchelenge,lukokesha,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1440,270,FLOOD,2013-06-06,day,,Luapula,Nchelenge,nchelenge,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1441,271,FLOOD,2013-06-06,day,,Luapula,Nchelenge,nchelenge,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1442,272,FLOOD,2013-06-06,day,,Luapula,Nchelenge,chandwe,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1443,273,FLOOD,2013-06-06,day,,Luapula,Nchelenge,kashikishi,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1448,280,FLOOD,2013-06-06,day,,Muchinga,,MUNGULUBE,assessment report,2017-06-06,True,20,True,True,assess,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1726,77,FLOOD,2017-05-03,day,,Lusaka,Kafue,SONDELA ROAD ,DMMU,2017-05-03,True,15,True,True,rehabilit,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1747,99,FLOOD,2011,year,,Central,Serenje,LUKUSASHI,MR B. SIYANGA DMMU,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+1649,486,FLOOD,2017-01-04,day,,Luapula,Samfya,samfya,assessment report,2017-06-12,False,2,False,True,assess,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1699,46,FLOOD,2015-06-18,day,,North-Western,Solwezi,MAHEBA,JACOB MPHEPO COMMISSIONER FOR REFUGEES,2017-05-03,True,1,False,True,construction,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1701,47,FLOOD,2010-03-28,day,,Southern,Livingstone,BATOKA/MAAMBA,RDA,2017-05-03,False,1,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1702,51,FLOOD,2010-03-08,day,,Central,Kabwe,CHIPEPO,MCDSS,2017-05-03,False,1,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1703,52,FLOOD,2009,year,,Lusaka,Chongwe,CHONGWE,RDA,2017-05-03,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+1704,54,FLOOD,2010-03-10,day,,Eastern,Mambwe,MAMBWE,RDA,2017-05-03,False,2,False,True,repair,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1705,55,FLOOD,2017-03-10,day,,Eastern,Chadiza,MWAMI,RDA,2017-05-03,False,1,False,True,repair,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1706,56,FLOOD,2010-03-10,day,,Eastern,Petauke,MUSUMBAZI ,RDA,2017-05-03,False,2,False,True,repair,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1707,57,FLOOD,2008,year,,Central,Serenje,LUSIWASI ,DMMU ,2017-05-03,False,0,False,True,maintenance;repair,1,no_exact_date,2026-10-07T19:37:17+00:00
+1708,58,FLOOD,2010-02-25,day,,Western,Kalabo,KALABO,DMMU,2017-05-03,False,1,False,True,rehabilit;replacement,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1709,59,FLOOD,2011-01-05,day,,Copperbelt,Lufwanyama,LUFWANYAMA,DMMU,2017-05-03,False,1,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1710,60,FLOOD,2000-05-03,day,,Central,Serenje,CHISOMO,DMMU,2017-05-03,True,1,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1711,61,FLOOD,2011-07-20,day,,Luapula,Milengi,BAHATI & MILENGE ,DMMU,2017-05-03,True,1,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1712,62,FLOOD,2017-05-03,day,,Lusaka,Lusaka,LUSAKA,DMMU,2017-05-03,True,15,True,True,rehabilit,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1713,64,FLOOD,2011-09-12,day,,Copperbelt,Ndola,CHIFUMPA,DMMU,2017-05-03,True,1,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1714,65,FLOOD,2012-02-14,day,,Eastern,Sinda,KABAZA,DMMU,2017-05-03,False,1,False,True,rehabilit;replacement,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1715,66,FLOOD,2011-07-13,day,,Muchinga,Chama,LUANGWA,DMMU,2017-05-03,True,1,False,True,construction,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1716,67,FLOOD,2013-03-11,day,,Lusaka,Lusaka,NEW SOWETO & OLD SOWETO,DMMU,2017-05-03,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1717,68,FLOOD,2013-02-28,day,,Southern,Sinazongwe,MWEEMBA,DMMU,2017-05-03,False,1,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1718,69,FLOOD,2013-01-15,day,,Copperbelt,Ndola,MUSHILI,DMMU,2017-05-03,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1719,70,FLOOD,2012-05-03,day,,Southern,Kazungula,NYAWA-MWEEMBA ,DMMU,2017-05-03,True,5,True,True,rehabilit,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1720,71,FLOOD,2012-05-03,day,,Southern,Kazungula,NYAWA DU-B015,DMMU,2017-05-03,True,5,True,True,rehabilit,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1721,72,FLOOD,2012-05-03,day,,Southern,Kazungula,MACILE-MOOMBA ,DMMU,2017-05-03,True,5,True,True,rehabilit,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1722,73,FLOOD,2012-05-03,day,,Southern,Kazungula,NYAWA-SIANANKANGE ,DMMU,2017-05-03,True,5,True,True,rehabilit,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1723,74,FLOOD,2013-05-03,day,,Southern,Kazungula,ZIMBA-MANYEMUNYEMU ,DMMU,2017-05-03,True,3,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1724,75,FLOOD,2012-05-03,day,,Southern,Kazungula,NYAWA-KAUWE ,DMMU,2017-05-03,True,5,True,True,rehabilit,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1725,76,FLOOD,2013-01-28,day,,Luapula,Lunga,KASOMALUNGA,DMMU,2017-05-03,False,1,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1727,78,FLOOD,2013-03-14,day,,Southern,Sinazongwe,SINAZONGWE,DMMU,2017-05-03,False,1,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1728,79,FLOOD,2015-02-10,day,,Eastern,Lundazi,LUNDAZI ,DMMU,2017-05-03,False,1,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1729,80,FLOOD,2013-05-03,day,,Southern,Choma,MBABALA,DMMU,2017-05-03,True,3,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1730,81,FLOOD,2015-05-11,day,,Northern,Luwingu,CHIPONDE AND WASHENI ,DM MU,2017-05-03,True,2,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1732,83,FLOOD,2014-05-08,day,,North-Western,Mwinilunga,NSWETA COMMUNITY ,DMMU,2017-05-03,True,1,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1733,84,FLOOD,2014-10-04,day,,North-Western,Mwinilunga,MUDANYAMA ,DMMU,2017-05-03,True,1,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1734,85,FLOOD,2011-10-05,day,,Western,Mongu,"KAOMA,KALABO AND SENANGA",DMMU/RDA,2017-05-03,True,1,False,True,repair,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1735,87,FLOOD,2012-10-05,day,,North-Western,Mwinilunga,"SOLWEZI, ZAMBALI,KABONGO..",DMMU/RDA,2017-05-04,True,6,True,True,repair,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1736,88,FLOOD,2012-10-05,day,,Northern,Kasama,"MPOROKOSO,KAPUTA,LUWINGU,,",DMMU/RDA,2017-05-04,True,6,True,True,repair,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1737,89,FLOOD,2012-10-05,day,,Luapula,Mansa,ALL LAUPULA ,DMMU/RDA,2017-05-04,True,6,True,True,repair,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1738,90,FLOOD,2012-05-04,day,,Eastern,Chipata,"LUANGENI,CHIPATA,CHADIZA,,,",DMMU/RDA,2017-05-04,True,2,False,True,repair,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1739,91,FLOOD,2012-10-05,day,,Copperbelt,Ndola,NDOLA,DMMU/RDA,2017-05-04,True,6,True,True,repair,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1740,92,FLOOD,2012-10-05,day,,Central,Kabwe,"KABWE,SERENJE,MKUSHI,,,,",DMMU/RDA,2017-05-04,True,6,True,True,repair,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1741,93,FLOOD,2012-10-05,day,,Lusaka,Lusaka,LUSAKA,DMMU/RDA,2017-05-04,True,6,True,True,rehabilit,3,onset_unlikely,2026-10-07T19:37:17+00:00
+1742,94,FLOOD,2012-02-01,day,,Central,Mkushi,LUNSEMFWA ,RDA,2017-05-04,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1743,95,FLOOD,2011-06-04,day,,Central,Mkushi,MAUNDA,MR B. SIYANGA DMMU,2017-05-04,True,2,False,True,reconstruct,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1744,96,FLOOD,2011-06-04,day,,Central,Serenje,LUKUSASHI,MR B. SIYANGA DMMU,2017-05-04,True,2,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1745,97,FLOOD,2011-06-01,day,,Central,Serenje,KAPAMPALWE ,MR B. SIYANGA DMMU,2017-05-04,True,1,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1746,98,FLOOD,2011,year,,Central,Serenje,MILEMBO ,MR B. SIYANGA DMMU,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+1748,100,FLOOD,2011-05-04,day,,Central,Kabwe,CHITAKATA,MR B. SIYANGA DMMU,2017-05-04,True,1,False,True,rehabilit;repair,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1749,101,FLOOD,2011,year,,Central,Kabwe,VWALIKA ,MR B. SIYANGA DMMU,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+1750,102,FLOOD,2011,year,,Central,Kapiri Mposhi,MUTETESHI ,,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+1751,103,FLOOD,2011,year,,Central,Mkushi,MILOMBWE ,MR B. SIYANGA DMMU,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+1752,104,FLOOD,2011,year,,Central,Serenje,AKASEBA ,,2017-05-04,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+1753,105,FLOOD,2012-01-16,day,,Central,Kabwe,MAKULULU ,MR B. SIYANGA DMMU,2017-05-04,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1754,106,FLOOD,2011,year,,Central,Kabwe,BWACHA AND KABWE ,RDA/DMMU,2017-05-04,False,0,False,True,construction;rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+1755,107,FLOOD,2014-10-28,day,,Central,Luano,KAMPOKO ,MR DAVIES CHISOPA (MP),2017-05-04,True,1,False,True,construction,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1756,108,FLOOD,2010-11-22,day,,Western,Mongu,LIANDE,RDA/DMMU,2017-05-04,False,3,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1757,109,FLOOD,2010-11-22,day,,Western,Mongu,LITAWA ,RDA/DMMU,2017-05-04,False,3,False,True,construction;rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1758,110,FLOOD,2010-11-22,day,,Western,Mongu,NAKANYA NAMAUMBA ROAD ,RDA/DMMU,2017-05-04,False,3,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1759,111,FLOOD,2009-02-11,day,,Luapula,Mansa,KATUNGULU/LUENA,DMMU,2017-05-04,False,5,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1760,112,FLOOD,2009-02-11,day,,Luapula,Kawambwa,CHINANI  MULUNDA WARD,DMMU,2017-05-04,False,5,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1761,113,FLOOD,2009-02-11,day,,Luapula,Kawambwa,CHIPILI/LUWINGU ,DISTRIC COMMISSIONER KAWAMBWA,2017-05-04,False,5,True,True,rehabilit,2,onset_uncertain,2026-10-07T19:37:17+00:00
+1762,114,FLOOD,2009-02-11,day,,Luapula,Kawambwa,PAMBASHE ,DISTRIC COMMISSIONER KAWAMBWA,2017-05-04,False,5,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1763,115,FLOOD,2009-02-11,day,,Luapula,Kawambwa,CHISEMBE-CHIBO TE,DISTRIC COMMISSIONER KAWAMBWA,2017-05-04,False,5,True,True,replacement,2,onset_uncertain,2026-10-07T19:37:17+00:00
+1764,116,FLOOD,2011-10-04,day,,Central,Serenje,MAILO ,DMMU,2017-05-04,True,1,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1765,117,FLOOD,2011-11-03,day,,Eastern,Chipata,MAGWERO ,DMMU,2017-05-04,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1766,118,FLOOD,2011-12-05,day,,Western,Sesheke,SICHILILO ,DMMU,2017-05-04,False,1,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1779,132,FLOOD,2001-02-03,day,,Central,Serenje,CHITAMBO ,MNL MALAMBO DMMU,2017-05-05,False,1,False,True,relief food,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1790,143,FLOOD,2004-03-31,day,,North-Western,Chavuma,CHAVUMA,DMMU,2017-05-05,False,5,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1791,144,FLOOD,2014-03-31,day,,North-Western,Zambezi,ZAMBEZI,DMMU,2017-05-05,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1792,145,FLOOD,2004-03-31,day,,Western,Senanga,SENANGA,DMMU,2017-05-05,False,5,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1793,146,FLOOD,2004-03-31,day,,Western,Mongu,MONGU ,DMMU,2017-05-05,False,5,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1794,147,FLOOD,2004-03-31,day,,Western,Lukulu,LUKULU ,DMMU,2017-05-05,False,5,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1795,148,FLOOD,2004-03-31,day,,Western,Kalabo,KALABO,DMMU,2017-05-05,False,5,True,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1797,150,FLOOD,2000-04-13,day,,Central,Mumbwa,MWANACHIYANDA ,MR MNL MALAMBO DMMU,2017-05-05,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1800,153,FLOOD,2013-01-27,day,,Lusaka,Lusaka,CHANDWE MUSONDA ,DMMU ,2017-05-05,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1803,162,FLOOD,2006-03-14,day,,North-Western,Mufumbwe,MUFUMBWE,DMMU,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1807,166,FLOOD,2012-02-09,day,,Central,Kabwe,KABWE ,MR B. SIYANGA DMMU,2017-05-08,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1810,169,FLOOD,2001-01-23,day,,Central,Serenje,KATONGA ,G MWENYA DACO ,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1811,170,FLOOD,2001-02-08,day,,Central,Kapiri Mposhi,"NDEKE,MUTILILO, SOWETO ..",MR MNL MALAMBO DMMU,2017-05-08,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1812,171,FLOOD,2017-05-09,day,,Lusaka,Shibuyunji,NAKABA FISHING CAMP ,EMMUNYANGA SPOKESMAN ,2017-05-09,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1813,174,FLOOD,2007-01-29,day,,Western,Mongu,MUKUKUTU AND SONGA, SITUMBEKO NALISHEBO ,2017-05-09,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1814,176,FLOOD,2015-11-15,day,,Luapula,Samfya,SAMFYA,NASON BWALYA DISTRICT COMMISIONER ,2017-05-11,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+1815,177,FLOOD,2014,year,,Southern,Livingstone,MULALA,EDWINB J. PETELI DMMU ,2017-05-11,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+1816,178,FLOOD,2016-02-25,day,,North-Western,Solwezi,KANDUNDU MUSHITALA ,PETER KABASO DMMU,2017-05-11,False,1,False,True,construction,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1819,181,FLOOD,2015-09-11,day,,Western,Lukulu,LUANCHUMA ,CHRISTOPHER KALULA MP,2017-05-11,True,1,False,True,construction,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1830,192,FLOOD,2012-06-26,day,,Luapula,Lunga,LUNGA ,DMMU,2017-05-11,True,1,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1831,194,FLOOD,2015-07-11,day,,Muchinga,Mpika,KANCHIBIYA ,OLIVER CHISOLA DMMU ,2017-05-12,True,1,False,True,construction,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1832,195,FLOOD,2012-07-15,day,,Muchinga,Mpika,MPIKA ,OLIVER CHISOLA DMMU,2017-05-12,True,1,False,True,construction,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1833,198,FLOOD,2009-03-27,day,,Eastern,Chipata,MSIMA ,MR EULARIAS ZULU PERMANENT SECRETARY ,2017-05-22,False,6,True,True,funding;reconstruct;repair,2,onset_uncertain,2026-10-07T19:37:17+00:00
+1834,199,FLOOD,2009-03-27,day,,Eastern,Chipata,MSIMA,MR EULARIAS ZULU PERMANENT SECRETARY,2017-05-22,False,6,True,True,funding;reconstruct;repair,2,onset_uncertain,2026-10-07T19:37:17+00:00
+1835,200,FLOOD,2009-03-27,day,,Eastern,Chipata,MANCHEULA ,MR EULARIAS ZULU PERMANENT SECRETARY,2017-05-22,False,6,True,True,funding;reconstruct;repair,2,onset_uncertain,2026-10-07T19:37:17+00:00
+1836,201,FLOOD,2009-03-27,day,,Eastern,Chipata,MZIMA ,MR EULARIAS ZULU PERMANENT SECRETARY,2017-05-22,False,6,True,True,funding;reconstruct;repair,2,onset_uncertain,2026-10-07T19:37:17+00:00
+1837,202,FLOOD,2009-03-27,day,,Eastern,Chipata,KATETE ,MR EULARIAS ZULU PERMANENT SECRETARY,2017-05-23,False,6,True,True,funding;reconstruct,2,onset_uncertain,2026-10-07T19:37:17+00:00
+1838,203,FLOOD,2008-03-23,day,,Luapula,Nchelenge,MUNUNGA ,HAMBAI F MWEETWA DMMU,2017-05-23,False,1,False,True,rehabilit,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1840,205,FLOOD,2009,year,,Western,Kalabo,LIUWA,IMASIKU KN ,2017-05-23,False,0,False,True,rehabilit,1,no_exact_date,2026-10-07T19:37:17+00:00
+1841,206,FLOOD,2017-05-23,day,,Western,Kalabo,LIUWA ,LUBINDA H IMASIKU MP,2017-05-22,True,3,False,True,rehabilit,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1842,207,FLOOD,2009,year,,Western,Kalabo,LIUWA,LUBINDA H IMASIKU MP,2017-05-22,False,0,False,True,request for funds,1,no_exact_date,2026-10-07T19:37:17+00:00
+1843,208,FLOOD,2009,year,,Western,Kalabo,LIUWA ,LUBINDA H IMASIKU MP,2017-05-23,False,0,False,True,funding,1,no_exact_date,2026-10-07T19:37:17+00:00
+1844,209,FLOOD,2017-05-23,day,,Western,Kalabo,LIUWA,LUBINDA H IMASIKU MP,2017-05-22,True,3,False,True,request for funds,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1845,210,FLOOD,2009,year,,Western,Kalabo,LIUWA ,LUBINDA H IMASIKU MP,2017-05-23,False,0,False,True,construction,1,no_exact_date,2026-10-07T19:37:17+00:00
+1846,211,FLOOD,2017-05-23,day,,Western,Kalabo,LIUWA,LUBINDA H IMASIKU MP,2017-05-23,True,3,False,True,rehabilit;request for funds,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1848,213,FLOOD,2009-05-19,day,,Western,Kalabo,LIUWA,LUBINDA H IMASIKU MP,2017-05-22,True,1,False,True,replacement,2,onset_unlikely,2026-10-07T19:37:17+00:00
+1850,220,FLOOD,2017,year,,Luapula,Lunga,KALIMANKONDE ,VAC,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+1851,221,FLOOD,2014,year,,Luapula,Lunga,KASOMALUNGA,VAC,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+1852,222,FLOOD,2014,year,,Luapula,Lunga,NSALUSHI ,VAC,2017-06-06,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+1855,225,FLOOD,2014,year,,Luapula,Nchelenge,KILWA ,ZVAC ,2017-06-07,False,0,False,False,,0,no_exact_date,2026-10-07T19:37:17+00:00
+1270,81,FLOOD,2013-10-13,day,,Lusaka,Lusaka,CHANDWE MUSONDA,MOSES MWELWA,2017-05-03,True,3,False,False,,1,onset_uncertain,2026-10-07T19:37:17+00:00
+1809,168,FLOOD,2001-02-07,day,,Central,Kabwe,KAPUTULA ,MR MNL MALAMBO DMMU,2017-05-08,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+2233,2252,FLOOD,2025-01-25,day,,Lusaka,Lusaka,"Mandevu, Kanyama, Chawama",Disaster Management and Mitigation Unit,28-01-2025,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+2238,2259,FLASH FLOODS,2026-01-17,day,,Lusaka,Luangwa,"Const: Feira Wards: Mburuma, Dzalo, Kabowo, Katondwe",Disaster Management and Mitigation Unit,27/01/2026,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+2239,2260,FLASH FLOODS,2026-01-18,day,,Lusaka,Rufunsa,"Const:Rufunsa Wards: Shikabeta, ",Disaster Management and Mitigation Unit,27/01/2026,False,3,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+2240,2261,FLASH FLOODS,2026-01-18,day,,Lusaka,Chongwe,Const: Chongwe Wards: Madido •	Kapwayambale,Disaster Management and Mitigation Unit,27/01/2026,False,3,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+2234,2253,FLASH FLOODS,2025-01-23,day,,Southern,Gwembe,"Gwembe, Lufwa River",Disaster Management and Mitigation Unit,24-01-2025,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+2236,2256,FLASH FLOODS,2026-01-23,day,,Central,Kabwe,"Bwacha Constituency, Chinyanja Ward",Disas,27/01/2026,False,1,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00
+2241,2263,FLASH FLOODS,2026-01-18,day,,Lusaka,Kafue,"Const: KAFUE  Wards:  Kafue,  Matanda, Malundu ",Disaster Management and Mitigation Unit,,False,3,False,False,,0,onset_plausible,2026-10-07T19:37:17+00:00

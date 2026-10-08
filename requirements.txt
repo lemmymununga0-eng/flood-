@@ -33,3 +33,10 @@ slowapi                     # rate limiting on sensitive endpoints
 pytest
 pytest-asyncio
 httpx
+
+# Stage 1 raw-data collection (scripts/, config/data_sources.yaml)
+rasterio             # CHIRPS COG window reads
+xarray
+netCDF4
+geopandas            # DesInventar district polygons
+shapely

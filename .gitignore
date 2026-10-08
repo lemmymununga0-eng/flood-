@@ -60,3 +60,11 @@ ai-engine/reports/*
 # Runtime logs from local dev servers (not build artifacts, not source)
 backend/uvicorn.log
 *.log
+
+# Stage 1 raw data (re-downloadable with scripts/; provenance in docs/DATA_SOURCES.md).
+# Large raw stores are not committed; small processed geography files are.
+data/raw/**
+!data/raw/**/
+!data/raw/**/README.md
+data/processed/chirps_daily_at_locations.csv
+data/processed/derived_rasters/
