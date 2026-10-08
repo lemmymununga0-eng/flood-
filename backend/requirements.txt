@@ -1,0 +1,27 @@
+# FloodShield / Flood Prediction System ZM -- backend runtime dependencies.
+#
+# PINNED to the exact versions the 57-test backend suite passed against on 2026-10-08.
+# Pinning is not cosmetic here: backend/ml_artifacts/*.joblib are scikit-learn pickles,
+# and a pickle written by one scikit-learn can fail to load, or silently behave
+# differently, under another. numpy and scipy are pinned for the same reason.
+#
+# The repository-root requirements.txt is the RESEARCH environment (it includes
+# tensorflow, geopandas, rasterio ...) and is deliberately not used for deployment.
+fastapi==0.136.1
+uvicorn==0.46.0
+sqlalchemy==2.0.44
+alembic==1.17.1
+psycopg2-binary==2.9.11
+pydantic==2.13.4
+pydantic-settings==2.14.0
+email-validator==2.3.0
+python-jose==3.3.0
+cryptography==49.0.0
+bcrypt==5.0.0
+slowapi==0.1.10
+requests==2.32.5
+joblib==1.5.3
+numpy==2.4.4
+scikit-learn==1.8.0
+scipy==1.17.1
+python-multipart==0.0.27

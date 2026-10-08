@@ -92,7 +92,7 @@ def make_models(seed: int = C.SEED) -> dict:
     }
     if XGB:
         m["XGBoost"] = XGBClassifier(
-            n_estimators=200, max_depth=5, learning_rate=0.1,
+            n_estimators=120, max_depth=5, learning_rate=0.1,
             eval_metric="logloss", random_state=seed, n_jobs=-1)
     return m
 
@@ -232,14 +232,17 @@ def main() -> None:
 
 
     allrows = []
+    out = C.S3_OUT_REPORTS / "rolling_origin_results.csv"
     for h in horizons:
         print(f"--- H+{h} ---")
         allrows += run(df, h, fsets, models)
+        # Checkpoint after every horizon. The first full sweep held everything in memory
+        # until the very end, so a crash or timeout hours in would have lost it all.
+        pd.DataFrame(allrows).to_csv(out, index=False)
+        print(f"  [checkpoint] H+{h} saved ({len(allrows)} rows)", flush=True)
 
     res = pd.DataFrame(allrows)
-    out = C.S3_OUT_REPORTS / "rolling_origin_results.csv"
-    res.to_csv(out, index=False)
-    print(f"\nWrote {out}  ({len(res)} rows)")
+    print(f"Wrote {out}  ({len(res)} rows)")
 
     ok = res[res.status == "ok"].dropna(subset=["pr_auc"])
     if not len(ok):
