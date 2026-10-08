@@ -23,7 +23,7 @@ export default function AIModel() {
       {state.status === "success" && state.data.length === 0 && (
         <EmptyState
           title="No trained model exists yet"
-          detail="Roadmap Phases 5–9 (Baseline Models through Model Packaging) have not started — see docs/ROADMAP.md and docs/ML-METHODOLOGY.md. This queries the real GET /api/v1/models endpoint (backend/app/api/model_registry.py); it returns an empty list because model_versions is genuinely empty, not because the endpoint doesn't exist. Model type, version, training date, dataset window, and performance metrics will appear here once training actually happens, populated with real measured numbers only."
+          detail="No model version has been registered yet. Once one is, its type, training window and measured performance — including how it compares with simple baselines — will appear here."
         />
       )}
       {state.status === "success" && state.data.length > 0 && (

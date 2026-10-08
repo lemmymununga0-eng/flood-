@@ -29,8 +29,7 @@ export default function Settings() {
           </label>
         </div>
         <p className="text-muted">
-          Disabled: no settings/preferences table exists yet to save these to (see
-          docs/missing-features.md).
+          These preferences are not editable yet — saving them needs a settings store that has not been built.
         </p>
       </div>
     </div>

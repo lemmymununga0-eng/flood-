@@ -99,14 +99,14 @@ export default function Predictions() {
       )}
 
       <div className="grid grid-auto" style={{ marginBottom: "1rem" }}>
-        <form className="card" onSubmit={onSubmit}>
+        <form className="card form-grid" onSubmit={onSubmit}>
           <h3>Run a prediction</h3>
           <p className="text-muted" style={{ marginTop: 0 }}>
             Score a weather observation against the trained model (7-day horizon). All six values
             are required — missing weather is never filled in with an assumed number.
           </p>
 
-          <div className="field">
+          <div className="field field-wide">
             <label htmlFor="pred-location">Location</label>
             <select
               id="pred-location"

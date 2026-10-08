@@ -57,7 +57,7 @@ export default function CreateAlert() {
         <div className="card" style={{ maxWidth: 480 }}>
           <p className="text-secondary">
             Issuing an alert requires an ADMIN, ANALYST, or OPERATOR account — enforced
-            by the backend, not just hidden here (see <code>docs/api-inventory.md</code>).
+            by the server, not just hidden in this screen.
             {status === "anonymous" ? " You're not signed in." : ` You're signed in as ${user?.role}.`}
           </p>
           {status === "anonymous" && (

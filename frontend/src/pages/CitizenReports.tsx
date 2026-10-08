@@ -69,8 +69,7 @@ export default function CitizenReports() {
           Citizen Flood Reports
         </h1>
         <p>
-          Community-submitted flooding reports, pending verification. Real submissions
-          against the backend — see docs/api-inventory.md.
+          Community-submitted flooding reports, pending verification by an analyst.
         </p>
       </div>
 

@@ -37,8 +37,7 @@ export default function Signup() {
           <h1 style={{ marginTop: 0 }}>Create an account</h1>
           <p className="text-secondary" style={{ marginTop: 0 }}>
             Public self-registration always creates a CITIZEN account (can submit ground
-            reports). ADMIN / ANALYST / OPERATOR / RESEARCHER accounts are granted separately —
-            see <code>docs/backend-architecture.md</code>.
+            reports). ADMIN / ANALYST / OPERATOR / RESEARCHER accounts are granted separately by an administrator.
           </p>
           <form onSubmit={onSubmit}>
             <div className="field">

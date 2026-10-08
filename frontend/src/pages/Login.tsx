@@ -35,8 +35,7 @@ export default function Login() {
         <div className="card auth-card">
           <h1 style={{ marginTop: 0 }}>Welcome back</h1>
           <p className="text-secondary" style={{ marginTop: 0 }}>
-            Sign in to your account. This authenticates against the real backend — see{" "}
-            <code>docs/api-inventory.md</code>.
+            Sign in to view flood-risk intelligence and manage alerts.
           </p>
           <form onSubmit={onSubmit}>
             <div className="field">
