@@ -147,18 +147,24 @@ def baselines(train: pd.DataFrame, ev: pd.DataFrame, tcol: str) -> dict:
     return out
 
 
-def run(df: pd.DataFrame, h: int, feature_sets: list[str], models: list[str]) -> list[dict]:
+def run(df: pd.DataFrame, h: int, feature_sets: list[str], models: list[str],
+        done: set | None = None, on_fold=None) -> list[dict]:
     tcol, ucol = f"target_h{h}", f"usable_h{h}"
     d = df[df[ucol] == 1].copy()
     rows = []
     years = sorted(d.date.dt.year.unique())
     for y in years:
+        if done and (h, int(y)) in done:
+            continue   # already computed in an earlier, interrupted run
+        n0 = len(rows)
         tr, ev = d[d.date.dt.year < y], d[d.date.dt.year == y]
         pos = int(ev[tcol].sum())
         if len(tr) == 0 or pos < MIN_POS_PER_FOLD or tr[tcol].sum() < MIN_POS_PER_FOLD:
             rows.append({"horizon": h, "fold_year": y, "status": "skipped",
                          "positives": pos,
                          "reason": f"{pos} eval positives / {int(tr[tcol].sum())} train positives"})
+            if on_fold:
+                on_fold(rows[n0:])
             continue
 
         for bname, s in baselines(tr, ev, tcol).items():
@@ -192,7 +198,13 @@ def run(df: pd.DataFrame, h: int, feature_sets: list[str], models: list[str]) ->
                 rows.append({"horizon": h, "fold_year": y, "status": "ok", "kind": "model",
                              "name": mname, "features": fs,
                              "train_seconds": round(time.time() - t0, 1), **m})
+            del Xtr, Xtr_s, Xev, Xev_s   # free the feature-set matrices before the next one
+            import gc; gc.collect()
         print(f"  H+{h} fold {y}: eval_pos={pos:>4} train_rows={len(tr):>7,}", flush=True)
+        # Persist THIS fold now. The previous design only saved after a whole horizon, and
+        # a MemoryError at fold 14 of 16 destroyed hours of work.
+        if on_fold:
+            on_fold(rows[n0:])
     return rows
 
 
@@ -231,15 +243,31 @@ def main() -> None:
     print(f"XGBoost available: {XGB}")
 
 
-    allrows = []
+    # Resume support. Results are persisted after EVERY fold into a partial file, and a
+    # restarted run skips (horizon, year) pairs already present. A separate file name is
+    # used on purpose: rolling_origin_results.csv may hold an old, narrower smoke-test and
+    # resuming from that would silently skip folds it only ran for one model.
     out = C.S3_OUT_REPORTS / "rolling_origin_results.csv"
+    partial = C.S3_OUT_REPORTS / "rolling_origin_partial.csv"
+    allrows: list[dict] = []
+    done: set = set()
+    if partial.exists():
+        prev = pd.read_csv(partial)
+        allrows = prev.to_dict("records")
+        done = {(int(r.horizon), int(r.fold_year)) for r in prev.itertuples()}
+        print(f"resuming: {len(done)} (horizon, year) folds already complete in "
+              f"{partial.name}", flush=True)
+
+    def checkpoint(new_rows: list[dict]) -> None:
+        allrows.extend(new_rows)
+        pd.DataFrame(allrows).to_csv(partial, index=False)
+
     for h in horizons:
         print(f"--- H+{h} ---")
-        allrows += run(df, h, fsets, models)
-        # Checkpoint after every horizon. The first full sweep held everything in memory
-        # until the very end, so a crash or timeout hours in would have lost it all.
-        pd.DataFrame(allrows).to_csv(out, index=False)
-        print(f"  [checkpoint] H+{h} saved ({len(allrows)} rows)", flush=True)
+        run(df, h, fsets, models, done=done, on_fold=checkpoint)
+        print(f"  [checkpoint] H+{h} complete ({len(allrows)} rows total)", flush=True)
+
+    pd.DataFrame(allrows).to_csv(out, index=False)
 
     res = pd.DataFrame(allrows)
     print(f"Wrote {out}  ({len(res)} rows)")
