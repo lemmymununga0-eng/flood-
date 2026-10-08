@@ -169,9 +169,9 @@ def run(df: pd.DataFrame, h: int, feature_sets: list[str], models: list[str]) ->
 
         for fs in feature_sets:
             cols = [c for c in FEATURE_SETS[fs] if c in d.columns]
-            Xtr = tr[cols].to_numpy(float)
+            Xtr = tr[cols].to_numpy(np.float32)
             ytr = tr[tcol].to_numpy()
-            Xev, yev = ev[cols].to_numpy(float), ev[tcol].to_numpy()
+            Xev, yev = ev[cols].to_numpy(np.float32), ev[tcol].to_numpy()
             sc = RobustScaler().fit(Xtr)           # fitted on the fold's train only
             Xtr_s, Xev_s = sc.transform(Xtr), sc.transform(Xev)
             for mname, model in make_models().items():
@@ -204,15 +204,32 @@ def main() -> None:
     args = ap.parse_args()
 
     C.ensure_s3_dirs()
-    p = C.S3_OUT_PROCESSED / "forecasting_dataset.parquet"
-    df = pd.read_parquet(p)
-    print(f"dataset {len(df):,} rows, {df.location_id.nunique()} districts, "
-          f"{df.date.min().date()} -> {df.date.max().date()}")
-    print(f"XGBoost available: {XGB}\n")
-
     horizons = [int(x) for x in args.horizons.split(",")]
     fsets = [f.strip() for f in args.features.split(",")]
     models = [m.strip() for m in args.models.split(",")]
+
+    # Read only the columns these feature sets need, as float32. The full frame is ~84
+    # float64 columns over 970k rows, so every per-fold slice copied ~600 MB and that
+    # dominated runtime far more than the model fits. Engineering only: no feature,
+    # split, label or metric changes.
+    import pyarrow.parquet as pq
+    path = C.S3_OUT_PROCESSED / "forecasting_dataset.parquet"
+    needed = {"location_id", "date"}
+    for fs in fsets:
+        needed |= set(FEATURE_SETS[fs])
+    for h in horizons:
+        needed |= {f"target_h{h}", f"usable_h{h}"}
+    avail = set(pq.ParquetFile(path).schema.names)
+    df = pd.read_parquet(path, columns=sorted(needed & avail))
+    for c in df.columns:
+        if df[c].dtype == "float64":
+            df[c] = df[c].astype("float32")
+    print(f"dataset {len(df):,} rows, {df.location_id.nunique()} districts, "
+          f"{df.date.min().date()} -> {df.date.max().date()}")
+    print(f"  {len(df.columns)} of {len(avail)} columns, float32, "
+          f"{df.memory_usage(deep=True).sum() / 1e6:.0f} MB")
+    print(f"XGBoost available: {XGB}")
+
 
     allrows = []
     for h in horizons:
