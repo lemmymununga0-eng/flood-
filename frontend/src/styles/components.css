@@ -1113,6 +1113,35 @@ tr:last-child td {
   border-bottom-color: var(--brand-gold);
 }
 
+/* Checkboxes sit inside .field for layout, but must not inherit the 44px bordered
+   text-input look above. */
+.field input[type="checkbox"] {
+  flex: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  min-height: 0;
+  padding: 0;
+  accent-color: var(--brand-blue);
+}
+
+.check-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  font-weight: 400;
+}
+
+.record-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+}
+
+.record-card-actions .btn {
+  flex: 1;
+}
+
 /* ============================== Responsive ============================== */
 @media (max-width: 1100px) {
   .hero-split {
@@ -1156,6 +1185,14 @@ tr:last-child td {
     justify-content: flex-end;
     flex-wrap: wrap;
   }
+  .field input,
+  .field select,
+  .field textarea {
+    font-size: 16px;
+  }
+  .btn {
+    min-height: 44px;
+  }
   .table-wrap table {
     display: none;
   }
@@ -1195,6 +1232,10 @@ tr:last-child td {
 }
 
 @media (max-width: 480px) {
+  form.card > .btn,
+  form.card > div > .btn {
+    width: 100%;
+  }
   .page-content {
     padding: 1rem 0.85rem 2.5rem;
   }

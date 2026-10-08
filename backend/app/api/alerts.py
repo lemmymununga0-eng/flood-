@@ -5,13 +5,16 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.core.audit import record_audit_event
+from app.core.config import get_settings
 from app.core.deps import require_roles
+from app.core.sms import build_body, send_sms
 from app.core.pagination import Pagination, pagination_params
 from app.database.session import get_db
 from app.models.alert import Alert
 from app.models.location import Location
+from app.models.sms_subscriber import SmsSubscriber
 from app.models.user import User
-from app.schemas.alert import AlertCreate, AlertOut
+from app.schemas.alert import AlertCreate, AlertCreated, AlertOut, SmsDelivery
 
 router = APIRouter(prefix="/alerts", tags=["alerts"])
 
@@ -31,16 +34,17 @@ def list_alerts(
     return db.scalars(query.limit(page.limit).offset(page.offset)).all()
 
 
-@router.post("", response_model=AlertOut, status_code=201)
+@router.post("", response_model=AlertCreated, status_code=201)
 def create_alert(
     payload: AlertCreate,
     db: Session = Depends(get_db),
     issuer: User = Depends(require_roles("ADMIN", "ANALYST", "OPERATOR")),
-) -> Alert:
+) -> AlertCreated:
     # RBAC added in the backend-integration build: previously anonymous, now requires
     # a role, since an unauthenticated public dashboard should not be able to issue
     # flood alerts to a citizen audience — see docs/PROJECT-MEMORY.md.
-    if db.get(Location, payload.location_id) is None:
+    location = db.get(Location, payload.location_id)
+    if location is None:
         raise HTTPException(status_code=400, detail={"error": "unknown_location", "message": "Unknown location_id"})
     alert = Alert(
         title=payload.title,
@@ -60,4 +64,25 @@ def create_alert(
     )
     db.commit()
     db.refresh(alert)
-    return alert
+
+    # SMS goes out only after the alert is safely stored; a send failure never undoes it.
+    created = AlertCreated.model_validate(alert)
+    if "sms" in payload.channels.lower():
+        subscribed = db.scalars(
+            select(SmsSubscriber.phone).where(
+                SmsSubscriber.active.is_(True),
+                (SmsSubscriber.location_id == payload.location_id)
+                | (SmsSubscriber.location_id.is_(None)),
+            )
+        ).all()
+        results = send_sms(
+            [*payload.sms_recipients, *subscribed],
+            build_body(payload.risk_level, location.name, payload.message),
+        )
+        created.sms_provider = get_settings().sms_provider.lower()
+        created.sms_delivery = [SmsDelivery(**r.as_dict()) for r in results]
+        record_audit_event(
+            db, user_id=issuer.id, action="alert_sms_sent", entity_type="alert", entity_id=alert.id
+        )
+        db.commit()
+    return created

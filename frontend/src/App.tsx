@@ -6,6 +6,7 @@ import PublicLayout from "./layouts/PublicLayout";
 import About from "./pages/About";
 import AIModel from "./pages/AIModel";
 import Alerts from "./pages/Alerts";
+import SmsSubscribers from "./pages/SmsSubscribers";
 import Analytics from "./pages/Analytics";
 import CitizenReports from "./pages/CitizenReports";
 import CreateAlert from "./pages/CreateAlert";
@@ -52,6 +53,7 @@ export default function App() {
           <Route path="/historical-events/:id" element={<HistoricalEventDetail />} />
           <Route path="/alerts" element={<Alerts />} />
           <Route path="/alerts/create" element={<CreateAlert />} />
+          <Route path="/alerts/subscribers" element={<SmsSubscribers />} />
           <Route path="/reports" element={<CitizenReports />} />
           <Route path="/ai-model" element={<AIModel />} />
           <Route path="/data-sources" element={<DataSources />} />

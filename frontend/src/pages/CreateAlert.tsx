@@ -5,6 +5,7 @@ import { ErrorState, LoadingState } from "../components/ui/States";
 import { canManageAlerts, useAuth } from "../context/AuthContext";
 import { useFetch } from "../hooks/useFetch";
 import { createAlert, fetchLocations } from "../services/api";
+import type { AlertCreated } from "../types";
 
 export default function CreateAlert() {
   const [locState] = useFetch(useCallback(fetchLocations, []));
@@ -18,6 +19,9 @@ export default function CreateAlert() {
   const [locationId, setLocationId] = useState<number | "">("");
   const [message, setMessage] = useState("");
   const [audience, setAudience] = useState("Public");
+  const [sendSms, setSendSms] = useState(false);
+  const [phones, setPhones] = useState("");
+  const [result, setResult] = useState<AlertCreated | null>(null);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -28,15 +32,21 @@ export default function CreateAlert() {
     setSubmitting(true);
     setError(null);
     try {
-      await createAlert({
+      const recipients = phones.split(/[\n,;]+/).map((n) => n.trim()).filter(Boolean);
+      const created = await createAlert({
         title,
         risk_level: riskLevel,
         location_id: locationId,
         message,
         audience,
-        channels: "Dashboard",
+        channels: sendSms ? "Dashboard,SMS" : "Dashboard",
+        sms_recipients: sendSms ? recipients : [],
       });
-      navigate("/alerts");
+      if (sendSms) {
+        setResult(created);
+      } else {
+        navigate("/alerts");
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unknown error");
     } finally {
@@ -65,6 +75,43 @@ export default function CreateAlert() {
               Sign in
             </Link>
           )}
+        </div>
+      </div>
+    );
+  }
+
+  if (result) {
+    const simulated = result.sms_provider === "simulated";
+    return (
+      <div>
+        <div className="page-header">
+          <h1>Alert issued</h1>
+          <p>
+            "{result.title}" is saved and visible on the alerts page.
+            {simulated
+              ? " SMS is in demo mode: nothing was actually sent."
+              : " SMS was handed to the provider."}
+          </p>
+        </div>
+        <div className="card" style={{ maxWidth: 520 }}>
+          <h3>SMS delivery ({result.sms_provider})</h3>
+          {result.sms_delivery.length === 0 && (
+            <p className="text-secondary">
+              No SMS recipients: no numbers were typed and no subscribers are registered for this
+              area. Add some under SMS Subscribers.
+            </p>
+          )}
+          <ul style={{ paddingLeft: "1.1rem" }}>
+            {result.sms_delivery.map((d, i) => (
+              <li key={i}>
+                <strong>{d.to}</strong> — {d.status}
+                <span className="text-muted"> ({d.detail})</span>
+              </li>
+            ))}
+          </ul>
+          <button className="btn btn-primary" onClick={() => navigate("/alerts")}>
+            View alerts
+          </button>
         </div>
       </div>
     );
@@ -124,10 +171,34 @@ export default function CreateAlert() {
           </div>
           <div className="field">
             <label>Delivery channel</label>
-            <p className="text-muted" style={{ margin: 0 }}>
-              Dashboard only — no SMS/email provider is configured in this build.
-            </p>
+            <label className="check-row">
+              <input type="checkbox" checked disabled /> Dashboard (always)
+            </label>
+            <label className="check-row">
+              <input
+                type="checkbox"
+                checked={sendSms}
+                onChange={(e) => setSendSms(e.target.checked)}
+              />{" "}
+              Also send by SMS (demo)
+            </label>
           </div>
+          {sendSms && (
+            <div className="field">
+              <label htmlFor="phones">Phone numbers</label>
+              <textarea
+                id="phones"
+                rows={2}
+                placeholder="+260971234567, +260961234567"
+                value={phones}
+                onChange={(e) => setPhones(e.target.value)}
+              />
+              <p className="text-muted" style={{ margin: "0.25rem 0 0" }}>
+                International format. These are extra, one-off numbers (not stored). Registered
+                subscribers for this area are texted automatically — manage them under SMS Subscribers.
+              </p>
+            </div>
+          )}
           {error && <ErrorState title="Could not create alert" detail={error} />}
           <div style={{ display: "flex", gap: "0.5rem", marginTop: "0.5rem" }}>
             <button className="btn btn-primary" type="submit" disabled={submitting}>

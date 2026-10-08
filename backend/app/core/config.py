@@ -30,11 +30,28 @@ class Settings(BaseSettings):
     model_artifact_dir: str = "./ml_artifacts"
     active_model_version: str = ""
 
+    # SMS delivery for alerts. "simulated" (default) sends nothing and reports what WOULD
+    # be sent, so the demo works with no account. "twilio" / "africastalking" send real
+    # messages and need the credentials below. Phone numbers are never stored.
+    sms_provider: str = "simulated"
+    sms_max_recipients: int = 20
+    sms_allowed_numbers: str = ""  # optional comma-separated allowlist (E.164); empty = any
+    twilio_account_sid: str = ""
+    twilio_auth_token: str = ""
+    twilio_from_number: str = ""
+    africastalking_username: str = ""
+    africastalking_api_key: str = ""
+    africastalking_sender_id: str = ""
+
     # Auth (JWT). secret_key above is reused as the signing key — see .env.example;
     # it MUST be overridden in any non-local environment (default is a dev placeholder).
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
     refresh_token_expire_days: int = 7
+
+    @property
+    def sms_allowed_list(self) -> list[str]:
+        return [n.strip() for n in self.sms_allowed_numbers.split(",") if n.strip()]
 
     @property
     def cors_origins_list(self) -> list[str]:

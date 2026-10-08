@@ -45,6 +45,9 @@ export default function Alerts() {
       <div style={{ marginBottom: "1rem" }}>
         <Link className="btn btn-primary" to="/alerts/create">
           Create Alert
+        </Link>{" "}
+        <Link className="btn btn-secondary" to="/alerts/subscribers">
+          SMS Subscribers
         </Link>
       </div>
 

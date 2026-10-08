@@ -125,6 +125,18 @@ export interface AlertCreateInput {
   message: string;
   audience?: string;
   channels?: string;
+  sms_recipients?: string[];
+}
+
+export interface SmsDelivery {
+  to: string;
+  status: "sent" | "simulated" | "failed" | "rejected";
+  detail: string;
+}
+
+export interface AlertCreated extends Alert {
+  sms_provider: string;
+  sms_delivery: SmsDelivery[];
 }
 
 export interface AuthUser {
@@ -218,4 +230,19 @@ export interface Notification {
   is_read: boolean;
   read_at: string | null;
   created_at: string;
+}
+
+export interface SmsSubscriber {
+  id: number;
+  phone: string;
+  name: string;
+  location_id: number | null;
+  active: boolean;
+  created_at: string;
+}
+
+export interface SmsSubscriberInput {
+  phone: string;
+  name?: string;
+  location_id: number | null;
 }
