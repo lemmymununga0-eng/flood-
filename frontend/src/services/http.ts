@@ -14,7 +14,16 @@
 //
 // Set VITE_API_BASE_URL to an absolute URL for a deployment whose API is on a different
 // origin (that origin must then allow it via CORS).
-const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "/api/v1";
+// VITE_API_BASE_URL may be the bare backend origin (https://x.up.railway.app) or the full
+// API base (.../api/v1); both resolve to the same thing. Only ever a public URL — never
+// put a secret in a VITE_* variable, it is shipped to every browser.
+function resolveApiBase(raw: string | undefined): string {
+  if (!raw) return "/api/v1";
+  const trimmed = raw.trim().replace(/\/+$/, "");
+  return /\/api\/v\d+$/.test(trimmed) ? trimmed : `${trimmed}/api/v1`;
+}
+const API_BASE = resolveApiBase(import.meta.env.VITE_API_BASE_URL);
+export const SESSION_EXPIRED_EVENT = "floodshield:session-expired";
 const TOKEN_STORAGE_KEY = "floodshield_access_token";
 
 export function getStoredToken(): string | null {
@@ -85,6 +94,13 @@ export async function authedRequest<T>(
     body: options.body !== undefined ? JSON.stringify(options.body) : undefined,
   });
   if (!res.ok) {
+    if (res.status === 401) {
+      // Token expired or revoked mid-session: drop it and tell AuthContext, so the UI
+      // goes back to "signed out" instead of showing a raw token error.
+      setStoredToken(null);
+      window.dispatchEvent(new Event(SESSION_EXPIRED_EVENT));
+      throw new ApiError(401, "Your session expired. Please sign in again.");
+    }
     throw new ApiError(res.status, await parseErrorBody(res));
   }
   return res.json() as Promise<T>;

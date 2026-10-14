@@ -125,19 +125,9 @@ export interface AlertCreateInput {
   message: string;
   audience?: string;
   channels?: string;
-  sms_recipients?: string[];
 }
 
-export interface SmsDelivery {
-  to: string;
-  status: "sent" | "simulated" | "failed" | "rejected";
-  detail: string;
-}
-
-export interface AlertCreated extends Alert {
-  sms_provider: string;
-  sms_delivery: SmsDelivery[];
-}
+export type AlertCreated = Alert;
 
 export interface AuthUser {
   id: number;
@@ -238,11 +228,88 @@ export interface SmsSubscriber {
   name: string;
   location_id: number | null;
   active: boolean;
+  consent_at: string | null;
+  consent_note: string;
+  opted_out_at: string | null;
   created_at: string;
+  can_receive: boolean;
 }
 
 export interface SmsSubscriberInput {
   phone: string;
   name?: string;
   location_id: number | null;
+  consent: boolean;
+  consent_note?: string;
+}
+
+export type RiskLevel = "low" | "moderate" | "high" | "critical";
+
+export interface SmsCompose {
+  location_id: number;
+  risk_level: RiskLevel;
+  message: string;
+}
+
+export interface SmsProviderStatus {
+  provider: string;
+  environment: string;
+  real: boolean;
+  configured: boolean;
+  missing: string[];
+  broadcast_enabled: boolean;
+  sender_id_set: boolean;
+  delivery_reports_enabled: boolean;
+  stop_reply_enabled: boolean;
+  real_test_accepted: boolean;
+  group_broadcast_unlocked: boolean;
+}
+
+export interface SmsPreview {
+  body: string;
+  length: number;
+  segments: number;
+  recipient_count: number;
+  recipients: { subscriber_id: number; name: string; phone_masked: string }[];
+  skipped_not_allowlisted: number;
+  can_send: boolean;
+  blocking_reasons: string[];
+}
+
+export interface SmsMessageRecord {
+  id: number;
+  phone_masked: string;
+  submission_status: "pending" | "accepted" | "rejected" | "failed" | "unknown" | "simulated";
+  submission_detail: string;
+  provider_message_id: string | null;
+  provider_status: string;
+  provider_status_code: number | null;
+  cost: string | null;
+  submitted_at: string | null;
+  delivery_status: "not_reported" | "pending" | "delivered" | "failed";
+  delivery_reported_at: string | null;
+  failure_reason: string;
+}
+
+export interface SmsBroadcastSummary {
+  id: number;
+  kind: "test" | "broadcast";
+  location_id: number | null;
+  risk_level: string;
+  body: string;
+  segments: number;
+  recipient_count: number;
+  provider: string;
+  environment: string;
+  status: "sending" | "submitted" | "partial" | "failed" | "unknown" | "simulated";
+  created_at: string;
+  completed_at: string | null;
+  accepted_count: number;
+  delivered_count: number;
+  delivery_failed_count: number;
+}
+
+export interface SmsBroadcastDetail extends SmsBroadcastSummary {
+  messages: SmsMessageRecord[];
+  replayed: boolean;
 }

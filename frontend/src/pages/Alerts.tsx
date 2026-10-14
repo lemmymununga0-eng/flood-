@@ -30,7 +30,7 @@ export default function Alerts() {
     <div>
       <div className="page-header">
         <h1>Early Warning &amp; Alerts</h1>
-        <p>Dashboard-issued alerts. No SMS/email provider is configured in this build.</p>
+        <p>Dashboard-issued alerts. SMS is a separate, manual, admin-confirmed step — nothing is texted automatically.</p>
       </div>
 
       {state.status === "success" && (
@@ -46,8 +46,11 @@ export default function Alerts() {
         <Link className="btn btn-primary" to="/alerts/create">
           Create Alert
         </Link>{" "}
+        <Link className="btn btn-secondary" to="/alerts/sms">
+          SMS Alerts
+        </Link>{" "}
         <Link className="btn btn-secondary" to="/alerts/subscribers">
-          SMS Subscribers
+          SMS Recipients
         </Link>
       </div>
 

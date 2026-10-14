@@ -6,11 +6,14 @@ import PublicLayout from "./layouts/PublicLayout";
 import About from "./pages/About";
 import AIModel from "./pages/AIModel";
 import Alerts from "./pages/Alerts";
+import SmsAlerts from "./pages/SmsAlerts";
 import SmsSubscribers from "./pages/SmsSubscribers";
 import Analytics from "./pages/Analytics";
 import CitizenReports from "./pages/CitizenReports";
 import CreateAlert from "./pages/CreateAlert";
 import Dashboard from "./pages/Dashboard";
+import DamDetail from "./pages/DamDetail";
+import Dams from "./pages/Dams";
 import DataSources from "./pages/DataSources";
 import HistoricalEventDetail from "./pages/HistoricalEventDetail";
 import HistoricalEvents from "./pages/HistoricalEvents";
@@ -53,8 +56,11 @@ export default function App() {
           <Route path="/historical-events/:id" element={<HistoricalEventDetail />} />
           <Route path="/alerts" element={<Alerts />} />
           <Route path="/alerts/create" element={<CreateAlert />} />
+          <Route path="/alerts/sms" element={<SmsAlerts />} />
           <Route path="/alerts/subscribers" element={<SmsSubscribers />} />
           <Route path="/reports" element={<CitizenReports />} />
+          <Route path="/dams" element={<Dams />} />
+          <Route path="/dams/:slug" element={<DamDetail />} />
           <Route path="/ai-model" element={<AIModel />} />
           <Route path="/data-sources" element={<DataSources />} />
           <Route path="/system-status" element={<SystemStatus />} />

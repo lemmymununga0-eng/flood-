@@ -26,18 +26,7 @@ class AlertCreate(BaseModel):
     audience: str = ""
     channels: str = "Dashboard"
     valid_until: datetime | None = None
-    # Used for this request only, never stored. Ignored unless channels includes SMS.
-    sms_recipients: list[str] = []
-
-
-class SmsDelivery(BaseModel):
-    to: str
-    status: str
-    detail: str = ""
 
 
 class AlertCreated(AlertOut):
-    """Create response: the stored alert plus per-recipient SMS outcomes (not stored)."""
-
-    sms_provider: str = ""
-    sms_delivery: list[SmsDelivery] = []
+    """Create response: the stored alert. SMS is sent separately via /sms/broadcasts."""

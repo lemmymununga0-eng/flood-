@@ -44,6 +44,31 @@ def _create_schema():
     Base.metadata.drop_all(bind=test_engine)
 
 
+@pytest.fixture(autouse=True)
+def _never_send_real_sms(monkeypatch):
+    """Whatever the developer's .env says, tests use the simulated provider with no
+    credentials, and any attempt to reach the network from the SMS layer fails loudly."""
+    from app.core import sms
+
+    cfg = get_settings()
+    for name, value in {
+        "sms_provider": "simulated",
+        "africastalking_environment": "sandbox",
+        "africastalking_username": "",
+        "africastalking_api_key": "",
+        "africastalking_sender_id": "",
+        "sms_allowed_numbers": "",
+        "sms_webhook_secret": "",
+        "sms_broadcast_enabled": False,
+    }.items():
+        monkeypatch.setattr(cfg, name, value)
+
+    def _blocked(*a, **k):
+        raise AssertionError("test attempted a real HTTP call from the SMS layer")
+
+    monkeypatch.setattr(sms.httpx, "post", _blocked)
+
+
 @pytest.fixture()
 def db() -> Session:
     """A DB session bound to an outer transaction that is always rolled back at the

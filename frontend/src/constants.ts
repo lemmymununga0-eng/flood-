@@ -12,6 +12,7 @@ export const NAV_PRIMARY = [
   { to: "/predictions", label: "Predictions", icon: "predictions" },
   { to: "/analytics", label: "Analytics", icon: "analytics" },
   { to: "/historical-events", label: "Historical Events", icon: "historical-events" },
+  { to: "/dams", label: "Dam Monitoring", icon: "map" },
   { to: "/alerts", label: "Alerts", icon: "alerts" },
   { to: "/reports", label: "Citizen Reports", icon: "reports" },
   { to: "/ai-model", label: "AI Model", icon: "ai-model" },

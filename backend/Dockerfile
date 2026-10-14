@@ -21,9 +21,11 @@ COPY . .
 RUN useradd --create-home --uid 10001 app && chown -R app:app /app
 USER app
 
+# Railway injects PORT; 8000 is the local/compose default.
+ENV PORT=8000
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=40s --retries=3 \
-    CMD curl -fsS http://127.0.0.1:8000/health || exit 1
+    CMD curl -fsS http://127.0.0.1:${PORT}/health || exit 1
 
 # Migrate, then serve. `alembic upgrade head` is idempotent, so restarts are safe.
-CMD ["sh", "-c", "alembic upgrade head && exec uvicorn app.main:app --host 0.0.0.0 --port 8000 --proxy-headers --forwarded-allow-ips='*'"]
+CMD ["sh", "-c", "alembic upgrade head && exec uvicorn app.main:app --host 0.0.0.0 --port ${PORT} --proxy-headers --forwarded-allow-ips='*'"]

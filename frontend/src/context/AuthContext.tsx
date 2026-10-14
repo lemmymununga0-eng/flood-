@@ -2,6 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import type { ReactNode } from "react";
 import type { AuthUser, LoginInputData, RegisterInput } from "../types";
 import { fetchMe, getStoredToken, login as apiLogin, register as apiRegister, setStoredToken } from "../services/api";
+import { SESSION_EXPIRED_EVENT } from "../services/http";
 import { ALERT_MANAGER_ROLES } from "../constants";
 
 interface AuthContextValue {
@@ -37,6 +38,15 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       });
   }, []);
 
+  useEffect(() => {
+    const onExpired = () => {
+      setUser(null);
+      setStatus("anonymous");
+    };
+    window.addEventListener(SESSION_EXPIRED_EVENT, onExpired);
+    return () => window.removeEventListener(SESSION_EXPIRED_EVENT, onExpired);
+  }, []);
+
   const login = useCallback(async (input: LoginInputData) => {
     const result = await apiLogin(input);
     setStoredToken(result.access_token);
@@ -66,6 +76,11 @@ export function useAuth(): AuthContextValue {
   const ctx = useContext(AuthContext);
   if (!ctx) throw new Error("useAuth must be used within an AuthProvider");
   return ctx;
+}
+
+/** SMS (recipients, composing, sending, history) is ADMIN-only — enforced server-side too. */
+export function canSendSms(user: AuthUser | null): boolean {
+  return !!user && user.role === "ADMIN";
 }
 
 export function canManageAlerts(user: AuthUser | null): boolean {

@@ -6,7 +6,7 @@ project's backend recognizes.
 import pathlib
 from functools import lru_cache
 
-from pydantic import model_validator
+from pydantic import AliasChoices, Field, field_validator, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 _INSECURE_DEV_SECRET_KEY = "changeme"
@@ -22,23 +22,38 @@ class Settings(BaseSettings):
     database_url: str = _INSECURE_DEV_DATABASE_URL
     secret_key: str = _INSECURE_DEV_SECRET_KEY
     api_v1_prefix: str = "/api/v1"
-    cors_origins: str = "http://localhost:5173"
+    # ALLOWED_ORIGINS is the deployment name; CORS_ORIGINS is the older name and still works.
+    # Production must list the exact Vercel origin, e.g. https://your-app.vercel.app
+    cors_origins: str = Field(
+        default="http://localhost:5173,http://localhost:3000",
+        validation_alias=AliasChoices("ALLOWED_ORIGINS", "CORS_ORIGINS"),
+    )
 
     nasa_power_base_url: str = "https://power.larc.nasa.gov/api/temporal"
     openweather_api_key: str = ""
 
-    model_artifact_dir: str = "./ml_artifacts"
+    # MODEL_PATH is the deployment name; MODEL_ARTIFACT_DIR is the older name and still
+    # works. It is the directory CONTAINING versioned model folders.
+    model_artifact_dir: str = Field(
+        default="./ml_artifacts",
+        validation_alias=AliasChoices("MODEL_PATH", "MODEL_ARTIFACT_DIR"),
+    )
     active_model_version: str = ""
 
-    # SMS delivery for alerts. "simulated" (default) sends nothing and reports what WOULD
-    # be sent, so the demo works with no account. "twilio" / "africastalking" send real
-    # messages and need the credentials below. Phone numbers are never stored.
+    # Manual, administrator-triggered SMS. "simulated" (default) sends nothing and records
+    # the attempt as "simulated"; "africastalking" submits to the real provider. Group
+    # broadcasts to a real provider stay off until SMS_BROADCAST_ENABLED=true AND a real
+    # test SMS has been accepted by that provider. Nothing here ever sends automatically.
     sms_provider: str = "simulated"
     sms_max_recipients: int = 20
     sms_allowed_numbers: str = ""  # optional comma-separated allowlist (E.164); empty = any
-    twilio_account_sid: str = ""
-    twilio_auth_token: str = ""
-    twilio_from_number: str = ""
+    sms_broadcast_enabled: bool = False
+    sms_message_prefix: str = "FloodShield DEMO"
+    sms_duplicate_window_minutes: int = 10
+    # Shared secret for the provider's delivery-report and inbound (STOP) callbacks, sent
+    # as ?token=... Empty = both callbacks are disabled (they answer 503).
+    sms_webhook_secret: str = ""
+    africastalking_environment: str = "sandbox"  # sandbox | production
     africastalking_username: str = ""
     africastalking_api_key: str = ""
     africastalking_sender_id: str = ""
@@ -48,6 +63,18 @@ class Settings(BaseSettings):
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
     refresh_token_expire_days: int = 7
+
+    @field_validator("database_url")
+    @classmethod
+    def _normalise_database_url(cls, v: str) -> str:
+        # Railway/Heroku-style providers can hand out "postgres://", which SQLAlchemy 2
+        # rejects. Same database, correct dialect name.
+        return "postgresql://" + v[len("postgres://"):] if v.startswith("postgres://") else v
+
+    @field_validator("sms_provider", "africastalking_environment")
+    @classmethod
+    def _lower(cls, v: str) -> str:
+        return v.strip().lower()
 
     @property
     def sms_allowed_list(self) -> list[str]:
@@ -71,6 +98,17 @@ class Settings(BaseSettings):
         if p.is_absolute():
             return p
         return (pathlib.Path(__file__).resolve().parents[2] / p).resolve()
+
+    @model_validator(mode="after")
+    def _refuse_wildcard_cors_outside_development(self) -> "Settings":
+        # The API sends credentials (Authorization header, allow_credentials=True), so an
+        # open origin list would let any website drive a signed-in user's session.
+        if self.environment.lower() != "development" and "*" in self.cors_origins_list:
+            raise ValueError(
+                "ALLOWED_ORIGINS must list exact origins (e.g. https://your-app.vercel.app), "
+                "not '*', outside development."
+            )
+        return self
 
     @model_validator(mode="after")
     def _refuse_insecure_defaults_outside_development(self) -> "Settings":

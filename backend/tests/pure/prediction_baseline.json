@@ -1,0 +1,67 @@
+{
+  "model_version": "flood_risk_lr_v1",
+  "artifact_sha256": {
+    "calibration_metadata.json": "e7a29b81712ed5accc091fc2215927e0bc9e5604b301830a2a4556ca1b80afc6",
+    "calibrator.joblib": "1fc40e7fd3d0e95a252a76ab5d57566f22f373e9cf09b9b1a70c64182e941891",
+    "feature_columns.json": "9f539ec71a7f9fbffd8ca45c79faf62b8703f6f4d54d1ff8acf7004643ef68fc",
+    "model.joblib": "82a7eb45723f1eee95ba7d11e6f0f9e8a092cc4414d66531b8fbceb1e2364464",
+    "scaler.joblib": "7924a7e1511feb42fdb6ab39b9c7a3199189e1429dfa154087c2ec8696254cfb",
+    "threshold_metadata.json": "5ea477af22665e61fb972a77f86a341ade43b5c5027fb37c36fbfd86184788d7"
+  },
+  "cases": [
+    {
+      "input": {
+        "precipitation_mm": 0.0,
+        "temperature_c": 24.0,
+        "temperature_max_c": 30.0,
+        "temperature_min_c": 18.0,
+        "relative_humidity_pct": 60.0,
+        "wind_speed_10m_ms": 2.0
+      },
+      "raw": 0.4432,
+      "calibrated": 0.0017,
+      "level": "LOW",
+      "alert": false,
+      "window": [
+        "2026-10-15",
+        "2026-10-21"
+      ]
+    },
+    {
+      "input": {
+        "precipitation_mm": 45.0,
+        "temperature_c": 22.0,
+        "temperature_max_c": 27.0,
+        "temperature_min_c": 17.0,
+        "relative_humidity_pct": 88.0,
+        "wind_speed_10m_ms": 3.5
+      },
+      "raw": 0.7693,
+      "calibrated": 0.0038,
+      "level": "HIGH",
+      "alert": true,
+      "window": [
+        "2026-10-15",
+        "2026-10-21"
+      ]
+    },
+    {
+      "input": {
+        "precipitation_mm": 120.0,
+        "temperature_c": 21.0,
+        "temperature_max_c": 25.0,
+        "temperature_min_c": 18.0,
+        "relative_humidity_pct": 95.0,
+        "wind_speed_10m_ms": 5.0
+      },
+      "raw": 0.86,
+      "calibrated": 0.0053,
+      "level": "HIGH",
+      "alert": true,
+      "window": [
+        "2026-10-15",
+        "2026-10-21"
+      ]
+    }
+  ]
+}

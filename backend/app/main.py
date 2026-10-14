@@ -26,11 +26,14 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from app.api import (
     alerts,
+    sms_broadcasts,
     sms_subscribers,
     auth,
     citizen_reports,
+    dams,
     data_sources,
     flood_events,
+    forecast,
     health,
     locations,
     model_registry,
@@ -142,8 +145,11 @@ app.include_router(weather.router, prefix=settings.api_v1_prefix)
 app.include_router(predictions.router, prefix=settings.api_v1_prefix)
 app.include_router(alerts.router, prefix=settings.api_v1_prefix)
 app.include_router(sms_subscribers.router, prefix=settings.api_v1_prefix)
+app.include_router(sms_broadcasts.router, prefix=settings.api_v1_prefix)
 app.include_router(citizen_reports.router, prefix=settings.api_v1_prefix)
 app.include_router(notifications.router, prefix=settings.api_v1_prefix)
 app.include_router(model_registry.router, prefix=settings.api_v1_prefix)
 app.include_router(data_sources.router, prefix=settings.api_v1_prefix)
 app.include_router(system_status.router, prefix=settings.api_v1_prefix)
+app.include_router(forecast.router, prefix=settings.api_v1_prefix)
+app.include_router(dams.router, prefix=settings.api_v1_prefix)

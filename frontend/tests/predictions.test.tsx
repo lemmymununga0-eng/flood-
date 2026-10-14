@@ -17,6 +17,12 @@ import { afterEach, describe, expect, it, vi } from "vitest";
 import Predictions from "../src/pages/Predictions";
 import * as api from "../src/services/api";
 
+const auth = vi.hoisted(() => ({ user: null as null | { role: string } }));
+vi.mock("../src/context/AuthContext", async (orig) => ({
+  ...(await orig<typeof import("../src/context/AuthContext")>()),
+  useAuth: () => ({ user: auth.user }),
+}));
+
 const A_PREDICTION = {
   id: 1,
   location_id: 1,

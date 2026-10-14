@@ -5,16 +5,13 @@ from sqlalchemy import select
 from sqlalchemy.orm import Session
 
 from app.core.audit import record_audit_event
-from app.core.config import get_settings
 from app.core.deps import require_roles
-from app.core.sms import build_body, send_sms
 from app.core.pagination import Pagination, pagination_params
 from app.database.session import get_db
 from app.models.alert import Alert
 from app.models.location import Location
-from app.models.sms_subscriber import SmsSubscriber
 from app.models.user import User
-from app.schemas.alert import AlertCreate, AlertCreated, AlertOut, SmsDelivery
+from app.schemas.alert import AlertCreate, AlertCreated, AlertOut
 
 router = APIRouter(prefix="/alerts", tags=["alerts"])
 
@@ -65,24 +62,6 @@ def create_alert(
     db.commit()
     db.refresh(alert)
 
-    # SMS goes out only after the alert is safely stored; a send failure never undoes it.
-    created = AlertCreated.model_validate(alert)
-    if "sms" in payload.channels.lower():
-        subscribed = db.scalars(
-            select(SmsSubscriber.phone).where(
-                SmsSubscriber.active.is_(True),
-                (SmsSubscriber.location_id == payload.location_id)
-                | (SmsSubscriber.location_id.is_(None)),
-            )
-        ).all()
-        results = send_sms(
-            [*payload.sms_recipients, *subscribed],
-            build_body(payload.risk_level, location.name, payload.message),
-        )
-        created.sms_provider = get_settings().sms_provider.lower()
-        created.sms_delivery = [SmsDelivery(**r.as_dict()) for r in results]
-        record_audit_event(
-            db, user_id=issuer.id, action="alert_sms_sent", entity_type="alert", entity_id=alert.id
-        )
-        db.commit()
-    return created
+    # Creating an alert never sends SMS. Texting is a separate, confirmed admin action
+    # (see app/api/sms_broadcasts.py).
+    return AlertCreated.model_validate(alert)
