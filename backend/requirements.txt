@@ -20,6 +20,7 @@ cryptography==49.0.0
 bcrypt==5.0.0
 slowapi==0.1.10
 requests==2.32.5
+httpx==0.28.1  # app/core/sms.py (Africa's Talking client); was missing, crashing production startup
 joblib==1.5.3
 numpy==2.4.4
 scikit-learn==1.8.0
