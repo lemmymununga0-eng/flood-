@@ -20,9 +20,13 @@ def test_full_citizen_report_lifecycle(client, db, seeded_roles, seeded_location
     assert report["status"] == "pending"
     assert report["reviewed_by_user_id"] is None
 
-    listed = client.get("/api/v1/citizen-reports")
-    assert listed.status_code == 200
-    assert any(r["id"] == report["id"] for r in listed.json())
+    # A pending report is NOT public: anonymous callers must not see it.
+    anonymous = client.get("/api/v1/citizen-reports")
+    assert anonymous.status_code == 200
+    assert all(r["id"] != report["id"] for r in anonymous.json())
+    # The reporter can see their own report.
+    own = client.get("/api/v1/citizen-reports", headers={"Authorization": f"Bearer {citizen_token}"})
+    assert any(r["id"] == report["id"] for r in own.json())
 
     citizen_cannot_moderate = client.post(
         f"/api/v1/citizen-reports/{report['id']}/moderate",

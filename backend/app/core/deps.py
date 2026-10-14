@@ -38,6 +38,22 @@ def get_current_user(
     return user
 
 
+def get_optional_user(
+    credentials: HTTPAuthorizationCredentials | None = Depends(_bearer),
+    db: Session = Depends(get_db),
+) -> User | None:
+    """The signed-in user if a valid access token is supplied, otherwise None. Never raises:
+    for endpoints whose public response is a restricted view and whose signed-in response is
+    wider. An invalid or expired token is treated as anonymous."""
+    if credentials is None:
+        return None
+    payload = decode_token(credentials.credentials)
+    if payload is None or payload.get("type") != "access" or payload.get("sub") is None:
+        return None
+    user = db.get(User, int(payload["sub"]))
+    return user if user is not None and user.is_active else None
+
+
 def require_roles(*allowed_role_names: str):
     """Dependency factory: `Depends(require_roles("ADMIN", "ANALYST"))`. Checks the
     authenticated user's real role row — never trusts a role claim embedded in the

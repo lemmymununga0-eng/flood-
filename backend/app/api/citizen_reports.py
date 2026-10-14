@@ -1,11 +1,11 @@
 from datetime import datetime, timezone
 
 from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy import select
+from sqlalchemy import or_, select
 from sqlalchemy.orm import Session
 
 from app.core.audit import record_audit_event
-from app.core.deps import get_current_user, require_roles
+from app.core.deps import get_current_user, get_optional_user, require_roles
 from app.core.notifications import notify_user
 from app.core.pagination import Pagination, pagination_params
 from app.database.session import get_db
@@ -17,16 +17,37 @@ from app.schemas.citizen_report import CitizenReportCreate, CitizenReportModerat
 router = APIRouter(prefix="/citizen-reports", tags=["citizen-reports"])
 
 
+_STAFF_ROLES = ("ADMIN", "ANALYST", "OPERATOR")
+
+
 @router.get("", response_model=list[CitizenReportOut])
 def list_reports(
     db: Session = Depends(get_db),
     status: str | None = None,
     page: Pagination = Depends(pagination_params),
-) -> list[CitizenReport]:
+    user: User | None = Depends(get_optional_user),
+) -> list[CitizenReportOut]:
+    """Visibility depends on who asks. Staff (ADMIN/ANALYST/OPERATOR) see every report. Anyone
+    else sees only moderator-VERIFIED reports, plus their own reports if signed in. The
+    reporter's account id is only returned to staff and to the reporter themself, and
+    unreviewed free text is never shown to the public."""
+    is_staff = user is not None and user.role.name in _STAFF_ROLES
     query = select(CitizenReport).order_by(CitizenReport.submitted_at.desc())
+    if not is_staff:
+        visible = CitizenReport.status == "verified"
+        if user is not None:
+            visible = or_(visible, CitizenReport.reporter_user_id == user.id)
+        query = query.where(visible)
     if status:
         query = query.where(CitizenReport.status == status)
-    return db.scalars(query.limit(page.limit).offset(page.offset)).all()
+    rows = db.scalars(query.limit(page.limit).offset(page.offset)).all()
+    out = []
+    for r in rows:
+        item = CitizenReportOut.model_validate(r)
+        if not is_staff and (user is None or r.reporter_user_id != user.id):
+            item = item.model_copy(update={"reporter_user_id": None, "reviewed_by_user_id": None})
+        out.append(item)
+    return out
 
 
 @router.post("", response_model=CitizenReportOut, status_code=201)

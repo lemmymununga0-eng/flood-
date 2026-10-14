@@ -1,8 +1,16 @@
 import type { CitizenReport, CitizenReportCreateInput } from "../types";
-import { authedRequest, getJson } from "./http";
+import { API_BASE, authedRequest, getStoredToken, parseErrorBody, ApiError } from "./http";
 
-export function fetchCitizenReports(): Promise<CitizenReport[]> {
-  return getJson<CitizenReport[]>("/citizen-reports");
+// Sends the token when there is one: staff then see every report, a signed-in citizen also sees their
+// own, and everyone else sees verified reports only. The server decides; an expired token is
+// treated as anonymous rather than as an error.
+export async function fetchCitizenReports(): Promise<CitizenReport[]> {
+  const token = getStoredToken();
+  const res = await fetch(`${API_BASE}/citizen-reports`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+  });
+  if (!res.ok) throw new ApiError(res.status, await parseErrorBody(res));
+  return res.json() as Promise<CitizenReport[]>;
 }
 
 export function submitCitizenReport(input: CitizenReportCreateInput): Promise<CitizenReport> {

@@ -2,6 +2,7 @@ import { useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import ForecastOutlook from "../components/ForecastOutlook";
 import KpiCard from "../components/ui/KpiCard";
+import PrototypeNotice from "../components/ui/PrototypeNotice";
 import RiskBadge from "../components/ui/RiskBadge";
 import { EmptyState, ErrorState, LoadingState } from "../components/ui/States";
 import { useFetch } from "../hooks/useFetch";
@@ -98,6 +99,8 @@ export default function Predictions() {
           <KpiCard label="Low Risk" value={counts!.low} icon="predictions" accent="green" />
         </div>
       )}
+
+      <PrototypeNotice />
 
       <ForecastOutlook />
 

@@ -3,6 +3,7 @@ import L from "leaflet";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ErrorState, LoadingState } from "../components/ui/States";
+import PrototypeNotice from "../components/ui/PrototypeNotice";
 import RiskBadge from "../components/ui/RiskBadge";
 import { useFetch } from "../hooks/useFetch";
 import { fetchLocations, fetchPredictions } from "../services/api";
@@ -97,6 +98,8 @@ export default function RiskMap() {
           prediction — shown honestly rather than coloured by assumption.
         </p>
       </div>
+
+      <PrototypeNotice />
 
       {(locState.status === "loading" || predState.status === "loading") && (
         <LoadingState label="Loading map" />

@@ -73,3 +73,22 @@ def test_ingest_unknown_location_returns_404(client):
 
     resp = client.post("/api/v1/weather/999999/ingest")
     assert resp.status_code == 404
+
+
+def test_repeated_ingest_does_not_duplicate_days(client, seeded_location):
+    """Audit F-01: the endpoint is public, so repeating it must not multiply rows."""
+    def rec(day, rain):
+        return WeatherRecord(
+            observed_date=datetime(2026, 2, day, tzinfo=timezone.utc), precipitation_mm=rain,
+            temperature_c=24.0, relative_humidity_pct=70.0, temperature_max_c=29.0,
+            temperature_min_c=18.0, wind_speed_10m_ms=2.0)
+
+    _override_provider(client, WeatherFetchOutcome("success", "https://example.test/mock", [rec(1, 5.0), rec(2, 6.0)], None))
+    first = client.post(f"/api/v1/weather/{seeded_location.id}/ingest").json()
+    second = client.post(f"/api/v1/weather/{seeded_location.id}/ingest").json()
+    assert first["observations_stored"] == 2 and second["observations_stored"] == 0
+
+    _override_provider(client, WeatherFetchOutcome("success", "https://example.test/mock", [rec(2, 6.0), rec(3, 7.0)], None))
+    third = client.post(f"/api/v1/weather/{seeded_location.id}/ingest").json()
+    assert third["observations_stored"] == 1
+    assert len(client.get(f"/api/v1/weather/{seeded_location.id}").json()) == 3
